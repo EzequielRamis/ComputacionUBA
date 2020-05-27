@@ -1,13 +1,24 @@
 % vim: foldmethod=marker 
 
-\documentclass{article}
+\documentclass[spanish]{report}
 
 %region Packages
 \usepackage{chemfig}
+\usepackage[spanish]{babel}
 %endregion
 
 \begin{document}
 
+%region Titulo
+\title{Mega Resumen de Química}
+\author{Pedro I. Perez Vargas}
+\maketitle
+%endregion
+
+\chapter{Átomos}
+
+\chapter{Moleculas}
+\begin{center}
 \chemfig[angle increment=60]{
        C?(-[5]H)
    -[1]C (-[0]H)
@@ -17,5 +28,8 @@
    -[5]C (-[4]H)
    -?
 }
+
+Una molecula de Benzeno
+\end{center}
 
 \end{document}
