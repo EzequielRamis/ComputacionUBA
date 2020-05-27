@@ -19,8 +19,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Github Action for LaTeX
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          # The root LaTeX file to be compiled
-          root_file: .
+          root_file: CBC/Química/Megaresumen.tex
