@@ -20,7 +20,7 @@ Apuntes de la carrera de Ciencias de la Computación de la UBA
 En este repositorio estaremos subiendo resumenes y ejercicios resueltos de las materias que componen la carrera de Ciencias de la Computación.
 Los archivos estan en formato Latex, sin embargo se pueden encontrar compilados a PDF en Google Drive. Estos PDFs se mantienen sincronizados con el ultimo commit de la branch [master](https://github.com/EzequielRamis/ComputacionUBA/tree/master).
 
-- [Link a Drive](https://drive.google.com/file/d/1gG9rcfvqXSfPCOLGgw4kvin97WVL0-VB/view?usp=sharing)
+- [Link a Drive](https://drive.google.com/folderview?id=1KCt-wgOvoMxxG1Kntyqh-ikI0OhEqUVK)
 
 ## Organización del contenido
 
