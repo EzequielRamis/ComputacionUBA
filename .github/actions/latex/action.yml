@@ -1,4 +1,6 @@
 name: Latex compiler
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://xucheng/texlive-full:latest'
+  entrypoint: 'entrypoint.sh'
+
