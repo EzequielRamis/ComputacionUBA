@@ -2,3 +2,4 @@ name: Latex compiler
 runs:
   using: 'docker'
   image: 'Dockerfile'
+
