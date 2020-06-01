@@ -21,7 +21,7 @@ Los archivos están en formato Latex, sin embargo se pueden encontrar compilados
 
 ### Directorios
 
-Toda materia está agrupada por área (basado en el listado de [Cuba-Wiki](https://www.cubawiki.com.ar/index.php/Lista_de_materias_de_computaci%C3%B3n)), y está dividida en teoría y práctica
+Toda materia está agrupada por área (basado en el listado de [Cuba-Wiki](https://www.cubawiki.com.ar/index.php/Lista_de_materias_de_computaci%C3%B3n)), y está dividida en teoría y práctica:
 
 ```none
 ├───CBC
@@ -30,12 +30,12 @@ Toda materia está agrupada por área (basado en el listado de [Cuba-Wiki](https
 │   │   │   ├───Unidad 1.tex
 │   │   │   ├───Unidad 2.tex
 │   │   │   ├───...
-│   │   │   └───Álgebra.root.tex
+│   │   │   └───Álgebra - Práctica.root.tex
 │   │   └───Teoría
 │   │       ├───Unidad 1.tex
 │   │       ├───Unidad 2.tex
 │   │       ├───...
-│   │       └───Álgebra.root.tex
+│   │       └───Álgebra - Teoría.root.tex
 │   └───Química
 │       └───...
 └───Matemática
@@ -55,4 +55,4 @@ Además, cada materia incluye un README.md que muestra la lista de unidades y co
 
 ### Branches
 
-A medida que vayamos rindiendo mas materias, iremos creando una branch por cada una que será la que utilicemos para trabajar directamente. El branch `master` solo tendra el contenido que consideremos "estable"
+A medida que vayamos rindiendo mas materias, iremos creando una branch por cada una que será la que utilicemos para trabajar directamente. El branch `master` solo tendra el contenido que consideremos "estable".
