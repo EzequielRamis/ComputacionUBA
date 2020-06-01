@@ -1,7 +1,7 @@
 # Análisis Matemático
 ## Contenido de la materia
 - ### Unidad 1: Números Reales y Funciones
-    Números reales. Propiedades básicas. Representación sobre la recta. Supremo e ínfimo. Funciones. Definición. Funciones reales. Dominio e imagen. Gráfico. Funciones elementales, algebraicas y tras-cendentes. Composición. Función inversa. Representación de curvas en forma paramétrica.
+    Números reales. Propiedades básicas. Representación sobre la recta. Supremo e ínfimo. Funciones. Definición. Funciones reales. Dominio e imagen. Gráfico. Funciones elementales, algebraicas y trascendentes. Composición. Función inversa. Representación de curvas en forma paramétrica.
 - ### Unidad 2: Sucesiones
     Sucesiones. Noción de límite. Propiedades. Sucesiones monótonas. El número e. Otros límites especiales. Introducción a las series numéricas.
 - ### Unidad 3: Límite y continuidad
