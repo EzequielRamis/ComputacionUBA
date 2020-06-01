@@ -27,13 +27,13 @@ Toda materia está agrupada por área (basado en el listado de [Cuba-Wiki](https
 ├───CBC
 │   ├───Álgebra
 │   │   ├───Práctica
-│   │   │   ├───Unidad - 1.tex
-│   │   │   ├───Unidad - 2.tex
+│   │   │   ├───Unidad 1.tex
+│   │   │   ├───Unidad 2.tex
 │   │   │   ├───...
 │   │   │   └───Álgebra.root.tex
 │   │   └───Teoría
-│   │       ├───Unidad - 1.tex
-│   │       ├───Unidad - 2.tex
+│   │       ├───Unidad 1.tex
+│   │       ├───Unidad 2.tex
 │   │       ├───...
 │   │       └───Álgebra.root.tex
 │   └───Química
@@ -46,10 +46,12 @@ Toda materia está agrupada por área (basado en el listado de [Cuba-Wiki](https
 
 Todo directorio, tanto de teoría o práctica, estan compuestos por dos tipos de archivos **.tex**:
 
-- `Unidad - {X}.tex`
-- `{Materia}.root.tex`
+- `Unidad { N }.tex`
+- `{ Materia } - { Teoría | Práctica }.root.tex`
 
-El primero contiene la práctica o teoría de una unidad entera, mientras que el segundo tiene `\include`'s que importan el contenido de cada unidad. Los PDFs se compilan a partir de los `.root.tex`
+El primero contiene la práctica o teoría de una unidad entera, mientras que el segundo tiene `\subfile`'s que importan el contenido de cada unidad. Los PDFs se compilan a partir de los `.root.tex`.
+
+Además, cada materia incluye un README.md que muestra la lista de unidades y conceptos dados.
 
 ### Branches
 
