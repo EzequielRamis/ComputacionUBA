@@ -2,8 +2,6 @@
 
 ![Latex](https://github.com/EzequielRamis/ComputacionUBA/workflows/Latex/badge.svg?branch=master)
 
-Apuntes de la carrera de Ciencias de la Computación de la UBA
-
 ## Índice <!-- omit in toc -->
 
 - [Sobre el repositorio](#sobre-el-repositorio)
