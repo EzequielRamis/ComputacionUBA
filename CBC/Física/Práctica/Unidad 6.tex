@@ -1,10 +1,11 @@
 \documentclass[Análisis.root.tex]{subfiles}
 
+\newcommand{\gravity}[1][per-mode=fraction]{\SI[#1]{9,8}{\meter\per\second\squared}}
+
 \begin{document}
 
 \section{Unidad 6}
 \subsection{Parte 1}
-
 \begin{enumerate}
   \item Un hombre arrastra hacia arriba un baúl por la rampa de un camión de mudanzas. La rampa está inclinada \ang{20,0} y el hombre tira hacia arriba con una fuerza cuya dirección forma un ángulo de \ang{30,0} con la rampa, como muestra la figura.
 
@@ -233,5 +234,67 @@
 
   \item El tambor de un lavarropas tiene \SI{40}{\cm} de diámetro y puede centrifugar las prendas a una velocidad de \SI{1200}{rpm} (revoluciones por minuto). ¿A qué fuerza se verá sometida una prenda mojada de \SI{2}{\kg}?
 \end{enumerate}
+
 \subsection{Parte 2}
+\begin{enumerate}
+  \item Un niño se encuentra jugando con un palo y un disco de hockey en un lago congelado de
+        Canadá, cuando el niño golpea al disco con su bastón, al cual le proporciona una rapidez
+        inicial de 20,0 m/s. El disco permanece en el hielo disminuyendo su velocidad
+        constantemente hasta detenerse a una distancia de 120 metros
+        \begin{enumerate}
+          \item ¿Cuál es la aceleración con que el disco se detiene?
+
+                \[
+                  \begin{cases}
+                    X_f = X_i + V_it + \frac{1}{2}at^2
+                    \\
+                    V_f = V_i + at
+                  \end{cases}
+                \]\[
+                  \begin{cases}
+                    \SI{120}{\meter} = \SI{20}{\meter\per\second}t + \frac{1}{2}at^2
+                    \\
+                    \SI{0}{\meter\per\second} = \SI{20}{\meter\per\second} + at
+                  \end{cases}
+                \]\[
+                  \begin{cases}
+                    \SI{120}{\meter} = t(\SI{20}{\meter\per\second} + \frac{1}{2}at)
+                    \\
+                    -\SI{20}{\meter\per\second} = at
+                  \end{cases}
+                \]
+
+                \[ \SI{120}{\meter} = t(\SI{20}{\meter\per\second} + \frac{1}{2}(-\SI{20}{\meter\per\second})) \]
+                \[ \SI{120}{\meter} = t(\SI{20}{\meter\per\second} - \frac{1}{2}\SI{20}{\meter\per\second}) \]
+                \[ \SI{120}{\meter} = t(\SI{20}{\meter\per\second} - \SI{10}{\meter\per\second}) \]
+                \[ \SI{120}{\meter} = \SI{10}{\meter\per\second}t \]
+                \[ \frac{\SI{120}{\meter}}{\SI{10}{\meter\per\second}} = t \]
+                \[ t = \SI{12}{\second} \]
+                \\
+                \[ \SI{0}{\meter\per\second} = \SI{20}{\meter\per\second} + at \]
+                \[ \SI{0}{\meter\per\second} = \SI{20}{\meter\per\second} + a\SI{12}{\second} \]
+                \[ -\SI{20}{\meter\per\second} = a\SI{12}{\second} \]
+                \[ a 
+                    = \frac{-\SI{20}{\meter\per\second}}{\SI{12}{\second}} 
+                    = 1,\overline{6}\si[per-mode=fraction]{\meter\per\second\squared}
+                    \approx \SI[per-mode=fraction]{1,7}{\meter\per\second\squared}
+                \]
+
+          \item Determine el coeficiente de fricción entre el disco y el hielo.
+
+                \[ |f_k| = \mu_k|n| \]
+                \[ m\cdot \SI[per-mode=fraction]{1,7}{\meter\per\second\squared} = \mu_k\cdot gm \]
+                \[ \SI[per-mode=fraction]{1,7}{\meter\per\second\squared} = \mu_k\cdot g \]
+                \[ g = \gravity \]
+                \[ \SI[per-mode=fraction]{1,7}{\meter\per\second\squared} = \mu_k\cdot\gravity \]
+                \[ \mu_k = \frac{
+                    \SI{1,7}{\meter\per\second\squared}
+                  }{
+                    \gravity[per-mode=reciprocal]
+                } \]
+                \[ \mu_k = \num{0,170} \]
+
+        \end{enumerate}
+\end{enumerate}
+
 \end{document}
