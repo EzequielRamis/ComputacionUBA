@@ -1,0 +1,32 @@
+\input{../../../tex/template.tex}
+
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{tikz}
+
+
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+
+\sisetup{
+  output-decimal-marker = {,}
+}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\setcounter{section}{-1}
+
+\subfile{Preambulo.tex}
+\subfile{Unidad 1.tex}
+\subfile{Unidad 2.tex}
+\subfile{Unidad 3.tex}
+\subfile{Unidad 4.tex}
+\subfile{Unidad 5.tex}
+\subfile{Unidad 6.tex}
+
+\end{document}

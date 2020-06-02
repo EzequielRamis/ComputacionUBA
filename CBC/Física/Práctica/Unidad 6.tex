@@ -1,0 +1,237 @@
+\documentclass[Análisis.root.tex]{subfiles}
+
+\begin{document}
+
+\section{Unidad 6}
+\subsection{Parte 1}
+
+\begin{enumerate}
+  \item Un hombre arrastra hacia arriba un baúl por la rampa de un camión de mudanzas. La rampa está inclinada \ang{20,0} y el hombre tira hacia arriba con una fuerza cuya dirección forma un ángulo de \ang{30,0} con la rampa, como muestra la figura.
+
+        \begin{center}
+          \begin{tikzpicture}
+            \draw (-1,0) -- ++(6,0);
+            \draw (0,0) -- ++(20:5);
+            \draw[help lines] (0,0) ++(0:1) arc (0:20:1) node[pos=.5, right]{\ang{20,0}};
+            \draw[help lines] (0,0) ++(20:1) arc (20:50:1) node[pos=.5, above right]{\ang{30,0}};
+            \draw[red, ->] (0,0) -- ++(50:2) node[above right]{$\vec{F}$};
+            \draw[red, dashed, ->] (0,0) -- ++(20:2) node[below right]{$F_x$};
+            \draw[red, dashed, ->] (0,0) -- ++(110:2) node[left]{$F_y$};
+          \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+          \item ¿Qué fuerza se necesita para que la componente $F_x$ paralela a la rampa sea de \SI{60,0}{\newton}?
+
+                \[F_x=\vec{F}\cos{\theta}\]
+                \[\SI{60,0}{\newton}=\vec{F}\cos{\ang{30,0}}\]
+                \[\vec{F}=\frac{\SI{60,0}{\newton}}{\cos{\ang{30,0}}}=\boxed{\SI{69,3}{\newton}}\]
+
+          \item ¿Qué magnitud tendrá entonces la componente $F_y$ perpendicular a la rampa?
+
+                \[F_y=\vec{F}\sin{\theta}=\SI{69,3}{\newton}\cdot\sin{\ang{30,0}}=\boxed{\SI{34,5}{\newton}}\]
+        \end{enumerate}
+
+  \item Un hombre sale de comprar del supermercado y se dirige a guardar la mercadería comprada en su auto, para llegar al estacionamiento empuja el carrito cargado de mercadería con una fuerza resultante de \SI{600}{\newton}, como consecuencia adquiere una aceleración de \SI{1,50}{\meter\over\second\squared}.
+
+        \begin{enumerate}
+          \item Calcular la masa del carrito con la mercadería.
+
+                \[F=ma\]
+                \[\SI{600}{\newton}=m\cdot\SI{1,50}{\meter\over\second\squared}\]
+                \[m=\frac{\SI{600}{\newton}}{\SI{1,50}{\meter\over\second\squared}}=\boxed{\SI{400}{\kilogram}}\]
+
+          \item Si se descargó la tercera parte de la mercadería del carrito y se vuelve a aplicar la misma fuerza resultante ¿Cuál es ahora la aceleración del carrito?
+
+                \[F=ma\]
+                \[\SI{600}{\newton}=\frac{2}{3}\cdot\SI{400}{\kilogram}\cdot a\]
+                \[a=\frac{\SI{600}{\newton}}{\frac{2}{3}\cdot\SI{400}{\kilogram}}=\boxed{\SI{2,25}{\meter\over\second\squared}}\]
+        \end{enumerate}
+
+  \item Dos cajas, una de \SI{4,00}{\kg} de masa y la otra con una masa de \SI{6,00}{\kg} descansan en la superficie sin fricción de un estanque congelado, unidas por una cuerda delgada como muestra la figura. Una persona con zapatos de golf (los cuales le dan tracción sobre el hielo) aplica un tirón horizontal $F$ a la caja de \SI{6,00}{\kg} y le imparte una aceleración de \SI{2,50}{\meter\over\second\squared}.
+
+        \begin{center}
+          \begin{tikzpicture}
+            \draw (-1,0) -- ++(10,0);
+            \draw (0,0) rectangle ++(2,3) node[pos=.5]{\SI{4,00}{\kg}};
+            \draw (1,3) node[above]{$\beta$};
+            \draw (2,1.5) -- ++(2,0);
+            \draw[red, <->] (2,1.7) -- ++(2,0) node[pos=.5, above]{$T$};
+            \draw (4,0) rectangle ++(2,3) node[pos=.5]{\SI{6,00}{\kg}};
+            \draw (5,3) node[above]{$\alpha$};
+            \draw[red, ->] (6,1.5) -- ++(2,0) node[right]{$F$};
+            \draw[green, ->] (6,2) -- ++(2,0) node[right]{\SI{2,50}{\meter\over\second\squared}};
+          \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+          \item ¿Qué aceleración tiene la caja de \SI{4,00}{\kg}?
+
+                \[a_\beta=a_\alpha=\boxed{\SI{2,50}{\meter\over\second\squared}}\]
+
+          \item Dibujé un diagrama de cuerpo libre para la caja de \SI{4,00}{\kg} y calcule la $T$ensión en la cuerda que une a las dos cajas.
+
+                \begin{center}
+                  \begin{tikzpicture}
+                    \draw (-.5,-.5) rectangle ++(1,1);
+                    \draw[red, ->] (0,0) -- ++(0,-1) node[below]{$g$};
+                    \draw[red, ->] (0,0) -- ++(0,1) node[above]{$-g$};
+                    \draw[red, ->] (0,0) -- ++(1,0) node[right]{$T$};
+                  \end{tikzpicture}
+                \end{center}
+
+                \[F=ma\]
+                \[T=\SI{4,00}{\kg}\cdot\SI{2,50}{\meter\over\second\squared}=\boxed{\SI{10,0}{\newton}}\]
+
+          \item Calcular la magnitud de la fuerza ejercida por la persona.
+
+                \[F=ma\]
+                \[F=(\SI{4,00}{\kg}+\SI{6,00}{\kg})\cdot\SI{2,50}{\meter\over\second\squared}=\boxed{\SI{25,0}{\newton}}\]
+        \end{enumerate}
+
+  \item Dos carretones, $A$ y $B$, cuyas masas son \SI{80,0}{\kg} y \SI{120}{\kg} respectivamente, se encuentran uno junto al otro, como muestra la figura, apoyados sobre un piso horizontal que no presenta rozamiento. Sobre el carretón $A$ se aplica una fuerza horizontal de \SI{300}{\newton}.
+
+        \begin{center}
+          \begin{tikzpicture}
+            \draw (-2.25,0) -- (6.5,0);
+            \draw[red, ->] (-1,1) node[left]{\SI{300}{\newton}} -- ++(1,0);
+            \draw (0,0) rectangle ++(3,2) node[pos=.5]{$A=\SI{80,0}{\kg}$};
+            \coordinate (a) at (1.5,2.25);
+            \draw[red, ->] (a) -- ++(1,0)  node[above]{$F_A$};
+            \draw[red, ->] (a) -- ++(-1,0) node[above]{$F_{B\to A}$};
+            \fill[green] (a) circle(2pt);
+
+            \draw (3,0) rectangle ++(3,2) node[pos=.5]{$B=\SI{120}{\kg}$};
+            \coordinate (b) at (4.5,2.25);
+            \draw[red, ->] (b) -- ++(1,0)  node[above]{$F_{A\to B}$};
+            \fill[green] (b) circle(2pt);
+          \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+          \item Calcular la magnitud de la fuerza aplicada entre ambos carretones.
+
+                \[F_B=\SI{300}{\newton}\cdot\frac{\SI{120}{\kg}}{\SI{80,0}{\kg}+\SI{120}{\kg}}=\SI{180}{\newton}\]
+
+          \item Calcular ahora la magnitud de la fuerza aplicada entre ambos carretones si la fuerza horizontal de \SI{300}{\newton} se hubiese aplicado de derecha a izquierda sobre el carretón $B$.
+
+                \[F_A=\SI{300}{\newton}\cdot\frac{\SI{80,0}{\kg}}{\SI{80,0}{\kg}+\SI{120}{\kg}}=\SI{120}{\newton}\]
+        \end{enumerate}
+
+  \item  Los dos bloques están unidos por una cuerda gruesa uniforme de peso despreciable. Se aplica una fuerza de \SI{200}{\newton} hacia arriba como se ilustra en la figura.
+
+        \begin{center}
+          \begin{tikzpicture}
+            \draw[red, ->] (0,1) -- ++(0,1) node[pos=.5, right]{$F=\SI{200}{\newton}$};
+            \draw (-1,-1) rectangle ++(2,2) node[pos=.5]{$A=\SI{6,00}{\kg}$};
+            \draw (0,-1) -- ++(0,-2) node[pos=.5, right]{$T$};
+            \draw (-1,-5) rectangle ++(2,2) node[pos=.5]{$B=\SI{5,00}{\kg}$};
+          \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+          \item Realice en proporción los diagramas de cuerpo libre para el bloque de \SI{6,00}{\kg} y el de \SI{5,00}{\kg}.
+
+                \begin{multicols}{2}
+                  \begin{center}
+                    \begin{tikzpicture}
+                      \draw[red, ->] (-2pt,0) -- ++(0,-1) node[left]{$F_A$};
+                      \draw[red, ->] (2pt,0) -- ++(0,-.75) node[right]{$-T$};
+                      \draw[red, ->] (0,0) -- ++(0,1) node[right]{$F$};
+                      \fill[green] circle(3pt) node[right]{$A$};
+                    \end{tikzpicture}
+                  \end{center}
+                  \begin{center}
+                    \begin{tikzpicture}
+                      \draw[red, ->] (0,0) -- ++(0,-1) node[left]{$F_B$};
+                      \draw[red, ->] (0,0) -- ++(0,1) node[right]{$T$};
+                      \fill[green] circle(3pt) node[left]{$B$};
+                    \end{tikzpicture}
+                  \end{center}
+                \end{multicols}
+
+          \item ¿Que aceleración tiene el sistema?
+
+                \[F_A=m_Ag=\SI{6,00}{\kg}\cdot\SI{-9,80}{\meter\over\second\squared}=\SI{-58,8}{\newton}\]
+                \[F_B=\SI{5,00}{\kg}\cdot\SI{-9,80}{\meter\over\second\squared}=\SI{-49,0}{\newton}\]
+
+                \[
+                  a
+                  =\frac{\Sigma F}{\Sigma m}
+                  =\frac{F+F_A+F_B+\cancel{T-T}}{m_A+m_B}
+                  =\frac{\SI{200}{\newton}-\SI{58,8}{\newton}-\SI{49,0}{\newton}}{\SI{6,00}{\kg}+\SI{5,00}{\kg}}
+                  =\boxed{\SI{8,38}{\meter\over\second\squared}}
+                \]
+
+          \item ¿Cuánto es la magnitud de la Tensión en la cuerda?
+
+                \[F=ma\]
+                \[T+F_B=m_Ba\]
+                \[T-\SI{49,0}{\newton}=\SI{5,00}{\kg}\cdot\SI{8,38}{\meter\over\second\squared}\]
+                \[T=\boxed{\SI{90,9}{\newton}}\]
+        \end{enumerate}
+
+  \item El gráfico muestra la fuerza resultante aplicada a un móvil que, partiendo del reposo, se mueve en la dirección $x$ sin rozamiento. ¿Cuál de las siguientes afirmaciones es verdadera? Argumente por qué las demás son erróneas.
+
+        \begin{multicols}{3}
+          \begin{center}
+            \begin{tikzpicture}
+              \draw (0,0) -- ++(4,0) node[right]{$x$};
+              \draw[->] (0,0) -- ++(0,2) node[left]{$F$};
+              \draw[red] (0,0) -- (2,2) -- (4,0);
+              \draw[help lines, dashed] (2,0) -- (2,2);
+              \draw[help lines, dashed] (2,0) -- ++(0,2);
+              \draw (0,0) node[below]{$0$};
+              \draw (2,0) node[below]{$A$};
+              \draw (4,0) node[below]{$B$};
+            \end{tikzpicture}
+          \end{center}
+
+          \begin{center}
+            \begin{tikzpicture}
+              \draw (0,0) -- ++(4,0) node[right]{$x$};
+              \draw[->] (0,0) -- ++(0,2) node[left]{$a$};
+              \draw[red] (0,0) -- (2,2) -- (4,0);
+              \draw[help lines, dashed] (2,0) -- (2,2);
+              \draw[help lines, dashed] (2,0) -- ++(0,2);
+              \draw (0,0) node[below]{$0$};
+              \draw (2,0) node[below]{$A$};
+              \draw (4,0) node[below]{$B$};
+            \end{tikzpicture}
+          \end{center}
+
+          \begin{center}
+            \begin{tikzpicture}
+              \draw (0,0) -- ++(4,0) node[right]{$x$};
+              \draw[->] (0,0) -- ++(0,2) node[left]{$V$};
+              \draw[red] (0,0) parabola (2,1) parabola bend (4,2) (4,2);
+              \draw[help lines, dashed] (2,0) -- ++(0,2);
+              \draw (0,0) node[below]{$0$};
+              \draw (2,0) node[below]{$A$};
+              \draw (4,0) node[below]{$B$};
+            \end{tikzpicture}
+          \end{center}
+        \end{multicols}
+
+        \begin{enumerate}
+          \item La velocidad es máxima en la posición A.
+
+                Falso.
+          \item Desde 0 hasta B la aceleración es constante.
+
+                Falso.
+          \item Entre A y B la velocidad disminuye.
+
+                Falso.
+          \item En A la aceleración es máxima.
+
+                Verdadero.
+          \item En A el móvil cambia el sentido de movimiento.
+
+                Falso.
+        \end{enumerate}
+
+  \item El tambor de un lavarropas tiene \SI{40}{\cm} de diámetro y puede centrifugar las prendas a una velocidad de \SI{1200}{rpm} (revoluciones por minuto). ¿A qué fuerza se verá sometida una prenda mojada de \SI{2}{\kg}?
+\end{enumerate}
+\subsection{Parte 2}
+\end{document}
