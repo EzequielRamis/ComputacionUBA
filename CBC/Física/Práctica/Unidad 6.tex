@@ -331,6 +331,52 @@
           \end{tikzpicture}
         \end{center}
 
+  \item
+        \begin{multicols}{2}
+          Una mujer en el aeropuerto mueve su maleta de \SI{20,0}{\kilogram} a una
+          velocidad constante tirando de la correa con una fuerza de \SI{35,0}{\newton} con
+          una dirección $\theta$ determinada como muestra la figura, la fuerza de
+          fricción entre la maleta y el piso es de \SI{20,0}{\newton}.
+          \begin{center}
+            \begin{tikzpicture}
+              \filldraw[draw=black, fill=gray!15] (-1,-1) rectangle +(2,2);
+              \begin{scope}[gray, thin]
+                \draw[dashed] (0,0) -- (2,0 -| 30:2);
+                \draw (0.5,0) arc [start angle=0, end angle=30, radius=0.5] node[right,pos=0.5]{$\alpha$};
+              \end{scope}
+              \begin{scope}[very thick, red, ->] % Vectores
+                \draw circle[radius=0.05];
+                \draw (0,0) -- (30:2) node[above]{$\vec{F}$};
+                \draw (0,0) -- (0,-2) node[right,near end]{$\vec{g}$};
+                \draw (0,0) -- (-2,0) node[above]{$\vec{f}_s$};
+              \end{scope}
+            \end{tikzpicture}
+          \end{center}
+        \end{multicols}
+        \begin{enumerate}
+          \item ¿Qué ángulo forma la correa con respecto a la horizontal cuando la mujer jala de ella?
+                \begin{center}
+                  \[ a = 0 \Rightarrow \sum F_x = 0 \]
+                  \[ \sum F_x = \vec{F}_x - f_s = 0 \]
+                  \[ \vec{F}_x = f_s \]
+                  \[ \vec{F}_x = F\cdot cos(\alpha) \]
+                  \[ f_s = F\cdot cos(\alpha) \]
+                  \[ \SI{20,0}{\newton} = \SI{35}{\newton}\cdot cos(\alpha)\]
+                  \[ cos(\alpha) = \frac{\SI{20,0}{\newton}}{\SI{35,0}{\newton}} \]
+                  \[ \alpha = arcos(\frac{4}{7}) \]
+                  \[ \boxed{\alpha = \ang{55,2}} \]
+                \end{center}
+          \item ¿Cuál es la fuerza normal que ejerce la tierra sobre la maleta?
+                \begin{center}
+                  \[ \sum F_y = 0 \]
+                  \[ \sum F_y = F_g - \vec{F}_y - n = 0 \]
+                  \[ F_g - \vec{F}_y = n \]
+                  \[ m\cdot g - Fsin(\alpha) = n \]
+                  \[ \SI{20,0}{\kilogram}\cdot \gravity - \SI{35,5}{\newton}sin(\ang{55,2}) = n \]
+                  \[ \boxed{n = \SI{167}{\newton}} \]
+                \end{center}
+        \end{enumerate}
+
 \end{enumerate}
 
 \end{document}
