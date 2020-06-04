@@ -295,6 +295,42 @@
                 \[ \mu_k = \num{0,170} \]
 
         \end{enumerate}
+
+  \item
+        \begin{multicols}{2}
+          El coeficiente de fricción estática entre la caja de masa de \num{0,300}
+          kg y el plano inclinado de \ang{35,0} es de \num{0,300}. ¿Cuál es la fuerza
+          mínima $\vec{F}$ perpendicular al plano que debe ser aplicada a la caja
+          para evitar que ésta deslice por la pendiente?
+          \begin{center}
+            \begin{tikzpicture}
+              \coordinate (F) at (35:5);
+              \draw[thin, draw=gray] (0,0) -- (1,0) arc [start angle=0, end angle=35, radius=1] node[right,pos=0.5]{$\alpha = \ang{35,0}$} -- cycle;
+              \draw (0,0) -- (F);
+              \draw (0,0) -- (F |- 0,0);
+              \begin{scope} [rotate=35]
+                \coordinate (B) at (2,0);
+                \draw (B) rectangle +(1,1);
+                \draw[red, very thick, ->] (B) ++(0.5,2) -- +(0,-1) node[above left, pos=0]{$\vec{F}$};
+                \draw[red, very thick, ->] (B) ++(0.5,0.5) -- ++(-125:1) node[right, pos=0.1]{$\vec{g}$};
+                \fill[red] (B) ++(0.5,0.5) circle[radius=0.05];
+              \end{scope}
+            \end{tikzpicture}
+          \end{center}
+        \end{multicols}
+        \begin{center}
+          \begin{tikzpicture}
+            \filldraw[draw=black, fill=gray!15] (-1,-1) rectangle +(2,2);
+            \begin{scope}[red, very thick, ->, near end] % Dibujar vectores
+              \draw circle[radius=0.05];
+              \draw (0,0) -- (0,2.5) node[right]{$\vec{n}$};
+              \draw (0,0) -- (0,-2) node[right]{$\vec{F}$};
+              \draw (0,0) -- (-125:1 |- 0,-2) node[left]{$\vec{F}_g$};
+              \draw (0,0) -- ++(2,0) node[above]{$\vec{f}_s$};
+            \end{scope}
+          \end{tikzpicture}
+        \end{center}
+
 \end{enumerate}
 
 \end{document}
