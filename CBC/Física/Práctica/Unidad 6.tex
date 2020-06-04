@@ -377,6 +377,32 @@
                 \end{center}
         \end{enumerate}
 
+  \item
+        \begin{multicols}{2}
+          La caja A de la figura tiene una masa de \SI{4,00}{\kilogram} y el
+          bloque B, de \SI{12,0}{\kilogram}. El coeficiente de fricción cinética
+          entre el bloque B y la mesa es de \num{0,25}.
+          \begin{center}
+            \begin{tikzpicture}
+              %\draw[dashed,very thin,gray] (-5,-5) grid (5,5);
+              \draw[thin] (-1.5,0) arc[start angle=0,end angle=360,radius=0.5]; % Rueda izq.
+              \draw[thin] (2.5,0) arc[start angle=0,end angle=360,radius=0.5]; % Rueda der.
+              \draw[thick] (-2.5,-1) -- ++(0,1) arc[start angle=180, end angle=90,radius=0.5] -- ++(1,0) node(A); % Cuerda izq.
+              \draw[thick] (A) ++(1,0) -- ++(2,0) arc[start angle=90, end angle=0,radius=0.5] -- +(0,-1); % Cuerda der.
+              \draw[very thick,->] (A) ++(1.5,0.5) -- node[above]{a} ++(1,0); % Fuerza `a`
+              \begin{scope}[fill=gray!15] % Cajas
+                \filldraw (-3,-2) rectangle +(1,1) node[pos=0.5]{A};
+                \filldraw (-1,0) rectangle +(1,1) node[pos=0.5]{B};
+                \filldraw (2,-2) rectangle +(1,1) node[pos=0.5]{C};
+              \end{scope};
+              \draw[very thick] (-2,0) -- (2,0); % Piso
+            \end{tikzpicture}
+          \end{center}
+        \end{multicols}
+        \begin{enumerate}
+          \item ¿Qué masa tiene el bloque C si el bloque B se mueve de izquierda a derecha con una aceleración de \SI[per-mode=fraction]{2}{\meter\per\second\squared}?
+          \item ¿Qué tensión hay en cada cuerda cuando el bloque B tiene esa aceleración?
+        \end{enumerate}
 \end{enumerate}
 
 \end{document}
