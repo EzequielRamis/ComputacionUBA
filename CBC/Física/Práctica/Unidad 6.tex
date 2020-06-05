@@ -453,13 +453,13 @@
           \[ T = \SI{1,200}{\second} \]
           \[ A = \SI{-0,600}{\meter} \]
           \[ \omega = \frac{\Delta\theta}{\Delta t} \]
-          \[ \omega = \frac{2\pi}{\SI{1,200}{\second}} \]
-          \[ \omega = \SI{1,667}{\per\second} \]
-          \[ \sin0 = 0 \]
+          \[ \omega = \frac{\SI{2\pi}{\radian}}{\SI{1,200}{\second}} \]
+          \[ \omega = \SI[per-mode=symbol]{1,667}{\radian\per\second} \]
+          \[ \sin\ang{0} = 0 \]
           \[ A\sin(\omega t) \]
-          \[ (\SI{-0,600}{\meter})\cdot\sin(t\cdot\SI{1,667}{\per\second}) \]
+          \[ (\SI{-0,600}{\meter})\cdot\sin(t\cdot\SI[per-mode=symbol]{1,667}{\radian\per\second}) \]
           \[
-            (\SI{-0,600}{\meter}) \cdot \sin( \SI{0,480}{\second} \cdot \SI{1,667}{\per\second} )
+            (\SI{-0,600}{\meter}) \cdot \sin( \SI{0,480}{\second} \cdot \SI[per-mode=symbol]{1,667}{\radian\per\second} )
             = \SI{-0,353}{\meter}
           \]
           \[ \boxed{
