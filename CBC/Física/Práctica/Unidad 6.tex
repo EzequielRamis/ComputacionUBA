@@ -298,7 +298,7 @@
 
   \item
         \begin{multicols}{2}
-          El coeficiente de fricción estática entre la caja de masa de \SI{3,00}{\kilogram} 
+          El coeficiente de fricción estática entre la caja de masa de \SI{3,00}{\kilogram}
           y el plano inclinado de \ang{35,0} es de \num{0,300}. ¿Cuál es la fuerza
           mínima $\vec{F}$ perpendicular al plano que debe ser aplicada a la caja
           para evitar que ésta deslice por la pendiente?
@@ -468,12 +468,26 @@
         \end{center}
 
 
-  \item Un cuerpo de masa desconocida se une a un resorte ideal con una constante de \SI[per-mode=symbol]{120}{\newton\per\meter}.
+  \item Un cuerpo de masa desconocida se une a un resorte ideal con una constante de \SI{120}{N/m}.
         Se observa que vibra con una frecuencia de \SI{6,00}{\hertz}.
         \begin{enumerate}
           \item Calcule el periodo del movimiento.
+                \[ \SI{6,00}{\hertz} = \frac{\SI{1}{\second}}{6} \approx \boxed{\SI{0,167}{\second}} \]
           \item Calcule la frecuencia angular.
+                \[ T = \SI{0,167}{\second} \]
+                \[ \omega = \frac{\Delta\theta}{\Delta T} \]
+                \[ \omega = \frac{\SI{2\pi}{\radian}}{\SI{0,167}{\second}} \]
+                \[ \boxed{
+                  \omega = \SI[per-mode=symbol]{37,7}{\radian\per\second}}
+                \]
           \item Calcule la masa del cuerpo.
+                \[ \omega^2 = \frac{k}{m} \]
+                \[ k = \SI{120}{N/m} \]
+                \[ \omega = \SI{37,7}{\per\second}} \]
+                \[ (\SI{37,7}{\per\second}})^2 = \frac{\SI{120}{N/m}}{m} \]
+                \[ \SI{1421,29}{\per\second\squared}} = \frac{\SI{120}{\kilo\gram\cancel\meter\per\second\squared\per\cancel\meter}}{m} \]
+                \[ m = \frac{\SI{120}{\kilo\gram\per\cancel\second\squared}}{\SI{1421,29}{\cancel\per\second\squared}} \]
+                \[ m = \SI{0,0844}{\kilo\gram} \]
         \end{enumerate}
 
 
