@@ -497,7 +497,45 @@
         herramientas a una velocidad constante de \SI[per-mode=symbol]{25,0}{\centi\meter\per\second}.
         \begin{enumerate}
           \item ¿Cuáles son los coeficientes de fricción estático y cinético entre la caja y el piso?
+                \begin{center}
+                  \begin{tikzpicture}
+                    \filldraw[fill=gray!15] (-0.5,-0.5) rectangle ++(1,1);
+                    \filldraw[red] (0,0) circle[radius=0.05];
+                    \begin{scope}[very thick,red,->,near end]
+                      \draw (0,0) -- node[above]{$\vec{F}_1$}(1.5,0);
+                      \draw (0,0) -- node[above]{$\vec{f_s}$}(-1,0);
+                      \draw (0,0) -- node[right]{$\vec{n}$}(0,1.3);
+                      \draw (0,0) -- node[right]{$\vec{g}$}(0,-1.3);
+                    \end{scope}
+                  \end{tikzpicture}
+                  \[ n = g\cdot m \]
+                  \[ n = \gravity\cdot \SI{45,0}{\kilo\gram} \]
+                  \[ n = \SI{441}{\newton} \]
+                  \[ F_1 = n\cdot\mu_s \]
+                  \[ \SI{313}{\newton} = \SI{441}{\newton}\cdot\mu_s \]
+                  \[ \boxed{ \mu_s = \num{0,710} } \]
+                  \begin{tikzpicture}
+                    \filldraw[fill=gray!15] (-0.5,-0.5) rectangle ++(1,1);
+                    \filldraw[red] (0,0) circle[radius=0.05];
+                    \begin{scope}[very thick,red,->,near end]
+                      \draw (0,0) -- node[above]{$\vec{F}_2$}(1.5,0);
+                      \draw (0,0) -- node[above]{$\vec{f_k}$}(-1,0);
+                      \draw (0,0) -- node[right]{$\vec{n}$}(0,1.3);
+                      \draw (0,0) -- node[right]{$\vec{g}$}(0,-1.3);
+                    \end{scope}
+                  \end{tikzpicture}
+                  \[ n = \SI{441}{\newton} \]
+                  \[ F_2 = n\cdot\mu_k \]
+                  \[ \SI{208}{\newton} = \SI{441}{\newton}\cdot\mu_k \]
+                  \[ \boxed{ \mu_k = \num{0,472} } \]
+                \end{center}
           \item ¿Qué fuerza debe usted ejercer para que la caja de herramientas alcance una aceleración de \SI[per-mode=symbol]{1,10}{\meter\per\second\squared}?
+                \begin{center}
+                  \[ F - f_k = m\cdot a \]
+                  \[ F - \SI{208}{\newton} = \SI{45,0}{\kilo\gram}\cdot\SI{1,10}{\meter\per\second\squared} \]
+                  \[ F = \SI{49,5}{\newton} + \SI{208}{\newton} \]
+                  \[ F = \SI{258}{\newton} \]
+                \end{center}
         \end{enumerate}
 \end{enumerate}
 
