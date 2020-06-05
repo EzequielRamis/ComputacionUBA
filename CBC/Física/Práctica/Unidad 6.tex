@@ -319,7 +319,7 @@
           \end{center}
         \end{multicols}
         \begin{center}
-          \begin{tikzpicture}
+          \begin{tikzpicture} % Diagrama de cuerpo libre
             \filldraw[draw=black, fill=gray!15] (-1,-1) rectangle +(2,2);
             \begin{scope}[red, very thick, ->, near end] % Dibujar vectores
               \draw circle[radius=0.05];
@@ -329,6 +329,46 @@
               \draw (0,0) -- ++(2,0) node[above]{$\vec{f}_s$};
             \end{scope}
           \end{tikzpicture}
+          \begin{tikzpicture} % Diagrama del vector F_g
+            \draw[very thin, gray] (0,-0.5) arc[start angle=-90, end angle=-125, radius=0.5] node[below,pos=0.5]{$\alpha$};
+            \begin{scope}[red, very thick, ->] % Dibujar vectores
+              \draw (0,0) -- node[right]{$\vec{F}_{g\bot}$} (0,-3) node(R); % Perpendicular
+              \draw (0,0) -- node[left]{$\vec{F}_g$} (-125:3 |- R) node(G); % Gravedad
+              \draw (R) -- node[below right]{$\vec{F}_{g\parallel}$} (G) node(B); % Paralelo
+            \end{scope}
+          \end{tikzpicture}
+        \end{center}
+
+        \begin{multicols}{2}
+          \begin{center}
+            \[ \sin\alpha = \frac{F_{g\parallel}}{F_g} \]
+            \[ \sin\alpha = \frac{F_{g\parallel}}{m\cdot g} \]
+            \[ \sin\ang{35,0} = \frac{F_{g\parallel}}{\SI{3,00}{\kilogram}\gravity[per-mode=reciprocal]} \]
+            \[ \sin\ang{35,0} = \frac{F_{g\parallel}}{\SI{29,4}{\newton}} \]
+            \[ \SI{29,4}{\newton}\sin\ang{35,0} = F_{g\parallel} \]
+            \[ F_{g\parallel} = \SI{16,7}{\newton} \]
+          \end{center}
+          \begin{center}
+            \[ \cos\alpha = \frac{F_{g\bot}}{F_g} \]
+            \[ \cos\alpha = \frac{F_{g\bot}}{m\cdot g} \]
+            \[ \cos\ang{35,0} = \frac{F_{g\bot}}{\SI{3,00}{\kilogram}\gravity[per-mode=reciprocal]} \]
+            \[ \cos\ang{35,0} = \frac{F_{g\bot}}{\SI{29,4}{\newton}} \]
+            \[ \SI{29,4}{\newton}\cos\ang{35,0} = F_{g\bot} \]
+            \[ F_{g\bot} = \SI{24,1}{\newton} \]
+          \end{center}
+        \end{multicols}
+        \begin{center}
+          \[ n = F_{g\bot} + F \]
+          \[ f_s = n\cdot\mu_s \]
+          \[ \sum F_x = 0 \]
+          \[ \sum F_x = F_{g\parallel} - f_s = 0 \]
+          \[ F_{g\parallel} - n\cdot\mu_s = 0 \]
+          \[ F_{g\parallel} - (F_{g\bot} + F)\cdot\mu_s = 0 \]
+          \[ \SI{16,7}{\newton} - (\SI{24,1}{\newton} - F)\cdot\num{0,300} = 0 \]
+          \[ \SI{16,7}{\newton} - \SI{7,23}{\newton} - F\cdot\num{0,300} = 0 \]
+          \[ \SI{9,47}{\newton} = F\cdot\num{0,300} \]
+          \[ \frac{\SI{9,47}{\newton}}{\num{0,300}} = F \]
+          \[ \boxed{F = \SI{31,6}{\newton}} \]
         \end{center}
 
   \item
