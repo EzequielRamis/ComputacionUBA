@@ -12,7 +12,7 @@
             \item Naturales, \(\mathbb{N} = \{1,2,3,4,...\}\)
             \item Enteros, \(\mathbb{Z} = \{...,-2,-1,0,1,2,...\}\)
             \item Racionales, \(\mathbb{Q} = \{\frac{a}{b} / a \in \mathbb{Z}; b \in \mathbb{Z};b \ne 0\}\)
-            \item Reales, \(\mathbb{R}\), como \(\pi\) y \(e\)
+            \item Reales, \(\mathbb{R}\), que incluyen a los irracionales, como \(\pi\) y \(e\)
         \end{itemize}
         Cada uno de estos conjuntos resulta estar incluido en el anterior:
         \begin{center}
@@ -168,6 +168,18 @@
                 \end{tikzpicture}
             \end{scaletikzpicturetowidth}
         \end{center}
+        Cuando un conjunto está acotado inferiormente, nos preguntamos por la ”mejor” cota inferior posible; en este caso, se trata de buscar la mayor de las cotas inferiores del conjunto. A esta última se la llama el \(\textit{ínfimo}\) del conjunto. Si \(i\) es el ínfimo de un conjunto \(A\), escribimos \(i = inf(A)\) y si el ínfimo del conjunto \(A\) pertenece a \(A\) lo llamamos \(\textit{mínimo}\).\\
+        Por ejemplo, para los conjuntos \(A = (3; 7)\), \(B = [2; +\infty)\) y \(C = (−\infty; 5)\) representados en la figura de arriba, tenemos que \(inf(A) = 3\), \(inf(B) = 2\) y C no tiene ínfimo.\\
+        Si \(A \subset \mathbb{R}\) es un conjunto no vacío y acotado inferiormente, el ínfimo de \(A\) es la mayor de las cotas inferiores de \(A\); en otras palabras, es un número \(i \in \mathbb{R}\) que cumple las dos condiciones siguientes:
+        \begin{itemize}
+            \item \(i\) es una cota inferior de \(A\),
+            \item si \(d\) es una cota inferior de \(A\), entonces \(d \leq i\).
+        \end{itemize}
+        Al igual que con el supremo de un conjunto, hay otra forma equivalente de definir el ínfimo de un conjunto \(A: i \in \mathbb{R}\) es el ínfimo del conjunto \(A\) si
+        \begin{itemize}
+            \item \(i\) es una cota inferior de \(A\),
+            \item para cualquier \(r\) real positivo, existe un elemento \(a \in A\) tal que \(i \geq a \geq i + r\).
+        \end{itemize}
     \subsection{Funciones}
         Una función \(f: A \rightarrow B\) es una relación entre dos conjuntos, donde cada elemento del conjunto \(A\) señala un sólo elemento del conjunto \(B\).
         \begin{center}
