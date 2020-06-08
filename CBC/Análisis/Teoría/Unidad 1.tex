@@ -57,15 +57,15 @@
         \subsubsection{Fracciones y desarrollo decimal}
         Sabemos que los números racionales son los que pueden expresarse de dos maneras: como una fracción de números enteros o como un número decimal con desarrollo finito o periódico.\\
         Tengamos siempre presente que no hay una única fracción que representa a un número racional. Solo podemos decir que es única la fracción si le pedimos que el numerador y el denominador sean comprimos, es decir, que no tengan divisores comunes distintos de 1 y −1. De este modo, las fracciones \(\frac{6}{24}\);\(\frac{2}{8}\);\(\frac{3}{12}\) y \(\frac{1}{4}\) representan al mismo número racional.\\
-        Veamos cómo hacemos si tenemos la expresión decimal de un número racional \(a\) y queremos obtener una fracción \(\frac{p}{q}\) que lo represente. En este caso, lo que en realidad estamos buscando es un número entero \(q\) tal que el producto \(q \cdot a\) dé como resultado otro número entero.\\
-        En primer lugar, consideremos el caso en que el número racional \(a\) tiene desarrollo decimal finito. El número entero \(q\) que buscamos puede ser 10 elevado a la cantidad de dígitos que tiene \(a\) detras de la coma y la fracción que buscamos sera la que tiene en el numerador el número que se obtiene al suprimir la coma en \(a\) y en el denominador 10 elevado a la cantidad de dígitos que hay detras de la coma.\\
-        Por ejemplo, si queremos encontrar una fracción que represente al número \(a = 72,305\) vemos que detrás de la coma hay 3 dígitos y que si multiplicamos
+        Veamos cómo hacemos si tenemos la expresión decimal de un número racional \(x\) y queremos obtener una fracción \(\frac{a}{b}\) que lo represente. En este caso, lo que en realidad estamos buscando es un número entero \(b\) tal que el producto \(b \cdot x\) dé como resultado otro número entero.\\
+        En primer lugar, consideremos el caso en que el número racional \(x\) tiene desarrollo decimal finito. El número entero \(b\) que buscamos puede ser 10 elevado a la cantidad de dígitos que tiene \(x\) detras de la coma y la fracción que buscamos sera la que tiene en el numerador el número que se obtiene al suprimir la coma en \(x\) y en el denominador 10 elevado a la cantidad de dígitos que hay detras de la coma.\\
+        Por ejemplo, si queremos encontrar una fracción que represente al número \(x = 72,305\) vemos que detrás de la coma hay 3 dígitos y que si multiplicamos
         \[10^3\cdot72,305=72305\in\Z\] por lo tanto, \[72,305=\frac{72305}{10^3}=\frac{72305}{1000}=\frac{14461}{200}\]
-        Un poco más de trabajo requiere encontrar una fracción que represente a un número \(a\) cuyo desarrollo decimal es infinito y periódico. Tengamos siempre presente que lo que buscamos es un número entero \(q\) tal que \(q \cdot a\) sea entero. Como en este caso no tenemos finitos dígitos detrás de la coma, no alcanzará con multiplicar por una potencia de 10. Tratemos de seguir el proceso en un ejemplo y busquemos una fracción equivalente al número \[a=0,3\overline{81}=0,381818181...\]
+        Un poco más de trabajo requiere encontrar una fracción que represente a un número \(x\) cuyo desarrollo decimal es infinito y periódico. Tengamos siempre presente que lo que buscamos es un número entero \(b\) tal que \(b \cdot x\) sea entero. Como en este caso no tenemos finitos dígitos detrás de la coma, no alcanzará con multiplicar por una potencia de 10. Tratemos de seguir el proceso en un ejemplo y busquemos una fracción equivalente al número \[x=0,3\overline{81}=0,381818181...\]
         \begin{itemize}
-            \item Primero multipliquemos por una potencia de 10 que deje delante de la coma toda la parte no periódica del número \(a\) más una copia del período (detrás de la coma solo quedará la parte periódica). En nuestro caso será \(10^3\):\[1000\cdot0,3\overline{81}=381,\overline{81}\]
-            \item Después multipliquemos por otra potencia de 10 que deje delante de la coma solo la parte no periódica de \(a\) (puede ser \(10^0\) si no hay parte no periódica). En nuestro caso:\[10\cdot0,3\overline{81}=3,\overline{81}\]
-            \item En esta instancia, solo tenemos que restar. Como ambas expresiones tienen la misma parte decimal, al restar obtendremos un número entero. Lo único que nos queda es despejar para encontrar los números enteros \(q\) y \(p\) buscados:
+            \item Primero multipliquemos por una potencia de 10 que deje delante de la coma toda la parte no periódica del número \(x\) más una copia del período (detrás de la coma solo quedará la parte periódica). En nuestro caso será \(10^3\):\[1000\cdot0,3\overline{81}=381,\overline{81}\]
+            \item Después multipliquemos por otra potencia de 10 que deje delante de la coma solo la parte no periódica de \(x\) (puede ser \(10^0\) si no hay parte no periódica). En nuestro caso:\[10\cdot0,3\overline{81}=3,\overline{81}\]
+            \item En esta instancia, solo tenemos que restar. Como ambas expresiones tienen la misma parte decimal, al restar obtendremos un número entero. Lo único que nos queda es despejar para encontrar los números enteros \(b\) y \(a\) buscados:
                 \[\frac{
                     \begin{matrix*}[r]
                         & 1000 & \cdot & 0,3\overline{81} & = & 381,\overline{81}\\
@@ -83,13 +83,13 @@
         \subsubsection{Raíz de dos}
         Veamos una demostración de que \(\sqrt{2}\) no es un número racional.\\
         Supongamos que es falso lo que queremos probar, es decir, supongamos que \(\sqrt{2}\) es racional. A partir de esta suposición vamos a deducir que vale un absurdo, un enunciado que sabemos que es falso y, por lo tanto, nuestra suposición será incorrecta.\\
-        Si \(\sqrt{2}\) es racional, sabemos que tienen que existir dos números enteros \(p\) y \(q\), sin divisores comunes salvo el 1 y el −1, y \(q \neq 0\) tales que \[\sqrt{2}=\frac{p}{q}\] Al pasar de miembro, nos queda
+        Si \(\sqrt{2}\) es racional, sabemos que tienen que existir dos números enteros \(a\) y \(b\), sin divisores comunes salvo el 1 y el −1, y \(b \neq 0\) tales que \[\sqrt{2}=\frac{a}{b}\] Al pasar de miembro, nos queda
         \begin{center}
-            \(\sqrt{2}q=p\) y elevando al cuadrado, \(2q^2=p^2\)
+            \(\sqrt{2}b=a\) y elevando al cuadrado, \(2b^2=a^2\)
         \end{center}
-        Esta expresión nos dice que \(p^2\) es par, ya que resulta de multiplicar 2 por otro número. Y, por lo tanto, \(p\) es par, es decir \(p = 2k\) para alg ún \(k \in \Z\).\\
-        Pero \(p^2 = (2k)^2\) es un cuadrado perfecto, o sea es un número entero al cuadrado, luego si uno de sus factores es el 2, el 2 tiene que estar como mínimo al cuadrado, o sea dos veces. Por lo tanto, como ya hay un 2 en la igualdad delante de \(q^2\), el otro 2 tiene que estar en el \(q^2\). Eso quiere decir que \(q^2\) también tiene que ser par y, por lo tanto \(q\) también es par.\\
-        Pero si \(p\) es par y \(q\) también, \(p\) y \(q\) tienen un divisor común, el 2, y habíamos supuesto que no.
+        Esta expresión nos dice que \(a^2\) es par, ya que resulta de multiplicar 2 por otro número. Y, por lo tanto, \(a\) es par, es decir \(a = 2k\) para alg ún \(k \in \Z\).\\
+        Pero \(a^2 = (2k)^2\) es un cuadrado perfecto, o sea es un número entero al cuadrado, luego si uno de sus factores es el 2, el 2 tiene que estar como mínimo al cuadrado, o sea dos veces. Por lo tanto, como ya hay un 2 en la igualdad delante de \(b^2\), el otro 2 tiene que estar en el \(b^2\). Eso quiere decir que \(b^2\) también tiene que ser par y, por lo tanto \(b\) también es par.\\
+        Pero si \(a\) es par y \(b\) también, \(a\) y \(b\) tienen un divisor común, el 2, y habíamos supuesto que no.
         \subsubsection{Intervalos y otros subconjuntos de la recta real}
         Un intervalo está formado por los números reales que corresponden a los puntos de un segmento o una semirrecta de la recta real. Puede incluir o no a los extremos del segmento o la semirrecta.\\
         Por ejemplo, el conjunto \(A = \{x \in \R / x \geq 1\}\) corresponde a los puntos de la semirrecta hacia la derecha de \(x = 1\), incluyendo a \(x = 1\):
