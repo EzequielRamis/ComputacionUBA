@@ -152,6 +152,48 @@
                 del vagón con la fórmula utilizada en cinemática. Compare este resultado con el del
                 inciso a).
         \end{enumerate}
+
+  \item A un auto a radiocontrol de masa \SI{2,00}{\kilo\gram} que avanza por una pista recta, se le aplica una
+        fuerza $F$ en la dirección del movimiento. La componente $x$ de la $F$ varía con la coordenada
+        $x$ del automóvil, como se indica en la figura. Calcule el trabajo efectuado por la fuerza $F$
+        cuando el auto se mueve de
+        \begin{multicols}{2}
+          \begin{enumerate}
+            \item $x = \SI{0}{\meter}$ a $x = \SI{3}{\meter}$
+            \item $x = \SI{3}{\meter}$ a $x = \SI{4}{\meter}$
+            \item $x = \SI{4}{\meter}$ a $x = \SI{7}{\meter}$
+            \item $x = \SI{0}{\meter}$ a $x = \SI{7}{\meter}$
+            \item $x = \SI{7}{\meter}$ a $x = \SI{2}{\meter}$
+          \end{enumerate}
+          \begin{tikzpicture}
+            \draw[dashed, gray, very thin] (0,-2) grid (7,2);
+            % Referencia y ejes
+            \draw (0,-2.5) -- (0,2.5) node[above]{$F_x (\si{\newton})$}; % Eje Y
+            \foreach \y in {-2,...,2}
+              \draw (0, \y) node[left]{\y} -- +(0.25, 0);
+            \draw (0,0) -- (7,0) node[right]{$x (\si{\meter})$}; % Eje x
+            \foreach \x in {1,...,7}
+              \draw (\x, 0) node[below]{\x} -- +(0, 0.25);
+
+            \draw[red, thick] (0,0) -- (2,2) -- (3,2) -- (3,0) -- (4,0) -- (6,-1) -- (6,0) -- (7,0);
+          \end{tikzpicture}
+        \end{multicols}
+
+  \item ¿Cuántos Joules de energía consume una lamparita eléctrica de \SI{100}{\watt} si permanece
+        prendida durante 1 hora? ¿Con qué rapidez tendría que correr una persona de \SI{70,0}{\kilo\gram} para
+        tener esa cantidad de energía como energía cinética?
+
+  \item Un equipo de dos personas en una bicicleta tándem debe superar una fuerza de \SI{66,6}{\newton}
+        para mantener una rapidez de \SI[per-mode=fraction]{9,00}{\meter\per\second}. Calcule la potencia requerida por ciclista,
+        suponiendo contribuciones iguales. Exprese su respuesta en \si{\watt} y en caballos de potencia (hp).
+
+  \item Imagine que su trabajo es levantar cajas de \SI{30,0}{\kilo\gram} una distancia vertical de \SI{0,90}{\meter} del
+        suelo al camión.
+        \begin{enumerate}
+          \item ¿Cuántas cajas tendría que cargar en un minuto para que su gasto medio de potencia
+                invertido en levantar las cajas sea de \num{0,50} hp?
+          \item ¿Y para que fuera de \SI{100}{\watt}?
+        \end{enumerate}
 \end{enumerate}
 
 \subsection{Parte 2}
