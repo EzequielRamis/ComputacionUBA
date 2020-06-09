@@ -7,9 +7,45 @@
 \section{Unidad 7}
 \subsection{Parte 1}
 \begin{enumerate}
+  \item
+        \begin{multicols}{2}
+          Guillermo entrena arrastrando 20 metros una bigornia que
+          está vinculada a su cintura por medio de una soga como
+          muestra la figura. El ángulo que forma la soga con el piso es
+          de 35º y la fuerza que ejerce Guillermo es de 420 N. Si una
+          fuerza de fricción de 320 N se opone al movimiento.
+          Calcule el trabajo total realizado. \\
+          \begin{center}
+            \begin{tikzpicture}[scale=1.1]
+              \draw (-0.5,-0.5) rectangle ++(1,1);
+              \filldraw[red] (0,0) circle [radius=0.05];
+              \begin{scope}[very thick, red, ->, near end]
+                \draw (0,0) -- node[above]{$\vec{F}_a$}(35:2) node (F);
+                \draw (0,0) -- node[above]{$\vec{f}_k$}(-1.5,0);
+              \end{scope}
+              % Angulo
+              \draw[help lines] (0,0) -- (F |- 2,0);
+              \draw[help lines] (0.7,0) arc[start angle=0, end angle=35, radius=0.7] node[pos=0.5, right]{$\theta$};
+              % Desplazamiento
+              \draw[gray!70, very thin] (-3,0) ++(-0.5,-0.5) rectangle ++(1,1);
+              \draw[dashed, |->] (-3,-1) -- node[below]{$\vec{s}$}(0,-1);
+            \end{tikzpicture}
+          \end{center}
+        \end{multicols}
+        \begin{center}
+          \[ W = \vec{s}\cdot\vec{F} \]
+          \[ F_x = F_a\cos\theta - f_s \]
+          \[ F_x = \SI{344}{\newton} - \SI{320}{\newton} \]
+          \[ F_x = \SI{24}{\newton} \]
+          \[ W_x = \SI{20}{\meter}\hat{j}\cdot\SI{24}{\newton} \]
+          \[ W_x = \SI{480}{\joule} \]
+        \end{center}
+
 \end{enumerate}
+
 \subsection{Parte 2}
 \begin{enumerate}
+
 \end{enumerate}
 
 \end{document}
