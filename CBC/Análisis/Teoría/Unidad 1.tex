@@ -12,6 +12,7 @@
 \begin{document}
     \section{Números reales y Funciones}
     \subsection{Números reales}
+        \subsubsection{Definiciones}
         Hasta el momento conocemos distintos conjuntos de números:
         \begin{itemize}
             \item Naturales, \(\N = \{1,2,3,4,...\}\)
@@ -87,7 +88,7 @@
         \begin{center}
             \(\sqrt{2}b=a\) y elevando al cuadrado, \(2b^2=a^2\)
         \end{center}
-        Esta expresión nos dice que \(a^2\) es par, ya que resulta de multiplicar 2 por otro número. Y, por lo tanto, \(a\) es par, es decir \(a = 2k\) para alg ún \(k \in \Z\).\\
+        Esta expresión nos dice que \(a^2\) es par, ya que resulta de multiplicar 2 por otro número. Y, por lo tanto, \(a\) es par, es decir \(a = 2k\) para algún \(k \in \Z\).\\
         Pero \(a^2 = (2k)^2\) es un cuadrado perfecto, o sea es un número entero al cuadrado, luego si uno de sus factores es el 2, el 2 tiene que estar como mínimo al cuadrado, o sea dos veces. Por lo tanto, como ya hay un 2 en la igualdad delante de \(b^2\), el otro 2 tiene que estar en el \(b^2\). Eso quiere decir que \(b^2\) también tiene que ser par y, por lo tanto \(b\) también es par.\\
         Pero si \(a\) es par y \(b\) también, \(a\) y \(b\) tienen un divisor común, el 2, y habíamos supuesto que no.
         \subsubsection{Intervalos y otros subconjuntos de la recta real}
@@ -222,6 +223,7 @@
             \item para cualquier \(r\) real positivo, existe un elemento \(a \in A\) tal que \(i \geq a \geq i + r\).
         \end{itemize}
     \subsection{Funciones}
+        \subsubsection{Definiciones}
         Una función \(f: A \rightarrow B\) es una relación entre dos conjuntos, donde cada elemento del conjunto \(A\) señala un sólo elemento del conjunto \(B\).
         \begin{center}
             \begin{tikzpicture}[line width=1pt]
@@ -273,11 +275,11 @@
             \item Imagen, a todos los resultados evaluados: \[Im f=\{f(x):x \in Dom f\}\]
             \item Conjunto de ceros o raíces, a todos los \(x\) del dominio de \(f\) donde la función vale cero: \[C^0 f=\{x\in Dom f:f(x)=0\}\]
             \item Conjunto de positividad, a todos los \(x\) del dominio de \(f\) donde la función tiene valor positivo: \[C^+ f=\{x\in Dom f:f(x) > 0\}\]
-            \item Conjunto de negatividad, a todos los \(x\) del dominio de \(f\) donde la función tiene valor negativo: \[C^+ f=\{x\in Dom f:f(x) < 0\}\]
+            \item Conjunto de negatividad, a todos los \(x\) del dominio de \(f\) donde la función tiene valor negativo: \[C^- f=\{x\in Dom f:f(x) < 0\}\]
             \item Intervalo de crecimiento, a todos los \(x\) donde la función sube
             \item Intervalo de decrecimiento, a todos los \(x\) donde la función baja
         \end{itemize}
-    \subsubsection{Funciones lineales}
+        \subsubsection{Funciones lineales}
         Las \textit{funciones lineales} son las funciones \(f: \R \rightarrow \R\) cuyo gráfico es una recta
         \begin{center}
             \begin{tikzpicture}
@@ -295,51 +297,124 @@
             \end{tikzpicture}
         \end{center}
         y cuya expresión es \[f(x)=mx+b\] Al número \(m = \frac{y_2-y_1}{x_2-x_1}\) se le llama la \textit{pendiente} de la recta, y a \(b\) la \textit{ordenada al origen.}
-    \subsubsection{Funciones cuadráticas}
-    Las \textit{funciones cuadráticas} son las funciones \(f: \R \rightarrow \R\) cuyo gráfico es una parábola
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                    axis lines = middle,
-                    axis equal,
-                    xlabel = \(x\),
-                    ylabel = {\(y\)},
-                    restrict y to domain=0:10,
-                    samples= 100,
-                    ymin = 0,
-                ]
-                \addplot[color=blue]{2*x^2+3*x+2};
-                \addlegendentry{\(2x^2+3x+2\)}
-            \end{axis}
-        \end{tikzpicture}
-    \end{center}
-    y cuya expresión es \(f(x)=ax^2+bx+c\), con \(a,b,c\in\R\) fijos y \(a\neq0\).
-    Toda curva obtenida se llama \textit{parábola}. De hecho, el gráfico de cualquier función cuadrática es una parábola y todas las parábolas que son gráficos de funciones resultan ser gráficos de funciones cuadráticas. Otras funciones pueden tener gráficos parecidos pero no son parábolas.\\
-    Todas las parábolas tienen un \textit{eje de simetría} y el punto donde se corta este eje de simetría con el gráfico se llama \textit{vértice de la parábola}.
-    \begin{itemize}
-        \item Si \(b^2 − 4ac \geq 0\), los valores donde \(f(x) = ax^2 + bx + c\) vale cero son \[x_1,x_2=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\] que es una fórmula bien conocida para calcular los \textit{ceros o raíces} de una función cuadrática. Si \(b^2 − 4ac < 0\), la función cuadrática no tiene raíces, es decir, nunca vale 0.
-        \item El \textit{eje de simetría de la parábola} es la recta vertical de la ecuación \(x=-\frac{b}{2a}\) o \(x=\frac{x_1+x_2}{2}\)
-        \item El \textit{vérice de la parábola} es \((x_v,y_v)\) y se encuentra en el \textit{eje de simetría}
-        \item Se alcanza un \textit{mínimo} o un \textit{máximo} en \(x_v\), en tanto \(a>0\) o \(a<0\), respectivamente
-        \item \(f\) puede escribirse de forma:
-        \begin{itemize}
-            \item Polinómica: \(f(x)=ax^2+bx+c\)
-            \item Canónica: \(f(x)=a(x-x_v)^2+y_v\)
-            \item Factorizada: \(f(x)=a(x-x_1)(x-x_2)\)
-        \end{itemize}
-        Para pasar de una forma a otra, se tiene el siguiente cuadro:
+        \subsubsection{Funciones cuadráticas}
+        Las \textit{funciones cuadráticas} son las funciones \(f: \R \rightarrow \R\) cuyo gráfico es una parábola
         \begin{center}
-            \begin{scaletikzpicturetowidth}{\linewidth}
-                \begin{tikzpicture}[scale=\tikzscale]
-                    \node[draw, label={Polinómica}] (A) at (90:3) {\(f(x)=ax^2+bx+c\)};
-                    \node[draw, label=below:{Canónica}] (B) at (210:3) {\(f(x)=a(x-x_v)^2+y_v\)};
-                    \node[draw, label=below:{Factorizada}] (C) at (330:3) {\(f(x)=a(x-x_1)(x-x_2)\)};
-                    \draw[-open triangle 45] (A.225) -- node[rotate=60,above] {\small{hallar coordenada del vértice}} (B.75);
-                    \draw[open triangle 45-] (A.255) -- node[rotate=60,below] {\small{desarrollar cuadrado de binomio}} (B.45);
-                    \draw[open triangle 45-] (A.285) -- node[rotate=300,below] {\small{aplicar propiedad distributiva}} (C.135);
-                    \draw[-open triangle 45] (A.315) -- node[rotate=300,above] {\small{hallar las raíces}} (C.105);
-                \end{tikzpicture}
-            \end{scaletikzpicturetowidth}
+            \begin{tikzpicture}
+                \begin{axis}[
+                        axis lines = middle,
+                        axis equal,
+                        xlabel = \(x\),
+                        ylabel = {\(y\)},
+                        restrict y to domain=0:10,
+                        samples= 100,
+                        ymin = 0,
+                    ]
+                    \addplot[color=blue]{2*x^2+3*x+2};
+                    \addlegendentry{\(2x^2+3x+2\)}
+                \end{axis}
+            \end{tikzpicture}
         \end{center}
-    \end{itemize}
+        y cuya expresión es \(f(x)=ax^2+bx+c\), con \(a,b,c\in\R\) fijos y \(a\neq0\).
+        Toda curva obtenida se llama \textit{parábola}. De hecho, el gráfico de cualquier función cuadrática es una parábola y todas las parábolas que son gráficos de funciones resultan ser gráficos de funciones cuadráticas. Otras funciones pueden tener gráficos parecidos pero no son parábolas.\\
+        Todas las parábolas tienen un \textit{eje de simetría} y el punto donde se corta este eje de simetría con el gráfico se llama \textit{vértice de la parábola}.
+        \begin{itemize}
+            \item Si \(b^2 − 4ac \geq 0\), los valores donde \(f(x) = ax^2 + bx + c\) vale cero son \[x_1,x_2=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\] que es una fórmula bien conocida para calcular los \textit{ceros o raíces} de una función cuadrática. Si \(b^2 − 4ac < 0\), la función cuadrática no tiene raíces, es decir, nunca vale 0.
+            \item El \textit{eje de simetría de la parábola} es la recta vertical de la ecuación \(x=-\frac{b}{2a}\) o \(x=\frac{x_1+x_2}{2}\)
+            \item El \textit{vérice de la parábola} es \((x_v,y_v)\) y se encuentra en el \textit{eje de simetría}
+            \item Se alcanza un \textit{mínimo} o un \textit{máximo} en \(x_v\), en tanto \(a>0\) o \(a<0\), respectivamente
+            \item \(f\) puede escribirse de forma:
+            \begin{itemize}
+                \item Polinómica: \(f(x)=ax^2+bx+c\)
+                \item Canónica: \(f(x)=a(x-x_v)^2+y_v\)
+                \item Factorizada: \(f(x)=a(x-x_1)(x-x_2)\)
+            \end{itemize}
+            Para pasar de una forma a otra, se tiene el siguiente cuadro:
+            \begin{center}
+                \begin{scaletikzpicturetowidth}{\linewidth}
+                    \begin{tikzpicture}[scale=\tikzscale]
+                        \node[draw, label={Polinómica}] (A) at (90:3) {\(f(x)=ax^2+bx+c\)};
+                        \node[draw, label=below:{Canónica}] (B) at (210:3) {\(f(x)=a(x-x_v)^2+y_v\)};
+                        \node[draw, label=below:{Factorizada}] (C) at (330:3) {\(f(x)=a(x-x_1)(x-x_2)\)};
+                        \draw[-open triangle 45] (A.225) -- node[rotate=60,above] {\small{hallar el vértice}} (B.75);
+                        \draw[open triangle 45-] (A.255) -- node[rotate=60,below] {\small{desarrollar}} (B.45);
+                        \draw[open triangle 45-] (A.285) -- node[rotate=300,below] {\small{distribuir}} (C.135);
+                        \draw[-open triangle 45] (A.315) -- node[rotate=300,above] {\small{hallar las raíces}} (C.105);
+                    \end{tikzpicture}
+                \end{scaletikzpicturetowidth}
+            \end{center}
+        \end{itemize}
+        \subsubsection{Funciones polinómicas}
+        El estudio de una función polinómica puede ser muy complicado y, en algunos casos, se podrá hacer con herramientas que veamos a lo largo de la materia.\\
+        Las funciones de la forma \(f(x) = x^n\) tendrán un comportamiento similar dependiendo de la \textit{paridad} de \(n\):
+        \begin{itemize}
+            \item Si \(n\) es par, la función \(f\) tiene propiedades similares a las funciones \(g(x) = x^2\) y \(h(x) = x^4\) (la misma imagen, los mismos intervalos de crecimiento y decrecimiento y conjuntos de positividad y negatividad, el mismo cero, el mismo extremo y un gráfico similar). Esto sucede porque al elevar un número negativo a un exponente par el resultado da positivo.
+            \item Si \(n\) es impar, la función \(f\) tiene propiedades similares a la función \(j(x) = x^3\) (la misma imagen, crecimiento en todo \(\R\), el mismo cero, los mismos conjuntos de positividad y de negatividad, no tendrá extremos y su gráfico será similar). Esto sucede porque al elevar un número a un exponente impar se mantiene el signo del número.
+        \end{itemize}
+        Veamos, por ejemplo, los gráficos de las siguientes funciones:
+        \begin{center}
+            \begin{tabularx}{\textwidth}{XX}
+                \begin{tikzpicture}[scale=.8]
+                    \begin{axis}[
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            restrict y to domain=-10:10,
+                            samples= 100,
+                            ymin = -10,
+                            ymax = 10,
+                        ]
+                        \addplot[color=blue]{x^3};
+                        \addlegendentry{\(x^3\)}
+                    \end{axis}
+                \end{tikzpicture} &
+                \begin{tikzpicture}[scale=.8]
+                    \begin{axis}[
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            restrict y to domain=-10:10,
+                            samples= 100,
+                            ymin = -4,
+                        ]
+                        \addplot[color=blue]{x^4};
+                        \addlegendentry{\(x^4\)}
+                    \end{axis}
+                \end{tikzpicture}
+                 \\\\\\
+                 \begin{tikzpicture}[scale=.8]
+                    \begin{axis}[
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            restrict y to domain=-10:10,
+                            samples= 100,
+                            ymin = -10,
+                            ymax = 10,
+                        ]
+                        \addplot[color=blue]{x^9};
+                        \addlegendentry{\(x^9\)}
+                    \end{axis}
+                \end{tikzpicture} &
+                \begin{tikzpicture}[scale=.8]
+                    \begin{axis}[
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            restrict y to domain=-10:10,
+                            samples= 100,
+                            ymin = -4,
+                        ]
+                        \addplot[color=blue]{x^12};
+                        \addlegendentry{\(x^{12}\)}
+                    \end{axis}
+                \end{tikzpicture}
+            \end{tabularx}
+        \end{center}
+        \subsubsection{Funciones homográficas}
+
 \end{document}
