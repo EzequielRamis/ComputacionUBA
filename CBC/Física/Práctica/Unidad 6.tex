@@ -320,7 +320,7 @@
         \end{multicols}
         \begin{center}
           \begin{tikzpicture} % Diagrama de cuerpo libre
-            \filldraw[draw=black, fill=gray!15] (-1,-1) rectangle +(2,2);
+            \draw[black] (-1,-1) rectangle +(2,2);
             \begin{scope}[red, very thick, ->, near end] % Dibujar vectores
               \draw circle[radius=0.05];
               \draw (0,0) -- (0,2.5) node[right]{$\vec{n}$};
@@ -330,7 +330,7 @@
             \end{scope}
           \end{tikzpicture}
           \begin{tikzpicture} % Diagrama del vector F_g
-            \draw[very thin, gray] (0,-0.5) arc[start angle=-90, end angle=-125, radius=0.5] node[below,pos=0.5]{$\alpha$};
+            \draw[help lines] (0,-0.5) arc[start angle=-90, end angle=-125, radius=0.5] node[below,pos=0.5]{$\alpha$};
             \begin{scope}[red, very thick, ->] % Dibujar vectores
               \draw (0,0) -- node[right]{$\vec{F}_{g\bot}$} (0,-3) node(R); % Perpendicular
               \draw (0,0) -- node[left]{$\vec{F}_g$} (-125:3 |- R) node(G); % Gravedad
@@ -379,9 +379,9 @@
           fricción entre la maleta y el piso es de \SI{20,0}{\newton}.
           \begin{center}
             \begin{tikzpicture}
-              \filldraw[draw=black, fill=gray!15] (-1,-1) rectangle +(2,2);
-              \begin{scope}[gray, thin]
-                \draw[dashed] (0,0) -- (2,0 -| 30:2);
+              \draw[black] (-1,-1) rectangle +(2,2);
+              \begin{scope}[help lines]
+                \draw (0,0) -- (2,0 -| 30:2);
                 \draw (0.5,0) arc [start angle=0, end angle=30, radius=0.5] node[right,pos=0.5]{$\alpha$};
               \end{scope}
               \begin{scope}[very thick, red, ->] % Vectores
@@ -499,7 +499,7 @@
           \item ¿Cuáles son los coeficientes de fricción estático y cinético entre la caja y el piso?
                 \begin{center}
                   \begin{tikzpicture}
-                    \filldraw[fill=gray!15] (-0.5,-0.5) rectangle ++(1,1);
+                    \draw[black] (-0.5,-0.5) rectangle ++(1,1);
                     \filldraw[red] (0,0) circle[radius=0.05];
                     \begin{scope}[very thick,red,->,near end]
                       \draw (0,0) -- node[above]{$\vec{F}_1$}(1.5,0);
@@ -515,7 +515,7 @@
                   \[ \SI{313}{\newton} = \SI{441}{\newton}\cdot\mu_s \]
                   \[ \boxed{ \mu_s = \num{0,710} } \]
                   \begin{tikzpicture}
-                    \filldraw[fill=gray!15] (-0.5,-0.5) rectangle ++(1,1);
+                    \draw[black] (-0.5,-0.5) rectangle ++(1,1);
                     \filldraw[red] (0,0) circle[radius=0.05];
                     \begin{scope}[very thick,red,->,near end]
                       \draw (0,0) -- node[above]{$\vec{F}_2$}(1.5,0);
