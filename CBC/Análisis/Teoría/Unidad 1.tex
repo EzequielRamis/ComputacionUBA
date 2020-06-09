@@ -279,7 +279,7 @@
             \item Intervalo de crecimiento, a todos los \(x\) donde la función sube
             \item Intervalo de decrecimiento, a todos los \(x\) donde la función baja
         \end{itemize}
-        \subsubsection{Funciones lineales}
+        \subsubsection{Función lineal}
         Las \textit{funciones lineales} son las funciones \(f: \R \rightarrow \R\) cuyo gráfico es una recta
         \begin{center}
             \begin{tikzpicture}
@@ -297,7 +297,7 @@
             \end{tikzpicture}
         \end{center}
         y cuya expresión es \[f(x)=mx+b\] Al número \(m = \frac{y_2-y_1}{x_2-x_1}\) se le llama la \textit{pendiente} de la recta, y a \(b\) la \textit{ordenada al origen.}
-        \subsubsection{Funciones cuadráticas}
+        \subsubsection{Función cuadrática}
         Las \textit{funciones cuadráticas} son las funciones \(f: \R \rightarrow \R\) cuyo gráfico es una parábola
         \begin{center}
             \begin{tikzpicture}
@@ -344,7 +344,7 @@
                 \end{scaletikzpicturetowidth}
             \end{center}
         \end{itemize}
-        \subsubsection{Funciones polinómicas}
+        \subsubsection{Función polinómica}
         El estudio de una función polinómica puede ser muy complicado y, en algunos casos, se podrá hacer con herramientas que veamos a lo largo de la materia.\\
         Las funciones de la forma \(f(x) = x^n\) tendrán un comportamiento similar dependiendo de la \textit{paridad} de \(n\):
         \begin{itemize}
@@ -415,6 +415,58 @@
                 \end{tikzpicture}
             \end{tabularx}
         \end{center}
-        \subsubsection{Funciones homográficas}
-
+        \subsubsection{Función homográfica}
+        Las \textit{funciones homográficas} son de la forma \[f(x)=\frac{ax+b}{cx+d}\] con \(a,b,c,d \in \R\) fijos y tales que \(c\neq0\) y \(ad-bc\neq0\) (estas condiciones aseguran que la función no sea lineal).
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                        axis lines = middle,
+                        axis equal,
+                        xlabel = \(x\),
+                        ylabel = {\(y\)},
+                        domain=-5:5,
+                        samples= 100,
+                        ymin = -5,
+                        ymax = 5
+                    ]
+                    \addplot[color=blue]{1/x};
+                    \addlegendentry{\(\frac{1}{x}\)}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        Estas funciones tienen una restricción natural en su dominio, ya que \textbf{NO SE PUEDE DIVIDIR POR CERO}. Por esta causa, \[cx+d\neq0\Leftrightarrow cx\neq-d\Leftrightarrow x\neq-\frac{d}{c}\] y la función resulta no estar definida cuando \(x=-\frac{d}{c}\). Por esto, tenemos que: dada la función \(f(x)=\frac{ax+b}{cx+d}\):
+        \begin{itemize}
+            \item El \textit{dominio} es \[Dom(f)=\left(-\infty;-\frac{d}{c}\right)\cup\left(-\frac{d}{c};+\infty\right)=\R-\left\{-\frac{d}{c}\right\}\]
+            \item La \textit{imagen} es \[Im(f)=\left(-\infty;\frac{a}{c}\right)\cup\left(\frac{a}{c};+\infty\right)=\R-\left\{\frac{a}{c}\right\}\]
+            \item La \textit{asintota vertical} a su gráfico está dada por la ecuación \(x=-\frac{d}{c}\), es decir que es la recta vertical que pasa por el valor que no está en el dominio de \(f\)
+            \item La ecuación de la \textit{asintota horizontal} es \(y=\frac{a}{c}\)
+        \end{itemize}
+        \subsubsection{Función raíz cuadrada}
+        Dado un número real \(a\geq0\). se llama \textit{raíz cuadrada de a} (lo que se nota \(\sqrt{a}\)) al único número positivo o cero que elevado al cuadrado da \(a\).
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                        axis lines = middle,
+                        axis equal,
+                        xlabel = \(x\),
+                        ylabel = {\(y\)},
+                        domain=0:10,
+                        samples= 100,
+                        ymin = -5,
+                        ymax = 5
+                    ]
+                    \addplot[color=blue] {sqrt(x)};
+                    \addlegendentry{\(\sqrt{x}\)}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        ¿Por qué nos quedamos sólo con el valor positivo? Porque queremos que la \textit{raíz cuadrada} sea una \textit{función} y, por la definición de función, la raíz cuadrada de un número debe ser unica.\\
+        ¿A qué números podemos sacarle \textit{raíz cuadrada}? Cuando elevamos un número al cuadrado, el resultado siempre es positivo o cero. Por lo tanto, sólo se les puede calcular raíz cuadrada a los números \textit{mayores o iguales que 0}.\\
+        Con la notación de funciones ya usada, podemos escribir entonces
+        \begin{center}
+            \begin{tabularx}{.6\textwidth}{XX}
+                \centering\(f:[0;+\infty)\rightarrow\R\) & \centering\(f(x)=\sqrt{x}\)
+            \end{tabularx}
+        \end{center}
+        \subsubsection{Composición de funciones}
 \end{document}
