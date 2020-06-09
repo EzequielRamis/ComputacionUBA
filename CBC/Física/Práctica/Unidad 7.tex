@@ -41,6 +41,92 @@
           \[ \boxed{W_x = \SI{480}{\joule}} \]
         \end{center}
 
+  \item
+        \begin{multicols}{2}
+          Dos bloques están unidos por una cuerda muy ligera que pasa por una polea sin masa y
+          sin fricción, como muestra la figura. Los bloques se están desplazando a rapidez
+          constante, el bloque A de \SI{20}{\newton} se mueve \SI{75,0}{\centi\meter} hacia la derecha y
+          el bloque B de \SI{12,0}{\newton} se mueve \SI{75,0}{\centi\meter} hacia abajo. Durante el proceso, \\
+
+          \begin{center}
+            \begin{tikzpicture}
+              \draw (-0.5,0.5) rectangle ++(1,1) node[midway](A){$A$};
+              \draw (A) ++(0.5,0) -- ++(1.5,0) arc(90:0:0.3) node[midway](c) -- ++(0,-0.5) node(B);
+              \draw (B) ++(0.5,0) rectangle ++(-1,-1) node[midway]{$B$};
+              \draw (c) ++(-0.15,-0.15) circle[radius=0.15];
+            \end{tikzpicture}
+          \end{center}
+        \end{multicols}
+        \begin{enumerate}
+          \item ¿Cuánto trabajo efectúan sobre el bloque B: la gravedad y la tensión de la cuerda?
+                \begin{center}
+                  \[ W_g = s_y\cdot F_g \]
+                  \[ W_g = \SI{0,75}{\meter}\cdot\SI{12,0}{\newton} \]
+                  \[ \boxed{W_g = \SI{9,0}{\joule}} \]
+                  \[ \sum F_y = \SI{0}{\newton} \]
+                  \[ \sum F_y = F_g + T_c = \SI{0}{\newton} \]
+                  \[ \SI{12,0}{\newton} + T_c = \SI{0}{\newton} \]
+                  \[ T_c = \SI{-12,0}{\newton} \]
+                  \[ W_c = s_y\cdot T_C \]
+                  \[ W_c = \SI{0,75}{\meter}\cdot\SI{-12,0}{\newton} \]
+                  \[ \boxed{W_c = \SI{-9,0}{\joule}} \]
+                \end{center}
+          \item ¿Cuánto trabajo efectúan sobre el bloque A: la gravedad, la tensión de la cuerda, la fricción y la fuerza normal?
+                \begin{center}
+
+                  \[ W_g = s_y\cdot F_g \]
+                  \[ W_g = \SI{0}{\meter}\cdot\SI{20}{\newton} \]
+                  \[ \boxed{W_g = \SI{0}{\joule}} \]
+
+                  \[ W_c = s_x\cdot T_c \]
+                  \[ W_c = \SI{0,75}{\meter}\cdot\SI{12,0}{\newton} \]
+                  \[ \boxed{W_c = \SI{9,0}{\joule}} \]
+
+                  \[ a_x = 0 \Rightarrow F_x = \SI{0}{\newton} \]
+                  \[ \sum F_x = \SI{0}{\newton} \]
+                  \[ \sum F_x = T_c + f_k = \SI{0}{\newton} \]
+                  \[ \SI{12,0}{\newton} + f_k = \SI{0}{\newton} \]
+                  \[ f_k = \SI{-12,0}{\newton} \]
+                  \[ W_f = s_x\cdot\SI{-12,0}{\newton} \]
+                  \[ W_f = \SI{0,75}{\meter}\cdot\SI{-12,0}{\newton} \]
+                  \[ \boxed{W_f = \SI{-9,0}{\joule}} \]
+
+                  \[ W_n = s_y\cdot F_n \]
+                  \[ W_n = \SI{0,0}{\meter}\cdot\SI{20}{\newton} \]
+                  \[ \boxed{W_n = \SI{0}{\joule}} \]
+                \end{center}
+          \item Obtenga el trabajo total efectuado sobre cada bloque. \\
+                Para el bloque B:
+                \begin{center}
+                  \[ \sum F_x = \SI{0}{\newton} \]
+                  \[ \sum F_y = F_g - T_c \]
+                  \[ \sum F_y = \SI{12,0}{\newton} - \SI{12,0}{\newton} \]
+                  \[ \sum F_y = \SI{0,0}{\newton} \]
+                  \[ W = \vec{s}\cdot\vec{F} \]
+                  \[ W = \SI{0,75}{\meter}\vec{i}\cdot\SI{0,0}{\newton}\vec{i} \]
+                  \[ \boxed{W = \SI{0,0}{\joule}} \]
+                \end{center}
+                Para el bloque A:
+                \begin{center}
+                  \[ \sum F_x = T_c + f_k \]
+                  \[ \sum F_x = \SI{12,0}{\newton} + \SI{-12,0}{\newton} \]
+                  \[ \sum F_x = \SI{0,0}{\newton} \]
+                  \[ \sum F_y = F_g + F_n \]
+                  \[ \sum F_y = \SI{20}{\newton} + \SI{-20}{\newton} \]
+                  \[ \sum F_y = \SI{0}{\newton} \]
+                  \[ W = \vec{s}\cdot\vec{F} \]
+                  \[ 
+                      W = \SI{0,75}{\meter}\vec{i}\cdot\SI{0,0}{\newton}\vec{i}
+                        + \SI{0}{\meter}\vec{j}\cdot\SI{0}{\newton}\vec{j}
+                   \]
+                  \[ 
+                      W = \SI{0,0}{\joule}
+                        + \SI{0}{\joule}
+                   \]
+                  \[ \boxed{W = \SI{0}{\joule}} \]
+                \end{center}
+        \end{enumerate}
+
 \end{enumerate}
 
 \subsection{Parte 2}
