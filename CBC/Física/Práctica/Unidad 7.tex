@@ -46,8 +46,7 @@
           Dos bloques están unidos por una cuerda muy ligera que pasa por una polea sin masa y
           sin fricción, como muestra la figura. Los bloques se están desplazando a rapidez
           constante, el bloque A de \SI{20}{\newton} se mueve \SI{75,0}{\centi\meter} hacia la derecha y
-          el bloque B de \SI{12,0}{\newton} se mueve \SI{75,0}{\centi\meter} hacia abajo. Durante el proceso, \\
-
+          el bloque B de \SI{12,0}{\newton} se mueve \SI{75,0}{\centi\meter} hacia abajo. Durante el proceso, \\ \\
           \begin{center}
             \begin{tikzpicture}
               \draw (-0.5,0.5) rectangle ++(1,1) node[midway](A){$A$};
@@ -63,6 +62,7 @@
                   \[ W_g = s_y\cdot F_g \]
                   \[ W_g = \SI{0,75}{\meter}\cdot\SI{12,0}{\newton} \]
                   \[ \boxed{W_g = \SI{9,0}{\joule}} \]
+
                   \[ \sum F_y = \SI{0}{\newton} \]
                   \[ \sum F_y = F_g + T_c = \SI{0}{\newton} \]
                   \[ \SI{12,0}{\newton} + T_c = \SI{0}{\newton} \]
@@ -70,10 +70,10 @@
                   \[ W_c = s_y\cdot T_C \]
                   \[ W_c = \SI{0,75}{\meter}\cdot\SI{-12,0}{\newton} \]
                   \[ \boxed{W_c = \SI{-9,0}{\joule}} \]
+
                 \end{center}
           \item ¿Cuánto trabajo efectúan sobre el bloque A: la gravedad, la tensión de la cuerda, la fricción y la fuerza normal?
                 \begin{center}
-
                   \[ W_g = s_y\cdot F_g \]
                   \[ W_g = \SI{0}{\meter}\cdot\SI{20}{\newton} \]
                   \[ \boxed{W_g = \SI{0}{\joule}} \]
@@ -115,35 +115,35 @@
                   \[ \sum F_y = \SI{20}{\newton} + \SI{-20}{\newton} \]
                   \[ \sum F_y = \SI{0}{\newton} \]
                   \[ W = \vec{s}\cdot\vec{F} \]
-                  \[ 
-                      W = \SI{0,75}{\meter}\vec{i}\cdot\SI{0,0}{\newton}\vec{i}
-                        + \SI{0}{\meter}\vec{j}\cdot\SI{0}{\newton}\vec{j}
-                   \]
-                  \[ 
-                      W = \SI{0,0}{\joule}
-                        + \SI{0}{\joule}
-                   \]
+                  \[
+                    W = \SI{0,75}{\meter}\vec{i}\cdot\SI{0,0}{\newton}\vec{i}
+                    + \SI{0}{\meter}\vec{j}\cdot\SI{0}{\newton}\vec{j}
+                  \]
+                  \[
+                    W = \SI{0,0}{\joule}
+                    + \SI{0}{\joule}
+                  \]
                   \[ \boxed{W = \SI{0}{\joule}} \]
                 \end{center}
         \end{enumerate}
-  
+
   \item Considere una situación igual a la del problema anterior, pero suponga ahora que no hay
         fuerza de rozamiento sobre el bloque A de \SI{20,0}{\newton} que descansa sobre la mesa. La polea
         es ligera y sin fricción.
         \begin{enumerate}
           \item Calcule la tensión T en la cuerda ligera que une los bloques
-          \item Para un desplazamiento en el cual el bloque de \SI{12,0}{\newton} desciende \SI{1,20}{\meter}, 
+          \item Para un desplazamiento en el cual el bloque de \SI{12,0}{\newton} desciende \SI{1,20}{\meter},
                 calcule el trabajo total realizado sobre: el bloque A y el bloque B.
           \item Para el desplazamiento del inciso b), calcule el trabajo total realizado sobre el sistema
                 de dos bloques. ¿Cómo se compara su respuesta con el trabajo realizado sobre el bloque
                 de \SI{12,0}{\newton} por la gravedad?
           \item Si el sistema se libera del reposo, ¿cuál es la rapidez del bloque de \SI{12,0}{\newton} cuando ha
                 descendido \SI{1,20}{\meter}?
-          
+
         \end{enumerate}
 
   \item Un vagón de juguete con masa de \SI{7,00}{\kilo\gram} se mueve en línea recta sobre una superficie
-        horizontal sin fricción. Tiene una rapidez inicial de \SI{4,00}{\meter\per\second} y luego es empujado a lo
+        horizontal sin fricción. Tiene una rapidez inicial de \SI[per-mode=fraction]{4,00}{\meter\per\second} y luego es empujado a lo
         largo de \SI{3}{\meter}, en la dirección de la velocidad inicial, por una fuerza cuya magnitud es de
         \SI{10,0}{\newton}.
         \begin{enumerate}
@@ -157,6 +157,20 @@
         fuerza $F$ en la dirección del movimiento. La componente $x$ de la $F$ varía con la coordenada
         $x$ del automóvil, como se indica en la figura. Calcule el trabajo efectuado por la fuerza $F$
         cuando el auto se mueve de
+        \begin{center}
+          \begin{tikzpicture}
+            \draw[dashed, gray, very thin] (0,-2) grid (7,2);
+            % Referencia y ejes
+            \draw (0,-2.5) -- (0,2.5) node[above]{$F_x (\si{\newton})$}; % Eje Y
+            \foreach \y in {-2,...,2}
+            \draw (0, \y) node[left]{\y} -- +(0.25, 0);
+            \draw (0,0) -- (7,0) node[right]{$x (\si{\meter})$}; % Eje x
+            \foreach \x in {1,...,7}
+            \draw (\x, 0) node[below]{\x} -- +(0, 0.25);
+
+            \draw[red, thick] (0,0) -- (2,2) -- (3,2) -- (3,0) -- (4,0) -- (6,-1) -- (6,0) -- (7,0);
+          \end{tikzpicture}
+        \end{center}
         \begin{multicols}{2}
           \begin{enumerate}
             \item $x = \SI{0}{\meter}$ a $x = \SI{3}{\meter}$
@@ -165,18 +179,6 @@
             \item $x = \SI{0}{\meter}$ a $x = \SI{7}{\meter}$
             \item $x = \SI{7}{\meter}$ a $x = \SI{2}{\meter}$
           \end{enumerate}
-          \begin{tikzpicture}
-            \draw[dashed, gray, very thin] (0,-2) grid (7,2);
-            % Referencia y ejes
-            \draw (0,-2.5) -- (0,2.5) node[above]{$F_x (\si{\newton})$}; % Eje Y
-            \foreach \y in {-2,...,2}
-              \draw (0, \y) node[left]{\y} -- +(0.25, 0);
-            \draw (0,0) -- (7,0) node[right]{$x (\si{\meter})$}; % Eje x
-            \foreach \x in {1,...,7}
-              \draw (\x, 0) node[below]{\x} -- +(0, 0.25);
-
-            \draw[red, thick] (0,0) -- (2,2) -- (3,2) -- (3,0) -- (4,0) -- (6,-1) -- (6,0) -- (7,0);
-          \end{tikzpicture}
         \end{multicols}
 
   \item ¿Cuántos Joules de energía consume una lamparita eléctrica de \SI{100}{\watt} si permanece
