@@ -148,9 +148,107 @@
         \SI{10,0}{\newton}.
         \begin{enumerate}
           \item Use el teorema de trabajo y energía para calcular la rapidez final del vagón
+                \begin{center}
+                  \[ W = K_2 - K_1\ \text{(Teorema de trabajo-energía)} \]
+                  \[ K = \frac{1}{2}mv^2\ \text{(Energía cinética)} \]
+                  \[ W = Fs \]
+                  \[ Fs = \frac{1}{2}m{v_2}^2 - \frac{1}{2}m{v_1}^2 \]
+                  \[ v_1 = \SI{4}{\meter\per\second} \]
+                  \[ s = \SI{3}{\meter} \]
+                  \[ F = \SI{10,0}{\newton} \]
+                  \[
+                    \SI{10,0}{\newton}\cdot\SI{3}{\meter} =
+                    \frac{1}{2}\cdot\SI{7,00}{\kilo\gram}(v_2)^2
+                    - \frac{1}{2}\cdot\SI{7,00}{\kilo\gram}(\SI{4}{\meter\per\second})^2
+                  \]
+                  \[ \SI{30,0}{\newton\meter} = \SI{3,50}{\kilo\gram}((v_2)^2 - (\SI{4}{\meter\per\second})^2) \]
+                  \[
+                    \frac{ \SI{30,0}{\kilo\gram\meter\per\second\squared\meter} }
+                    { \SI{3,50}{\kilo\gram} }
+                    = (v_2)^2 - \SI{16}{\meter\squared\per\second\squared}
+                  \]
+                  \[
+                    \SI{60/7}{\meter\squared\per\second\squared} = (v_2)^2 - \SI{16}{\meter\squared\per\second\squared}
+                  \]
+                  \[ \frac{60+16\cdot 7}{7}(\si{\meter\per\second})^2 = (v_2)^2 \]
+                  \[ \frac{172}{7}(\si{\meter\per\second})^2 = (v_2)^2 \]
+                  \[ \sqrt{\num{24,57}(\si{\meter\per\second})^2} = v_2 \]
+                  \[ \boxed{v_2 = \SI{4,96}{\meter\per\second}} \]
+                \end{center}
           \item Calcule la aceleración producida por la fuerza y úsela para calcular la rapidez final
                 del vagón con la fórmula utilizada en cinemática. Compare este resultado con el del
                 inciso a).
+                \begin{center}
+                  \[ F = ma \]
+                  \[ \SI{10,0}{\newton} = a \]
+                  \[ \frac{\SI{10,0}{\kilo\gram\meter\per\second\squared}}{\SI{7,00}{\kilo\gram}} = a  \]
+                  \[ a = \SI{1,42}{\meter\per\second\squared}\]
+                  \[ \Delta X = V_it + \frac{1}{2}at^2 \]
+                  \[ \SI{3}{\meter} = \SI{4,00}{\meter\per\second}t + \frac{1}{2}\SI{1,42}{\meter\per\second\squared}t^2 \]
+                  \[ 0 = \SI{0,71}{\meter\per\second\squared}t^2 + \SI{4,00}{\meter\per\second}t + \SI{-3}{\meter} \]
+                  \[
+                    t_{1,2} = \frac{
+                      \SI{-4,00}{\m/\s} \pm \sqrt{ (\SI{-4,00}{\m/\s})^2 - \num{4}\SI{0,71}{\m/\s^2}(\SI{-3}{\m}) }
+                    }{
+                      \num{2}\cdot\SI{0,71}{\meter\per\second\squared}
+                    }
+                  \]\[
+                    t_{1,2} = \frac{
+                      \SI{-4,00}{\m/\s} \pm \sqrt{ \SI{16,00}{\m^2/\s^2} + \SI{8,52}{\m^2/\s^2} }
+                    }{
+                      \SI{1,42}{\m/\s^2}
+                    }
+                  \]\[
+                    t_{1,2} = \frac{
+                      \SI{-4,00}{\m/\s} \pm \sqrt{ \SI{24,52}{\m^2/\s^2} }
+                    }{
+                      \SI{1,42}{\m/\s^2}
+                    }
+                  \]\[
+                    t_{1,2} = \frac{
+                      \SI{-4,00}{\m/\s} \pm \SI{4,95}{\m/\s}
+                    }{
+                      \SI{1,42}{\m/\s^2}
+                    }
+                  \]
+                  \begin{multicols}{2}
+                    \begin{center}
+                      \[
+                        t_1 = \frac{
+                          \SI{-4,00}{\m/\s} + \SI{4,95}{\m/\s}
+                        }{
+                          \SI{1,42}{\m/\s^2}
+                        }
+                      \]\[
+                        t_1 = \frac{
+                          \SI{0,95}{\m/\s}
+                        }{
+                          \SI{1,42}{\m/\s^2}
+                        }
+                      \]
+                      \[ t_1 = \SI{0,67}{\s} \]
+                    \end{center}
+                    \begin{center}
+                      \[
+                        t_2 = \frac{
+                          \SI{-4,00}{\m/\s} - \SI{4,95}{\m/\s}
+                        }{
+                          \SI{1,42}{\m/\s^2}
+                        }
+                      \]\[
+                        t_2 = \frac{
+                          \SI{-8,95}{\m/\s}
+                        }{
+                          \SI{1,42}{\m/\s^2}
+                        }
+                      \]\[
+                        \cancel{t_2 = \SI{-6,30}{\s}}
+                      \]
+                    \end{center}
+                  \end{multicols}
+                  \[ V_f = \SI{4,00}{\meter\per\second} + \SI{1,42}{\meter\per\second\squared}\SI{0,67}{\s} \]
+                  \[ \boxed{V_f = \SI{4,96}{\meter\per\second}} \]
+                \end{center}
         \end{enumerate}
 
   \item A un auto a radiocontrol de masa \SI{2,00}{\kilo\gram} que avanza por una pista recta, se le aplica una
@@ -174,16 +272,53 @@
         \begin{multicols}{2}
           \begin{enumerate}
             \item $x = \SI{0}{\meter}$ a $x = \SI{3}{\meter}$
+                  \[ W = \frac{\SI{2}{\meter}\cdot\SI{2}{\newton}}{2} + \SI{1}{\meter}\cdot\SI{2}{\newton} \]
+                  \[ W = \frac{\SI{4}{\joule}}{2} + \SI{2}{\joule} \]
+                  \[ \boxed{W = \SI{4}{\joule}} \]
             \item $x = \SI{3}{\meter}$ a $x = \SI{4}{\meter}$
+                  \[ W = \SI{1}{\meter}\cdot\SI{0}{\newton} \]
+                  \[ \boxed{W = \SI{0}{\joule}} \]
             \item $x = \SI{4}{\meter}$ a $x = \SI{7}{\meter}$
+                  \[ W = \SI{2}{\meter}\cdot\SI{-1}{\newton} + \SI{1}{\meter}\cdot\SI{0}{\newton} \]
+                  \[ \boxed{W = \SI{-2}{\joule}} \]
             \item $x = \SI{0}{\meter}$ a $x = \SI{7}{\meter}$
+                  \[ W_{0,2} = \frac{\SI{2}{\meter}\cdot\SI{2}{\newton}}{2} = \SI{2}{\joule} \] % (0 a 2)
+                  \[ W_{2,3} = \SI{1}{\meter}\cdot\SI{2}{\newton} = \SI{2}{\joule} \] % (2 a 3)
+                  \[ W_{3,4} = \SI{1}{\meter}\cdot\SI{0}{\newton} = \SI{0}{\joule} \] % (3 a 4)
+                  \[ W_{4,6} = \frac{\SI{2}{\meter}\cdot\SI{-1}{\newton}}{2} = \SI{-1}{\joule} \] % (4 a 6)
+                  \[ W_{6,7} = \SI{1}{\meter}\cdot\SI{0}{\newton} = \SI{0}{\joule} \] % (6 a 7)
+                  \[ W_{0,7} = W_{0,2} + W_{2,3} + W_{3,4} + W_{4,6} + W_{6,7} \]
+                  \[ W_{0,7} = (2 + 2 + 0 + \num{-1} + 0)\si{\joule} \]
+                  \[ \boxed{W_{0,7} = \SI{3}{\joule}} \]
             \item $x = \SI{7}{\meter}$ a $x = \SI{2}{\meter}$
+                  \[ W_{7,6} = \SI{-1}{\meter}\cdot\SI{0}{\newton} = \SI{0}{\joule} \]
+                  \[ W_{6,4} = \frac{\SI{-2}{\meter}\cdot\SI{-1}{\newton}}{2} = \SI{1}{\joule} \]
+                  \[ W_{4,3} = \SI{-1}{\meter}\cdot\SI{0}{\newton} = \SI{0}{\joule} \]
+                  \[ W_{3,2} = \SI{-1}{\meter}\cdot\SI{2}{\newton} = \SI{-2}{\joule} \]
+                  \[ W_{7,2} =  W_{7,6} + W_{6,4} + W_{4,3} + W_{3,2} \]
+                  \[ W_{7,2} = (0 + 1 + 0 + \num{-2})\si{\joule} \]
+                  \[ \boxed{W_{7,2} = \SI{-1}{\joule}} \]
+
           \end{enumerate}
         \end{multicols}
 
   \item ¿Cuántos Joules de energía consume una lamparita eléctrica de \SI{100}{\watt} si permanece
         prendida durante 1 hora? ¿Con qué rapidez tendría que correr una persona de \SI{70,0}{\kilo\gram} para
         tener esa cantidad de energía como energía cinética?
+        \begin{center}
+          \[ \si{\joule} = \si{\watt\second} \]
+          \[ j = \SI{100}{\watt}\cdot\SI{3600}{\second} \]
+          \[ j = \SI{360000}{\joule} \]
+          \[ \boxed{j = \SI{360}{\kilo\joule}} \]
+
+          \[ K = \frac{1}{2}mv^2 \]
+          \[ \SI{360000}{\joule} = \frac{1}{2}\SI{70,0}{\kilo\gram}\cdot v^2 \]
+          \[ \SI{360000}{\kilo\gram(\meter\per\second)^2} = \SI{35,0}{\kilo\gram}\cdot v^2 \]
+          \[ \frac{\SI{360000}{\kilo\gram(\meter\per\second)^2}}{\SI{35,0}{\kilo\gram}} = v^2 \]
+          \[ \SI{10286}{(\meter\per\second)^2} = v^2 \]
+          \[ \sqrt{\SI{10286}{(\meter\per\second)^2}} = v \]
+          \[ \boxed{v = \SI[per-mode=fraction]{101}{\meter\per\second}} \]
+        \end{center}
 
   \item Un equipo de dos personas en una bicicleta tándem debe superar una fuerza de \SI{66,6}{\newton}
         para mantener una rapidez de \SI[per-mode=fraction]{9,00}{\meter\per\second}. Calcule la potencia requerida por ciclista,
