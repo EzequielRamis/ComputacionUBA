@@ -434,7 +434,7 @@
                 \end{axis}
             \end{tikzpicture}
         \end{center}
-        Estas funciones tienen una restricción natural en su dominio, ya que \textbf{NO SE PUEDE DIVIDIR POR CERO}. Por esta causa, \[cx+d\neq0\Leftrightarrow cx\neq-d\Leftrightarrow x\neq-\frac{d}{c}\] y la función resulta no estar definida cuando \(x=-\frac{d}{c}\). Por esto, tenemos que: dada la función \(f(x)=\frac{ax+b}{cx+d}\):
+        Estas funciones tienen una restricción natural en su dominio, ya que \textbf{NO SE PUEDE DIVIDIR POR CERO}. Por esta causa, \[cx+d\neq0\Longleftrightarrow cx\neq-d\Longleftrightarrow x\neq-\frac{d}{c}\] y la función resulta no estar definida cuando \(x=-\frac{d}{c}\). Por esto, tenemos que: dada la función \(f(x)=\frac{ax+b}{cx+d}\):
         \begin{itemize}
             \item El \textit{dominio} es \[Dom(f)=\left(-\infty;-\frac{d}{c}\right)\cup\left(-\frac{d}{c};+\infty\right)=\R-\left\{-\frac{d}{c}\right\}\]
             \item La \textit{imagen} es \[Im(f)=\left(-\infty;\frac{a}{c}\right)\cup\left(\frac{a}{c};+\infty\right)=\R-\left\{\frac{a}{c}\right\}\]
@@ -469,4 +469,250 @@
             \end{tabularx}
         \end{center}
         \subsubsection{Composición de funciones}
+        Si \(f\) y \(g\) son funciones reales, se define la \textit{composición de g con f} (también llamada \textit{g compuesta con f}) a la función que se nota \(g \circ f\) y cuya fórmula viene dada por \((g \circ f)(x) = g(f(x))\); es decir, dado un valor de \(x\), primero se le aplica la función \(f\) y al valor obtenido se le aplica la función \(g\).
+        \begin{center}
+            \begin{tikzpicture}[line width=1pt]
+                \node (a1) {1};
+                \node[below=of a1] (a2) {2};
+                \node[below=of a2] (a3) {3};
+                \node[right=4cm of a1] (b1) {4};
+                \node[below=of b1] (b2) {5};
+                \node[below=of b2] (b3) {6};
+                \node[right=4cm of b1] (c1) {7};
+                \node[below=of c1] (c2) {8};
+                \node[below=of c2] (c3) {9};
+                \node[shape=ellipse,draw=black,minimum size=3cm,fit={(a1) (a3)}] {};
+                \node[shape=ellipse,draw=black,minimum size=3cm,fit={(b1) (b3)}] {};
+                \node[shape=ellipse,draw=black,minimum size=3cm,fit={(c1) (c3)}] {};
+                \node[above=1cm of a1,font=\Large\bfseries] (A) {A};
+                \node[above=1cm of b1,font=\Large\bfseries] (B) {B};
+                \node[above=1cm of c1,font=\Large\bfseries] (C) {C};
+                \draw[->] (A) -- node[above] {\(f\)} (B);
+                \draw[->] (B) -- node[above] {\(g\)} (C);
+                \draw[->] (a1) -- (b1);
+                \draw[->] (a2) -- (b3);
+                \draw[->] (a3) -- (b3);
+                \draw[->] (b1) -- (c3);
+                \draw[->] (b2) -- (c1);
+                \draw[->] (b3) -- (c2);
+            \end{tikzpicture}
+        \end{center}
+        La composición de funciones \textit{NO} es conmutativa (es decir, en general, \(g \circ f \neq f \circ g\)).
+        \subsubsection{Función inversa}
+        Dada una función \(f: A\rightarrow B\) queremos definir otra función que intercambie los roles del dominio y del codominio, a la que llamaremos \textit{función inversa de f}, que se nota \(f^{−1}:B\rightarrow A\) y cuya fórmula viene dada por \(f(x) = y \Longleftrightarrow f^{−1}(y) = x\).
+        \begin{figure}[H]
+            \centering
+            \begin{minipage}{.5\textwidth}
+                \centering
+                \begin{tikzpicture}[line width=1pt]
+                    \node (a1) {1};
+                    \node[below=of a1] (a2) {2};
+                    \node[below=of a2] (a3) {3};
+                    \node[right=3cm of a1] (b1) {4};
+                    \node[below=of b1] (b2) {5};
+                    \node[below=of b2] (b3) {6};
+                    \node[shape=ellipse,draw=black,minimum size=2.5cm,fit={(a1) (a3)}] {};
+                    \node[shape=ellipse,draw=black,minimum size=2.5cm,fit={(b1) (b3)}] {};
+                    \node[above=1cm of a1,font=\Large\bfseries] (A) {A};
+                    \node[above=1cm of b1,font=\Large\bfseries] (B) {B};
+                    \draw[->] (A) -- node[above] {\(f\)} (B);
+                    \draw[->] (a1) -- (b2);
+                    \draw[->] (a2) -- (b1);
+                    \draw[->] (a3) -- (b3);
+                \end{tikzpicture}
+                \caption{Función}
+            \end{minipage}%
+            \begin{minipage}{.5\textwidth}
+                \centering
+                \begin{tikzpicture}[line width=1pt]
+                    \node (a1) {1};
+                    \node[below=of a1] (a2) {2};
+                    \node[below=of a2] (a3) {3};
+                    \node[right=3cm of a1] (b1) {4};
+                    \node[below=of b1] (b2) {5};
+                    \node[below=of b2] (b3) {6};
+                    \node[shape=ellipse,draw=black,minimum size=2.5cm,fit={(a1) (a3)}] {};
+                    \node[shape=ellipse,draw=black,minimum size=2.5cm,fit={(b1) (b3)}] {};
+                    \node[above=1cm of a1,font=\Large\bfseries] (A) {A};
+                    \node[above=1cm of b1,font=\Large\bfseries] (B) {B};
+                    \draw[<-] (A) -- node[above] {\(f^{-1}\)} (B);
+                    \draw[<-] (a1) -- (b2);
+                    \draw[<-] (a2) -- (b1);
+                    \draw[<-] (a3) -- (b3);
+                \end{tikzpicture}
+                \caption{Función inversa}
+            \end{minipage}
+        \end{figure}
+        Observen que \((f \circ f^{−1})(x)=x\) y que también \((f^{−1} \circ f)(x)=x\).\\
+        Pero que pasa si tenemos una función \(f:X\rightarrow Y\) como la representada, cuyo elemento \(C\) del codominio \(Y\) no le llega ninguna flecha.
+        \begin{center}
+            \begin{tikzpicture}[line width=1pt]
+                \node (a1) {1};
+                \node[below=of a1] (a2) {2};
+                \node[below=of a2] (a3) {3};
+                \node[right=4cm of a1] (b1) {A};
+                \node[below=of b1] (b2) {B};
+                \node[below=of b2] (b3) {C};
+                \node[shape=ellipse,draw=black,minimum size=3cm,fit={(a1) (a3)}] {};
+                \node[shape=ellipse,draw=black,minimum size=3cm,fit={(b1) (b3)}] {};
+                \node[above=1cm of a1,font=\Large\bfseries] {X};
+                \node[above=1cm of b1,font=\Large\bfseries] {Y};
+                \draw[->] (a1) -- (b1);
+                \draw[->] (a2) -- (b2);
+                \draw[->] (a3) -- (b2);
+            \end{tikzpicture}
+        \end{center}
+        Al intentar definir la inversa \(f^{−1}: Y\rightarrow X\) nos encontramos con un problema: el valor \(C\) se encuentra en el dominio \(Y\) de la función \(f^{−1}\) pero no está relacionado con ningún elemento del codominio \(X\), incumpliendo la definición de función.\\
+        Diremos que una función \(f\) es \textit{sobreyectiva} si se cumple que \[Codom f=Img f\] Si una función no es \textit{sobreyectiva} no podremos definir una función inversa.\\
+        Ahora que pasa si tenemos otra función \(f:X\rightarrow Y\), cuyo elemento \(B\) del codominio \(Y\) le llegan dos flechas.
+        \begin{center}
+            \begin{tikzpicture}[line width=1pt]
+                \node (a1) {1};
+                \node[below=of a1] (a2) {2};
+                \node[below=of a2] (a3) {3};
+                \node[right=4cm of a1] (b1) {A};
+                \node[below=of b1] (b2) {B};
+                \node[below=of b2] (b3) {};
+                \node[shape=ellipse,draw=black,minimum size=3cm,fit={(a1) (a3)}] {};
+                \node[shape=ellipse,draw=black,minimum size=3cm,fit={(b1) (b3)}] {};
+                \node[above=1cm of a1,font=\Large\bfseries] {X};
+                \node[above=1cm of b1,font=\Large\bfseries] {Y};
+                \draw[->] (a1) -- (b1);
+                \draw[->] (a2) -- (b2);
+                \draw[->] (a3) -- (b2);
+            \end{tikzpicture}
+        \end{center}
+        Al intentar definir la inversa \(f^{−1}: Y\rightarrow X\) nos encontramos con otro problema, el valor \(B\) se encuentra en el dominio \(Y\) de la función\(f^{−1}\) pero está relacionado con dos elementos del codominio \(X\) incumpliendo, una vez más, la definición de función.\\
+        Diremos que una función \(f\) es \textit{inyectiva} sólo si \(a,b\) son elementos diferentes de \(X\), entonces \(f(a)\neq f(b)\).\\
+        Entonces, si una función es a la vez inyectiva y sobreyectiva diremos que la función es \textit{biyectiva} o \textit{inversible} o \textit{uno a uno}.
+        \subsubsection{Función exponencial}
+        {
+            \def\arraystretch{1.5}
+            \begin{tabularx}{\textwidth}{XX}
+                Si \(a>1, h(x)=a^x\) satisface
+                \begin{center}
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        Dominio & Imagen & Monotonía\\\hline
+                        \(\R\) & \((0;+\infty)\) & creciente\\
+                        \hline
+                    \end{tabular}
+                \end{center}
+                y el gráfico aproximado es de la forma siguiente:
+                \begin{center}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            scale=0.8,
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            domain=-5:3,
+                            samples= 100,
+                            ymin=-1
+                        ]
+                        \addplot[color=blue] {2^x};
+                        \addlegendentry{\(2^x\)}
+                        \end{axis}
+                    \end{tikzpicture} 
+                \end{center} 
+                &
+                Si \(0<a<1, h(x)=a^x\) satisface
+                \begin{center}
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        Dominio & Imagen & Monotonía\\\hline
+                        \(\R\) & \((0;+\infty)\) & decreciente\\
+                        \hline
+                    \end{tabular}
+                \end{center}
+                y el gráfico aproximado es de la forma siguiente:
+                \begin{center}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            scale=0.8,
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            domain=-3:5,
+                            samples= 100,
+                            ymin=-1
+                        ]
+                        \addplot[color=blue] {0.5^x};
+                        \addlegendentry{\(\frac{1}{2}^x\)}
+                        \end{axis}
+                    \end{tikzpicture}
+                \end{center} 
+            \end{tabularx}
+        }
+        \subsubsection{Función logarítmica}
+        Las funciones logarítmicas son las funciones inversas de las funciones exponenciales. A la inversa de la función \(f(x) = a^x\) se la nota con \(f^{−1}(x) = \log_a(x)\) lo que se lee ”logaritmo en base \(a\) de \(x\)”.
+        \[\log_a(x)=y\Longleftrightarrow a^y=x\]
+        Como las funciones logarítmicas son las inversas de las exponenciales, podemos obtener sus gráficos como los simétricos de los de las funciones exponenciales con respecto a la recta \(y = x\). Entonces, para la función \(h(x) = \log_a(x)\) tenemos que:\\
+        {
+            \def\arraystretch{1.5}
+            \begin{tabularx}{\textwidth}{XX}
+                Si \(a>1\), el gráfico de \(h(x)=\log_a(x)\) es de la forma
+                \begin{center}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            scale=0.8,
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            domain=-5:5,
+                            samples= 100,
+                            ymin=-4,
+                            ymax=2
+                        ]
+                        \addplot[color=blue] {Log(2,\x)};
+                        \addlegendentry{\(\log_2(x)\)}
+                        \end{axis}
+                    \end{tikzpicture} 
+                \end{center} y entonces,
+                \begin{center}
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        Dominio & Imagen & Monotonía\\\hline
+                        \((0;+\infty)\) & \(\R\) & creciente\\
+                        \hline
+                    \end{tabular}
+                \end{center}
+                &
+                Si \(0<a<1\), el gráfico de \(h(x)=\log_a(x)\) es de la forma
+                \begin{center}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            scale=0.8,
+                            axis lines = middle,
+                            axis equal,
+                            xlabel = \(x\),
+                            ylabel = {\(y\)},
+                            domain=-5:5,
+                            samples= 100,
+                            ymin=-2,
+                            ymax=4
+                        ]
+                        \addplot[color=blue] {Log(0.5,\x)};
+                        \addlegendentry{\(\log_\frac{1}{2}(x)\)}
+                        \end{axis}
+                    \end{tikzpicture} 
+                \end{center} y entonces,
+                \begin{center}
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        Dominio & Imagen & Monotonía\\\hline
+                        \((0;+\infty)\) & \(\R\) & decreciente\\
+                        \hline
+                    \end{tabular}
+                \end{center}
+            \end{tabularx}
+        }
+        Como, para a fijo, la función \(f^{−1}(x) = \log_a(x)\) es la inversa de \(f(x) = a^x\), resulta que
+        \begin{center}
+           \(a^{\log_a(x)}=x\) y \(\log_a(a^x)=x\)
+        \end{center}
+        En el caso en que la base del logaritmo sea el número \(e\), el logaritmo se llama \textit{logaritmo natural} y se nota \(\log_e(x) = \ln(x)\).
 \end{document}

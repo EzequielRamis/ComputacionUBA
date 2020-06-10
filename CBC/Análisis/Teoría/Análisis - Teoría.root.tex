@@ -3,7 +3,11 @@
 \usepackage{tabularx}
 \usepackage{pgfplots}
 \usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{float}
+\captionsetup[figure]{labelformat=empty}
 \pgfplotsset{compat=1.17}
+\tikzset{declare function={Log(\n,\x)=log2(\x)/log2(\n);}}
 
 \begin{document}
     \tableofcontents
