@@ -308,11 +308,11 @@
               \draw[thin, draw=gray] (0,0) -- (1,0) arc [start angle=0, end angle=35, radius=1] node[right,pos=0.5]{$\alpha = \ang{35,0}$} -- cycle;
               \draw (0,0) -- (F);
               \draw (0,0) -- (F |- 0,0);
-              \begin{scope} [rotate=35]
+              \begin{scope}[rotate=35]
                 \coordinate (B) at (2,0);
                 \draw (B) rectangle +(1,1);
-                \draw[red, very thick, ->] (B) ++(0.5,2) -- +(0,-1) node[above left, pos=0]{$\vec{F}$};
-                \draw[red, very thick, ->] (B) ++(0.5,0.5) -- ++(-125:1) node[right, pos=0.1]{$\vec{g}$};
+                \draw[fvec] (B) ++(0.5,2) -- +(0,-1) node[above left, pos=0]{$\vec{F}$};
+                \draw[fvec] (B) ++(0.5,0.5) -- ++(-125:1) node[right, pos=0.1]{$\vec{g}$};
                 \fill[red] (B) ++(0.5,0.5) circle[radius=0.05];
               \end{scope}
             \end{tikzpicture}
@@ -321,7 +321,7 @@
         \begin{center}
           \begin{tikzpicture} % Diagrama de cuerpo libre
             \draw[black] (-1,-1) rectangle +(2,2);
-            \begin{scope}[red, very thick, ->, near end] % Dibujar vectores
+            \begin{scope}[fvec, near end] % Dibujar vectores
               \draw circle[radius=0.05];
               \draw (0,0) -- (0,2.5) node[right]{$\vec{n}$};
               \draw (0,0) -- (0,-2) node[right]{$\vec{F}$};
@@ -331,7 +331,7 @@
           \end{tikzpicture}
           \begin{tikzpicture} % Diagrama del vector F_g
             \draw[help lines] (0,-0.5) arc[start angle=-90, end angle=-125, radius=0.5] node[below,pos=0.5]{$\alpha$};
-            \begin{scope}[red, very thick, ->] % Dibujar vectores
+            \begin{scope}[fvec] % Dibujar vectores
               \draw (0,0) -- node[right]{$\vec{F}_{g\bot}$} (0,-3) node(R); % Perpendicular
               \draw (0,0) -- node[left]{$\vec{F}_g$} (-125:3 |- R) node(G); % Gravedad
               \draw (R) -- node[below right]{$\vec{F}_{g\parallel}$} (G) node(B); % Paralelo
@@ -384,7 +384,7 @@
                 \draw (0,0) -- (2,0 -| 30:2);
                 \draw (0.5,0) arc [start angle=0, end angle=30, radius=0.5] node[right,pos=0.5]{$\alpha$};
               \end{scope}
-              \begin{scope}[very thick, red, ->] % Vectores
+              \begin{scope}[fvec] % Vectores
                 \draw circle[radius=0.05];
                 \draw (0,0) -- (30:2) node[above]{$\vec{F}$};
                 \draw (0,0) -- (0,-2) node[right,near end]{$\vec{g}$};
@@ -467,7 +467,6 @@
             } \]
         \end{center}
 
-
   \item Un cuerpo de masa desconocida se une a un resorte ideal con una constante de \SI{120}{N/m}.
         Se observa que vibra con una frecuencia de \SI{6,00}{\hertz}.
         \begin{enumerate}
@@ -501,7 +500,7 @@
                   \begin{tikzpicture}
                     \draw[black] (-0.5,-0.5) rectangle ++(1,1);
                     \filldraw[red] (0,0) circle[radius=0.05];
-                    \begin{scope}[very thick,red,->,near end]
+                    \begin{scope}[fvec, near end]
                       \draw (0,0) -- node[above]{$\vec{F}_1$}(1.5,0);
                       \draw (0,0) -- node[above]{$\vec{f_s}$}(-1,0);
                       \draw (0,0) -- node[right]{$\vec{n}$}(0,1.3);
@@ -517,7 +516,7 @@
                   \begin{tikzpicture}
                     \draw[black] (-0.5,-0.5) rectangle ++(1,1);
                     \filldraw[red] (0,0) circle[radius=0.05];
-                    \begin{scope}[very thick,red,->,near end]
+                    \begin{scope}[fvec, near end]
                       \draw (0,0) -- node[above]{$\vec{F}_2$}(1.5,0);
                       \draw (0,0) -- node[above]{$\vec{f_k}$}(-1,0);
                       \draw (0,0) -- node[right]{$\vec{n}$}(0,1.3);

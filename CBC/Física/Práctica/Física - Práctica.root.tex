@@ -9,8 +9,12 @@
 
 \usetikzlibrary{decorations.pathmorphing}
 \tikzset{snake it/.style={decorate, decoration=snake}}
+\tikzset{fvec/.style={draw=red, very thick, ->}} % Force VECtor / VECtor Fuerza
 \sisetup{
-  output-decimal-marker = {,}
+  output-decimal-marker = {,},
+  per-mode = symbol-or-fraction,
+  input-product=\cdot,
+  output-product=\cdot
 }
 
 \begin{document}
