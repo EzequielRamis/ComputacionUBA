@@ -20,11 +20,11 @@
           \end{center}
 
           \[
-            F_n=\SI{21,0}{\kilogram}\times\SI{9,80}{\meter\over\second\squared}
+            F_n=\SI{21,0}{\kilogram}\times\SI{9,80}{\meter\per\second\squared}
             =\SI{205}{\newton}
           \]
           \[
-            F_p=\SI{105}{\kilogram}\times\SI{9,80}{\meter\over\second\squared}
+            F_p=\SI{105}{\kilogram}\times\SI{9,80}{\meter\per\second\squared}
             =\SI{1020}{\newton}
           \]
           \[
@@ -56,11 +56,11 @@
           \end{center}
 
           \[
-            F_p=\SI{75,0}{\kilogram}\times\SI{9,80}{\meter\over\second}
+            F_p=\SI{75,0}{\kilogram}\times\SI{9,80}{\meter\per\second}
             =\SI{735}{\newton}
           \]
           \[
-            F_t=\SI{15,0}{\kilogram}\times\SI{9,80}{\meter\over\second}
+            F_t=\SI{15,0}{\kilogram}\times\SI{9,80}{\meter\per\second}
             =\SI{147}{\newton}
           \]
           \[
@@ -103,11 +103,11 @@
           \end{center}
 
           \[
-            F_p=\SI{75,0}{\kilogram}\times\SI{9,80}{\meter\over\second}
+            F_p=\SI{75,0}{\kilogram}\times\SI{9,80}{\meter\per\second}
             =\SI{735}{\newton}
           \]
           \[
-            F_t=\SI{15,0}{\kilogram}\times\SI{9,80}{\meter\over\second}
+            F_t=\SI{15,0}{\kilogram}\times\SI{9,80}{\meter\per\second}
             =\SI{147}{\newton}
           \]
           \[
@@ -154,7 +154,7 @@
           \[M_a=\SI{0,100}{\kilogram}\]
           \[
             F_a=M_a\times g
-            =\SI{0,100}{\kilogram}\times\SI{9,80}{\meter\over\second}
+            =\SI{0,100}{\kilogram}\times\SI{9,80}{\meter\per\second}
             =\SI{0,980}{\newton}
           \]
           \[
@@ -169,7 +169,7 @@
           \[F_b=\SI{1.96}{\newton}\]
           \[
             M_b=\frac{F_b}{g}
-            =\frac{\SI{1.96}{\newton}}{\SI{9,80}{\meter\over\second}}
+            =\frac{\SI{1.96}{\newton}}{\SI{9,80}{\meter\per\second}}
             =\boxed{\SI{0,200}{\kilogram}}
           \]
 
@@ -190,7 +190,7 @@
           \[F_d=\SI{4,90}{\newton}\]
           \[
             M_d=\frac{F_d}{g}
-            =\frac{\SI{4,90}{\newton}}{\SI{9,80}{\meter\over\second}}
+            =\frac{\SI{4,90}{\newton}}{\SI{9,80}{\meter\per\second}}
             =\boxed{\SI{0,500}{\kilogram}}
           \]
 
@@ -211,7 +211,7 @@
           \[F_f=\SI{3,92}{\newton}\]
           \[
             M_d=\frac{F_d}{g}
-            =\frac{\SI{3,92}{\newton}}{\SI{9,80}{\meter\over\second}}
+            =\frac{\SI{3,92}{\newton}}{\SI{9,80}{\meter\per\second}}
             =\boxed{\SI{0,400}{\kilogram}}
           \]
         \end{multicols}
@@ -236,7 +236,7 @@
 
         \begin{multicols}{2}
           \[
-            F_c=\SI{1,50}{\kilogram}\times\SI{9,80}{\meter\over\second}
+            F_c=\SI{1,50}{\kilogram}\times\SI{9,80}{\meter\per\second}
             =\SI{14,7}{\newton}
           \]
           \[F_a+F_b+F_c=0\]
@@ -259,7 +259,8 @@
           \[F_b=\boxed{\SI{40,2}{\newton}}\]
         \end{multicols}
 
-  \item Calcular que ángulo máximo puede formar con la vertical cada una de las cuatro cuerdas de la figura, para que la tensión que soporta cada una no exceda los \SI{500}{\newton}. (Use consideraciones de simetria)
+  \item Calcular que ángulo máximo puede formar con la vertical cada una de las cuatro cuerdas de la figura, 
+        para que la tensión que soporta cada una no exceda los \SI{500}{\newton}. (Use consideraciones de simetria)
 
         \begin{multicols}{2}
           \begin{center}
@@ -272,7 +273,7 @@
               \draw[red] (0,0) -- (a) (3,0) -- (a) (-1,-1) -- (a) (2,-1) -- (a);
 
               \draw[dashed] (3,0) -- ++(0,2);
-              \draw[help lines] (3,1) -- ++arc(90:135:1) node[pos=.5,anchor=south]{$\theta$};
+              \draw[help lines] (3,1) arc(90:135:1) node[pos=.5,anchor=south]{$\theta$};
             \end{tikzpicture}
           \end{center}
 
@@ -295,9 +296,9 @@
             \begin{tikzpicture}
               \draw (-2.5,1) -- (2.5,1);
               \draw[red,->] (0,0) -- (150:2) coordinate(a) node[anchor=south]{$F_a$};
-              \draw[help lines] (150:2) ++(1,0) -- ++arc(0:-30:1) node[pos=.5,anchor=west]{$\alpha$};
+              \draw[help lines] (150:2) ++(1,0) arc(0:-30:1) node[pos=.5,anchor=west]{$\alpha$};
               \draw[red,->] (0,0) -- (30:2) coordinate(b) node[anchor=south]{$F_b$};
-              \draw[help lines] (30:2) ++(-1,0) -- ++arc(180:210:1) node[pos=.5,anchor=east]{$\beta$};
+              \draw[help lines] (30:2) ++(-1,0) arc(180:210:1) node[pos=.5,anchor=east]{$\beta$};
               \draw[red,->] (0,0) -- (270:2) coordinate(c) node[anchor=north]{$F_p$};
 
               \draw[dashed,help lines] (a) -- (c) (b) -- (c);
@@ -353,11 +354,11 @@
           \item Dónde debe colocarsse el contrapeso de \SI{9,50e3}{\kilogram} cuando la carga se levanta desde el suelo?
 
                 \[
-                  F_a=\SI{9,50e3}{\kilogram}\times\SI{9,80}{\meter\over\second\squared}
+                  F_a=\SI{9,50e3}{\kilogram}\times\SI{9,80}{\meter\per\second\squared}
                   =\SI{9,31e4}{\newton}
                 \]
                 \[
-                  F_b=\SI{2,80e3}{\kilogram}\times\SI{9,80}{\meter\over\second\squared}
+                  F_b=\SI{2,80e3}{\kilogram}\times\SI{9,80}{\meter\per\second\squared}
                   =\SI{2,74e4}{\newton}
                 \]
                 \[
@@ -386,7 +387,7 @@
 
                 \[
                   M=\frac{F_b}{g}
-                  =\frac{\SI{4,17e4}{\newton}}{\SI{9,80}{\meter\over\second\squared}}
+                  =\frac{\SI{4,17e4}{\newton}}{\SI{9,80}{\meter\per\second\squared}}
                   =\boxed{\SI{4,26e3}{\kilogram}}
                 \]
         \end{enumerate}

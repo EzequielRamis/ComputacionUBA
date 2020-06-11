@@ -14,14 +14,14 @@
           muestra la figura. El ángulo que forma la soga con el piso es
           de \ang{35} y la fuerza que ejerce Guillermo es de \SI{420}{\newton}. Si una
           fuerza de fricción de \SI{320}{\newton} se opone al movimiento.
-          Calcule el trabajo total realizado. \\
+          Calcule el trabajo total realizado.
           \begin{center}
-            \begin{tikzpicture}[scale=1.2]
+            \begin{tikzpicture}[scale=1.1]
               \draw (-0.5,-0.5) rectangle ++(1,1);
               \filldraw[red] (0,0) circle [radius=0.05];
               \begin{scope}[fvec, near end] % Vectores
-                \draw (0,0) -- node[above]{$\vec{F}_a$}(35:2) node (F);
-                \draw (0,0) -- node[above]{$\vec{f}_k$}(-1.5,0);
+                \draw (0,0) -- node[above]{$\vec{F}_a$} (35:2) node(F){};
+                \draw (0,0) -- node[above]{$\vec{f}_k$} (-1.5,0);
               \end{scope}
               % Angulo
               \draw[help lines] (0,0) -- (F |- 2,0);
@@ -50,7 +50,7 @@
           \begin{center}
             \begin{tikzpicture}
               \draw (-0.5,0.5) rectangle ++(1,1) node[midway](A){$A$};
-              \draw (A) ++(0.5,0) -- ++(1.5,0) arc(90:0:0.3) node[midway](c) -- ++(0,-0.5) node(B);
+              \draw (A) ++(0.5,0) -- ++(1.5,0) arc(90:0:0.3) node[midway](c){} -- ++(0,-0.5) node(B){};
               \draw (B) ++(0.5,0) rectangle ++(-1,-1) node[midway]{$B$};
               \draw (c) ++(-0.15,-0.15) circle[radius=0.15];
             \end{tikzpicture}
@@ -330,10 +330,10 @@
           \[ \si{\watt} = \si{\newton\meter\per\second} \]
           \[ \SI{33,0}{\newton}\cdot\SI{9,00}{\meter\per\second} = w \]
           \[ \boxed{w = \SI{297}{\watt}} \]
-          \begin{tabular}{ c | c }
+          \begin{tabular}{|c|c|}
             \si{\watt}  & \si{\hp} \\ \hline
-            \num{735,5} & \num{1}  \\
-            \num{297}   & $x$
+            \num{735,5} & \num{1}  \\ \hline
+            \num{297}   & $x$      \\ \hline
           \end{tabular}
           \[ \boxed{x = \SI{0,4}{\hp}} \]
         \end{center}
@@ -347,10 +347,10 @@
                   \[ W_c = \SI{30,0}{\kilo\gram}\cdot\SI{9,8}{\m\per\s^2}\cdot\SI{0,90}{\meter} \]
                   \[ W_c = \SI{264,6}{\joule} \]
                   \[ \SI{0,50}{\hp} = x\frac{W_c}{\SI{1}{\minute}} \]
-                  \begin{tabular}{ c | c }
-                    \si{\watt}  & \si{\hp} \\ \hline
-                    \num{735,5} & \num{1}  \\
-                    $x$         & \num{0,50}
+                  \begin{tabular}{|c|c|} \hline
+                    \si{\watt}  & \si{\hp}    \\ \hline
+                    \num{735,5} & \num{1}     \\ \hline
+                    $x$         & \num{0,50}  \\ \hline
                   \end{tabular}
                   \[ x = \SI{367,75}{\watt} \]
                   \[ \SI{367,75}{\watt} = x\frac{\SI{264,6}{\joule}}{\SI{1}{\minute}} \]
