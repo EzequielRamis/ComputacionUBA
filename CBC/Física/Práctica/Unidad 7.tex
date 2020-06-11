@@ -323,13 +323,54 @@
   \item Un equipo de dos personas en una bicicleta tándem debe superar una fuerza de \SI{66,6}{\newton}
         para mantener una rapidez de \SI[per-mode=fraction]{9,00}{\meter\per\second}. Calcule la potencia requerida por ciclista,
         suponiendo contribuciones iguales. Exprese su respuesta en \si{\watt} y en caballos de potencia (\si{\hp}).
+        \begin{center}
+          \[ a = 0 \Rightarrow \sum F = \SI{0}{\newton} \]
+          \[ F = 2\cdot f_p - f_o = \SI{0}{\newton} \]
+          \[ f_p = \SI{33,3}{\newton} \]
+          \[ \si{\watt} = \si{\newton\meter\per\second} \]
+          \[ \SI{33,0}{\newton}\cdot\SI{9,00}{\meter\per\second} = w \]
+          \[ \boxed{w = \SI{297}{\watt}} \]
+          \begin{tabular}{ c | c }
+            \si{\watt}  & \si{\hp} \\ \hline
+            \num{735,5} & \num{1}  \\
+            \num{297}   & $x$
+          \end{tabular}
+          \[ \boxed{x = \SI{0,4}{\hp}} \]
+        \end{center}
 
   \item Imagine que su trabajo es levantar cajas de \SI{30,0}{\kilo\gram} una distancia vertical de \SI{0,90}{\meter} del
         suelo al camión.
         \begin{enumerate}
           \item ¿Cuántas cajas tendría que cargar en un minuto para que su gasto medio de potencia
                 invertido en levantar las cajas sea de \SI{0,50}{\hp}?
+                \begin{center}
+                  \[ W_c = \SI{30,0}{\kilo\gram}\cdot\SI{9,8}{\m\per\s^2}\cdot\SI{0,90}{\meter} \]
+                  \[ W_c = \SI{264,6}{\joule} \]
+                  \[ \SI{0,50}{\hp} = x\frac{W_c}{\SI{1}{\minute}} \]
+                  \begin{tabular}{ c | c }
+                    \si{\watt}  & \si{\hp} \\ \hline
+                    \num{735,5} & \num{1}  \\
+                    $x$         & \num{0,50}
+                  \end{tabular}
+                  \[ x = \SI{367,75}{\watt} \]
+                  \[ \SI{367,75}{\watt} = x\frac{\SI{264,6}{\joule}}{\SI{1}{\minute}} \]
+                  \[ \SI{367,75}{\watt}\cdot\SI{60}{\second} = x\cdot\SI{264,6}{\joule} \]
+                  \[ \SI{22065}{\joule} = x\cdot\SI{264,6}{\joule} \]
+                  \[ \frac{\SI{22065}{\cancel\joule}}{\SI{264,6}{\cancel\joule}} = x \]
+                  \[ \boxed{\num{84} = x} \]
+                \end{center}
+
           \item ¿Y para que fuera de \SI{100}{\watt}?
+                \begin{center}
+                  \[ W_c = \SI{30,0}{\kilo\gram}\cdot\SI{9,8}{\m\per\s^2}\cdot\SI{0,90}{\meter} \]
+                  \[ W_c = \SI{264,6}{\joule} \]
+                  \[ \SI{100}{\watt} = x\frac{W_c}{\SI{1}{\minute}} \]
+                  \[ \SI{100}{\watt} = x\frac{\SI{264,6}{\joule}}{\SI{60}{\second}} \]
+                  \[ \SI{100}{\watt}\cdot\SI{60}{\second} = x\SI{264,6}{\joule} \]
+                  \[ \frac{\SI{6000}{\cancel\joule}}{\SI{264,6}{\cancel\joule}} = x \]
+                  \[ \num{23} = x \]
+                \end{center}
+
         \end{enumerate}
 \end{enumerate}
 
