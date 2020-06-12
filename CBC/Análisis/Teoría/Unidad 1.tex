@@ -2,12 +2,14 @@
 
 \documentclass[Análisis.root.tex]{subfiles}
 
-\usetikzlibrary{positioning,shapes,fit,arrows}
+\usetikzlibrary{positioning,shapes,fit,arrows,angles,quotes}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
+
+\def\arraystretch{1.5}
 
 \begin{document}
     \section{Números reales y Funciones}
@@ -67,27 +69,28 @@
             \item Primero multipliquemos por una potencia de 10 que deje delante de la coma toda la parte no periódica del número \(x\) más una copia del período (detrás de la coma solo quedará la parte periódica). En nuestro caso será \(10^3\):\[1000\cdot0,3\overline{81}=381,\overline{81}\]
             \item Después multipliquemos por otra potencia de 10 que deje delante de la coma solo la parte no periódica de \(x\) (puede ser \(10^0\) si no hay parte no periódica). En nuestro caso:\[10\cdot0,3\overline{81}=3,\overline{81}\]
             \item En esta instancia, solo tenemos que restar. Como ambas expresiones tienen la misma parte decimal, al restar obtendremos un número entero. Lo único que nos queda es despejar para encontrar los números enteros \(b\) y \(a\) buscados:
-                \[\frac{
-                    \begin{matrix*}[r]
-                        & 1000 & \cdot & 0,3\overline{81} & = & 381,\overline{81}\\
-                        -\\
-                        & 10 & \cdot & 0,3\overline{81} & = & 3,\overline{81}
-                    \end{matrix*}
+               {
+                    \def\arraystretch{1}
+                    \[\frac{
+                        \begin{matrix*}[r]
+                            & 1000 & \cdot & 0,3\overline{81} & = & 381,\overline{81}\\
+                            -\\
+                            & 10 & \cdot & 0,3\overline{81} & = & 3,\overline{81}
+                        \end{matrix*}
                     }{
-                    \begin{matrix*}[r]
-                        \\
-                        & 990 & \cdot & 0,3\overline{81} & = & 378
-                    \end{matrix*}
-                }\]
+                        \begin{matrix*}[r]
+                            \\
+                            & 990 & \cdot & 0,3\overline{81} & = & 378
+                        \end{matrix*}
+                    }\]
+                }
             Así, \[0,3\overline{81}=\frac{378}{990}=\frac{21}{55}\]
         \end{itemize}
         \subsubsection{Raíz de dos}
         Veamos una demostración de que \(\sqrt{2}\) no es un número racional.\\
         Supongamos que es falso lo que queremos probar, es decir, supongamos que \(\sqrt{2}\) es racional. A partir de esta suposición vamos a deducir que vale un absurdo, un enunciado que sabemos que es falso y, por lo tanto, nuestra suposición será incorrecta.\\
         Si \(\sqrt{2}\) es racional, sabemos que tienen que existir dos números enteros \(a\) y \(b\), sin divisores comunes salvo el 1 y el −1, y \(b \neq 0\) tales que \[\sqrt{2}=\frac{a}{b}\] Al pasar de miembro, nos queda
-        \begin{center}
-            \(\sqrt{2}b=a\) y elevando al cuadrado, \(2b^2=a^2\)
-        \end{center}
+        \[\sqrt{2}b=a\qquad\text{y elevando al cuadrado,}\qquad 2b^2=a^2\]
         Esta expresión nos dice que \(a^2\) es par, ya que resulta de multiplicar 2 por otro número. Y, por lo tanto, \(a\) es par, es decir \(a = 2k\) para algún \(k \in \Z\).\\
         Pero \(a^2 = (2k)^2\) es un cuadrado perfecto, o sea es un número entero al cuadrado, luego si uno de sus factores es el 2, el 2 tiene que estar como mínimo al cuadrado, o sea dos veces. Por lo tanto, como ya hay un 2 en la igualdad delante de \(b^2\), el otro 2 tiene que estar en el \(b^2\). Eso quiere decir que \(b^2\) también tiene que ser par y, por lo tanto \(b\) también es par.\\
         Pero si \(a\) es par y \(b\) también, \(a\) y \(b\) tienen un divisor común, el 2, y habíamos supuesto que no.
@@ -150,9 +153,7 @@
         \subsubsection{Axioma de complejitud}
         Un conjunto de números reales no vacío y acotado superiormente siempre tiene supremo.\\
         El siguiente ejemplo muestra que los números racionales no verifican este axioma. Vamos a escribir \(\R_{>0}\) por el conjunto de los números reales estrictamente mayores que cero y \(\Q_{>0}\) por el de los números racionales estrictamente mayores que cero.
-        \begin{center}
-            \(A = \{x \in \R_{>0} : x^2 < 2\}\) y \(B = \{x \in \Q_{>0} : x^2 < 2\}\)
-        \end{center}
+        \[A = \{x \in \R_{>0} : x^2 < 2\}\qquad\text{y}\qquad B = \{x \in \Q_{>0} : x^2 < 2\}\]
         Ambos conjuntos, \(A\) y \(B\), son no vacíos y acotados superiormente. El número \(\sqrt{2}\) es el supremo de \(A\) ya que es la menor de las cotas superiores. Por otro lado, si nos restringimos a mirar a \(B\) dentro de los números racionales, no tiene supremo ya que toda cota superior racional de \(B\) puede ser “mejorada” por otro racional más cercano a \(\sqrt{2}\).
         \subsubsection{Cotas inferiores e ínfimo}
         En forma similar a lo desarrollado en el apartado anterior, podemos introducir las nociones de \textit{cota inferior} e \textit{ínfimo}.\\
@@ -243,11 +244,7 @@
             \end{tikzpicture}
         \end{center}
         Se puede evaluar la función así:
-        \begin{center}
-            \begin{tabularx}{\textwidth}{XXX}
-                \centering{\(f(1) = 4\)} & \centering{\(f(2) = 6\)} & \centering{\(f(3) = 6\)}\\
-            \end{tabularx}
-        \end{center}
+        \[f(1) = 4 \qquad\qquad\qquad f(2) = 6 \qquad\qquad\qquad f(3) = 6\]
         Como se puede ver, siempre hay un resultado por cada evaluación, no importa si hay dos o más elementos del conjunto \(A\) cuya evaluación tenga el mismo resultado.\\
         En caso contrario, no sería una función, sería una relación no funcional, como el siguiente ejemplo:
         \begin{center}
@@ -383,7 +380,7 @@
                         \addlegendentry{\(x^4\)}
                     \end{axis}
                 \end{tikzpicture}
-                 \\\\\\
+                 \\\\
                  \begin{tikzpicture}[scale=.8]
                     \begin{axis}[
                             axis lines = middle,
@@ -463,11 +460,7 @@
         ¿Por qué nos quedamos sólo con el valor positivo? Porque queremos que la \textit{raíz cuadrada} sea una \textit{función} y, por la definición de función, la raíz cuadrada de un número debe ser unica.\\
         ¿A qué números podemos sacarle \textit{raíz cuadrada}? Cuando elevamos un número al cuadrado, el resultado siempre es positivo o cero. Por lo tanto, sólo se les puede calcular raíz cuadrada a los números \textit{mayores o iguales que 0}.\\
         Con la notación de funciones ya usada, podemos escribir entonces
-        \begin{center}
-            \begin{tabularx}{.6\textwidth}{XX}
-                \centering\(f:[0;+\infty)\rightarrow\R\) & \centering\(f(x)=\sqrt{x}\)
-            \end{tabularx}
-        \end{center}
+        \[f:[0;+\infty)\rightarrow\R \qquad\qquad\qquad f(x)=\sqrt{x}\]
         \subsubsection{Composición de funciones}
         Si \(f\) y \(g\) son funciones reales, se define la \textit{composición de g con f} (también llamada \textit{g compuesta con f}) a la función que se nota \(g \circ f\) y cuya fórmula viene dada por \((g \circ f)(x) = g(f(x))\); es decir, dado un valor de \(x\), primero se le aplica la función \(f\) y al valor obtenido se le aplica la función \(g\).
         \begin{center}
@@ -586,133 +579,259 @@
         Diremos que una función \(f\) es \textit{inyectiva} sólo si \(a,b\) son elementos diferentes de \(X\), entonces \(f(a)\neq f(b)\).\\
         Entonces, si una función es a la vez inyectiva y sobreyectiva diremos que la función es \textit{biyectiva} o \textit{inversible} o \textit{uno a uno}.
         \subsubsection{Función exponencial}
-        {
-            \def\arraystretch{1.5}
-            \begin{tabularx}{\textwidth}{XX}
-                Si \(a>1, h(x)=a^x\) satisface
-                \begin{center}
-                    \begin{tabular}{|c|c|c|}
-                        \hline
-                        Dominio & Imagen & Monotonía\\\hline
-                        \(\R\) & \((0;+\infty)\) & creciente\\
-                        \hline
-                    \end{tabular}
-                \end{center}
-                y el gráfico aproximado es de la forma siguiente:
-                \begin{center}
-                    \begin{tikzpicture}
-                        \begin{axis}[
-                            scale=0.8,
-                            axis lines = middle,
-                            axis equal,
-                            xlabel = \(x\),
-                            ylabel = {\(y\)},
-                            domain=-5:3,
-                            samples= 100,
-                            ymin=-1
-                        ]
-                        \addplot[color=blue] {2^x};
-                        \addlegendentry{\(2^x\)}
-                        \end{axis}
-                    \end{tikzpicture} 
-                \end{center} 
-                &
-                Si \(0<a<1, h(x)=a^x\) satisface
-                \begin{center}
-                    \begin{tabular}{|c|c|c|}
-                        \hline
-                        Dominio & Imagen & Monotonía\\\hline
-                        \(\R\) & \((0;+\infty)\) & decreciente\\
-                        \hline
-                    \end{tabular}
-                \end{center}
-                y el gráfico aproximado es de la forma siguiente:
-                \begin{center}
-                    \begin{tikzpicture}
-                        \begin{axis}[
-                            scale=0.8,
-                            axis lines = middle,
-                            axis equal,
-                            xlabel = \(x\),
-                            ylabel = {\(y\)},
-                            domain=-3:5,
-                            samples= 100,
-                            ymin=-1
-                        ]
-                        \addplot[color=blue] {0.5^x};
-                        \addlegendentry{\(\frac{1}{2}^x\)}
-                        \end{axis}
-                    \end{tikzpicture}
-                \end{center} 
-            \end{tabularx}
-        }
+        \begin{tabularx}{\textwidth}{XX}
+            Si \(a>1, h(x)=a^x\) satisface
+            \begin{center}
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    Dominio & Imagen & Monotonía\\\hline
+                    \(\R\) & \((0;+\infty)\) & creciente\\
+                    \hline
+                \end{tabular}
+            \end{center}
+            y el gráfico aproximado es de la forma siguiente:
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        scale=0.8,
+                        axis lines = middle,
+                        axis equal,
+                        xlabel = \(x\),
+                        ylabel = {\(y\)},
+                        domain=-5:3,
+                        samples= 100,
+                        ymin=-1
+                    ]
+                    \addplot[color=blue] {2^x};
+                    \addlegendentry{\(2^x\)}
+                    \end{axis}
+                \end{tikzpicture} 
+            \end{center} 
+            &
+            Si \(0<a<1, h(x)=a^x\) satisface
+            \begin{center}
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    Dominio & Imagen & Monotonía\\\hline
+                    \(\R\) & \((0;+\infty)\) & decreciente\\
+                    \hline
+                \end{tabular}
+            \end{center}
+            y el gráfico aproximado es de la forma siguiente:
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        scale=0.8,
+                        axis lines = middle,
+                        axis equal,
+                        xlabel = \(x\),
+                        ylabel = {\(y\)},
+                        domain=-3:5,
+                        samples= 100,
+                        ymin=-1
+                    ]
+                    \addplot[color=blue] {0.5^x};
+                    \addlegendentry{\(\frac{1}{2}^x\)}
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center} 
+        \end{tabularx}
         \subsubsection{Función logarítmica}
         Las funciones logarítmicas son las funciones inversas de las funciones exponenciales. A la inversa de la función \(f(x) = a^x\) se la nota con \(f^{−1}(x) = \log_a(x)\) lo que se lee ”logaritmo en base \(a\) de \(x\)”.
         \[\log_a(x)=y\Longleftrightarrow a^y=x\]
         Como las funciones logarítmicas son las inversas de las exponenciales, podemos obtener sus gráficos como los simétricos de los de las funciones exponenciales con respecto a la recta \(y = x\). Entonces, para la función \(h(x) = \log_a(x)\) tenemos que:\\
-        {
-            \def\arraystretch{1.5}
-            \begin{tabularx}{\textwidth}{XX}
-                Si \(a>1\), el gráfico de \(h(x)=\log_a(x)\) es de la forma
-                \begin{center}
-                    \begin{tikzpicture}
-                        \begin{axis}[
-                            scale=0.8,
-                            axis lines = middle,
-                            axis equal,
-                            xlabel = \(x\),
-                            ylabel = {\(y\)},
-                            domain=-5:5,
-                            samples= 100,
-                            ymin=-4,
-                            ymax=2
-                        ]
-                        \addplot[color=blue] {Log(2,\x)};
-                        \addlegendentry{\(\log_2(x)\)}
-                        \end{axis}
-                    \end{tikzpicture} 
-                \end{center} y entonces,
-                \begin{center}
-                    \begin{tabular}{|c|c|c|}
-                        \hline
-                        Dominio & Imagen & Monotonía\\\hline
-                        \((0;+\infty)\) & \(\R\) & creciente\\
-                        \hline
-                    \end{tabular}
-                \end{center}
-                &
-                Si \(0<a<1\), el gráfico de \(h(x)=\log_a(x)\) es de la forma
-                \begin{center}
-                    \begin{tikzpicture}
-                        \begin{axis}[
-                            scale=0.8,
-                            axis lines = middle,
-                            axis equal,
-                            xlabel = \(x\),
-                            ylabel = {\(y\)},
-                            domain=-5:5,
-                            samples= 100,
-                            ymin=-2,
-                            ymax=4
-                        ]
-                        \addplot[color=blue] {Log(0.5,\x)};
-                        \addlegendentry{\(\log_\frac{1}{2}(x)\)}
-                        \end{axis}
-                    \end{tikzpicture} 
-                \end{center} y entonces,
-                \begin{center}
-                    \begin{tabular}{|c|c|c|}
-                        \hline
-                        Dominio & Imagen & Monotonía\\\hline
-                        \((0;+\infty)\) & \(\R\) & decreciente\\
-                        \hline
-                    \end{tabular}
-                \end{center}
-            \end{tabularx}
-        }
+        \begin{tabularx}{\textwidth}{XX}
+            Si \(a>1\), el gráfico de \(h(x)=\log_a(x)\) es de la forma
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        scale=0.8,
+                        axis lines = middle,
+                        axis equal,
+                        xlabel = \(x\),
+                        ylabel = {\(y\)},
+                        domain=-5:5,
+                        samples= 100,
+                        ymin=-4,
+                        ymax=2
+                    ]
+                    \addplot[color=blue] {Log(2,\x)};
+                    \addlegendentry{\(\log_2(x)\)}
+                    \end{axis}
+                \end{tikzpicture} 
+            \end{center} y entonces,
+            \begin{center}
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    Dominio & Imagen & Monotonía\\\hline
+                    \((0;+\infty)\) & \(\R\) & creciente\\
+                    \hline
+                \end{tabular}
+            \end{center}
+            &
+            Si \(0<a<1\), el gráfico de \(h(x)=\log_a(x)\) es de la forma
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        scale=0.8,
+                        axis lines = middle,
+                        axis equal,
+                        xlabel = \(x\),
+                        ylabel = {\(y\)},
+                        domain=-5:5,
+                        samples= 100,
+                        ymin=-2,
+                        ymax=4
+                    ]
+                    \addplot[color=blue] {Log(0.5,\x)};
+                    \addlegendentry{\(\log_\frac{1}{2}(x)\)}
+                    \end{axis}
+                \end{tikzpicture} 
+            \end{center} y entonces,
+            \begin{center}
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    Dominio & Imagen & Monotonía\\\hline
+                    \((0;+\infty)\) & \(\R\) & decreciente\\
+                    \hline
+                \end{tabular}
+            \end{center}
+        \end{tabularx}
         Como, para a fijo, la función \(f^{−1}(x) = \log_a(x)\) es la inversa de \(f(x) = a^x\), resulta que
         \begin{center}
            \(a^{\log_a(x)}=x\) y \(\log_a(a^x)=x\)
         \end{center}
         En el caso en que la base del logaritmo sea el número \(e\), el logaritmo se llama \textit{logaritmo natural} y se nota \(\log_e(x) = \ln(x)\).
+        \subsubsection{Función trigonométrica}
+        En lo que sigue, vamos a trabajar con ángulos. Por las buenas propiedades que tiene desde el punto de vista del análisis, la unidad de medida de ángulos que se utiliza es el radián. La medida de un ángulo en radianes equivale al recorrido del arco de dicho ángulo en una circunferencia de radio 1. Por ejemplo, si queremos medir en radianes un ángulo de \(360\degree\), su arco recorre toda la circunferencia que tiene longitud \(2\pi \cdot 1\) (pues el radio es 1) con lo cual \[360\degree=2\pi\]
+        Con esta equivalencia y por proporcionalidad directa, estamos en condiciones de calcular cuánto vale en radianes cualquier ángulo dado en grados. Por ejemplo:\\
+        \begin{center}
+            \begin{tabularx}{\textwidth}{|m{2cm}|X|X|X|X|X|X|X|X|}
+                \hline
+                Radianes & 0 & \(\frac{\pi}{6}\) & \(\frac{\pi}{4}\) & \(\frac{\pi}{3}\) & \(\frac{\pi}{2}\) & \(\pi\) & \(\frac{3}{2}\pi\) & \(2\pi\)\\\hline
+                Grados & \(0\degree\) & \(30\degree\) & \(45\degree\) & \(60\degree\) & \(90\degree\) & \(180\degree\) & \(270\degree\) & \(360\degree\)\\\hline
+            \end{tabularx}
+        \end{center}
+        Consideremos un triángulo rectángulo como el de la siguiente figura:
+        \begin{center}
+            \begin{tikzpicture}
+                \draw (0,0) coordinate (a) node[below] {A}
+                -- (4,0) coordinate (b) node[below] {B}
+                -- (4,4) coordinate (c) node[above] {C}
+                -- cycle
+                pic[pic text=\(\alpha\), draw=red, angle eccentricity=1.5, angle radius=1cm]{angle=b--a--c};
+            \end{tikzpicture}
+        \end{center}
+        Para el ángulo agudo \(\alpha\) se definen los valores del seno y del coseno de \(\alpha\) de la siguiente manera:
+        \[\sin(\alpha)=\frac{\overline{BC}}{\overline{AC}}\qquad\text{y}\qquad\cos(\alpha)=\frac{\overline{AB}}{\overline{AC}}\]
+        Estos valores dependen únicamente de la medida del ángulo \(\alpha\) y no del tama˜no del triángulo rectángulo. Es decir, si cambiamos el triángulo rectángulo por otro con ángulo \(\alpha\), los cocientes anteriores valen lo mismo.\\
+        Si calculamos \[\sin^2(\alpha)+\cos^2(\alpha)=\frac{\overline{BC}^2}{\overline{AC}^2}+\frac{\overline{AB}^2}{\overline{AC}^2}=\frac{\overline{BC}^2+\overline{AB}^2}{\overline{AC}^2}\underbrace{=}_{\text{por Pitágoras}}\frac{\overline{AC}^2}{\overline{AC}^2}=1\]
+        La identidad \(\sin^2(\alpha) + \cos^2(\alpha) = 1\) vale para cualquier valor que tome \(\alpha\) y se llama la \textit{identidad pitagórica}.\\
+        A continuación damos algunos valores del seno y del coseno:
+        \begin{center}
+            \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+                \hline
+                \(\alpha\) & 0 & \(\frac{\pi}{6}\) & \(\frac{\pi}{4}\) & \(\frac{\pi}{3}\) & \(\frac{\pi}{2}\)\\\hline
+                \(\sin(\alpha)\) & 0 & \(\frac{1}{2}\) & \(\frac{\sqrt{2}}{2}\) & \(\frac{\sqrt{3}}{2}\) & 1\\\hline
+                \(\cos(\alpha)\) & 1 & \(\frac{\sqrt{3}}{2}\) & \(\frac{\sqrt{2}}{2}\) & \(\frac{1}{2}\) & 0\\\hline
+            \end{tabularx}
+        \end{center}
+        Notemos que, cuando dos ángulos \(\alpha\) y \(\beta\) son \textit{complementarios} (es decir, suman \(\frac{\pi}{2}\)), el seno de uno es el coseno del otro y viceversa, pues son los dos ángulos agudos de un triángulo rectángulo:
+        \begin{center}
+            \begin{tikzpicture}
+                \draw (0,0) coordinate (a) node[below] {A}
+                -- (4,0) coordinate (b) node[below] {B}
+                -- (4,4) coordinate (c) node[above] {C}
+                -- cycle
+                pic[pic text=\(\alpha\), draw=red, angle eccentricity=1.5, angle radius=1cm]{angle=b--a--c}
+                pic[pic text=\(\beta\), draw=red, angle eccentricity=1.5, angle radius=1cm]{angle=a--c--b};
+            \end{tikzpicture}
+        \end{center}
+        Por ejemplo, en la figura, \(\sin(\beta)=\frac{\overline{AB}}{\overline{AC}}=\cos(\alpha)\).\\
+        \textbf{Extensión del seno y del coseno a ángulos en el intervalo \([0; 2\pi]\) y luego a cualquier valor real:}\\
+        Consideremos primero el seno. Dibujamos una circunferencia de radio 1, y en cada caso, la medida del segmento vertical es el valor de \(\sin(\alpha)\), ya que la hipotenusa del triángulo coincide con el radio, que vale 1. En los dos primeros casos, el seno será positivo y en los últimos dos, será negativo:
+        \begin{center}
+            \begin{tabularx}{\textwidth}{XXXX}
+                \begin{tikzpicture}
+                    \draw (0cm,0cm) circle(1.5cm);
+                    \draw[dashed] (-1.5cm,0cm) -- (1.5cm,0cm);
+                    \draw[dashed] (0cm,-1.5cm) -- (0cm,1.5cm);
+                    \draw[draw=blue,very thick] (1.5,0) coordinate(a) -- (0,0) coordinate (b) -- (70:1.5) coordinate (c)
+                    pic[pic text=\(\scriptstyle\alpha\), draw=blue,angle eccentricity=.6, angle radius=5mm]{angle=a--b--c};
+                    \draw[draw=red,very thick] (c) -- node[right]{\(\scriptstyle\sin(\alpha)\)} node[above right=2mm]{+} (0.5,0);
+                \end{tikzpicture}&
+                \begin{tikzpicture}
+                    \draw (0cm,0cm) circle(1.5cm);
+                    \draw[dashed] (-1.5cm,0cm) -- (1.5cm,0cm);
+                    \draw[dashed] (0cm,-1.5cm) -- (0cm,1.5cm);
+                    \draw[draw=blue,very thick] (1.5,0) coordinate(a) -- (0,0) coordinate (b) -- (110:1.5) coordinate (c)
+                    pic[pic text=\(\scriptstyle\alpha\), draw=blue,angle eccentricity=.6, angle radius=5mm]{angle=a--b--c};
+                    \draw[draw=red,very thick] (c) -- node[left]{\(\scriptstyle\sin(\alpha)\)} node[above left=2mm]{+} (-0.5,0);
+                \end{tikzpicture}&
+                \begin{tikzpicture}
+                    \draw (0cm,0cm) circle(1.5cm);
+                    \draw[dashed] (-1.5cm,0cm) -- (1.5cm,0cm);
+                    \draw[dashed] (0cm,-1.5cm) -- (0cm,1.5cm);
+                    \draw[draw=blue,very thick] (1.5,0) coordinate(a) -- (0,0) coordinate (b) -- (250:1.5) coordinate (c)
+                    pic[pic text=\(\scriptstyle\alpha\), draw=blue,angle eccentricity=.6, angle radius=5mm]{angle=a--b--c};
+                    \draw[draw=red,very thick] (c) -- node[left]{\(\scriptstyle\sin(\alpha)\)} node[below left=2mm]{-} (-0.5,0);
+                \end{tikzpicture}&
+                \begin{tikzpicture}
+                    \draw (0cm,0cm) circle(1.5cm);
+                    \draw[dashed] (-1.5cm,0cm) -- (1.5cm,0cm);
+                    \draw[dashed] (0cm,-1.5cm) -- (0cm,1.5cm);
+                    \draw[draw=blue,very thick] (1.5,0) coordinate(a) -- (0,0) coordinate (b) -- (290:1.5) coordinate (c)
+                    pic[pic text=\(\scriptstyle\alpha\), draw=blue,angle eccentricity=.6, angle radius=5mm]{angle=a--b--c};
+                    \draw[draw=red,very thick] (c) -- node[right]{\(\scriptstyle\sin(\alpha)\)} node[below right=2mm]{-} (0.5,0);
+                \end{tikzpicture}
+            \end{tabularx}
+        \end{center}
+        De esta manera, se puede definir el seno de cualquier ángulo entre 0 y \(2\pi\), y para los números mayores o menores, se considera el valor del seno del ángulo que forman sin contar las vueltas de más que se den en sentido horario o antihorario. Entonces, tenemos la función \(sen : \R \rightarrow \R\) que podemos graficar usando la circunferencia de radio 1 como auxiliar:
+        \begin{center}
+            \begin{scaletikzpicturetowidth}{\linewidth}
+                \begin{tikzpicture}[scale=\tikzscale]
+                    \draw[->] (0,-2) -- (0,2);
+                    \draw[dashed] (0,0) -- ({-2.5*pi},0);
+                    \draw[->] ({-.5*pi},0) -- ({2.5*pi},0);
+                    \draw[thick,color=blue,domain={-.5*pi}:{2.5*pi},samples=100] plot (\x,{sin(\x r)}) node[above left] {\(f(x)=\sin(x)\)};
+                    \draw ({-1.5*pi},0) circle(1);
+                    \foreach \x in {0,pi/4,pi/2,pi*5/6,pi*1,pi*5/4,pi*3/2,pi*11/6} {
+                        \draw[dashed] (\x,0) -- (\x,{sin(\x r)}) node[shape=circle,fill=black,scale=0.4](l){};
+                        \draw[dashed] ({-1.5*pi},0) -- ({cos(\x r)-1.5*pi},{sin(\x r)}) node[shape=circle,fill=black,scale=0.4](c){};
+                        \draw[thick,color=blue] (c) -- ({cos(\x r)-1.5*pi},0);
+                        \draw[dashed] (l) -- (c);
+                    }
+                    \draw ({pi*1},0.4) node{\(\scriptstyle\pi\)};
+                    \draw (0.2,1.2) node{\(\scriptstyle 1\)};
+                    \draw (0.2,-0.2) node{\(\scriptstyle 0\)};
+                    \draw (0.2,-1.2) node{\(\scriptstyle -1\)};
+                \end{tikzpicture}
+            \end{scaletikzpicturetowidth}
+        \end{center}
+        La función \(sen: \R\rightarrow\R\) dibujada arriba en rojo tiene por dominio a \(Dom(sen) = \R\), su imagen es \(Im(sen) = [−1; 1]\) y es periódica de período \(2\pi\), es decir que la función se repite cada \(2\pi\) o, escrito más formalmente, \(sen(x) = sen(x + 2k\pi)\) para todo \(x \in \R\) con \(k \in \Z\).\\
+        Un estudio similar al hecho con la función seno puede hacerse con la función coseno y se obtiene el siguiente gráfico:
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    axis lines = middle,
+                    axis equal,
+                    xlabel = \(x\),
+                    ylabel = {\(y\)},
+                    samples= 100,
+                    ymin=-1,
+                    ymax=1,
+                    width=12cm, height=5cm
+                ]
+                \addplot[color=blue] {cos(deg(x))};
+                \addlegendentry{\(\cos(x)\)}
+                \end{axis}
+            \end{tikzpicture} 
+        \end{center}
+        La función \(cos:\R\rightarrow\R\), dibujada arriba en rojo tiene por dominio a \(Dom(cos) = \R\), su imagen es \(Im(cos) = [−1; 1]\) y también es periódica de período \(2\pi\).\\
+        Algunas fórmulas que pueden ser utiles para resolver ecuaciones que involucran funciones trigonométricas son las fórmulas del seno y del coseno de una suma que valen para cualquier par de números reales \(\alpha\) y \(\beta\):
+        \[\sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\]
+        \[\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\]
+        Si se aplica cuando \(\alpha=\beta\) dan
+        \[\sin(2\alpha)=2\sin(\alpha)\cos(\alpha)\]
+        \[\cos(2\alpha)=\cos^2(\alpha)-\sin^2(\alpha)\]
 \end{document}
