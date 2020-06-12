@@ -715,7 +715,7 @@
         Consideremos un triángulo rectángulo como el de la siguiente figura:
         \begin{center}
             \begin{tikzpicture}
-                \draw (0,0) coordinate (a) node[below] {A}
+                \draw[thick] (0,0) coordinate (a) node[below] {A}
                 -- (4,0) coordinate (b) node[below] {B}
                 -- (4,4) coordinate (c) node[above] {C}
                 -- cycle
@@ -739,7 +739,7 @@
         Notemos que, cuando dos ángulos \(\alpha\) y \(\beta\) son \textit{complementarios} (es decir, suman \(\frac{\pi}{2}\)), el seno de uno es el coseno del otro y viceversa, pues son los dos ángulos agudos de un triángulo rectángulo:
         \begin{center}
             \begin{tikzpicture}
-                \draw (0,0) coordinate (a) node[below] {A}
+                \draw[thick] (0,0) coordinate (a) node[below] {A}
                 -- (4,0) coordinate (b) node[below] {B}
                 -- (4,4) coordinate (c) node[above] {C}
                 -- cycle
@@ -834,4 +834,77 @@
         Si se aplica cuando \(\alpha=\beta\) dan
         \[\sin(2\alpha)=2\sin(\alpha)\cos(\alpha)\]
         \[\cos(2\alpha)=\cos^2(\alpha)-\sin^2(\alpha)\]
+        \subsubsection{Función módulo}
+        Otra función usual que es util es la función que a cada número real le calcula la distancia del número al cero. Esta función se llama módulo o valor absoluto y se simboliza con la variable entre dos barras verticales (\(|x|\) que se lee módulo de \(x\)).\\
+        Por ejemplo, \(|3| = 3\) pues la distancia del 3 al 0 es 3 y \(|−5| = 5\) pues la distancia del −5 al 0 es 5. Podemos pensar, entonces, que la función módulo ”le saca el signo” al número que se la calculamos.\\
+        Si queremos dar una definición precisa de esta función, es fácil ver que, para los números positivos o cero (es decir, para \(x \geq 0\)), vale que \(|x| = x\).\\
+        Sin embargo, a los números negativos la función les cambia el signo, y una forma de cambiarle el signo a un número es poniéndole un signo \(−\) adelante. Entonces, para \(x < 0\), vale que \(|x| = −x\).\\
+        La definición de la función módulo es la que sigue: 
+        \[|x|=
+            \begin{cases}
+                x & \text{si }x\geq0\\
+                -x & \text{si }x<0
+            \end{cases}
+        \]
+        Esta definición significa que, si nos dan un valor \(x\) para aplicarle la función, lo primero que debemos observar es cuál condición cumple, es decir si \(x \geq 0\) o si \(x < 0\). De acuerdo a esta condición, aplicamos la fórmula correspondiente.\\
+        Por ejemplo, para calcular \(|−4|\), lo primero que vemos es que \(−4 < 0\), luego debemos usar el segundo renglón de la definición y resulta que \(|−4|=−(−4)=4\).\\
+        Notemos que la función módulo coincide con la recta \(y=x\) para los \(x\geq 0\) y con la recta \(y=−x\) para los \(x<0\), por lo que su gráfico resulta
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    axis lines = middle,
+                    axis equal,
+                    xlabel = \(x\),
+                    ylabel = {\(y\)},
+                    samples= 100,
+                ]
+                \addplot[color=blue] {abs(x)};
+                \addlegendentry{\(|x|\)}
+                \end{axis}
+            \end{tikzpicture} 
+        \end{center}
+        \subsubsection{Función partida}
+        Así como sucede con la función módulo que definimos antes, una función puede estar definida por distintas fórmulas, dependiendo el valor de x al que se la aplicamos.\\
+        Ejemplo. Consideremos la función
+        \[f(x)=
+            \begin{cases}
+                3x+5 & \text{si }x\leq -2\\
+                x^2 & \text{si }-2<x<2\\
+                -x+3 & \text{si }2\leq x
+            \end{cases}
+        \]
+        Resulta que
+        \begin{itemize}
+            \item \(f(-4)=3(-4)+5=-7\) pues \(-4\leq -2\)
+            \item \(f(-1)=(-1)^2=1\) pues \(-2< -1<2\)
+            \item \(f(5)=-5+3=-2\) pues \(2\leq 5\)
+        \end{itemize}
+        Si queremos hacer un gráfico de esta función, coincidirá con la recta \(y =3x+5\) para \(x\leq−2\), con la parábola \(y=x^2\) para \(−2<x<2\) y con la recta \(y=−x+3\) para \(2\leq x\). Luego será aproximadamente así:
+        \begin{center}
+            \begin{tikzpicture}[
+                declare function={
+                    f(\x)=(\x< -2) * (3*\x+5) + %hay un bug gráfico que muestra una línea entre la ecuación lineal y la cuadratica en x=2
+                    and(-2<=\x,\x<2) * (\x^2) + %por eso modifiqué la condición para que se vea bien
+                    (2<=\x) * (-\x+3);
+                }
+            ]
+                \begin{axis}[
+                    axis lines = middle,
+                    axis equal,
+                    xlabel = \(x\),
+                    ylabel = {\(y\)},
+                    samples= 100,
+                    ymax=5,
+                    ymin=-5
+                ]
+                \foreach \xStart/\xEnd  in {-4/-2, -2/2, 2/8} {
+                    \addplot[domain=\xStart:\xEnd, blue, samples=100] {f(x)};
+                }
+                \draw [draw=blue, fill=blue, thick] (axis cs:-2,-1) circle (2.0pt);
+                \draw [draw=blue, fill=white, thick] (axis cs:-2,4) circle (2.0pt);
+                \draw [draw=blue, fill=white, thick] (axis cs:2,4) circle (2.0pt);
+                \draw [draw=blue, fill=blue, thick] (axis cs:2,1) circle (2.0pt);
+                \end{axis}
+            \end{tikzpicture} 
+        \end{center}
 \end{document}
