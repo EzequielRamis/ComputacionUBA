@@ -381,6 +381,13 @@
 
   \item A qué altura debe de estar elevado un costal de peso \SI{840}{\kilo\gram} para que su energía
         potencial sea de \SI{34354}{\joule}.
+        \begin{center}
+          \[ U = mgy \]
+          \[ \SI{34354}{\joule} = \SI{840}{\kilo\gram}\cdot\SI{9,80}{\m\per\s\squared}y \]
+          \[ \SI{34354}{\newton\meter} = \SI{8232}{\newton}y \]
+          \[ \frac{\SI{34354}{\cancel\newton\meter}}{\SI{8232}{\cancel\newton}} = y \]
+          \[ \boxed{\SI{4,17}{\meter} = y} \]
+        \end{center}
 
   \item Se desea subir una caja de \SI{24}{\kilo\gram} por una rampa de \SI{2,5}{\meter} de longitud que se encuentra
         inclinada \ang{30} respecto al piso.
@@ -400,8 +407,27 @@
         la calle. Calcular:
         \begin{enumerate}
           \item La energía potencial respecto al suelo de la calle en el momento de soltarla
+                \begin{center}
+                  \[ U = mgy \]
+                  \[ U = \SI{0,50}{\kilo\gram}\cdot\SI{9,80}{\m\per\s\squared}\cdot\SI{30,0}{\meter} \]
+                  \[ \boxed{U = \SI{147}{\joule}} \]
+                \end{center}
           \item La energía cinética en el momento de llegar al suelo.
+                \begin{center}
+                  \[ E_i = U_i + K_i \]
+                  \[ E_i = \SI{147}{\joule} + \SI{0}{\joule} \]
+                  \[ E_f = \SI{0}{\joule} + \SI{147}{\joule} \]
+                  \[ \boxed{K_f = \SI{147}{\joule}} \]
+                \end{center}
           \item La velocidad de llegada al suelo.
+                \begin{center}
+                  \[ K_f = \frac{1}{2}m{v_f}^2 \]
+                  \[ \SI{147}{\joule} = \frac{1}{2}\SI{0,50}{\kilo\gram}{v_f}^2 \]
+                  \[ \SI{147}{\cancel\kilo\gram\m\per\s\squared\m} = \SI{0,25}{\cancel\kilo\gram}{v_f}^2 \]
+                  \[ \frac{\SI{147}{(\m\per\s)^2}}{0,25} = {v_f}^2 \]
+                  \[ \sqrt{\SI{588}{(\m\per\s)^2}} = v_f \]
+                  \[ \boxed{v_f = \SI{24,3}{\m\per\s}} \]
+                \end{center}
         \end{enumerate}
 
   \item En una feria nos subimos a una “Barca Vikinga” que oscila como un péndulo. Si en el
@@ -416,17 +442,83 @@
         con una velocidad de \SI{20}{\m/\s}. Calcular:
         \begin{enumerate}
           \item Su energía mecánica respecto del suelo.
+                \begin{center}
+                  \[ E = U + K \]
+                  \[ K = \frac{1}{2}mv^2 \]
+                  \[ K = \frac{1}{2}\cdot\SI{0,500}{\kilo\gram}\cdot(\SI{20}{\m/\s})^2 \]
+                  \[ K = \SI{100}{\joule} \]
+                  \[ U = mgy \]
+                  \[ U = \SI{0,500}{\kilo\gram}\cdot\SI{9,80}{\m\per\s\squared}\cdot\SI{15}{\m} \]
+                  \[ U = \SI{74}{\joule} \]
+                  \[ E = \SI{74}{\joule} + \SI{100}{\joule} \]
+                  \[ \boxed{E = \SI{174}{\joule}} \]
+                \end{center}
           \item Hasta qué altura subirá.
+                \begin{center}
+                  \[ U_2: \text{E. potencial cuando $K = \SI{0}{\joule}$} \]
+                  \[ K_i = \delta U \]
+                  \[ \num{1/2}m{v_i}^2 = mg\delta y \]
+                  \[ \num{1/2}\cdot\cancel{\SI{0,500}{\kilo\gram}}(\SI{20}{\m\per\s})^2
+                    = \cancel{\SI{0,500}{\kilo\gram}}\cdot\SI{9,80}{\m\per\s\squared}\cdot \delta y \]
+                  \[ \num{1/2}\cdot\SI{400}{\meter}\cdot\cancel{\si{\m\per\s\squared}}
+                    = \num{9,80}\cdot\cancel{\si{\m\per\s\squared}} \delta y \]
+                  \[ \SI{20,41}{\meter} = \delta y \]
+                  \[ y_{max} = y_i + \delta y \]
+                  \[ y_{max} = \SI{15}{\meter} + \SI{20,41}{\meter} \]
+                  \[ \boxed{y_{max} = \SI{35,5}{\meter}} \]
+                \end{center}
           \item A qué velocidad pasará por delante de la ventana cuando baje.
+                \begin{center}
+                  \[ \num{1/2}m{v_i}^2 = mg\delta y \]
+                  \[ \num{1/2}\cancel{\SI{0,500}{\kilo\gram}}v^2 = \cancel{\SI{0,500}{\kilo\gram}}\cdot\SI{9,80}{\m\per\s\squared}\cdot\SI{20,41}{\meter} \]
+                  \[ v^2 = \num{2}\cdot\SI{200,08}{(\meter\per\second)\squared} \]
+                  \[ \sqrt{v^2} = \sqrt{\SI{400}{(\m\per\s)\squared}} \]
+                  \[ v = \SI{20}{\meter\per\second} \]
+                \end{center}
           \item A qué velocidad llegará al suelo.
+                \begin{center}
+                  \[ \num{1/2}m{v_i}^2 = mg\delta y \]
+                  \[ \num{1/2}\cancel{\SI{0,500}{\kilo\gram}}v^2 = \cancel{\SI{0,500}{\kilo\gram}}\cdot\SI{9,80}{\m\per\s\squared}\cdot\SI{35,5}{\meter} \]
+                  \[ v^2 = \num{2}\cdot\SI{347,90}{(\meter\per\second)\squared} \]
+                  \[ \sqrt{v^2} = \sqrt{\SI{695,80}{(\m\per\s)\squared}} \]
+                  \[ v = \SI{26,3}{\meter\per\second} \]
+                \end{center}
         \end{enumerate}
 
   \item Subimos un carrito de \SI{50}{\kilo\gram} por una rampa de \SI{30}{\meter} de longitud inclinada \ang{10}. Si no hay
         rozamiento, calcula:
         \begin{enumerate}
           \item El trabajo que hay que hacer para subir el carrito hasta lo alto de la rampa.
+                \begin{center}
+                  \[ W_f - W_i = U_i - U_f \]
+                  \[ \SI{0}{\joule} - W_i = \SI{0}{\joule} - U_f \]
+                  \[ U_f = mgy_f \]
+                  \[ U_f = \SI{50}{\kilo\gram}\SI{9,80}{\meter\per\second\squared}h \]
+                  \[ h = sen\ang{10}\cdot\SI{30}{\meter} \]
+                  \[ h = \SI{5,21}{\meter} \]
+                  \[ U_f = \SI{50}{\kilo\gram}\SI{9,80}{\meter\per\second\squared}\SI{5,21}{\meter} \]
+                  \[ U_f = \SI{2552,9}{\joule} \]
+                  \[ \SI{0}{\joule} - W_i = \SI{0}{\joule} - \SI{2552,9}{\joule} \]
+                  \[ \boxed{W_i = \SI{2552,9}{\joule}} \]
+                \end{center}
           \item La energía potencial que tendrá el carrito cuando esté arriba
+                \begin{center}
+                  \[ U_f = \SI{50}{\kilo\gram}\SI{9,80}{\meter\per\second\squared}\SI{6,21}{\meter} \]
+                  \[ \boxed{U_f = \SI{2552,9}{\joule}} \]
+                \end{center}
           \item La velocidad a la que llegará a la parte baja de la rampa el carrito si lo dejamos caer.
+                \begin{center}
+                  \[ K = \num{1/2}mv^2 \]
+                  \[ K_1 + U_1 = K_2 + U_2 \]
+                  \[ \SI{0}{\joule} + \SI{2552,9}{\joule} = \SI{2552,9}{\joule} + \SI{0}{\joule} \]
+                  \[ K_2 = \SI{2552,9}{\joule} \]
+                  \[ \num{1/2}\SI{50}{\kilo\gram}v^2 = U \]
+                  \[ \num{1/2}\SI{50}{\kilo\gram}v^2 = \SI{50}{\kilo\gram}\SI{9,80}{\meter\per\second\squared}\SI{5,21}{\meter} \]
+                  \[ \cancel{\SI{50}{\kilo\gram}}v^2 = \cancel{\SI{50}{\kilo\gram}}\SI{51,058}{\meter\per\second\squared\meter}\cdot\num{2} \]
+                  \[ v^2 = \SI{102,116}{(\meter\per\second)\squared} \]
+                  \[ \sqrt{v^2 = \SI{102,116}{(\meter\per\second)\squared}} \]
+                  \[ \boxed{v = \SI{10,1}{\meter\per\second}} \]
+                \end{center}
         \end{enumerate}
 
   \item El esquema representa a Santiago con su
@@ -438,17 +530,67 @@
         derecho (masa de Santiago = \SI{70}{\kilo\gram})
         \begin{enumerate}
           \item ¿qué altura máxima podrá alcanzar?
+                \begin{center}
+                  \[ E_i = U_i \]
+                  \[ E_f = U_f = U_i - W_f \]
+                  \[ U_i = \SI{70,0}{\kilo\gram}\cdot\SI{9,80}{\m\per\s\squared}\cdot\SI{5,0}{\m} \]
+                  \[ U_i = \SI{3430}{\joule} \]
+                  \[ W_f = \SI{70}{\kilo\gram}\cdot\SI{9,80}{\m\per\s\squared}\cdot\num{0,30}\cdot\SI{3,0}{\meter} \]
+                  \[ W_f = \SI{617,4}{\joule} \]
+                  \[ E_f = \SI{3430}{\joule} - \SI{617,4}{\joule} \]
+                  \[ E_f = \SI{2812,6}{\joule} \]
+                  \[ U_f = \SI{2812,6}{\joule} = \SI{70,0}{\kilo\g}\cdot\SI{9,80}{\m\per\s\squared}\cdot h_f \]
+                  \[ \SI{2812,6}{\joule} = \SI{70,0}{\kilo\g}\cdot\SI{9,80}{\m\per\s\squared}\cdot h_f \]
+                  \[ \SI{2812,6}{\m}\cancel{\si{\kilo\g\m\per\s\squared}} = \SI{70,0}{\cancel\kilo\g}\cdot\SI{9,80}{\cancel\m\per\cancel\s\squared}\cdot h_f \]
+                  \[ \frac{\SI{2812,6}{\m}}{\num{70,0\cdot 9,80}} = h_f \]
+                  \[ \boxed{h_f = \SI{4,10}{\meter}} \]
+                \end{center}
           \item ¿Con qué velocidad inicial debería iniciar el descenso desde la izquierda para poder
                 subir completamente por el lado derecho?
+                \[ E_i = U_i + K_i \]
+                \[ E_f = U_f \]
+                \[ h_i = h_f \Rightarrow U_f = U_i = \SI{3430}{\joule} \]
+                \[ E_f = U_i + K_i - W_f \]
+                \[ \SI{3430}{\joule} = \SI{3430}{\joule} + K_i - \SI{617,4}{\joule} \]
+                \[ K_i = \SI{617,4}{\joule} \]
+                \[ \num{1/2}\cdot\SI{70,0}{\kilo\gram}v^2 = \SI{617,4}{\joule} \]
+                \[ \SI{35,0}{\cancel\kilo\gram}v^2 = \SI{617,4}{\cancel\kilo\gram\m\per\s\squared\m} \]
+                \[ v^2 = \frac{\SI{617,4}{(\m\per\s)\squared}}{\num{35,0}} \]
+                \[ v^2 = \SI{17,64}{(\m\per\s)\squared} \]
+                \[ \sqrt{v^2 = \SI{17,64}{(\m\per\s)\squared}} \]
+                \[ \boxed{v = \SI{4,20}{\m\per\s}} \]
         \end{enumerate}
 
   \item Una bola de \SI{1,80}{\kilo\gram} se libera desde el reposo por encima de
-        un resorte de ideal de constante elástica $K$. La bola alcanza al
+        un resorte ($y_i = \SI{65,0}{\centi\meter}$) de ideal de constante elástica $K$. La bola alcanza al
         resorte, comprimiéndolo \SI{9,00}{\centi\meter}
         \begin{enumerate}
           \item Calcule la velocidad de la bola en el momento en que toca al
                 resorte
+                \begin{center}
+                  \[ U_g = mgy \]
+                  \[ K = \num{1/2}mv^2  \]
+                  \[ E_i = U_g \]
+                  \[ E_r = K_r \]
+                  \[ E_i = E_r \]
+                  \[ \cancel{\SI{1,80}{\kilo\gram}}\cdot\SI{9,80}{\m\per\s\squared}\cdot\SI{0,650}{\m}
+                     = \num{1/2}\cdot\cancel{\SI{1,80}{\kilo\gram}}\cdot v^2 \]
+                  \[ \num{2}\cdot\SI{6,37}{(\m\per\s)^2} = v^2 \]
+                  \[ \SI{12,74}{(\m\per\s)^2} = v^2 \]
+                  \[ \boxed{v = \SI{3,57}{\m\per\s}} \]
+                \end{center}
           \item Calcule la constante de fuerza $K$ del resorte
+                \begin{center}
+                  \[ K_r = \num{1/2}mv^2 \]
+                  \[ U_{el} = \num{1/2}Ky^2 \]
+                  \[ \SI{0}{\joule} = K_r - U_{el} \]
+                  \[ K_r = U_{el} \]
+                  \[ \cancel{\num{1/2}}\cdot\SI{1,80}{\kilo\gram}\cdot(\SI{3,57}{\m\per\s})^2
+                    = \cancel{\num{1/2}}K(\SI{0,0900}{\m})^2 \]
+                  \[ \frac{\SI{22,94}{\m\squared\per\s\squared}}{(\SI{0,0900}{\m})^2} = K \]
+                  \[ \SI{2832,2}{\newton\per\meter}\si{\cancel\m\per\cancel\m} = K \]
+                  \[ \boxed{K = \SI{2832,2}{\newton\per\meter}} \]
+                \end{center}
         \end{enumerate}
 
 \end{enumerate}
