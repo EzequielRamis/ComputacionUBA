@@ -378,6 +378,27 @@
 \begin{enumerate}
   \item Un avión vuela con una velocidad de \SI{720}{\km\per\hour} a una altura de \SI{3}{\km} sobre el suelo. Si la
         masa del avión es de \SI{2500}{\kilo\gram}, ¿cuánto vale su energía mecánica total?
+        \begin{center}
+          \[ \SI{720}{\km\per\hour} =
+            \SI{720}{\km\per\hour}
+            \cdot\SI{1000}{\m\per\km}
+            \cdot\SI{1/3600}{\hour\per\second} \]
+          \[ \SI{720}{\km\per\hour} =
+            \SI{720}{\cancel\km\per\cancel\hour}
+            \cdot\SI{1000}{\m\per\cancel\km}
+            \cdot\SI{1/3600}{\cancel\hour\per\second} \]
+          \[ \SI{720}{\km\per\hour} = \num{720}\cdot\SI{1000 / 3600}{\m\per\s} \]
+          \[ \SI{720}{\km\per\hour} = \SI{720\cdot 10/36}{\m\per\s} \]
+          \[ \SI{720}{\km\per\hour} = \SI{200}{\m\per\s} \]
+          \[ E = U_g + K \]
+          \[ U_g = mgy \]
+          \[ U_g = \SI{2500}{\kilo\g}\cdot\SI{9,80}{\m\per\s\squared}\cdot\SI{3000}{\meter} \]
+          \[ U_g = \SI{73,5}{\mega\joule} \]
+          \[ K = \num{1/2}mv^2 \]
+          \[ K = \num{1/2}\cdot\SI{2500}{\kilo\g}\cdot(\SI{200}{\m\per\s})^2 \]
+          \[ K = \SI{50}{\mega\joule} \]
+          \[ \boxed{E = \SI{1,235e8}{\joule}} \]
+        \end{center}
 
   \item A qué altura debe de estar elevado un costal de peso \SI{840}{\kilo\gram} para que su energía
         potencial sea de \SI{34354}{\joule}.
@@ -396,11 +417,53 @@
                 velocidad inicial que debe imprimirse a la caja para poder llegar al final de la rampa (\SI{2,5}{\meter})?
                 ¿Cuánto es el valor que posee la energía mecánica inicialmente? ¿Y al llegar al final
                 de la rampa?
+                \begin{center}
+                  \[ w = \SI{24}{\kilo\gram}\cdot\SI{-9,80}{\m/\s\squared}  \]
+                  \[ w = \SI{235,2}{\newton} \]
+                  \[ h = sen\ang{30}\cdot\SI{2,5}{\meter} \]
+                  \[ h = \SI{1,25}{\meter} \]
+                  \[ W_i = w\cdot h \]
+                  \[ W_i = \SI{235,2}{\newton}\cdot\SI{1,25}{\meter} \]
+                  \[ W_i = \SI{294}{\joule} \]
+                  \[ E_i = W_i + U_g \]
+                  \[ E_i = \SI{294}{\joule} + \SI{0}{\joule} \]
+                  \[ \boxed{E_i = \SI{294}{\joule}} \]
+                  \[ E_f = \SI{0}{\joule} + \SI{294}{\joule} \]
+                  \[ \boxed{E_f = \SI{294}{\joule}} \]
+                  \[ K = \frac{1}{2}mv^2 \]
+                  \[ \SI{294}{\joule} = \frac{1}{2}\SI{24}{\kilo\gram}{v_i}^2 \]
+                  \[ \SI{294}{\cancel\kg\m\per\s\squared\m} = \SI{12}{\cancel\kg}{v_i}^2 \]
+                  \[ \frac{\SI{294}{(\m\per\s)^2}}{12} = {v_i}^2 \]
+                  \[ \sqrt{\SI{24,5}{(\m\per\s)^2}} = v_i \]
+                  \[ \boxed{v_i = \SI{4,95}{\m\per\s}} \]
+                \end{center}
           \item Si ahora desea subir otra caja de \SI{24}{\kilo\gram} pero cuyo material posee un coeficiente de
                 fricción dinámico con la rampa de \num{0,29} y la arroja con la misma velocidad que calculó en
                 el ítem a), ¿a qué altura se detendrá la caja? ¿Cuánta distancia deslizó sobre la rampa?
                 ¿Cuánto vale la energía mecánica, la energía cinética y la energía potencial en la situación
                 inicial? ¿Y en la situación final?
+                \begin{center}
+                  \[ E_i = K_i \]
+                  \[ K_i = \num{1/2}\cdot\SI{24}{\kilo\gram}\cdot(\SI{4,95}{\mps})^2 \]
+                  \[ \boxed{E_i = K_i = \SI{294,03}{\joule}} \]
+                  \[ E_f = U_g + K_f = K_i - W_f \]
+                  \[ K_f = \SI{0}{\joule} \]
+                  \[ U_g = K_i - W_f \]
+                  \[ U_g = mgy \]
+                  \[ U_g = \SI{24}{\kilo\gram}\cdot\SI{9,8}{\mpss}\cdot(sen\ang{30}\cdot d) = d\cdot\SI{117,6}{\newton} \]
+                  \[ K_i = \SI{294}{\joule} \]
+                  \[ W_f = mg\mu_k\cdot d \]
+                  \[ W_f = \SI{24}{\kilo\gram}\cdot\SI{9,80}{\mpss}\cdot cos\ang{30}\cdot\num{0,29}\cdot d =  d\cdot\SI{59,1}{\newton} \]
+                  \[ d\cdot\SI{117,6}{\newton} = \SI{294}{\joule} - d\cdot\SI{59,1}{\newton}  \]
+                  \[ d(\SI{117,6}{\newton} + \SI{59,1}{\newton}) = \SI{294}{\joule} \]
+                  \[ d = \frac{\SI{294}{\newton\meter}}{\SI{176,7}{\newton}} \]
+                  \[ \boxed{d = \SI{1,66}{\meter}} \]
+                  \[ h = \SI{1,66}{\m}\cdot sin\ang{30} \]
+                  \[ \boxed{h = \SI{0,83}{\m}} \]
+                  \[ E_f = mgh \]
+                  \[ E_f = \SI{24}{\kilo\gram}\cdot\SI{9,80}{\mpss}\cdot\SI{0,83}{\meter} \]
+                  \[ \boxed{E_f = \SI{196}{\joule}} \]
+                \end{center}
         \end{enumerate}
 
   \item Dejamos caer una pelota de \SI{0,50}{\kilo\gram} desde una ventana que está a \SI{30,0}{\meter} de altura sobre
