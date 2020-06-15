@@ -12,7 +12,7 @@
 
 ## Sobre el repositorio
 
-En este repositorio estaremos subiendo resumenes y ejercicios resueltos de las materias que componen la carrera de Ciencias de la Computación.
+En este repositorio estaremos subiendo resúmenes y ejercicios resueltos de las materias que componen la carrera de Ciencias de la Computación.
 Los archivos están en formato Latex, sin embargo se pueden encontrar compilados a PDF en Google Drive. Estos PDFs se mantienen sincronizados con el ultimo commit de la branch [master](https://github.com/EzequielRamis/ComputacionUBA/tree/master).
 
 - [Link a Drive](https://drive.google.com/folderview?id=1KCt-wgOvoMxxG1Kntyqh-ikI0OhEqUVK)
@@ -24,30 +24,33 @@ Los archivos están en formato Latex, sin embargo se pueden encontrar compilados
 Toda materia está agrupada por área (basado en el listado de [Cuba-Wiki](https://www.cubawiki.com.ar/index.php/Lista_de_materias_de_computaci%C3%B3n)), y está dividida en teoría y práctica:
 
 ```none
-├───CBC
-│   ├───Álgebra
-│   │   ├───Práctica
+├───CBC/
+│   ├───Álgebra/
+│   │   ├───Práctica.root.tex
+│   │   ├───Práctica/
 │   │   │   ├───Unidad 1.tex
 │   │   │   ├───Unidad 2.tex
-│   │   │   ├───...
-│   │   │   └───Álgebra - Práctica.root.tex
-│   │   └───Teoría
+│   │   │   └───...
+│   │   │
+│   │   ├───Teoría.root.tex
+│   │   └───Teoría/
 │   │       ├───Unidad 1.tex
 │   │       ├───Unidad 2.tex
-│   │       ├───...
-│   │       └───Álgebra - Teoría.root.tex
-│   └───Química
+│   │       └───...
+│   │
+│   └───Química/
 │       └───...
-└───Matemática
+│
+└───Matemática/
     └───...
 ```
 
 ### Archivos
 
-Todo directorio, tanto de teoría o práctica, estan compuestos por dos tipos de archivos **.tex**:
+Todo directorio, tanto de teoría o práctica, están compuestos por dos tipos de archivos **.tex**:
 
-- `Unidad { N }.tex`
-- `{ Materia } - { Teoría | Práctica }.root.tex`
+- `{ Teoría | Práctica }.root.tex` (Dentro de la carpeta de la materia, junto a una carpeta del mismo nombre)
+- `Unidad { N }.tex` (Dentro de la carpeta que acompaña al archivo `root.tex`)
 
 El primero contiene la práctica o teoría de una unidad entera, mientras que el segundo tiene `\subfile`'s que importan el contenido de cada unidad. Los PDFs se compilan a partir de los `.root.tex`.
 
