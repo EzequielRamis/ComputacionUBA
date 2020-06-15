@@ -1,0 +1,74 @@
+% !TEX root = ../Teoría.root.tex
+
+\documentclass[../Teoría.root.tex]{subfiles}
+
+\begin{document}
+    \section{Sucesiones}
+    \subsection{Introducción}
+    Las sucesiones son objetos matemáticos muy sencillos que se apoyan en la ordenación de un conjunto (finito o infinito) de números reales. Sirven, por ejemplo, para estudiar, representar y predecir los fenómenos que ocurren o se miden en el tiempo, en forma intermitente.
+    \subsubsection{Un problema a modo de presentación}
+    El problema consiste en encontrar un algoritmo que calcule la raíz cuadrada de un número dado (por ejemplo \(\sqrt{2}\)), utilizando sólo las cuatro operaciones básicas.\\
+    Una solución al problema se basa en una idea geométrica:\\
+    Se construyen sucesivos rectángulos todos de área 2. La base de cada uno de ellos es el promedio de la base y la altura del anterior.
+    \begin{center}
+        \begin{scaletikzpicturetowidth}{\linewidth}
+            \begin{tikzpicture}[scale=\tikzscale]
+                \node(rect)[draw=black,ultra thick, minimum width=2*1cm,minimum height=2*2cm,label=right:2,label=below:1](A){\(\textstyle1\cdot2=2\)};
+                \node(rect)[right=of A,draw=black,ultra thick, minimum width=2*1.5cm,minimum height=2*1.333cm,label=right:\(\textstyle\frac{2}{1,5}\),label=below:\(\textstyle\text{\(\frac{1+2}{2}=1,5\)}\)](B){\(\textstyle1,5\cdot\frac{2}{1,5}=2\)};
+                \node(rect)[right=of B,draw=black,ultra thick, minimum width=2*1.417cm,minimum height=2*1.412cm,label=right:\(\textstyle\text{1,4118}\),label=below:\(\textstyle\text{\(\frac{1,5+\frac{2}{1,5}}{2}\cong1,4167\)}\)](c){\(\scriptstyle1,4167\cdot1,4118\cong2\)};
+            \end{tikzpicture}
+        \end{scaletikzpicturetowidth}
+    \end{center}
+    Designamos con \(x_1\) a la medida de la base del primer rectángulo, que elegimos que fuera igual a 1, con \(x_2\) a lo que mide la base del segundo rectángulo, y así sucesivamente.\\
+    Entonces resulta: \[x_1=1,x_2=\frac{x_1+\frac{2}{x_1}}{2}=1,5,x_3=\frac{x_2+\frac{2}{x_2}}{2}=1,4167,\dots,x_{n+1}=\frac{x_n+\frac{2}{x_n}}{2}\]
+    Geométricamente se observa que los rectángulos se van aproximando a un cuadrado de área 2, por lo cual las bases \(x_n\) se van aproximando al lado del cuadrado de área 2, es decir \(x_n\rightarrow\sqrt{2}\) (\(x_n\) se aproxima a \(\sqrt{2}\)).\\
+    \subsubsection{Ejemplos de sucesiones}
+    Consideramos los siguientes ejemplos:
+    \begin{enumerate}
+        \item \(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+        \item 1, 3, 5, 7, \dots
+        \item \(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
+        \item \(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+        \item 0, 1, 0, 1, \dots
+        \item 2, -4, 6, -8, \dots
+    \end{enumerate}
+    Informalmente, una \textit{sucesión} es una \textit{lista ordenada} e infinita de números reales.\\
+    Nos interesará el “comportamiento a la larga” de cada lista de números. En otras palabras, nos interesará saber si, a medida que avanzamos en la lista de números, éstos se parecen o aproximan a un número determinado. Habrá que dar más precisión a esta idea.\\
+    Observemos por el momento, que una lista ordenada de números se puede describir con el lenguaje de las funciones que vimos en el primer módulo, usando como conjunto “ordenador” a los números naturales.\\
+    Una \textit{sucesión} es una función \(a:\N\rightarrow\R\), se escribe \(a(n)=a_n\). Se lee “\(a\,sub\,n\)”. Indica el número real de la lista en la posición \(n\).\\
+    Observemos la lista de sucesiones con las que comenzamos esta sección:\\
+    En la sucesión \textbf{1.} \(a_3=\frac{1}{3}\) y \(a_{100}=\frac{1}{100}\); en la sección \textbf{4.} \(a_4=\frac{4}{5}\) y \(a_{1000}=\frac{1000}{1001}\).\\
+    Lo que interesará es el comportamiento de \(a_n\) para “valores grandes” de \(n\).
+    \subsubsection{Término general}
+    Es la expresión de \(a_n\) para cada \(n\). Analizamos cada una de las sucesiones anteriores
+    \begin{enumerate}
+        \item \(a_n=\frac{1}{n}\)\tab\(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+        \item \(a_n=2n-1\)\tab\(1,3,5,7,\dots\)
+        \item \(a_n=(-1)^n\frac{1}{2^n}\)\tab\(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
+        \item \(a_n=\frac{n}{n+1}\)\tab\(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+        \item \(a_n=\begin{cases}
+            0 &\text{si \(n\) es impar}\\
+            1 &\text{si \(n\) es par}
+        \end{cases}\)\tab\(0,1,0,1,\dots\)
+        \item \(a_n=(-1)^{n+1}2n\)\tab\(2,-4,6,-8,\dots\)
+    \end{enumerate}
+    \subsubsection{Representación gráfica}
+    Como una sucesión es una función admite una representación gráfica, veamos alguno de los ejemplos anteriores:
+    \begin{enumerate}
+        \item \(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\) 
+        \begin{center}
+            \begin{scaletikzpicturetowidth}{\linewidth}
+                \begin{tikzpicture}[scale=\tikzscale]
+                    \draw[->,thick] (0,-.1) -- (0,1.1);
+                    \draw[->,thick] (-.1,0) -- (2.1,0);
+                    \foreach \x/\xl/\y/\yl in {.2/1/1/1,.4/2/{1/2}/{1/2},.6/3/{1/3}/{1/3},.8/4/{1/4}/{1/4},1.4/\(n\)/{1/10}/{1/\(n\)}} {
+                        \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+                        \node (yl) at (0,\y){};
+                        \node (xl) at (\x,0){};
+                        \draw[dashed] node[left=1mm of yl]{\yl} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+                    }
+                \end{tikzpicture}
+            \end{scaletikzpicturetowidth}
+        \end{center}
+    \end{enumerate}
+\end{document}

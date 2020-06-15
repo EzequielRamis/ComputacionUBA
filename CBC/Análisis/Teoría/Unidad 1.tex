@@ -1,20 +1,11 @@
-% !TEX root = *.root.tex
+% !TEX root = ../Teoría.root.tex
 
-\documentclass[Análisis.root.tex]{subfiles}
-
-\usetikzlibrary{positioning,shapes,fit,arrows,angles,quotes}
-
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-
-\def\arraystretch{1.5}
+\documentclass[../Teoría.root.tex]{subfiles}
 
 \begin{document}
     \section{Números reales y Funciones}
     \subsection{Números reales}
-        \subsubsection{Definiciones}
+        \subsubsection{Introducción}
         Hasta el momento conocemos distintos conjuntos de números:
         \begin{itemize}
             \item Naturales, \(\N = \{1,2,3,4,...\}\)
@@ -224,7 +215,7 @@
             \item para cualquier \(r\) real positivo, existe un elemento \(a \in A\) tal que \(i \geq a \geq i + r\).
         \end{itemize}
     \subsection{Funciones}
-        \subsubsection{Definiciones}
+        \subsubsection{Introducción}
         Una función \(f: A \rightarrow B\) es una relación entre dos conjuntos, donde cada elemento del conjunto \(A\) señala un sólo elemento del conjunto \(B\).
         \begin{center}
             \begin{tikzpicture}[line width=1pt]
@@ -289,7 +280,7 @@
                     \addplot[color=red, 
                             domain=-10:10, 
                     ]{x/2+2};
-                    \addlegendentry{\(\frac{1}{2}x+2\)}
+                    \addlegendentry{\(\textstyle\frac{1}{2}x+2\)}
                 \end{axis}
             \end{tikzpicture}
         \end{center}
@@ -308,7 +299,7 @@
                         ymin = 0,
                     ]
                     \addplot[color=blue]{2*x^2+3*x+2};
-                    \addlegendentry{\(2x^2+3x+2\)}
+                    \addlegendentry{\(\textstyle2x^2+3x+2\)}
                 \end{axis}
             \end{tikzpicture}
         \end{center}
@@ -427,7 +418,7 @@
                         ymax = 5
                     ]
                     \addplot[color=blue]{1/x};
-                    \addlegendentry{\(\frac{1}{x}\)}
+                    \addlegendentry{\(\textstyle\frac{1}{x}\)}
                 \end{axis}
             \end{tikzpicture}
         \end{center}
@@ -603,7 +594,7 @@
                         ymin=-1
                     ]
                     \addplot[color=blue] {2^x};
-                    \addlegendentry{\(2^x\)}
+                    \addlegendentry{\(\textstyle2^x\)}
                     \end{axis}
                 \end{tikzpicture} 
             \end{center} 
@@ -631,7 +622,7 @@
                         ymin=-1
                     ]
                     \addplot[color=blue] {0.5^x};
-                    \addlegendentry{\(\frac{1}{2}^x\)}
+                    \addlegendentry{\(\textstyle\frac{1}{2}^x\)}
                     \end{axis}
                 \end{tikzpicture}
             \end{center} 
@@ -656,7 +647,7 @@
                         ymax=2
                     ]
                     \addplot[color=blue] {Log(2,\x)};
-                    \addlegendentry{\(\log_2(x)\)}
+                    \addlegendentry{\(\textstyle\log_2(x)\)}
                     \end{axis}
                 \end{tikzpicture} 
             \end{center} y entonces,
@@ -684,7 +675,7 @@
                         ymax=4
                     ]
                     \addplot[color=blue] {Log(0.5,\x)};
-                    \addlegendentry{\(\log_\frac{1}{2}(x)\)}
+                    \addlegendentry{\(\textstyle\log_\frac{1}{2}(x)\)}
                     \end{axis}
                 \end{tikzpicture} 
             \end{center} y entonces,
@@ -883,8 +874,8 @@
         \begin{center}
             \begin{tikzpicture}[
                 declare function={
-                    f(\x)=(\x< -2) * (3*\x+5) + %hay un bug gráfico que muestra una línea entre la ecuación lineal y la cuadratica en x=2
-                    and(-2<=\x,\x<2) * (\x^2) + %por eso modifiqué la condición para que se vea bien
+                    f(\x)=(\x<= -2) * (3*\x+5) +
+                    and(-2<\x,\x<2) * (\x^2) +
                     (2<=\x) * (-\x+3);
                 }
             ]
