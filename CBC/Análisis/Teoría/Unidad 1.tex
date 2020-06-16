@@ -875,7 +875,7 @@
             \begin{tikzpicture}[
                 declare function={
                     f(\x)=(\x<= -2) * (3*\x+5) +
-                    and(-2<\x,\x<2) * (\x^2) +
+                    and(-2<\x,\x<2) * (\x^2) + 
                     (2<=\x) * (-\x+3);
                 }
             ]
@@ -888,7 +888,7 @@
                     ymax=5,
                     ymin=-5
                 ]
-                \foreach \xStart/\xEnd  in {-4/-2, -2/2, 2/8} {
+                \foreach \xStart/\xEnd  in {-4/-2, -1.99/1.99, 2/8} {
                     \addplot[domain=\xStart:\xEnd, blue, samples=100] {f(x)};
                 }
                 \draw [draw=blue, fill=blue, thick] (axis cs:-2,-1) circle (2.0pt);
