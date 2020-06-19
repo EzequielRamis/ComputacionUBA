@@ -1,0 +1,52 @@
+\input{../../tex/template.tex}
+
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{tikz}
+
+
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=Práctica/tikz/]
+\tikzset{snake it/.style={decorate, decoration=snake}}
+\tikzset{fvec/.style={draw=red, very thick, ->}} % Force VECtor / VECtor Fuerza
+
+\sisetup{
+  output-decimal-marker = {,},
+  per-mode = symbol-or-fraction,
+  input-product = \cdot,
+  output-product = \cdot,
+  fraction-function = \frac,
+  quotient-mode = fraction
+}
+\DeclareSIUnit{\horsepower}{hp}
+\DeclareSIUnit{\hp}{hp}
+\DeclareSIUnit{\mps}{\meter\per\second}
+\DeclareSIUnit{\mpss}{\meter\per\second\squared}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\setcounter{section}{-1}
+
+\subfile{Práctica/Preambulo.tex}
+\newpage
+\subfile{Práctica/Unidad 1.tex}
+\newpage
+\subfile{Práctica/Unidad 2.tex}
+\newpage
+\subfile{Práctica/Unidad 3.tex}
+\newpage
+\subfile{Práctica/Unidad 4.tex}
+\newpage
+\subfile{Práctica/Unidad 5.tex}
+\newpage
+\subfile{Práctica/Unidad 6.tex}
+\newpage
+\subfile{Práctica/Unidad 7.tex}
+
+\end{document}
