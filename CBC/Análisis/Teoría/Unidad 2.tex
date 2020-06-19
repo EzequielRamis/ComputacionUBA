@@ -252,4 +252,46 @@
         \end{scaletikzpicturetowidth}
     \end{center}
     Se elige \(\epsilon=L/2\), de modo que \(L-L/2=L/2>0\). Esto asegura que la franja verde esté por encime del eje de las \(x\). Así \(a_n>0\) si \(n\geq n_0\).
+    \subsubsection{Álgebra de límites}
+    Si \(a_n\rightarrow a\in\R\) y \(b_n\rightarrow b\in\R\), entonces
+    \begin{itemize}
+        \item \(a_n+b_n\rightarrow a+b\)
+        \item \(a_n\cdot b_n\rightarrow ab\). En particular \(k\cdot a_n\rightarrow ka\) si \(k\in\R\)
+        \item Si \(b\neq0\) entonces \(\frac{a_n}{b_n}\rightarrow\frac{a}{b}\)
+        \item \(|a_n|\rightarrow|a|\)
+        \item Si \(a>0\) entonces \((a_n)^{b_n}\rightarrow a^b\)
+    \end{itemize}
+    Ejemplo. Calcular \(\lim_{n\to\infty}=\left(\frac{1}{n}+\frac{2n}{n+1}\right)^3\).\\
+    Tenemos que \[\lim_{n\to\infty}\frac{1}{n}=0\] \[\lim_{n\to\infty}\frac{2n}{n+1}=2\cdot\lim_{n\to\infty}\frac{n}{n+1}=2\cdot1=2\]
+    Entonces: \[\lim_{n\to\infty}=\left(\frac{1}{n}+\frac{2n}{n+1}\right)^3=(0+2)^3=8\]
+    \subsubsection{Intederminaciones}
+    El álgebra de límites requiere que las sucesiones involucradas sean convergentes a un número real. Por ello, no podemos aplicar el álgebra de límites en forma directa en, por ejemplo \(\lim_{a\to\infty}\frac{3n^2+2}{2n^2+5n}\), ya que un primer análisis de la sucesión nos dice que tanto numerador como denominador tienden a más infinito y el teorema de álgebra de límites se refiere a valores numéricos del límite.\\
+    Se suele decir que estamos en presencia de una \textit{indeterminación} en este caso, del tipo \(\frac{\infty}{\infty}\) entendiendo este símbolo como el cociente de sucesiones que tienden ambas a infinito. El nombre de indeterminación es porque no hay una propiedad general que nos indique el valor del límite en una situación como esta.\\
+    Es necesario, en cada caso, aplicar alguna técnica algebraica que permita “salvar” la indeterminación y calcular el límite. No es el único tipo de indeterminación con el que nos vamos a encontrar. Analicemos los siguientes ejemplos:
+    \begin{itemize}
+        \item \(a_n=\frac{1}{n}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n=1\rightarrow1\)
+        \item \(a_n=\frac{1}{n}\rightarrow0,b_n=n^2\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n^2=n\rightarrow+\infty\)
+        \item \(a_n=\frac{1}{n^2}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n^2}n=\frac{1}{n}\rightarrow0\)
+    \end{itemize}
+    En estos observamos que no existe una propiedad que pueda predecir sobre un límite del tipo \(0\cdot\infty\).\\
+    Los límites de los siguientes “tipos”, aunque no son todos, constituyen indeterminaciones:
+    \begin{itemize}
+        \item \(\frac{\infty}{\infty}\)
+        \item \(+\infty-\infty\)
+        \item \(0\cdot\infty\)
+        \item \(\frac{0}{0}\)
+        \item \((+\infty)^0\)
+        \item \(0^0\)
+    \end{itemize}
+    En todos los casos, hay que entender estos símbolos como el límite de la operación aritmética indicada en cada caso, entre dos sucesiones.\\
+    Como vimos, el álgebra de límites requiere que las sucesiones involucradas sean convergentes a un número real. Cuando esto no ocurre, a veces se presentan indeterminaciones. En cada caso hay que usar algún recurso algebraico que permita salvar la indeterminación y calcular el valor del límite.\\
+    En ocasiones no es posible aplicar el álgebra de límites porque los límites involucrados no son finitos, sin embargo no estamos ante una indeterminación. A continuación damos algunas situaciones donde se puede saber el límite a pesar de que los límites involucrados no sean todos números reales.
+    \begin{itemize}
+        \item \((+\infty)\cdot L=+\infty\) si \(L>0\)\tab Ej: \(\lim_{n\to\infty}\sqrt{n}\left(\frac{n}{3n+1}\right)=+\infty\)
+        \item \((+\infty)+\infty=+\infty\)\tab Ej: \(\lim_{n\to\infty}\frac{n^2}{n+1}+\sqrt{n}=+\infty\)
+        \item \((+\infty)+\) oscila finitamente \(=+\infty\)\tab Ej: \(\lim_{n\to\infty}(n+\cos(n))=+\infty\)
+        \item \(\frac{0}{\infty}=0\)\tab Ej: \(\lim_{n\to\infty}\frac{\frac{1}{n}}{n^2+1}=0\)
+        \item \((0)^{+\infty}=0\)\tab Ej: \(\lim_{n\to\infty}\left(\frac{n}{n^2+1}\right)^n=0\)
+    \end{itemize}
+    Cada una de estas afirmaciones se puede demostrar a partir de la definición de límite.
 \end{document}
