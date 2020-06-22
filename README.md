@@ -52,7 +52,7 @@ Todo directorio, tanto de teoría o práctica, están compuestos por dos tipos d
 - `{ Teoría | Práctica }.root.tex` (Dentro de la carpeta de la materia, junto a una carpeta del mismo nombre)
 - `Unidad { N }.tex` (Dentro de la carpeta que acompaña al archivo `root.tex`)
 
-El primero contiene la práctica o teoría de una unidad entera, mientras que el segundo tiene `\subfile`'s que importan el contenido de cada unidad. Los PDFs se compilan a partir de los `.root.tex`.
+El primero tiene `\subfile`'s que importan el contenido de cada unidad, mientras que el segundo contiene la práctica o teoría de una unidad entera. Los PDFs se compilan a partir de los `.root.tex`.
 
 Además, cada materia incluye un README.md que muestra la lista de unidades y conceptos dados.
 
