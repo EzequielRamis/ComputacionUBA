@@ -5,16 +5,71 @@
 \section{Unidad 6}
 \subsection{Bloque 1}
 \begin{enumerate}
-    \item Un recipiente de tapa móvil contiene \SI{1,00}{\deci\m\cubed} de oxígeno gaseoso, a \SI{1520}{\torr} y a
+    \item Un recipiente de tapa móvil contiene \SI{1,00}{\dm\cubed} de oxígeno gaseoso, a \SI{1520}{\torr} y a
           \SI{30,0}{\celsius}. Calculen la presión que ejercerá esa cantidad de oxígeno si el volumen se reduce
           hasta \SI{200}{\centi\m\cubed} y la temperatura a \SI{-20,0}{\celsius}.
+          \begin{center}
+              \[ PV = nRT \]
+              \[ \frac{PV}{T} = nR \]
+              \begin{tabular}{ l l l }
+                  $ P_i = \SI{1520}{\torr} $ & $ V_i = \SI{1,00}{\dm\cubed} $  & $ T_i = \SI{30,0}{\celsius} $  \\
+                  $ P_f = x $                & $ V_f = \SI{0,200}{\dm\cubed} $ & $ T_f = \SI{-20,0}{\celsius} $ \\
+              \end{tabular}
+              \[ \frac{P_i\cdot V_i}{T_i} = \frac{x\cdot V_f}{T_f} = nR \]
+              \[
+                  \frac{\SI{1520}{\torr}\cdot \SI{1,00}{\cancel\dm\cubed}}{\SI{30,0}{\cancel\celsius}}
+                  = \frac{x\cdot \SI{0,200}{\cancel\dm\cubed}}{\SI{-20,0}{\cancel\celsius}}
+              \]
+              \[
+                  \frac{\SI{1520}{\torr}}{\num{30,0}}
+                  = x\cdot\num{-0,01}
+              \]
+              \[ \frac{\SI{1520}{\torr}}{\num{30,0}\cdot\num{-0,01}} = x \]
+              \[ \boxed{x = \SI{5066,7}{\torr}} \]
+          \end{center}
 
     \item Indiquen cuál es el volumen que ocuparán \num{2,40} moles de una sustancia en estado gaseoso a
           \SI{127}{\celsius} y a presión normal.
+          \begin{center}
+              \[ \SI{127}{\celsius} = \SI{400,15}{\kelvin} \]
+              \[ PV = nRT \]
+              \[
+                  \SI{1}{\atm}\cdot x
+                  = \SI{2,40}{\mole}
+                  \cdot\frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                  \cdot\SI{400,15}{\kelvin}
+              \]
+              \[
+                  \cancel{\SI{1}{\atm}\cdot} x
+                  = \SI{2,40}{\cancel\mole}
+                  \cdot\frac{\SI{22,4}{\cancel\atm\dm\cubed}}{\SI{273,15}{\cancel\mole\cancel\kelvin}}
+                  \cdot\SI{400,15}{\cancel\kelvin}
+              \]
+              \[ \boxed{x = \SI{78,8}{\dm\cubed}} \]
+          \end{center}
 
     \item No necesario
 
     \item Calculen el volumen molar de un gas ideal, a \SI{27,0}{\celsius} y a una presión de \SI{2,00}{\atm}.
+          \begin{center}
+              \[ \SI{27,0}{\celsius} = \SI{260,15}{\kelvin} \]
+              \[ PV = nRT \]
+              \[
+                  \SI{2,00}{\atm}\cdot x
+                  = \SI{1}{\mole}
+                  \cdot\frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                  \cdot\SI{260,15}{\kelvin}
+              \]
+              \[
+                  \SI{2,00}{\cancel\atm}\cdot x
+                  = \cancel{\SI{1}{\mole}}
+                  \cdot\frac{\SI{22,4}{\cancel\atm\dm\cubed}}{\SI{273,15}{\cancel\mole\cancel\kelvin}}
+                  \cdot\SI{260,15}{\cancel\kelvin}
+              \]
+              \[ x = \frac{\SI{22,4}{\dm\cubed}\cdot\num{260,15}}{\num{273,15}\cdot\num{2}} \]
+              \[ x = \frac{\SI{6723,4}{\dm\cubed}}{\num{546,30}} \]
+              \[ \boxed{x = \SI{12,3}{\dm\cubed}} \]
+          \end{center}
 
     \item No necesario
 
@@ -23,11 +78,57 @@
     \item No necesario
 
     \item Se dispone de un cilindro de \SI{100}{\liter} que contiene $N_2$ (g), a una presión de \SI{5,00}{\atm} y a una
-          temperatura de \SI{22,0}{\celsius}. Calculen:
+          temperatura de \SI{22,0}{\celsius}. Calculen: \\
+          $ \SI{100}{\liter} = \SI{100}{\dm\cubed}; \SI{22,0}{\celsius} = \SI{295,15}{\kelvin} $
           \begin{enumerate}
               \item la masa de nitrógeno en el recipiente;
+                    \begin{center}
+                        \[ PV = nRT \]
+                        \[
+                            \SI{5,00}{\atm}\cdot\SI{100}{\dm\cubed}
+                            = n
+                            \cdot \frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                            \cdot \SI{295,15}{\kelvin}
+                        \]
+                        \[
+                            \SI{5,00}{\cancel\atm}\cdot\SI{100}{\cancel\dm\cubed}
+                            = n
+                            \cdot \frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}{\SI{273,15}{\mole\cancel\kelvin}}
+                            \cdot \SI{295,15}{\cancel\kelvin}
+                        \]
+                        \[
+                            \num{500}
+                            = n
+                            \cdot \SI{24,2}{\per\mole}
+                        \]
+                        \[ \num{500}/\SI{24,2}{\mole} = n \]
+                        \[ n = \SI{20,5}{\mole} \]
+                        \begin{tabular}{ c | c }
+                            moles de $N_2$ & gramos \\
+                            \hline
+                            1              & 28     \\
+                            \num{20,5}     & x
+                        \end{tabular}
+                        \[ \SI{28}{\g}\cdot\num{20,5} \]
+                        \[ \boxed{\SI{574}{\g}} \]
+                    \end{center}
               \item el volumen que ocuparía esa cantidad de gas si a temperatura constante, la presión se
                     reduce \num{5} veces.
+                    \begin{center}
+                        \[
+                            \SI{1,00}{\atm}\cdot V
+                            = \SI{20,5}{\mole}
+                            \cdot \frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                            \cdot \SI{295,15}{\kelvin}
+                        \]
+                        \[
+                            \cancel{\SI{1,00}{\atm}}\cdot V
+                            = \SI{20,5}{\cancel\mole}
+                            \cdot \frac{\SI{22,4}{\cancel\atm\dm\cubed}}{\SI{273,15}{\cancel\mole\cancel\kelvin}}
+                            \cdot \SI{295,15}{\cancel\kelvin}
+                        \]
+                        \[ \boxed{V = \SI{500}{\dm\cubed}} \]
+                    \end{center}
           \end{enumerate}
 
     \item No necesario
@@ -55,14 +156,102 @@
     \item Un recipiente rígido de \SI{10,0}{\dm\cubed} contiene cierta masa de $CO_2$ (g) en CNPT. Se agrega $CO$ (g)
           hasta que la masa de la mezcla de gases es de \SI{60,0}{\gram}. Se produce una variación de la
           temperatura y un aumento en la presión de \SI{2,5}{\atm}. Indiquen:
+          \begin{center}
+              \[ \text{I: } \SI{10,0}{\dm\cubed}\cdot\SI{1}{\atm} = n_iR\cdot\SI{273,15}{\kelvin} \]
+              \[ \text{F: } \SI{10,0}{\dm\cubed}\cdot\SI{3,5}{\atm} = \SI{60,0}{\gram}RT_f \]
+              \[ \SI{10,0}{\dm\cubed} \cdot \SI{1}{\atm}
+                  = n_i
+                  \cdot \frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                  \cdot \SI{273,15}{\kelvin}
+              \]
+              \[ \SI{10,0}{\cancel\dm\cubed} \cdot \cancel{\SI{1}{\atm}}
+                  = n_i
+                  \cdot \frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}{\cancel{\SI{273,15}{\kelvin}}\si{\mole}}
+                  \cdot \cancel{\SI{273,15}{\kelvin}}
+              \]
+              \[ \num{10} = n_i \cdot \SI{22,4}{\per\mole} \]
+              \[ n_i = \SI{10/22,4}{\mole} \]
+              \[ \text{Moles de $CO_2$: } n_i = \SI{0,45}{\mole} \]
+              \begin{tabular}{ c | c }
+                  moles      & Gramos $CO_2$ \\
+                  \hline
+                  1          & 44            \\
+                  \num{0,45} & \num{19,8}
+              \end{tabular}
+              \[ \SI{60}{\g} - \SI{19,8}{\g} = \SI{40,2}{\g} \text{ de $CO$} \]
+              \begin{tabular}{ c | c }
+                  moles     & Gramos de $CO$ \\
+                  \hline
+                  1         & 28             \\
+                  \num{1,4} & \num{40,2}
+              \end{tabular}
+          \end{center}
           \begin{enumerate}
               \item la temperatura final que alcanza el sistema;
+                    \begin{center}
+                        \[ \SI{10,0}{\dm\cubed}\cdot\SI{3,5}{\atm} = \SI{60,0}{\gram}RT_f \]
+                        \[
+                            \SI{10,0}{\dm\cubed}\cdot\SI{3,5}{\atm}
+                            = (\num{1,4} + \num{0,45})\si{\mole}
+                            \cdot\frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                            \cdot T_f
+                        \]
+                        \[
+                            \SI{10,0}{\cancel\dm\cubed}\cdot\SI{3,5}{\cancel\atm}
+                            = \num{1,85}\si{\cancel\mole}
+                            \cdot\frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}{\SI{273,15}{\cancel\mole\kelvin}}
+                            \cdot T_f
+                        \]
+                        \[
+                            \SI{10,0}{\cancel\dm\cubed}\cdot\SI{3,5}{\cancel\atm}
+                            = \num{1,85}\si{\cancel\mole}
+                            \cdot\frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}{\SI{273,15}{\cancel\mole\kelvin}}
+                            \cdot T_f
+                        \]
+                        \[ \boxed{T_f = \SI{230}{\kelvin}} \]
+                    \end{center}
               \item si la presión parcial del dióxido de carbono en la mezcla es mayor, igual o menor que
                     la del monóxido de carbono;
+                    \begin{center}
+                        \[ \SI{10,0}{\dm\cubed}\cdot P_{CO_2} = \SI{0,45}{\mole}\cdot R\cdot\SI{230}{\kelvin} \]
+                        \[ P_{CO_2} = \SI{0,9}{\dm\cubed} \]
+                        \[ P_{CO} = \SI{2,6}{\dm\cubed} \]
+                    \end{center}
               \item el número de átomos de oxígeno que hay en la mezcla;
+                    \begin{center}
+                        \begin{tabular}{ l r }
+                            $CO_2$ & \SI{0,45}{\mole} \\
+                            $CO$   & \SI{1,4}{\mole}  \\
+                            $O$    & \SI{2,3}{\mole}
+                        \end{tabular}
+                        \[ \SI{2,3}{\mole} = \num{2,3}\cdot\num{6,023E23} \]
+                        \[ \boxed{\num{1,4E24}} \]
+                    \end{center}
               \item si la temperatura final alcanzada aumenta, disminuye o no cambia, si en lugar de CO
                     se hubiera agregado $O_2$ (g) hasta tener la misma masa final de \SI{60,0}{\gram} y el mismo
                     aumento de presión. Justifiquen la respuesta.
+                    \begin{center}
+                        \begin{tabular}{ c | c }
+                            moles     & Gramos de $O_2$ \\
+                            \hline
+                            1         & 32              \\
+                            \num{1,3} & \num{40,2}
+                        \end{tabular}
+                        \[
+                            \SI{10,0}{\dm\cubed}\cdot\SI{3,5}{\atm}
+                            = (\num{1,3} + \num{0,45})\si{\mole}
+                            \cdot\frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                            \cdot T_f
+                        \]
+                        \[
+                            \SI{10,0}{\cancel\dm\cubed}\cdot\SI{3,5}{\cancel\atm}
+                            = \SI{1,75}{\cancel\mole}
+                            \cdot\frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}{\SI{273,15}{\cancel\mole\kelvin}}
+                            \cdot T_f
+                        \]
+                        \[ \num{35} = \SI{1,75}\cdot\frac{\num{22,4}}}{\SI{273,15}{\kelvin}}\cdot T_f \]
+                        \[ \boxed{\SI{243}{\kelvin}} \]]
+                    \end{center}
           \end{enumerate}
 \end{enumerate}
 
