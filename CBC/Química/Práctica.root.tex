@@ -1,0 +1,49 @@
+\input{../../tex/template.tex}
+
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{tikz}
+
+
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=Práctica/tikz/]
+\tikzset{fvec/.style={draw=red, very thick, ->}} % Force VECtor / VECtor Fuerza
+
+\sisetup{
+  output-decimal-marker = {,},
+  per-mode = symbol-or-fraction,
+  input-product = \cdot,
+  output-product = \cdot,
+  fraction-function = \frac,
+  quotient-mode = fraction
+}
+\DeclareSIUnit{\torr}{torr} % torr = mm Hg
+\DeclareSIUnit{\atm}{atm} % 1atm = 1013 hPa
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\setcounter{section}{-1}
+
+%\subfile{Práctica/Preambulo.tex}
+\newpage
+\subfile{Práctica/Unidad 1.tex}
+\newpage
+\subfile{Práctica/Unidad 2.tex}
+\newpage
+\subfile{Práctica/Unidad 3.tex}
+\newpage
+\subfile{Práctica/Unidad 4.tex}
+\newpage
+\subfile{Práctica/Unidad 5.tex}
+\newpage
+\subfile{Práctica/Unidad 6.tex}
+\newpage
+\subfile{Práctica/Unidad 7.tex}
+
+\end{document}
