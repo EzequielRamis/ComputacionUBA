@@ -1,5 +1,7 @@
 \documentclass[../Práctica.root.tex]{subfiles}
  
+% R = \frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+
 \begin{document}
 
 \section{Unidad 6}
@@ -228,36 +230,324 @@
 \begin{enumerate}
     \item[3] Un recipiente de volumen variable contiene \SI{10,0}{\liter} de $C_4H_{10}$ gaseoso a \SI{600}{\torr} y a \SI{5,00}{\celsius}.
           Se calienta el sistema hasta que se verifica que la presión y el volumen se duplican.
-          Calculen:
+          Calculen: \\
+          $ \SI{5,00}{\celsius} = \SI{278,15}{\kelvin}; \SI{10,0}{\liter} = \SI{10,0}{\dm\cubed}; \SI{600}{\torr} = \SI{0,7895}{\atm} $
           \begin{enumerate}
               \item la temperatura final del sistema;
+                    \begin{center}
+                        \[ \frac{P_i\cdot V_i}{\SI{278,15}{\kelvin}}
+                            = \frac{\num{2}\cdot P_i\cdot \num{2}\cdot V_i}{T_f}  \]
+                        \[ \frac{\cancel{P_i\cdot V_i}}{\SI{278,15}{\kelvin}}
+                            = \frac{\num{4}\cdot\cancel{P_i\cdot V_i}}{T_f}  \]
+                        \[ T_f = \num{4}\cdot\SI{278,15}{\kelvin} \]
+                        \[ \boxed{T_f = \SI{1112,6}{\kelvin}} \]
+                    \end{center}
               \item la masa de $C_4H_{10}$ en el recipiente
+                    \begin{center}
+                        \[ PV = nRT \]
+                        \[
+                            \SI{0,7895}{\atm}\cdot\SI{10,0}{\dm\cubed}
+                            = n
+                            \cdot\frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                            \cdot\SI{278,15}{\kelvin}
+                        \]
+                        \[
+                            \SI{0,7895}{\cancel\atm}\cdot\SI{10,0}{\cancel\dm\cubed}
+                            = n
+                            \cdot\frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}{\SI{273,15}{\mole\cancel\kelvin}}
+                            \cdot\SI{278,15}{\cancel\kelvin}
+                        \]
+                        \[
+                            \num{0,7895}\cdot\num{10,0}
+                            = n
+                            \cdot\frac{\num{22,4}}{\SI{273,15}{\mole}}
+                            \cdot\num{278,15}
+                        \]
+                        \[
+                            n =
+                            \frac{
+                                \num{0,7895}\cdot\num{10,0}\cdot\SI{273,15}{\mole}
+                            }{
+                                \num{22,4}\cdot\num{278,15}
+                            }
+                        \]
+                        \[ n = \SI{0,346}{\mole} \]
+                        \begin{tabular}{ c | c }
+                            moles       & Gramos de $C_4H_{10}$ \\
+                            \hline
+                            1           & 58                    \\
+                            \num{0,346} & \num{20,068}
+                        \end{tabular}
+                        \[ \boxed{ \text{Gramos de $C_4H_{10}$:} \num{20,068}} \]
+                    \end{center}
           \end{enumerate}
     \item[11] La densidad de una sustancia en estado gaseoso, a \SI{25,0}{\celsius} y a \SI{760}{\torr}, es de
-          \SI{1,80}{\g\per\dm\cubed}. Calculen:
+          \SI{1,80}{\g\per\dm\cubed}. Calculen: \\
+          $ \SI{25,0}{\celsius} = \SI{298,15}{\kelvin}; \SI{760}{\torr} = \SI{1}{\atm} $
           \begin{enumerate}
               \item la masa molar de la sustancia;
+                    \begin{center}
+                        \[ M = \frac{\rho RT}{P} \]
+                        \[
+                            M
+                            = \frac{
+                                \SI{1,80}{\g\per\dm\cubed}
+                                \cdot \frac{\SI{22,4}{\atm\dm\cubed}}
+                                {\SI{273,15}{\mole\kelvin}}
+                                \cdot\SI{298,15}{\kelvin}
+                            }
+                            {
+                                \SI{1}{\atm}
+                            }
+                        \]
+                        \[
+                            M
+                            = \frac{
+                                \SI{1,80}{\g\per\cancel\dm\cubed}
+                                \cdot \frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}
+                                {\SI{273,15}{\mole\cancel\kelvin}}
+                                \cdot\SI{298,15}{\cancel\kelvin}
+                            }
+                            {
+                                \cancel{\SI{1}{\atm}}
+                            }
+                        \]
+                        \[
+                            M = \num{1,80}\cdot\num{22,4/273,15}\cdot\num{298,15}\si[]{\g\per\mole}
+                        \]
+                        \[ \boxed{M = \SI{44,0}{\g\per\mole}} \]
+                    \end{center}
               \item la densidad del gas en CNPT.
+                    \begin{center}
+                        \[ \rho = \frac{PM}{RT} \]
+                        \[
+                            \rho = \frac{
+                                \SI{1}{\atm}\cdot\SI{44,0}{\g\per\mole}
+                            }{
+                                \frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}} \cdot\SI{273,15}{\kelvin}
+                            }
+                        \]
+                        \[
+                            \rho = \frac{
+                                \cancel{\SI{1}{\atm}}\cdot\SI{44,0}{\g\per\cancel\mole}
+                            }{
+                                \frac{\SI{22,4}{\cancel\atm\dm\cubed}}{\cancel{\SI{273,15}{\mole\kelvin}}} \cdot\cancel{\SI{273,15}{\kelvin}}
+                            }
+                        \]
+                        \[ \rho = \SI{44,0/22,4}{\g\per\dm\cubed } \]
+                        \[ \boxed{\rho = \SI{1,97}{\g\per\dm\cubed}} \]
+                    \end{center}
           \end{enumerate}
     \item[12] A determinada temperatura un recipiente rígido contiene \SI{3,00}{\mole} de un gas que ejercen
           una presión de \SI{1,80}{\atm}. A temperatura constante, se abre una llave hasta que la presión se
           iguala a la presión atmosférica (\SI{1,00}{\atm}). Calculen la cantidad de gas, expresada en moles,
           que se perdió
+          \begin{center}
+              \[ PV = nRT \]
+              \[ \frac{P}{n} = \frac{RT}{V} \]
+              \[ \frac{P_i}{n_i} = \frac{P_f}{n_f} \]
+              \[ \frac{\SI{1,80}{\atm}}{\SI{3,00}{\mole}} = \frac{\SI{1,00}{\atm}}{n_f} \]
+              \[ \frac{\SI{1,80}{\cancel\atm}}{\SI{3,00}{\mole}} = \frac{\cancel{\SI{1,00}{\atm}}}{n_f} \]
+              \[ n_f = \frac{\SI{3,00}{\mole}}{\num{1,80}} \]
+              \[ n_f = \SI{1,67}{\mole} \]
+              \[ \SI{3,00}{\mole} - \SI{1,67}{\mole} \]
+              \[ \boxed{\SI{1,33}{\mole}} \]
+          \end{center}
     \item[15] Una mezcla, formada por masas iguales de $CO_2$, $CO$ y $O_2$, se encuentra a \SI{25,0}{\celsius} en un
-          recipiente rígido de \SI{1,37}{\dm\cubed}. Determinen:
+          recipiente rígido de \SI{1,37}{\dm\cubed}. Determinen: \\
+          $ \SI{25,0}{\celsius} = \SI{298,15}{\kelvin} $
           \begin{enumerate}
               \item cuál de los gases ejerce mayor presión en la mezcla;
+                    \begin{center}
+                        (Masa de cada gas (\si{\g}): $m$) \\
+                        \begin{tabular}{ l | c }
+                            Molecula     & Moles (por \si{\g})               \\
+                            \hline
+                            $ n_{CO_2} $ & $ \SI{1/44}{\mole\per\g}\cdot m $ \\
+                            $ n_{CO} $   & $ \SI{1/28}{\mole\per\g}\cdot m $ \\
+                            $ n_{O_2} $  & $ \SI{1/32}{\mole\per\g}\cdot m $
+                        \end{tabular}
+                    \end{center}
+                    $CO_2$:
+                    \begin{center}
+                        \[
+                            P_{CO_2}\cdot\SI{1,37}{\dm\cubed}
+                            = (\SI{1/44}{\mole\per\g}\cdot m)
+                            \cdot\frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                            \cdot\SI{298,15}{\kelvin}
+                        \]
+                        \[
+                            P_{CO_2}\cdot\SI{1,37}{\cancel\dm\cubed}
+                            = (\SI{1/44}{\cancel\mole\per\g}\cdot m)
+                            \cdot\frac{\SI{22,4}{\atm\cancel\dm\cubed}}{\SI{273,15}{\cancel\mole\cancel\kelvin}}
+                            \cdot\SI{298,15}{\cancel\kelvin}
+                        \]
+                        \[
+                            P_{CO_2}\cdot\num{1,37}
+                            = (\SI{1/44}{\g^{-1}}\cdot m)
+                            \cdot\frac{\SI{22,4}{\atm}}{\num{273,15}}
+                            \cdot\num{298,15}
+                        \]
+                        \[
+                            P_{CO_2} = m
+                            \cdot\frac{
+                                \num{22,4}\cdot\num{298,15}
+                            }{
+                                \num{44}\cdot\num{273,15}\cdot\num{1,37}
+                            }
+                            \cdot\si{\atm\per\g}
+                        \]
+                        \[
+                            P_{CO_2} = m\cdot\SI{0,40}{\atm\per\g}
+                        \]
+                    \end{center}
+                    $CO$:
+                    \begin{center}
+                        \[
+                            P_{CO} = m
+                            \cdot\frac{
+                                \num{22,4}\cdot\num{298,15}
+                            }{
+                                \num{28}\cdot\num{273,15}\cdot\num{1,37}
+                            }
+                            \cdot\si{\atm\per\g}
+                        \]
+                        \[
+                            P_{CO} = m\cdot\SI{0,68}{\atm\per\g}
+                        \]
+                    \end{center}
+                    $O_2$:
+                    \begin{center}
+                        \[
+                            P_{O_2} = m
+                            \cdot\frac{
+                                \num{22,4}\cdot\num{298,15}
+                            }{
+                                \num{32}\cdot\num{273,15}\cdot\num{1,37}
+                            }
+                            \cdot\si{\atm\per\g}
+                        \]
+                        \[
+                            P_{O_2} = m\cdot\SI{0,56}{\atm\per\g}
+                        \]
+                    \end{center}
+                    \begin{center}
+                        \begin{tabular}{ l | l }
+                            Molecula & Presión (por \si{\g})                 \\
+                            \hline
+                            $CO_2$   & $m\cdot\SI{0,40}{\atm\per\g}$         \\
+                            $CO$     & \boxed{$m\cdot\SI{0,68}{\atm\per\g}$} \\
+                            $O_2$    & $m\cdot\SI{0,56}{\atm\per\g}$
+                        \end{tabular}
+                    \end{center}
               \item si la fracción molar del $O_2$ es mayor, menor o igual que la del $CO$;
+                    \begin{center}
+                        \[ n_T = m\cdot(\num{1/44}+\num{1/28}+\num{1/32})\si{\mole\per\g} =  \]
+                        \[ X_{O_2} = \frac{n_{O_2}}{n_T} = \num{0,35} \]
+                        \[ X_{CO} = \frac{n_{CO}}{n_T} = \num{0,40} \]
+                        \[ \boxed{X_{O_2} < X_{CO}} \]
+                    \end{center}
               \item si la presión de la mezcla aumenta, disminuye o no cambia, al elevar la temperatura
                     hasta \SI{400}{\kelvin}. Justifiquen la respuesta
+                    \begin{center}
+                        \[ \frac{P}{T} = \frac{nR}{V} \]
+                        \[ \frac{P_i}{T_i} = \frac{P_f}{T_f} \]
+                        \[ \frac{P_i}{\SI{298,15}{\kelvin}} = \frac{P_f}{\SI{400}{\kelvin}} \]
+                        \[ P_i\cdot\frac{\SI{400}{\kelvin}}{\SI{298,15}{\kelvin}} = P_f \]
+                        \[ P_f = \num{1,34}P_i \]
+                        \[ \boxed{P_f > P_i} \]
+                    \end{center}
           \end{enumerate}
     \item[17] En un recipiente rígido de \SI{30,0}{\dm\cubed}, se colocan \SI{0,500}{\mole} de $CO_2$ (g) y \SI{35,0}{\g} de $Cl_2O$ a
           \SI{25}{\celsius}. A temperatura constante se agrega cierta masa de neón, lo que produce un aumento en
-          la presión de \SI{0,415}{\atm}. Calculen:
+          la presión de \SI{0,415}{\atm}. Calculen: \\
+          $ \SI{35,0}{\g} $ de $ Cl_2O = \SI{0,40}{\mole} $; $ \SI{25,0}{\celsius} = \SI{298,15}{\kelvin} $
           \begin{enumerate}
               \item la masa de neón agregada;
+                    \begin{center}
+                        \[ P_i = P_{CO_2} + P_{Cl_2O} \]
+                        \[ P_f = P_{CO_2} + P_{Cl_2O} + P_{Ne} = P_i + P_{Ne}\]
+                        \[ \Delta P = P_{Ne} = \SI{0,415}{\atm} \]
+                        \[
+                            \SI{0,415}{\atm}
+                            =
+                            \frac{n_{ne}
+                                \cdot\frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+                                \cdot\SI{298,15}{\kelvin}}{\SI{30,0}{\dm\cubed}}
+                        \]
+                        \[
+                            \SI{0,415}{\cancel\atm}
+                            =
+                            \frac{n_{ne}
+                                \cdot\frac{\SI{22,4}{\cancel\atm\cancel\dm\cubed}}{\SI{273,15}{\mole\cancel\kelvin}}
+                                \cdot\SI{298,15}{\cancel\kelvin}}{\SI{30,0}{\cancel\dm\cubed}}
+                        \]
+                        \[
+                            \num{0,415}
+                            =
+                            \frac{
+                                n_{ne}
+                                \cdot\frac{\num{22,4}}{\SI{273,15}{\mole}}
+                                \cdot\num{298,15}
+                            }{\num{30,0}}
+                        \]
+                        \[
+                            \num{0,415}\cdot\num{30,0}
+                            =
+                            n_{ne}
+                            \cdot\frac{\num{22,4}}{\SI{273,15}{\mole}}
+                            \cdot\num{298,15}
+                        \]
+                        \[
+                            \SI{12,45}{\mole}
+                            =
+                            n_{ne}
+                            \cdot\num{24,45}
+                        \]
+                        \[ n_{ne} = \SI{0,51}{\mole} \]
+                        \begin{tabular}{ c | c }
+                            Moles      & Gramos             \\
+                            \hline
+                            1          & 10                 \\
+                            \num{0,51} & \boxed{\num{10,3}}
+                        \end{tabular}
+                    \end{center}
               \item la presión total luego del agregado del neón;
+                    \begin{center}
+                        \[
+                            P\cdot\SI{30,0}{\dm\cubed}
+                            = (\num{0,51}+\num{0,500}+\num{0,40})\si{\mole}
+                            \cdot
+                            \frac{
+                                \SI{22,4}{\atm\dm\cubed}
+                            }{
+                                \SI{273,15}{\mole\kelvin}
+                            }
+                            \cdot\SI{298,15}{\kelvin}
+                        \]
+                        \[
+                            P\cdot\SI{30,0}{\cancel\dm\cubed}
+                            = (\num{0,51}+\num{0,500}+\num{0,40})\si{\cancel\mole}
+                            \cdot
+                            \frac{
+                                \SI{22,4}{\atm\cancel\dm\cubed}
+                            }{
+                                \SI{273,15}{\cancel\mole\cancel\kelvin}
+                            }
+                            \cdot\SI{298,15}{\cancel\kelvin}
+                        \]
+                        \[
+                            P\cdot\num{30,0} = \num{1,41}\cdot\SI{22,4/273,15}{\atm}\cdot\num{298,15}
+                        \]
+                        \[ \boxed{P = \SI{1,15}{\atm}} \]
+                    \end{center}
               \item la fracción molar del $Cl_2O$.
+                    \begin{center}
+                        \[ X_{Cl_2O} = \frac{n_{Cl_2O}}{n_T} \]
+                        \[ n_T = (\num{0,51}+\num{0,500}+\num{0,40})\si{\mole} = \SI{1,41}{\mole} \]
+                        \[ X_{Cl_2O} = \frac{\SI{0,40}{\mole}}{\SI{1,41}{\mole}} \]
+                        \[ \boxed{X_{Cl_2O} = \num{0,284}} \]
+                    \end{center}
           \end{enumerate}
 \end{enumerate}
 
