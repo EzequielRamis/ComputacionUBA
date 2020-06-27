@@ -1,6 +1,7 @@
 \documentclass[../Práctica.root.tex]{subfiles}
- 
+
 \newcommand{\lra}{\ensuremath{\longrightarrow{}}}
+\newcommand{\sr}[2]{\stackrel{#1}{#2}}
 
 \begin{document}
 
@@ -10,28 +11,41 @@
     \item Lean atentamente y señalen cuáles de las opciones son correctas.
           Siempre que se produce una reacción química:
           \begin{enumerate}
-              \item el tipo y número de átomos que intervienen no cambia;
+              \item el tipo y número de átomos que intervienen no cambia; \checkmark
               \item se desprenden luz y/o calor;
               \item se produce siempre entre dos sustancias;
-              \item cambian las sustancias presentes;
+              \item cambian las sustancias presentes; \checkmark
               \item aparecen átomos nuevos;
-              \item hay ruptura y formación de enlaces.
+              \item hay ruptura y formación de enlaces. \checkmark
           \end{enumerate}
 
     \item Escriban los coeficientes estequiométricos para balancear las ecuaciones:
           \begin{enumerate}
-              \item $Ca(OH)_2$ (ac) + $HNO_3$ (ac) \lra $Ca(NO_3)_2$ (ac) + $H_2O$ (l)
-              \item $Fe$ (s) + $HCl$ (ac) \lra $FeCl_3$ (ac) + $H_2$ (g)
-              \item $Al_2O_3$ (s) + $H_2$ (g) \lra $Al$ (s) + $H_2O$ (l)
-              \item $H_2SO_4$ (ac) + $Fe(OH)_3$ (ac) \lra $Fe_2(SO_4)_3$ (ac) + $H_2O$ (l)
-              \item $KClO_3$ (s) \lra $KCl$ (s) + $O_2$ (g)
+              \item $Ca(OH)_2$ (ac) + \blue{2}$HNO_3$ (ac) \lra \blue{}$Ca(NO_3)_2$ (ac) + \blue{2}$H_2O$ (l)
+              \item $Fe$ (s) + $HCl$ (ac) \lra $FeCl_3$ (ac) + $H_2$ (g) \\
+                    $Fe$ + \blue{3}$HCl$ \lra $FeCl_3$ + \blue{\num{1,5}}$H_2$ \\
+                    ($Fe$ + \blue{3}$HCl$ \lra $FeCl_3$ + \blue{\num{1,5}}$H_2$)\cdot\blue{\num{2}} \\
+                    \blue{2}$Fe$ (s) + \blue{6}$HCl$ (ac) \lra \blue{2}$FeCl_3$ (ac) + \blue{3}$H_2$ (g)
+              \item $Al_2O_3$ (s) + $H_2$ (g) \lra $Al$ (s) + $H_2O$ (l) \\
+                    $Al_2O_3$ + $H_2$ \lra \blue{2}$Al$ + \blue{3}$H_2O$ \\
+                    $Al_2O_3$ (s) + \blue{3}$H_2$ (g) \lra \blue{2}$Al$ (s) + \blue{3}$H_2O$ (l)
+              \item $H_2SO_4$ (ac) + $Fe(OH)_3$ (ac) \lra $Fe_2(SO_4)_3$ (ac) + $H_2O$ (l) \\
+                    \blue{3}$H_2SO_4$ + \blue{2}$Fe(OH)_3$ \lra $Fe_2(SO_4)_3$ + $H_2O$ \\
+                    \blue{3}$H_2SO_4$ (ac) + \blue{2}$Fe(OH)_3$ (ac) \lra $Fe_2(SO_4)_3$ (ac) + \blue{6}$H_2O$ (l)
+              \item $KClO_3$ (s) \lra $KCl$ (s) + $O_2$ (g) \\
+                    $KClO_3$ \lra $KCl$ + \blue{\num{1,5}}$O_2$ \\
+                    ($KClO_3$ \lra $KCl$ + \blue{\num{1,5}}$O_2$)\cdot\blue{\num{2}} \\
+                    \blue{2}$KClO_3$ (s) \lra \blue{2}$KCl$ (s) + \blue{3}$O_2$ (g)
           \end{enumerate}
 
     \item Para las siguientes ecuaciones:
           \begin{enumerate}
-              \item $TiCl_4$ (ac) + 2 $Mg$ (s) \lra $Ti$ (s) + 2 $MgCl_2$ (ac)
-              \item $KBr$ (ac) + $AgNO_3$ (ac) \lra $AgBr$ (s) + $KNO_3$ (ac)
-              \item 2 $NaOH$ (ac) + $H_2SO_4$ (ac) \lra $Na_2SO_4$ (ac) + 2 $H_2O$ (l)
+              \item $\sr{\blue{(+4)}(-1)}{TiCl_4}$ (ac) + 2 $\sr{\blue{(0)}}{Mg}$ (s)
+                    \lra $\sr{\blue{(0)}}{Ti}$ (s) + 2 $\sr{\blue{(+2)}(-1)}{MgCl_2}$ (ac)
+              \item $\sr{(+1)(-1)}{KBr}$ (ac) + $\sr{(+1)(+5)(-2)}{AgNO_3}$ (ac)
+                    \lra $\sr{(+1)(-1)}{AgBr}$ (s) + $\sr{(+1)(+5)(-2)}{KNO_3}$ (ac)
+              \item 2 $\sr{(+1)(-2)(+1)}{NaOH}$ (ac) + $\sr{(+1)(+4)(-2)}{H_2SO_4}$ (ac)
+                    \lra $\sr{(+1)(+6)(-2)}{Na_2SO_4}$ (ac) + 2 $\sr{(+1)(-2)}{H_2O}$ (l)
               \item $C_3H_8$ (g) + 5 $O_2$ (g) \lra 3 $CO_2$ (g) + 4 $H_2O$ (g)
               \item 2 $SO_2$ (g) + $O_2$ (g) \lra 2 $SO_3$ (g)
               \item 6 $CoCl_2$ (ac) + 12 $KOH$ (ac) + $KClO_3$ (ac) \lra 3 $Co_2O_3$ (s) + 13 $KCl$ (ac) + 6 $H_2O$ (l)
@@ -41,9 +55,37 @@
           \begin{enumerate}
               \item el tipo de reacción química que representa (síntesis, descomposición, combustión,
                     precipitación, neutralización o redox);
+                    \begin{enumerate}[label=\alph*]
+                        \item Redox
+                        \item Intercambio
+                        \item Neutralización
+                        \item Combustión
+                        \item Redox y síntesis
+                        \item
+                    \end{enumerate}
               \item el agente oxidante, el agente reductor y el cambio que se produce en los estados de
                     oxidación, en las que representan a reacciones redox;
-              \item Justificar los coeficientes de las ecuaciones A y F utilizando el método del ionelectrón
+              \item Justificar los coeficientes de las ecuaciones A y F utilizando el método del ionelectrón \\
+                    $TiCl_4$ + 2 $Mg$ \lra $Ti$ + 2 $MgCl_2$ \\
+                    $Ti^{4+}Cl^-_4$ + 2 $Mg^0$ \lra $Ti^0$ + 2 $Mg^{2+}Cl^-_2$
+                    \begin{multicols}{2}
+                        Oxidación: \\
+                        $Mg^0$ \lra $Mg^{2+}Cl_2^-$ \\
+                        \blue{$Cl_2^-$ +} $Mg^0$ \lra $Mg^{2+}Cl_2^-$ \blue{+ 2 $e^-$} \\
+                        ($Cl_2^-$ + $Mg^0$ \lra $Mg^{2+}Cl_2^-$ + 2 $e^-$)\cdot\blue{2} \\
+                        $Cl_4^-$ + 2 $Mg^0$ \lra 2 $Mg^{2+}Cl_2^-$ + 4 $e^-$
+
+                        \columnbreak
+
+                        Reducción: \\
+                        $Ti^{4+}$ \lra $Ti^0$ \\
+                        $Ti^{4+}$ + \blue{4 $e^-$} \lra $Ti^0$
+                    \end{multicols}
+                    \begin{tabular}{ r c l }
+                        2 $Mg^0$              & \lra & 2 $Mg^{2+}$ + 4 $e^-$ \\
+                        + $Ti^{4+}$ + 4 $e^-$ & \lra & $Ti^0$
+                    \end{tabular}
+
           \end{enumerate}
 
     \item Ajustar las siguientes ecuaciones químicas por el método ion electrón en medio básico:
