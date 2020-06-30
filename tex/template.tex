@@ -10,20 +10,19 @@
 \usepackage{tikz}
 \usepackage{environ}
 \hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
 }
-\usepackage[utf8]{inputenc}
 
 \makeatletter
 \newsavebox{\measure@tikzpicture}
 \NewEnviron{scaletikzpicturetowidth}[1]{
   \def\tikz@width{#1}
   \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}
-  \BODY
+    \BODY
   \end{lrbox}
   \pgfmathparse{#1/\wd\measure@tikzpicture}
   \edef\tikzscale{\pgfmathresult}
