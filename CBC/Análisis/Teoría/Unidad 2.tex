@@ -542,4 +542,147 @@ De modo que podemos usar álgebra de límite:
 la base (lo que está entre corchetes) tiende al número real \(e\) y el exponente tiende a 2, entonces
 \[\lim_{n\to\infty}\left(1+\frac{2}{n+2}\right)^{n-1}=e^2\]
 \subsection{El Criterio de Cauchy o de la raíz enésima}
+Hemos visto que \(r^n\) tiende a 0 si \(r\) está entre 0 y 1 y tiende a más infinito si \(r\) es mayor que 1.
+Se puede extender fácilmente este resultado para valores negativos de \(r\) diciendo que
+\[r^n\rightarrow0\text{ si }-1<r<1\]
+\[|r^n|\rightarrow+\infty\text{ si }|r|>1\]
+Este ejemplo sirve para dar un criterio que será muy útil para el cálculo de límites.
+Se quiere calcular el \(\lim_{n\to\infty}a_n\).\\
+Criterio de Cauchy: si \(\lim_{n\to\infty}\sqrt[n]{|a_n|}=L\) vale que:
+\begin{itemize}
+    \item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
+    \item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
+    \item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
+\end{itemize}
+\subsection{El Criterio de D ́Alembert o del cociente}
+Se basa en la idea que usamos en los primeros ejemplos donde estudiamos el cociente \(\frac{a_{n+1}}{a_n}\) y lo comparábamos con 1.\\
+Se quiere calcular el \(\lim_{n\to\infty}a_n\).\\
+Criterio de D ́Alembert: si \(\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L\) vale que:
+\begin{itemize}
+    \item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
+    \item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
+    \item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
+\end{itemize}
+\subsection{Subsucesiones}
+Hemos visto que algunas sucesiones carecen de límite finito o infinito.
+Es el caso de las sucesiones que oscilan finitamente o infinitamente.
+Comprobar que una sucesión no tiene límite en forma rigurosa puede resultar difícil con sólo la definición de límite ya que hay que descartar \textit{todo posible} candidato a ser el límite de la sucesión.\\
+Para resolver este problema será útil introducir la idea de \textit{subsucesión}.\\
+Consideremos una sucesión de números reales:
+\[a_1,a_2,a_3,a_4,a_5,\dots,a_n,\dots\]
+Con dicha sucesión se puede realizar de muchas maneras la siguiente construcción:
+se suprimen de la sucesión una cantidad finita o infinita de términos de manera que queden infinitos términos.
+Los que quedan forman una nueva sucesión que volvemos a numerar.
+Por ejemplo:\\
+Si sacamos el primer término nos queda la nueva sucesión:
+\[a_2,a_3,a_4,a_5,\dots,a_n,\dots\]
+que volvemos a numerar \(b_1,b_2,b_3,b_4,b_5,\dots,b_n,\dots\) de modo que \(b_n=a_{n+1}\).
+Esta nueva sucesión resulta ser una \textit{subsucesión} de la primera.\\
+Si, en cambio, sacamos los infinitos términos impares, nos quedan los infinitos términos pares \(a_2,a_4,a_6,a_8,a_{10},\dots,a_{2n},\dots\) de modo que si volvemos a numerarla \(b_1,b_2,b_3,b_4,b_5,\dots,b_n,\dots\) resulta ser \(b_n=a_{2n}\).
+Como antes, se dice que \(a_{2n}\) es una \textit{subsucesión} de \(a_n\).\\
+Una \textit{subsucesión} de \(a_n\) es una sucesión \(b_k=a_{ n_k}\) donde \(n_1<n_2<n_3<n_4<n_5<n_6<\dots<n_k<\dots\) es la nueva enumeración.\\
+Dada la sucesión \(a_n\) cuyos primeros términos son \(2,4,6,4,2,4,6,4,2,\dots\) escribir el término general de \(a_{2n}\) y de \(a_{2n+1}\).
+Determinen si alguna de las dos subsucesiones es convergente.\\
+\(a_{2n}\) es la subsucesión de los términos pares.
+Los resaltamos en negrita para poder visualizarlos:
+\begin{center}
+    2, \textbf{4}, 6, \textbf{4}, 2, \textbf{4}, 6, \textbf{4}, 2,
+\end{center}
+Claramente se observa que \(a_{2n}=4\) para todo \(n\).
+De modo que, al ser una sucesión constante, resulta convergente.\\
+\(a_{2n+1}\) es la subsucesión de los términos impares.
+De vuelta en negrita.
+\begin{center}
+    \textbf{2}, 4, \textbf{6}, 4, \textbf{2}, 4, \textbf{6},
+\end{center}
+Vemos que esta subsucesión se obtiene sacando todos los 4 de la sucesión.
+Si hacemos eso queda \(2,6,2,6,2,\dots\) de modo que
+\[b_n=a_{2n+1}=\begin{cases}
+        2 & \text{si \(n\) impar} \\
+        6 & \text{si \(n\) par}
+    \end{cases}\]
+que no resulta convergente.
+Pero, ¿cómo probar que no es convergente?\\
+El siguiente resultado, que se deduce directamente de la definición de límite, vendrá en nuestra ayuda.
+Sea \(a_n\) una sucesión de números reales.
+Entonces \(a_n\rightarrow L\) sí y sólo si toda subsucesión \(b_k=a_{n_k}\) de \(a_n\) converge a \(L\) (\(L\) puede ser finito o infinito).\\
+El cuantificador “toda subsucesión” la hace poco práctica para usarla para calcular límites.
+Pero alcanza con que dos subsucesiones tiendan a límites diferentes para que la sucesión original no sea convergente.\\
+Probemos que la sucesión \(b_n=\begin{cases}
+    2 & \text{si \(n\) impar} \\
+    6 & \text{si \(n\) par}
+\end{cases}\) no tiene límite.\\
+Consideremos la subsucesión de los términos pares y la subsucesión de los impares:
+\[2,6,2,6,\dots\]
+\[b_{2n}=6\text{ y }b_{2n+1}=2\]
+Es inmediato que \(b_{2n}\rightarrow6\) y que \(b_{2n+1}\rightarrow2\).
+Como estos límites son distintos, se concluye que la sucesión \(b_n\) no tiene límite.
+\subsection{Sucesiones dadas en forma recurrente}
+Hasta ahora hemos tratado cada sucesión por medio de su término general.\\
+Sin embargo, en muchas situaciones vinculadas con las aplicaciones y procesos iterativos, las sucesiones sepresentan en forma recurrente.
+Esto es, se define el primer término \(a_1\), luego del mismo surge \(a_2\) y en general, se define \(a_{n+1}\) a partir del término anterior \(a_n\) o más generalmente, a partir de todos los términos anteriores.\\
+Ejemplo.
+Estudiemos la convergencia de la sucesión definida como \(a_1=5,\frac{a_{n+1}}{a_n}=\frac{n+1}{3n}\) para todo \(n>1\).\\
+La sucesión viene servida para aplicar el criterio del cociente:
+\[\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\lim_{n\to\infty}\frac{n+1}{3n}=\frac{1}{3}<1\]
+Entonces
+\[\lim_{n\to\infty}a_n=0\]
+Ejemplo. Sea \(a_n\) la sucesión definida en forma recurrente por \(a_1=1,a_{n+1}=\frac{n^n+3^n}{n!}a_n\).
+Calcular, si existe, el \(\lim_{n\to\infty}2^{1+\frac{1}{a_n}}\)\\
+La sucesión es de términos positivos.
+En primer lugar calculamos el \(\lim_{n\to\infty}a_n\).
+Para ello usaremos el Criterio del cociente o Criterio de D ́Alembert.\\
+Aprovechamos la forma recurrente en que viene definida la sucesión:
+\[\frac{a_{n+1}}{a_n}=\frac{n^n+3^n}{n!}=\frac{n^n}{n!}+\frac{3^n}{n!}\]
+Estudiamos cada término por separado, usando otra vez, el criterio del cociente:
+\(x_n=\frac{n^n}{n!}\).
+El cociente de D ́Alembert es
+\[\frac{x_{n+1}}{x_n}=\frac{\frac{(n+1)^{n+1}}{(n+1)!}}{\frac{n^n}{n!}}=\frac{(n+1)^{n+1}}{(n+1)!}\cdot\frac{n!}{n^n}\]
+Trabajamos un poco esta última expresión
+\[\frac{x_{n+1}}{x_n}=\frac{(n+1)^{n+1}}{(n+1)!}\cdot\frac{n!}{n^n}=\frac{(n+1)(n+1)^n}{(n+1)\cdot n!}\cdot\frac{n!}{n^n}=\]
+\[=\frac{(n+1)^n}{n^n}=\left(\frac{n+1}{n}\right)^n=\left(1+\frac{1}{n}\right)^n\]
+Entonces \(\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\).
+Como \(e>1\), el criterio del cociente nos dice que la sucesión \(x_n=\frac{n^n}{n!}\) tiende a más infinito.
+Es decir \(\lim_{n\to\infty}\frac{n^n}{n!}=+\infty\)\\
+Con este resultado alcanza para asegurar que el cociente
+\[\frac{a_{n+1}}{a_n}=\frac{n^n}{n!}+\frac{3^n}{n!}\]
+tiende a más infinito y así, por el Criterio del cociente podemos afirmar que \(\lim_{n\to\infty}a_n=+\infty\).\\
+De todas maneras estudiemos el segundo término:\\
+\(y_n=\frac{3^n}{n!}\).
+El cociente de D ́Alembert es en este caso:
+\[\frac{y_{n+1}}{y_n}=\frac{\frac{3^{n+1}}{(n+1)!}}{\frac{3^n}{n!}}=\frac{3^{n+1}}{(n+1)!}\cdot\frac{n!}{3^n}=\frac{3}{n+1}\]
+Entonces \(\lim_{n\to\infty}frac{y_{n+1}}{y_n}=\lim_{n\to\infty}\frac{3}{n+1}=0\).
+Como \(0<1\) el criterio del cociente nos dice que \(\lim_{n\to\infty}y_n=0\).\\
+En consecuencia \(\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\lim_{n\to\infty}\frac{n^n}{n!}+\frac{3^n}{n!}=+\infty\).\\
+El criterio del cociente afirma que \(\lim_{n\to\infty}a_n=+\infty\).\\
+Estamos en condiciones de calcular el límite que nos pide el problema, teniendo en cuenta que \(\lim_{n\to\infty}\frac{1}{a_n}=0\).
+\[\lim_{n\to\infty}2^{1+\frac{1}{a_n}}=\lim_{n\to\infty}2^{1+\lim_{n\to\infty}\frac{1}{a_n}}=2^{1+0}=2\]
+\subsubsection{La raíz cuadrada de 2}
+Comenzamos esta unidad planteando el problema de diseñar un algoritmo para calcular la raíz cuadrada de un número utilizando las cuatro operaciones elementales de la aritmética.
+Tomamos el caso particular \(a=\sqrt{2}\).\\
+Con la ayuda de una original \textit{idea geométrica}, llegamos a conjeturar que las bases de los rectángulos aproximaban a \(\sqrt{2}\).\\
+Las medidas de las bases de los sucesivos rectángulos vienen dados por la sucesión dada en forma recurrente por la fórmula
+\[x_1=1,x_{n+1}=\frac{1}{2}\left(x_n+\frac{2}{x_n}\right)\]
+Esta sucesión resulta ser una sucesión de términos positivos que podemos ver que está acotada inferiormente y es decreciente, usando la desigualdad entre el promedio geométrico y el promedio aritmético que recordamos en el recuadro.
+(Si \(a>0,b>0\) vale \(\frac{a+b}{2}\geq\sqrt{ab}\))\\
+Para ver que está acotada inferiormente ponemos \(a=x_n\) y \(b=\frac{2}{x_n}\) en la desigualdad y queda
+\[x_{n+1}=\frac{1}{2}\left(x_n+\frac{2}{x_n}\right)\geq\sqrt{x_n\cdot\frac{2}{x_n}}=\sqrt{2}\quad n\geq1\]
+Para ver que es decreciente analizamos el cociente de D ́Alembert como en ocasiones anteriores y volvemos a usar la desigualdad entre promedios y la acotación que acabamos de demostrar.
+El cociente es
+\[\frac{x_{n+1}}{x_n}=\frac{1}{2}\left(1+\frac{2}{x^2_n}\right)\]
+Al poner en la desigualdad \(a=1\) y \(b=\frac{2}{x^2_n}\) se obtiene
+\[\frac{x_{n+1}}{x_n}=\frac{1}{2}\left(1+\frac{2}{x^2_n}\right)\geq\sqrt{1\cdot\frac{2}{x^2_n}}=\frac{\sqrt{2}}{x_n}\leq1\quad n\geq2\]
+Entonces, la sucesión de la medida de las bases de los rectángulos \(x_n\) es decreciente y acotadainferiormente.
+Por el Teorema de las sucesiones monótonas podemos afirmar que existe \(\lim_{n\to\infty}x_n=L\).
+Solo queda calcular \(L\).
+Para ello, usamos el álgebra de límites en la definición recurrente de \(x_n\) y obtenemos
+\[L=\lim_{n\to\infty}x_{n+1}=\lim_{n\to\infty}\frac{1}{2}\left(x_n+\frac{2}{x_n}\right)=\frac{1}{2}\left(L+\frac{2}{L}\right)\]
+Es decir,
+\[2L=L+\frac{2}{L}\]
+o lo que es equivalente
+\[L^2=2\Longleftrightarrow L=\sqrt{2}\text{ ó }L=-\sqrt{2}\]
+Como la sucesión es de términos positivos, el límite no puede ser negativo (recordar la propiedad de conservación de signo).
+Entonces, podemos asegurar que la solución verdadera es la positiva.
+Es decir
+\[\lim_{n\to\infty}x_n=\sqrt{2}\]
 \end{document}
