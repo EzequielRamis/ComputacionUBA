@@ -339,7 +339,207 @@ Ejemplo: Calcular el \(\lim_{n\to\infty}\left(1-\frac{n}{n+1}\right)(-1)^{n+1}\)
 La expresión \((-1)^{n+1}\) vale 1 o \(-1\) según la paridad de \(n\).
 En particular está acotada: \(|(-1)^{n+1}|\leq1\).
 Por otra parte, \(\lim_{n\to\infty}\left(1-\frac{n}{n+1}\right)=\lim_{n\to\infty}\left(\frac{1}{n+1}\right)=0\).
-Usando la propiedad ``cero por acotado" se obtiene
+Usando la propiedad "cero por acotado" se obtiene
 \[\lim_{n\to\infty}\left(1-\frac{n}{n+1}\right)(-1)^{n+1}=0\]
 \subsubsection{Propiedad del sándwich}
+Si dos sucesiones convergen a un mismo límite \(L\), entonces, cualquier sucesión comprendida entre ambas, también converge a \(L\).
+\[\text{Si }b_n<a_n<c_n\text{ entonces }\lim_{n\to\infty}b_n\leq\lim_{n\to\infty}a_n\leq\lim_{n\to\infty}c_n\]
+Ejemplo: Calcular el \(\lim_{n\to\infty}\left(3+\frac{1}{n}\cos(3n+1)\right)\)\\
+El coseno es una función que toma valores entre \(-1\) y 1.
+Entonces vale
+\[-1\leq\cos(3n+1)\leq1\]
+\[-\frac{1}{n}\leq\frac{1}{n}\cos(3n+1)\leq\frac{1}{n}\]
+\[3-\frac{1}{n}\leq3+\frac{1}{n}\cos(3n+1)\leq3+\frac{1}{n}\]
+Ahora bien: \(\lim_{n\to\infty}\left(3-\frac{1}{n}\right)=\lim_{n\to\infty}\left(3+\frac{1}{n}\right)=3\).
+Entonces \[\lim_{n\to\infty}\left(3+\frac{1}{n}\cos(3n+1)\right)=3\]
+Otra forma de resolverlo es
+\[\lim_{n\to\infty}\left(3+\frac{1}{n}\cos(3n+1)\right)=\]
+\[3+\lim_{n\to\infty}\left(\underbrace{\frac{1}{n}}_{\text{Tiende a cero}}\underbrace{\cos(3n+1)}_{\text{Está acotado}}\right)=3\]
+\subsubsection{Sándwich en el infinito}
+La propiedad del sándwich se puede generalizar de la siguiente forma.
+\[\text{Si }a_n>b_n\text{ y }b_n\rightarrow+\infty\text{ entonces }a_n\rightarrow+\infty\]
+Ejemplo: Calcular el \(\lim_{n\to\infty}a_n\) sabiendo que \(a_n>\frac{3n^2+1}{100n+5}\) para todo \(n\).\\
+Calculamos el \(\lim_{n\to\infty}\frac{3n^2+1}{100n+5}\). Para ello, dividimos por \(n\) numerador y denominador:
+\[\lim_{n\to\infty}\frac{3n^2+1}{100n+5}=\lim_{n\to\infty}\frac{3n+\frac{1}{n}}{100+\frac{5}{n}}=+\infty\]
+Entonces \(\lim_{n\to\infty}a_n=+\infty\).
+\subsection{Sucesiones monótonas}
+Las sucesiones son funciones que tienen por dominio a los números naturales.
+Estudiaremos aquellas sucesiones que son funciones crecientes o decrecientes de su variable natural.
+Es decir:
+\[a_{n+1}\leq a_n \text{para (casi) todo \(n\). En tal caso será \textit{decreciente} o}\]
+\[a_{n+1}\geq a_n \text{para (casi) todo \(n\). En tal caso será \textit{creciente}.}\]
+En ambos casos decimos que se trata de una \textit{sucesión monótona}.\\
+La importancia de las sucesiones monótonas radica en que siempre tienen límite, ya sea éste finito o infinito.
+Antes de enunciar con precisión este resultado, hacemos una observación que será de utilidad en lo que sigue.\\
+Si la sucesión es de términos positivos se tiene que:
+\[\frac{a_{n+1}}{a_n}\leq1\text{ equivale a \(a_n\) decreciente.}\]
+\[\frac{a_{n+1}}{a_n}\geq1\text{ equivale a \(a_n\) creciente.}\]
+Ejemplo. Determinemos si las sucesiones \(a_n=(0,8)^n\) y \(b_n=(-0,8)^n\) son monótonas.\\
+La sucesión \(a_n=(0,8)^n\) tiene todos sus términos positivos.
+Sus primeros términos son: \(a_1=0,8, a_2=0,64, a_3=0,512\dots\) Aparentemente es decreciente, pero no alacanza con visualizar tres términos para concluir que es decreciente.
+Sirve para hacer una conjetura.
+Para demostrar que la misma es efectivamente cierta usamos la observación precendente
+\[\frac{a_{n+1}}{a_n}=\frac{(0,8)^{n+1}}{(0,8)^n}=(0,8)^{n+1-n}=0,8<1\]
+Entonces, como \(\frac{a_{n+1}}{a_n}<1\), la sucesión resulta decreciente.\\
+En el otro caso, la sucesión no es de términos positivos pues \(b_n=(-0,8)^n\) va cambiando de signo según sea \(n\) par o impar.
+Los primeros términos de \(b_n\) son \(b_1=-0,8, b_2=0,64, b_3=-0,512\dots\) Se observa que \(b_n<0\) si \(n\) es impar y que \(b_n>0\) sin \(n\) es par.
+Podemos concluir entonces que la sucesión \(b_n\) no es monótona.
+Este ejemplo nos muestra que no todas las sucesiones son monótonas y que éstas constituyen una clase particular de sucesiones.
+El siguiente teorema nos dice cómo se comporta el límite de una sucesión monótona.
+\subsubsection{Teorema sobre sucesiones monótonas}
+Si \(a_n\) es una sucesión creciente puede ser que el conjunto \(A=\{a_n:n\in\N\}\) esté acotado superiormente o que no lo esté.
+Para cada uno de estos dos casos se tiene el siguiente teorema.
+\begin{itemize}
+    \item Si \(A=\{a_n:n\in\N\}\) está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=L\in\R\).
+    \item Si \(A=\{a_n:n\in\N\}\) no está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=+\infty\).
+\end{itemize}
+De forma análoga, hay una versión del teorema cambiando \textit{creciente} por \textit{decreciente}, \textit{acotada superiormente} por \textit{acotada inferiormente} y \(\lim_{n\to\infty}a_n=+\infty\) por \(\lim_{n\to\infty}a_n=-\infty\).\\
+En otras palabras, el teorema dice que la sucesión no puede oscilar:
+o tiene límite finito o tiende a infinito (más o menos según sea creciente o decreciente).\\
+El teorema es de los llamados \textit{teoremas de existencia}, esto es, asegura que el límite existe (en el caso de acotación) pero no dice cuánto vale.\\
+\subsubsection{Algunos ejemplos importantes}
+Estudiaremos algunos ejemplos importantes de sucesiones, no sólo por los ejemplos en sí, sino por las técnicas usadas para calcular sus límites.
+Haremos uso del teorema recién enunciado sobre sucesiones monótonas.
+\begin{itemize}
+    \item \(a_n=r^n, 0<r<1\)
+\end{itemize}
+Si experimentamos con algún caso particular (\(r=\frac{1}{2},\,a_n=\frac{1}{2^n}\), por ejemplo) nos podemos convencer de que la sucesión tiende a 0 ya que \(2^n\) crece a más infinito.
+Veamos cómo este convencimiento se puede plasmar en una demostración.\\
+La sucesión es de términos positivos.
+Estudiamos el cociente \(\frac{a_{n+1}}{a_n}\) a los efectos de compararlo, se tiene que
+\[\frac{a_{n+1}}{a_n}=\frac{r^{n+1}}{r^n}=r<1\text{ para todo }n\]
+Entonces, la sucesión es decreciente.
+Además, dijimos que es de términos positivos, por lo que \(0<a_n\), es decir, está acotada inferiormente.\\
+El teorema nos dice entonces que existe el límite \(\lim_{n\to\infty}a_n=L\geq0\).
+Apostamos a (“conjeturamos” es más apropiado) que \(L=0\).\\
+Pues bien, veamos qué pasa si fuera \(L>0\).
+En tal caso, podemos aplicar el teorema de álgebra de límites al cociente \(\frac{a_{n+1}}{a_n}\) y obtenemos la siguiente contradicción:\\
+Por un lado:
+\[\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\frac{\lim_{n\to\infty}a_{n+1}}{\lim_{n\to\infty}a_n}=\frac{L}{L}=1\]
+Por otro lado:
+\[\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\lim_{n\to\infty}r=r\]
+Como el límite es único, debe ser \(1=r\).
+Pero \(r<1\).
+¡Contradicción!
+Luego no queda otra que \(L=0\).
+Es decir
+\[0<r<1\Rightarrow\lim_{n\to\infty}r^n=0\]
+Con una cuenta similar se obtiene que si
+\[r>1\Rightarrow\lim_{n\to\infty}r^n=+\infty\]
+\begin{itemize}
+    \item \(b_n=\frac{r^n}{n}, r>1\)
+\end{itemize}
+Otra vez tenemos una sucesión de términos positivos.
+Estamos ante una indeterminación del tipo \(\frac{\infty}{\infty}\).
+Si tuviéramos que conjeturar un resultado, habría que decidir quién va "más rápido" a más infinito, ¿el numerador o el denominador?
+Si fuera \(r=2\), los primeros términos serían:
+\(2,2,\frac{8}{3},4,\frac{32}{5},\dots\)
+Aparentemente va creciendo y nada la detiene.\\
+Calculamos el cociente \(\frac{b_{n+1}}{b_n}\) y lo comparamos con 1 como en el ejemplo anterior.
+\[\frac{b_{n+1}}{b_n}=\frac{\frac{r^{n+1}}{n+1}}{\frac{r^n}{n}}=r\frac{n}{n+1}\]
+Observamos que:
+\begin{enumerate}
+    \item \(r>1\) (Es dato)
+    \item \(\frac{n}{n+1}=\frac{1}{1+\frac{1}{n}}\rightarrow1\)
+    \item El producto \(r\frac{n}{n+1}>1\) para casi todo \(n\)
+\end{enumerate}
+Entonces la sucesión \(b_n=\frac{r^n}{n}\) es creciente.
+El teorema de las sucesiones monótonas nos dice que si está acotada superiormente tiene límite finito, caso contrario, tiende a más infinito.\\
+Supongamos que esté acotado superiormente.\\
+En tal caso \(\lim_{n\to\infty}b_n=L>0\) y se puede usar el álgebra de límites y obtener:\\
+Por un lado, \[\lim_{n\to\infty}\frac{b_{n+1}}{b_n}=\frac{L}{L}=1\]
+y, por otro lado, \[\lim_{n\to\infty}\frac{b_{n+1}}{b_n}=\lim_{n\to\infty}r\frac{n}{n+1}=r\]
+Se llega a la contradicción: \(r=1\) cuando teníamos de movida que \(r>1\).
+Esta contradicción proviene de suponer que la sucesión creciente \(b_n=\frac{r^n}{n}\) está acotada superiormente.
+Por lo tanto \(b_n=\frac{r^n}{n}\) \textit{no está acotada superiormente}.
+El teorema nos dice entonces que \[r>1\Rightarrow\lim_{n\to\infty}\frac{r^n}{n}=+\infty\]
+Con una cuenta similar se obtiene que \[0<r<1\Rightarrow\lim_{n\to\infty}nr^n=0\]
+Con una demostración análoga a la precedente, vale que
+\(r>1\Rightarrow\lim_{n\to\infty}\frac{r^n}{n^k}=+\infty\) y que \(0<r<1\Rightarrow\lim_{n\to\infty}n^kr^n=0\) cualquiera sea \(k\in\N\).
+\begin{itemize}
+    \item \(c_n=\sqrt[n]{n}\)
+\end{itemize}
+Nos apoyaremos en que \(\lim_{n\to\infty}\frac{r^n}{n}=+\infty\) (\(r>1\)).\\
+Observemos en primer lugar que \[c_n=\sqrt[n]{n}\geq1\text{ para todo }n\]
+Vamos a probar que \[\lim_{n\to\infty}\sqrt[n]{n}=1\]
+Cualquiera sea \(\epsilon>0\), basta probar que \[1\leq\sqrt[n]{n}<1+\epsilon\text{ para casi todo }n\]
+Llamamos \(r=1+\epsilon>1\) y la desigualdad a probar es equivalente a probar que \[n<(1+\epsilon)^n=r^n\text{ para casi todo }n\]
+Es decir \(\frac{r^n}{n}>1\) para casi todo \(n\). Pero sabemos que \(\frac{r^n}{n}\rightarrow+\infty\) pues \(r>1\).
+Entonces, es seguro que \(\frac{r^n}{n}>1\) para casi todo \(n\).
+Luego \[\lim_{n\to\infty}\sqrt[n]{n}=1\]
+\subsubsection{El número \textit{e}}
+\begin{itemize}
+    \item \(e_n=\left(1+\frac{1}{n}\right)^n\)
+\end{itemize}
+Esta sucesión ejemplifica un nuevo tipo de indeterminación \(1^\infty\), siempre entendiendo este símbolo como una sucesión que tiende a 1 elevada a una sucesión que tiende a infinito.\\
+Sin pretender dar una demostración, mostraremos que \(e_n\) es creciente \((e_{n+1}>e_n)\) y acotada \(e_n<K\).
+Aceptados estos dos hechos, el teorema de sucesiones monótonas nos asegurará que la sucesión converja a un límite finito.\\
+Para visualizar que \(e_n\) es creciente y acotada recurriremos al gráfico de la función \(f(x)=\log(1+x)\) para valores positivos de la variable \(x\).
+Más precisamente, fijamos la atención en \[x_1=\frac{1}{n+1}\text{ y }x_2=\frac{1}{n}\]
+\begin{center}
+    \begin{scaletikzpicturetowidth}{\linewidth}
+        \begin{tikzpicture}[scale=\tikzscale]
+            \draw[->,thick] (0,-.1) -- (0,1.1);
+            \draw[->,thick] (-.1,0) -- (2.1,0);
+            \foreach \x/\xl/\y/\yl/\c in {.7/\(\frac{1}{n+1}\)/.45/\(f(\frac{1}{n+1})\)/green,1.4/\(\frac{1}{n}\)/.75/\(f(\frac{1}{n})\)/blue} {
+                    \draw[\c,very thick] (0,0) -- (\x,\y);
+                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+                    \node (yl) at (0,\y){};
+                    \node (xl) at (\x,0){};
+                    \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+                }
+            \draw[very thick,domain=0:2, smooth, variable=\x] plot ({\x}, {2*Log(10,1+\x)});
+            \draw[red,very thick] (0,0) -- (1,.9);
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+\end{center}
+Se observa que la recta verde tiene pendiente mayor que la recta azul.
+Estas dos rectas pasan por el origen y lo unen con los puntos del gráfico \((x_1,f(x_1))\) y \((x_2,f(x_2))\) respectivamente.
+Esta observación se traduce en la desigualdad
+\[\frac{\log\left(1+\frac{1}{n+1}\right)}{\frac{1}{n+1}}>\frac{\log\left(1+\frac{1}{n}\right)}{\frac{1}{n}}\]
+\[(n+1)\log\left(1+\frac{1}{n+1}\right)>n\log\left(1+\frac{1}{n}\right)\]
+\[\log\left[\left(1+\frac{1}{n+1}\right)^{n+1}\right]>\log\left[\left(1+\frac{1}{n}\right)^n\right]\]
+Como el logaritmo es una función creciente la desigualdad vale para las expresiones que están entre corchetes.
+Es decir \[\left(1+\frac{1}{n+1}\right)^{n+1}>\left(1+\frac{1}{n}\right)^n\]
+Esto muestra que la sucesión \(e_n\) es creciente.
+Para “ver” que además está acotada, también apelamos al gráfico de \(f(x)=\log(1+x)\) y observamos que las pendientes de las rectas de colores (sean azules o verdes) son todas menores que la pendiente de la recta roja.\\
+Si tal pendiente es \(m\) esta observación se traduce en la desigualdad
+\[\frac{\log\left(1+\frac{1}{n}\right)}{\frac{1}{n}}<m\]
+\[\log\left[\left(1+\frac{1}{n}\right)^n\right]<m\]
+\[\left(1+\frac{1}{n}\right)^n<10^m=K\]
+El teorema de las sucesiones monótonas, nos asegura que existe \[\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\]
+El número \(e\), valor límite de la sucesión \(e_n\) es un número muy importante de la matemática que aparece en diversas situaciones.
+Es un número irracional que está entre 2 y 3.
+Más precisamente, su expresión decimal aproximada es \(e\cong2,718281\dots\)\\
+Conocer el límite de \(\left(1+\frac{1}{n}\right)^n\) nos permite calcular el límite de otras sucesiones con la misma “pinta”.\\
+Ejemplo. Calcular el \(\lim_{n\to\infty}\left(1+\frac{2}{n+1}\right)^{\frac{n+1}{2}}\)\\
+Estamos ante una indeterminación del tipo \(1^\infty\).
+Observemos, además, que si llamamos \(a_n=\frac{n+1}{2}\), podemos escribir el límite a calcular como
+\[\lim_{n\to\infty}\left(1+\frac{1}{a_n}\right)^{a_n}\text{ donde }\lim_{n\to\infty}a_n=+\infty\]
+Este límite, con un tratamiento similar al realizado para el caso \(a_n=n\), tiende al número real \(e\).
+De modo que, en general vale
+\[\lim_{n\to\infty}\left(1+\frac{1}{a_n}\right)^{a_n}=e\text{ si }\lim_{n\to\infty}a_n=+\infty\]
+Es equivalente decir, cambiando \(b_n=\frac{1}{a_n}\) que
+\[\lim_{n\to\infty}\left(1+b_n\right)^{\frac{1}{b_n}}=e\text{ si }\lim_{n\to\infty}b_n=+\infty\]
+Cuando estemos ante una indeterminación del tipo \(1^\infty\), la estrategia será “llevar” por medio de transformaciones algebraicas, el límite a calcular a una de estas situaciones.\\
+Ejemplo. Calcular el \(\lim_{n\to\infty}\left(1+\frac{2}{n+2}\right)^{n-1}\)\\
+Es una indeterminación del tipo \(1^\infty\).
+Utilicemos la estrategia recién propuesta.
+\[\left(1+\frac{2}{n+1}\right)^{n-1}=\]
+Preparamos la base como \(\left(1+\frac{1}{\text{algo}}\right)\).
+El exponente queda igual.
+\[\left(1+\frac{1}{\frac{n+1}{2}}\right)^{n-1}=\]
+Hacemos ``aparecer'' en el exponente ``algo'' para poder decir que el corchete tiende a \(e\)
+\[\left[\left(1+\frac{1}{\frac{n+1}{2}}\right)^{\frac{n+1}{2}}\right]^{\frac{2}{n+1}(n-1)}\]
+Para compensar que hicimos aparecer en el exponente ``algo'' ponemos \(\frac{1}{\text{algo}}\) y mantenemos lo que ya estaba.\\
+Si bien la expresión que quedó tiene un aspecto temible, si la miramos con optimismo, podemos ver que lo que está entre corchetes es del tipo
+\[\lim_{n\to\infty}\left(1+\frac{1}{a_n}\right)^{a_n}\text{ con }\lim_{n\to\infty}a_n=+\infty\]
+Sabemos en estos casos que
+\[\left(1+\frac{1}{\frac{n+1}{2}}\right)^{\frac{n+1}{2}}\rightarrow e\]
+Por otra parte, si concentramos la atención en lo que quedó en el exponente por fuera del corchete, vemos que tenemos una sucesión que sabemos atacar.
+\[\frac{2}{n+1}(n-1)=\frac{2n-2}{n+1}=\frac{2-\frac{2}{n}}{1+\frac{1}{n}}\rightarrow2\]
+De modo que podemos usar álgebra de límite:
+la base (lo que está entre corchetes) tiende al número real \(e\) y el exponente tiende a 2, entonces
+\[\lim_{n\to\infty}\left(1+\frac{2}{n+2}\right)^{n-1}=e^2\]
+\subsection{El Criterio de Cauchy o de la raíz enésima}
 \end{document}
