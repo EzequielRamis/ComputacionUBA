@@ -24,11 +24,21 @@
 }
 \DeclareSIUnit{\torr}{torr} % torr = mm Hg
 \DeclareSIUnit{\atm}{atm} % 1atm = 1013 hPa
+\DeclareSIUnit{\MR}{M} % Molaridad
+\DeclareSIUnit{\ML}{m} % Molalidad
 
-\setlength{\columnseprule}{1pt}
+\setlength{\columnseprule}{1pt} % Separar columnas de texto con una linea de 1pt de ancho
 
-\newcommand{\blue}[1]{\textcolor{blue}{#1}}
-\newcommand{\ii}[1]{\textit{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}} % Shortcut para texto en azul
+\newcommand{\ii}[1]{\textit{#1}} % Shortcut para texto en italica
+\newcommand{\lra}{\ensuremath{\longrightarrow{}}} % Shortcut para la flecha para estequimetria
+\newcommand{\sr}[2]{\stackrel{#1}{#2}} % Shortcut para poner texto pequeño sobre texto
+% Estados (ac) (s) (l) (g)
+\newcommand{\eac}{\ \text{(ac)}}
+\newcommand{\es}{\ \text{(s)}}
+\newcommand{\el}{\ \text{(l)}}
+\newcommand{\eg}{\ \text{(g)}}
+
 
 \begin{document}
 
@@ -52,5 +62,7 @@
 \subfile{Práctica/Unidad 6.tex}
 \newpage
 \subfile{Práctica/Unidad 7.tex}
+\newpage
+\subfile{Práctica/Unidad 8.tex}
 
 \end{document}
