@@ -1,5 +1,7 @@
 \documentclass[../Práctica.root.tex]{subfiles}
 
+% R = \frac{\SI{22,4}{\atm\dm\cubed}}{\SI{273,15}{\mole\kelvin}}
+
 \begin{document}
 \section{Unidad 8}
 \subsection{Bloque 1}
@@ -7,14 +9,60 @@
     \item[4.] En un recipiente que contiene \SI{4,00}{\L} de solución acuosa de $HNO_3$ \SI{1,50}{\MR}, se coloca la
           cantidad de cobre suficiente para que reaccione el ácido nítrico presente. La ecuación que
           representa a la reacción es:
-          \[ Cu \es + 4 HNO_3 \eac \lra Cu(NO_3)_2 \eac + 2 NO_2 \eg + 2 H_2O \el \]
+          \[ \sr{(0)}{Cu} \es + 4 \sr{(+1)(+5)(-2)}{HNO_3} \eac \lra \sr{(+2)(+5)(-2)}{Cu(NO_3)_2} \eac + 2 \sr{(+4)(-2)}{NO_2} \eg + 2 H_2O \el \]
+          $HNO_3: \SI{1,50}{\MR} = \frac{\SI{6,00}{\mole}}{\SI{4,00}{\L}}$
+
           Indiquen:
           \begin{enumerate}
               \item la masa de cobre que reacciona;
+                    \begin{center}
+                        \begin{tabular}{c|c}
+                            $Cu$                      & $HNO_3$            \\ \hline
+                            $\SI{1}{\mole}$           & $\SI{4}{\mole}$    \\
+                            $\blue{\SI{1,50}{\mole}}$ & $\SI{6,00}{\mole}$
+                        \end{tabular}
+
+                        \begin{tabular}{c|c}
+                            $Cu$               & $Masa$                   \\ \hline
+                            $\SI{1}{\mole}$    & $\SI{63,5}{\g}$          \\
+                            $\SI{1,50}{\mole}$ & $\boxed{\SI{95,25}{\g}}$
+                        \end{tabular}
+                    \end{center}
+
               \item la masa de sal que se forma;
+                    \[ \SI{1,50}{\mole} Cu \rightarrow \SI{1,50}{\mole} Cu(NO_3)_2 \]
+                    \begin{center}
+                        \begin{tabular}{c|c}
+                            $Cu(NO_3)_2$       & $Masa$                    \\ \hline
+                            $\SI{1}{\mole}$    & $\SI{187.5}{\g}$          \\
+                            $\SI{1,50}{\mole}$ & $\boxed{\SI{281,25}{\g}}$
+                        \end{tabular}
+                    \end{center}
+
               \item la cantidad, expresada en moles, de $NO_2$ que se produce;
+                    \begin{center}
+                        \begin{tabular}{c|c}
+                            $Cu$               & $NO_2$                  \\ \hline
+                            $\SI{1}{\mole}$    & $\SI{2}{\mole}$         \\
+                            $\SI{1,50}{\mole}$ & $\boxed{\SI{3}{\mole}}$
+                        \end{tabular}
+                    \end{center}
+
               \item el número de moléculas de agua que se obtienen;
-              \item el tipo de reacción química que representa.
+                    \begin{center}
+                        \begin{tabular}{c|c}
+                            $Cu$               & $H_2O$          \\ \hline
+                            $\SI{1}{\mole}$    & $\SI{2}{\mole}$ \\
+                            $\SI{1,50}{\mole}$ & $\SI{3}{\mole}$
+                        \end{tabular}
+                    \end{center}
+                    \[ \SI{3}{\mole}\cdot\SI[per-mode=reciprocal]{6,023e23}{\per\mole} \]
+                    \[ \SI{3}{\cancel\mole}\cdot\SI[per-mode=reciprocal]{6,023e23}{\cancel\per\mole} \]
+                    \[ \num{3}\cdot\num{6,023e23} \]
+                    \[ \num{18,069e23} \]
+                    \[ \boxed{\num{1,8069e24}} \]
+              \item el tipo de reacción química que representa. \\
+                    Redox. $Cu: 0 \rightarrow +2$; $N: +5 \rightarrow +4$
           \end{enumerate}
 
     \item[6.] En un recipiente se colocan \SI{280}{\g} de una muestra que contiene antimonio y \SI{42,0}{\g} de
@@ -24,11 +72,49 @@
           Indiquen:
           \begin{enumerate}
               \item la pureza de la muestra;
+                    \[ \frac{\SI{42,0}{\g}}{\SI{280}{\g}} = \SI{15}{\percent}\text{ de impureza} \]
+                    \[ \SI{100}{\percent} - \SI{15}{\percent} = \boxed{\SI{85}{\percent}} \]
               \item el volumen mínimo de solución \SI{2,00}{\MR} de ácido nitroso necesario;
+                    \begin{center}
+                        \begin{tabular}{c|c}
+                            Moles $Sb$        & Masa                         \\
+                            \hline
+                            1                 & \SI{122}{\g}                 \\
+                            \blue{\num{1,95}} & $\SI{280}{\g} - \SI{42}{\g}$ \\
+                        \end{tabular}
+                    \end{center}
+                    Moles de $HNO_2$ necesarios: $5 \cdot \num{1,95} = \num{9,75}$
+                    \[ \SI{2,00}{\MR} = \SI{2,00}{\mole\per\L} \]
+                    \[ \SI{2,00}{\mole\per\L}\cdot v = \SI{9,75}{\mole} \]
+                    \[ \boxed{v = \SI{4,88}{\L}} \]
               \item la presión que ejerce el gas obtenido si se lo recoge en un recipiente de \SI{20,0}{\dm\cubed} a \SI{25,0}{\celsius};
-              \item el tipo de reacción química que representa.
-          \end{enumerate}
+                    \[ \text{Moles de $NO$}: \SI{9,75}{\mole} \]
+                    \[ \SI{25,0}{\celsius} = \SI{298,15}{\kelvin} \]
+                    \[ VP = nRT \]
+                    \[
+                        \SI{20,0}{\dm\cubed}\cdot P =
+                        \SI{9,75}{\mole}
+                        \cdot\SI{22,4/273,15}{\atm\dm\cubed\per\mole\per\kelvin}
+                        \cdot\SI{298,15}{\kelvin}
+                    \]
+                    \[
+                        \SI{20,0}{\cancel\dm\cubed}\cdot P =
+                        \SI{9,75}{\cancel\mole}
+                        \cdot\SI{22,4/273,15}{\atm\cancel\dm\cubed\per\cancel\mole\per\cancel\kelvin}
+                        \cdot\SI{298,15}{\cancel\kelvin}
+                    \]
+                    \[
+                        P = \frac{
+                            \num{9,75 \cdot 22,4 \cdot 298,15}
+                        }{
+                            \num{273,15 \cdot 20,0}
+                        }
+                    \]
+                    \[ \boxed{\SI{11,92}{\atm}} \]
 
+              \item el tipo de reacción química que representa. \\
+                    Redox. $Sb: 0 \rightarrow +5$; $N: +3 \rightarrow +2$
+          \end{enumerate}
 
     \item[8.] En un recipiente se colocan \SI{500}{\mL} de solución acuosa \SI{2,00}{\MR} de hidróxido de sodio,
           \SI{30,0}{\g} de una muestra formada por carbono (\SI{10,0}{\percent} de impurezas inertes) y agua en
@@ -37,8 +123,33 @@
           Determinen:
           \begin{enumerate}
               \item la masa de sal que se produce;
-              \item la cantidad de gas, expresada en moles, que se libera;
-              \item si la cantidad de gas que se forma, aumenta, disminuye o no cambia, al repetir la experiencia con una muestra que contiene carbono con mayor porcentaje de pureza. Justifiquen la respuesta.
+                    \[ \text{Moles $NaOH$: } \SI{500}{\mL}\cdot\SI{2,00}{\MR} = \SI{1,00}{\mole} \]
+                    \begin{center}
+                        \begin{tabular}{c|c}
+                            Moles $C$  & Masa                                  \\
+                            \hline
+                            1          & \SI{12}{\g}                           \\
+                            \num{2,25} & $\SI{30,0}{\g}\cdot\SI{90}{\percent}$
+                        \end{tabular}
+                    \end{center}
+                    Reactivo limitante: $NaOH$
+                    \begin{center}
+                        \begin{tabular}{c|c|c}
+                            $NaOH$        & $Na_2CO_3$      & Masa $Na_2CO_3$     \\
+                            \hline
+                            \SI{2}{\mole} & \SI{1}{\mole}   & \SI{106}{\g}        \\
+                            \SI{1}{\mole} & \SI{0,5}{\mole} & \boxed{\SI{53}{\g}}
+                        \end{tabular}
+                    \end{center}
+
+              \item la cantidad de gas, expresada en moles, que se libera; \\
+                    Por cada mol de $NaOH$ se produce otro de $H_2$
+                    \[ \boxed{\SI{1}{\mole}} \]
+
+              \item si la cantidad de gas que se forma, aumenta, disminuye o no cambia,
+                    al repetir la experiencia con una muestra que contiene carbono con mayor
+                    porcentaje de pureza. Justifiquen la respuesta. \\
+                    \boxed{\text{RTA: No cambia ya que el reactivo limitante es el $NaOH$}}
           \end{enumerate}
 
 
@@ -62,12 +173,84 @@
           \begin{enumerate}
               \item Indiquen cuál es el cambio que se produce en el número de oxidación del elemento
                     correspondiente a la especie que se oxida.
+                    \[ \sr{(0)}{Cu} \es + 2 \sr{(+1)(+6)(-2)}{H_2SO_4} \eac
+                        \lra \sr{(+2)(+6)(-2)}{CuSO_4} \eac + \sr{(+4)(-2)}{SO_2} \eg + 2 \sr{(+1)(-2)}{H_2O} \el \]
+                    \boxed{Cu \text{: } 0 \rightarrow +2}
               \item Calculen:
-                    \begin{enumerate}
+                    \begin{enumerate}[label=\roman*)]
                         \item la presión que ejerce el gas obtenido en el recipiente;
+
+                              \ii{Calcular la cantidad de cobre en moles: }
+                              \begin{center}
+                                  \begin{tabular}{c|c}
+                                      $Cu$            & Masa                           \\
+                                      \hline
+                                      \SI{1}{\mole}   & \SI{63,5}{\g}                  \\
+                                      \SI{0,7}{\mole} & $\SI{44,8}{\g}-\SI{0,400}{\g}$ \\
+                                  \end{tabular}
+                              \end{center}
+
+                              \ii{Calcular la cantidad de moles de $N_2SO_4$: }
+                              \[ \SI{3,30}{\MR}\cdot\SI{0,454}{\dm\cubed} = \SI{1,50}{\mole} \]
+
+                              El reactivo limitante es el $Cu$ (\SI{0,7}{\mole})
+                              \begin{center}
+                                  \begin{tabular}{c|c}
+                                      $Cu$            & $SO_2$                                  \\
+                                      \hline
+                                      \SI{1}{\mole}   & $\SI{1}{\mole}\cdot\SI{86,0}{\percent}$ \\
+                                      \SI{0,7}{\mole} & \SI{0,6}{\mole}
+                                  \end{tabular}
+                              \end{center}
+                              \[ PV = nRT \]
+                              \[
+                                  P\cdot\SI{12,5}{\dm\cubed}
+                                  = \SI{0,6}{\mole}
+                                  \cdot\SI{22,4/273,15}{\atm\dm\cubed\per\mole\per\kelvin}
+                                  \cdot\SI{298.15}{\kelvin}
+                              \]
+                              \[
+                                  P\cdot\SI{12,5}{\cancel\dm\cubed}
+                                  = \SI{0,6}{\cancel\mole}
+                                  \cdot\SI{22,4/273,15}{\atm\cancel\dm\cubed\per\cancel\mole\per\cancel\kelvin}
+                                  \cdot\SI{298.15}{\cancel\kelvin}
+                              \]
+                              \[
+                                  P\cdot\num{12,5}
+                                  = \num{0,6}
+                                  \cdot\SI{22,4/273,15}{\atm}
+                                  \cdot\num{298.15}
+                              \]
+                              \[ \boxed{P = \SI{1,17}{\atm}} \]
+
                         \item el porcentaje de pureza de la muestra de cobre;
+                              \[ \frac{\SI{44,8}{\g}-\SI{0,400}{\g}}{\SI{44,8}{\g}} \]
+                              \[ \boxed{\SI{0,99}{\percent}} \]
+
                         \item el volumen de solución \SI{10,0}{\percent} m/V que se puede preparar con la masa de sal obtenida;
+                              \begin{center}
+                                  \begin{tabular}{c|c}
+                                      $CuSO_4$        & Masa            \\
+                                      \hline
+                                      \SI{1}{\mole}   & \SI{159,5}{\g}  \\
+                                      \SI{0,7}{\mole} & \SI{111,65}{\g} \\
+                                  \end{tabular}
+                              \end{center}
+                              \[ \SI{111,65}{\g}\cdot\SI{86,0}{\percent} = \SI{96,019}{\g} \]
+                              \[ \frac{\SI{96}{\g}}{v} = \SI{10,0}{\percent} m/V \]
+                              \[ \boxed{v = \SI{960}{\cm\cubed}} \]
+
                         \item la cantidad de agua, expresada en moles, que se obtiene.
+                              \begin{center}
+
+                                  \begin{tabular}{c|c}
+                                      $Cu$            & $H_2O$          \\
+                                      \hline
+                                      \SI{1}{\mole}   & \SI{2}{\mole}   \\
+                                      \SI{0,7}{\mole} & \SI{1,4}{\mole} \\
+                                  \end{tabular}
+                              \end{center}
+                              \[ \SI{1,4}{\mole}\cdot\SI{86,0}{\percent} = \boxed{\SI{1,2}{\mole}} \]
                     \end{enumerate}
           \end{enumerate}
 
