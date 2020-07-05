@@ -8,6 +8,7 @@
 \usepackage{tikz}
 \usepackage{xcolor}
 \usepackage{enumitem}
+\usepackage{subcaption}
 
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{external}
@@ -19,6 +20,7 @@
   per-mode = symbol-or-fraction,
   input-product = \cdot,
   output-product = \cdot,
+  exponent-product = \cdot,
   fraction-function = \frac,
   quotient-mode = fraction
 }
@@ -31,7 +33,8 @@
 
 \newcommand{\blue}[1]{\textcolor{blue}{#1}} % Shortcut para texto en azul
 \newcommand{\ii}[1]{\textit{#1}} % Shortcut para texto en italica
-\newcommand{\lra}{\ensuremath{\longrightarrow{}}} % Shortcut para la flecha para estequimetria
+\newcommand{\lra}{\ensuremath{\longrightarrow{}}} % Shortcut para la flecha para estequiometria
+\newcommand{\llra}{\ensuremath{\rightleftarrows{}}} % Shortcut para la (otra) flecha para estequiometria
 \newcommand{\sr}[2]{\stackrel{#1}{#2}} % Shortcut para poner texto pequeño sobre texto
 % Estados (ac) (s) (l) (g)
 \newcommand{\eac}{\ \text{(ac)}}
@@ -62,5 +65,7 @@
 \subfile{Práctica/Unidad 7.tex}
 \newpage
 \subfile{Práctica/Unidad 8.tex}
+\newpage
+\subfile{Práctica/Unidad 9.tex}
 
 \end{document}
