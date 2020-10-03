@@ -1,0 +1,84 @@
+\input{../../tex/template.tex}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{chemformula}
+
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=Práctica/tikz/]
+\tikzset{fvec/.style={draw=red, very thick, ->}} % Force VECtor / VECtor Fuerza
+
+\sisetup{
+  output-decimal-marker = {,},
+  per-mode = symbol-or-fraction,
+  input-product = \cdot,
+  output-product = \cdot,
+  exponent-product = \cdot,
+  fraction-function = \frac,
+  quotient-mode = fraction
+}
+\DeclareSIUnit{\torr}{torr} % torr = mm Hg
+\DeclareSIUnit{\atm}{atm} % 1atm = 1013 hPa
+\DeclareSIUnit{\MR}{M} % Molaridad
+\DeclareSIUnit{\ML}{m} % Molalidad
+
+\setlength{\columnseprule}{1pt} % Separar columnas de texto con una linea de 1pt de ancho
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}} % Shortcut para texto en azul
+\newcommand{\ii}[1]{\textit{#1}} % Shortcut para texto en italica
+\newcommand{\lra}{\ensuremath{\longrightarrow{}}} % Shortcut para la flecha para estequiometria
+\newcommand{\llra}{\ensuremath{\rightleftarrows{}}} % Shortcut para la (otra) flecha para estequiometria
+\newcommand{\sr}[2]{\stackrel{#1}{#2}} % Shortcut para poner texto pequeño sobre texto
+% Estados (ac) (s) (l) (g)
+\newcommand{\eac}{\ \text{(ac)}}
+\newcommand{\es}{\ \text{(s)}}
+\newcommand{\el}{\ \text{(l)}}
+\newcommand{\eg}{\ \text{(g)}}
+
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\setcounter{section}{0}
+
+\subfile{Teoría/Palabras clave.tex}
+\newpage
+\subfile{Teoría/Compuestos químicos.tex}
+\newpage
+\subfile{Teoría/Uniones químicas.tex}
+\newpage
+\subfile{Teoría/Uniones moleculares.tex}
+\newpage
+\subfile{Teoría/Representaciones.tex}
+\newpage
+\subfile{Teoría/Soluciones.tex}
+\newpage
+\subfile{Teoría/Reacciones.tex}
+\newpage
+\subfile{Teoría/Cheatsheets.tex}
+% \newpage
+% \subfile{Teoría/Fuentes.tex}
+% \newpage
+% \subfile{Práctica/Unidad 5.tex}
+% \newpage
+% \subfile{Práctica/Unidad 6.tex}
+% \newpage
+% \subfile{Práctica/Unidad 7.tex}
+% \newpage
+% \subfile{Práctica/Unidad 8.tex}
+% \newpage
+% \subfile{Práctica/Unidad 9.tex}
+% \newpage
+% \subfile{Práctica/Unidad 10.tex}
+
+\end{document}

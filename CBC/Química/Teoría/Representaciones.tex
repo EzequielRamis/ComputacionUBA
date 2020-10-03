@@ -1,0 +1,70 @@
+\documentclass[../Teoría.root.tex]{subfiles}
+ 
+\begin{document}
+\section{Representaciones}
+\subsection{Estructura de Lewis}
+\label{subsec:lewis}
+% TODO
+
+\subsubsection{Uniones}
+% TODO
+
+\subsubsection{Regla del Octeto}
+Los átomos tienen sus electrones organizados en capas. En los elementos representativos, las últimas dos capas (Xs y Xp) son de baja energía (o sea, los \ch{e-} en ellas se pueden perder y ganar fácilmente), y pueden utilizarse para realizar uniones químicas. Como, en conjunto, las capas s y p solo pueden tener 8 electrones en total, la “Regla del Octeto” dice que los átomos alcanzan la estabilidad al completar ambas. Esto se puede lograr de dos formas: Ganando electrones, completando todas las capas (Ej.: \ch{O}\rightarrow\ch{O^2-}), o perdiendo electrones, de forma que las capas exteriores que no sean s y p dejen de existir (Ej.: \ch{K}\rightarrow\ch{K+})
+
+\subsubsection{Excepciones}
+\begin{enumerate}
+    \item Los elementos del tercer periodo en adelante tienen orbitales intermedios (varios s y p, etc.) y pueden acomodar más electrones, por lo que al unirse con otros elementos pueden formar más uniones y terminar con más de \num{8} electrones.
+    \item \ch{H} y \ch{He} tienen un solo orbital (\num{1}s) y por lo tanto solo pueden mantener \num{2} electrones.
+    \item Por algún motivo nunca se observó un compuesto donde el boro o el aluminio formen suficientes uniones como para completar el octeto
+\end{enumerate}
+
+\subsection{Regla de la Electronegatividad}
+% TODO: Averiguar si hay que saberla o no.
+% NOTE: Hay que saberla, solo que no la enseñan
+
+\subsection{TRePEV y Geometría}
+\label{sec:trepev}
+“Teoría de Repulsión de los Pares Electrónicos de Valencia”
+Debido a que los electrones y protones tienen carga eléctrica, estos van a atraerse y repelerse entre sí. Mientras que la atracción provoca las uniones químicas (Ver sección \ref{sec:compuestos quimicos}), la repulsión provoca que los átomos se alejen los unos de los otros. Dentro de una molécula, los electrones de valencia de un átomo intentarán atraer los núcleos de otros átomos, mientras que los electrones orbitando dichos átomos se resistirán a esta atracción. Cuando este tire y empuje alcanza el equilibrio, la molécula resultante tendrá dos propiedades: La \ii{geometría molecular} y la \ii{geometría electrónica}
+
+Reglas:
+\label{lst:representaciones.reglas}
+\begin{enumerate}
+    \item Los electrones libres provocan mayor repulsión que los que forman uniones. El orden de mayor repulsión a menor es: Libre vs. Libre > Libre vs. Unión > Unión vs. Unión
+    \item Todos los tipos de enlaces covalentes (dativos, dobles, triples, etc.) se consideran simples
+\end{enumerate}
+
+La geometría de las moléculas se puede predecir a partir del número de electrones que rodean al átomo central de una molécula, según su estructura de \hyperref[sec:lewis]{Lewis}. La disposición espacial que adoptan los electrones externos (compartidos y libres) alrededor del átomo central, se denomina \underline{geometría electrónica} (GE). Los pares de electrones se ubican de manera de minimizar las repulsiones entre ellos.
+
+En esta materia nos encontramos con las siguientes configuraciones según la cantidad de pares de \ch{e-} rodeando al átomo central:
+\begin{itemize}
+    \item Dos pares de \ch{e-} \rightarrow\ “Geometría electrónica lineal” (Ángulo entre átomos: \ang{180})
+
+    \item Tres pares de \ch{e-} \rightarrow\ “Geometría electrónica plana triangular” (Ángulo entre átomos: \ang{120})
+
+    \item Cuatro pares de \ch{e-} \rightarrow\ “Geometría electrónica tetraédrica” (Ángulo entre átomos: \ang{109.5})
+
+\end{itemize}
+
+La disposición que toman los átomos de una se llama geometría molecular (GM), para moléculas y geometría electrónica (GE) para iones. Cuando no hay pares de electrones libres, la GM va a coincidir con la GE (\hyperref[subsec:representaciones.ejemplos]{Ejemplos}). Sin embargo, cuando sí haya pares libres, estos van a empujar con mayor fuerza a los pares unidos (\hyperref[lst:representaciones.reglas]{Reglas}), provocando que los ángulos entre los átomos sean menores a los predichos por la GE\textsuperscript{1} (por lo que también tendrán otros nombres).
+\\
+
+\textsuperscript{1} En la materia no se nos pide que calculemos los ángulos exactos, salvo cuando GE=GM, con poner “menor a ...” alcanza.
+\\
+
+Ejemplos:
+\label{subsec:representaciones.ejemplos}
+
+    \begin{tabular}{llllll}
+        \hline
+        \ch{AB_{x}} & Par \ch{e-} libres & \ch{B_{x}} & GE               & GM               & Ang.                \\ \hline
+        \ch{CO2}    & \num{0}            & \num{2}    & Lineal           & Lineal           & \ang{180}           \\ \hline
+        \ch{H2O}    & \num{2}            & \num{2}    & Tetraédrica      & Angular          & Menor a \ang{109.5} \\ \hline
+        \ch{SO2}    & \num{1}            & \num{2}    & Plana triangular & Angular          & Menor a \ang{120}   \\ \hline
+        \ch{SO3}    & \num{0}            & \num{3}    & Plana triangular & Plana triangular & \ang{120}           \\ \hline
+        \ch{CH4}    & \num{0}            & \num{4}    & Tetraédrica      & Tetraédrica      & \ang{109.5}         \\ \hline
+    \end{tabular}
+
+
+\end{document}
