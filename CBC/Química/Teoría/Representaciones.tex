@@ -54,17 +54,34 @@ La disposición que toman los átomos de una se llama geometría molecular (GM),
 
 
 Ejemplos:
-\label{subsec:representaciones.ejemplos}
 
-    \begin{tabular}{llllll}
-        \hline
-        \ch{AB_{x}} & Par \ch{e-} libres & \ch{B_{x}} & GE               & GM               & Ang.                \\ \hline
-        \ch{CO2}    & \num{0}            & \num{2}    & Lineal           & Lineal           & \ang{180}           \\ \hline
-        \ch{H2O}    & \num{2}            & \num{2}    & Tetraédrica      & Angular          & Menor a \ang{109.5} \\ \hline
-        \ch{SO2}    & \num{1}            & \num{2}    & Plana triangular & Angular          & Menor a \ang{120}   \\ \hline
-        \ch{SO3}    & \num{0}            & \num{3}    & Plana triangular & Plana triangular & \ang{120}           \\ \hline
-        \ch{CH4}    & \num{0}            & \num{4}    & Tetraédrica      & Tetraédrica      & \ang{109.5}         \\ \hline
-    \end{tabular}
+\label{subsec:representaciones.ejemplos}
+\begin{tabular}{cccccc}
+    \toprule
+    Forma general & Ejemplo    & GM. & GE. & Polaridad & Ángulo de enlace \\
+    \midrule
+    \ch{AX_2}     & \ch{CO_2}  & \chemfig{X-A-X} & \chemfig{X-A-X} & No polar & $\alpha=\ang{180}$ \\
+    \midrule
+    \ch{AX_3}     & \ch{SO_3}  & \chemfig{A(-[:90]X)(-[:210]X)(-[:330]X)} & \chemfig{A(-[:90]X)(-[:210]X)(-[:330]X)} & No polar & $\alpha=\ang{120}$ \\
+    \midrule
+    \ch{AX_4}     & \ch{CCl_4} & \chemfig{A(-[:200]X)(<[:290]X)(<:[:-10]X)(-[:90]X)} & \chemfig{A(-[:200]X)(<[:290]X)(<:[:-10]X)(-[:90]X)} & No polar & $\alpha=\ang{109.5}$ \\
+    \midrule
+    \ch{AX_2E_1}  & \ch{SO_2}  & \chemfig{A(-[5]X)(-[7]X)} & \chemfig{A(-[2]\lewis{2:,})(-[5]X)(-[7]X)} & Polar & $\alpha<\ang{120}$ \\
+    \midrule
+    \ch{AX_2E_2}  & \ch{H_2O}  & \chemfig{A(-[5]X)(-[7]X)} & \chemfig{A(-[:200]X)(<[:290]X)(<:[:-10]\lewis{0:,})(-[:90]\lewis{2:,})} & Polar & $\alpha<\ang{109.5}$ \\
+    \midrule
+    \ch{AX_3E_1}  & \ch{NH_3}  & \chemfig{A(-[:200]X)(<[:290]X)(<:[:-10]X)} & \chemfig{A(-[:200]X)(<[:290]X)(<:[:-10]X)(-[:90]\lewis{2:,})} & Polar & $\alpha<\ang{109.5}$ \\
+    \bottomrule
+\end{tabular}
+    % \begin{tabular}{llllll}
+    %     \hline
+    %     \ch{AB_{x}} & Par \ch{e-} libres & \ch{B_{x}} & % GE               & GM               & Ang.                \\ % \hline
+    %     \ch{CO2}    & \num{0}            & \num{2}    & % Lineal           & Lineal           & \ang{180}           \\ % \hline
+    %     \ch{H2O}    & \num{2}            & \num{2}    & % Tetraédrica      & Angular          & Menor a \ang{109.5} \\ % \hline
+    %     \ch{SO2}    & \num{1}            & \num{2}    & Plana % triangular & Angular          & Menor a \ang{120}   \\ \hline
+    %     \ch{SO3}    & \num{0}            & \num{3}    & Plana % triangular & Plana triangular & \ang{120}           \\ \hline
+    %     \ch{CH4}    & \num{0}            & \num{4}    & % Tetraédrica      & Tetraédrica      & \ang{109.5}         \\ % \hline
+    % \end{tabular}
 
 
 \end{document}
