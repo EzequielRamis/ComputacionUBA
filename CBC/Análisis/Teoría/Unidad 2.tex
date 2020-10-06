@@ -1,0 +1,764 @@
+% !TEX root = ../Teoría.root.tex
+
+\documentclass[../Teoría.root.tex]{subfiles}
+
+\begin{document}
+\section{Sucesiones}
+\subsection{Introducción}
+Las sucesiones son objetos matemáticos muy sencillos que se apoyan en la ordenación de un conjunto (finito o infinito) de números reales.
+Sirven, por ejemplo, para estudiar, representar y predecir los fenómenos que ocurren o se miden en el tiempo, en forma intermitente.
+\subsubsection{Un problema a modo de presentación}
+El problema consiste en encontrar un algoritmo que calcule la raíz cuadrada de un número dado (por ejemplo \(\sqrt{2}\)), utilizando sólo las cuatro operaciones básicas.
+
+Una solución al problema se basa en una idea geométrica:
+
+Se construyen sucesivos rectángulos todos de área 2.
+La base de cada uno de ellos es el promedio de la base y la altura del anterior.
+\begin{center}
+    \begin{scaletikzpicturetowidth}{\linewidth}
+        \begin{tikzpicture}[scale=\tikzscale]
+            \node(rect)[draw=black,ultra thick, minimum width=2*1cm,minimum height=2*2cm,label=right:2,label=below:1](A){\(\textstyle1\cdot2=2\)};
+            \node(rect)[right=of A,draw=black,ultra thick, minimum width=2*1.5cm,minimum height=2*1.333cm,label=right:\(\textstyle\frac{2}{1,5}\),label=below:\(\textstyle\text{\(\frac{1+2}{2}=1,5\)}\)](B){\(\textstyle1,5\cdot\frac{2}{1,5}=2\)};
+            \node(rect)[right=of B,draw=black,ultra thick, minimum width=2*1.417cm,minimum height=2*1.412cm,label=right:\(\textstyle\text{1,4118}\),label=below:\(\textstyle\text{\(\frac{1,5+\frac{2}{1,5}}{2}\cong1,4167\)}\)](c){\(\scriptstyle1,4167\cdot1,4118\cong2\)};
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+\end{center}
+Designamos con \(x_1\) a la medida de la base del primer rectángulo, que elegimos que fuera igual a 1, con \(x_2\) a lo que mide la base del segundo rectángulo, y así sucesivamente.
+
+Entonces resulta:
+\[x_1=1,x_2=\frac{x_1+\frac{2}{x_1}}{2}=1,5,x_3=\frac{x_2+\frac{2}{x_2}}{2}=1,4167,\dots,x_{n+1}=\frac{x_n+\frac{2}{x_n}}{2}\]
+Geométricamente se observa que los rectángulos se van aproximando a un cuadrado de área 2, por lo cual las bases \(x_n\) se van aproximando al lado del cuadrado de área 2, es decir \(x_n\rightarrow\sqrt{2}\) (\(x_n\) se aproxima a \(\sqrt{2}\)).
+
+\subsubsection{Ejemplos de sucesiones}
+Consideramos los siguientes ejemplos:
+\begin{enumerate}
+    \item \(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+    \item 1, 3, 5, 7, \dots
+    \item \(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
+    \item \(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+    \item 0, 1, 0, 1, \dots
+    \item 2, -4, 6, -8, \dots
+\end{enumerate}
+Informalmente, una \textit{sucesión} es una \textit{lista ordenada} e infinita de números reales.
+
+Nos interesará el “comportamiento a la larga” de cada lista de números.
+En otras palabras, nos interesará saber si, a medida que avanzamos en la lista de números, éstos se parecen o aproximan a un número determinado.
+Habrá que dar más precisión a esta idea.
+
+Observemos por el momento, que una lista ordenada de números se puede describir con el lenguaje de las funciones que vimos en el primer módulo, usando como conjunto “ordenador” a los números naturales.
+
+Una \textit{sucesión} es una función \(a:\N\rightarrow\R\), se escribe \(a(n)=a_n\).
+Se lee “\(a\,sub\,n\)”.
+Indica el número real de la lista en la posición \(n\).
+
+Observemos la lista de sucesiones con las que comenzamos esta sección:
+En la sucesión \textbf{1.} \(a_3=\frac{1}{3}\) y \(a_{100}=\frac{1}{100}\); en la sección \textbf{4.} \(a_4=\frac{4}{5}\) y \(a_{1000}=\frac{1000}{1001}\).
+
+Lo que interesará es el comportamiento de \(a_n\) para “valores grandes” de \(n\).
+\subsubsection{Término general}
+Es la expresión de \(a_n\) para cada \(n\).
+Analizamos cada una de las sucesiones anteriores
+\begin{enumerate}
+    \item \(a_n=\frac{1}{n}\)\tab\(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+    \item \(a_n=2n-1\)\tab\(1,3,5,7,\dots\)
+    \item \(a_n=(-1)^n\frac{1}{2^n}\)\tab\(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
+    \item \(a_n=\frac{n}{n+1}\)\tab\(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+    \item \(a_n=\begin{cases}
+              0 & \text{si \(n\) es impar} \\
+              1 & \text{si \(n\) es par}
+          \end{cases}\)\tab\(0,1,0,1,\dots\)
+    \item \(a_n=(-1)^{n+1}2n\)\tab\(2,-4,6,-8,\dots\)
+\end{enumerate}
+\subsubsection{Representación gráfica}
+Como una sucesión es una función admite una representación gráfica, veamos alguno de los ejemplos anteriores:
+\begin{enumerate}
+    \item \addtocounter{enumi}{1}\(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+          \begin{center}
+              \begin{scaletikzpicturetowidth}{\linewidth}
+                  \begin{tikzpicture}[scale=\tikzscale]
+                      \draw[->,thick] (0,-.1) -- (0,1.1);
+                      \draw[->,thick] (-.1,0) -- (2.1,0);
+                      \foreach \x/\xl/\y/\yl in {.2/1/1/1,.4/2/{1/2}/{1/2},.6/3/{1/3}/{1/3},.8/4/{1/4}/{1/4},1.4/\(n\)/{1/10}/{1/\(n\)}} {
+                      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+                      \node (yl) at (0,\y){};
+                      \node (xl) at (\x,0){};
+                      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+                      }
+                  \end{tikzpicture}
+              \end{scaletikzpicturetowidth}
+          \end{center}
+          \[a_n=\frac{1}{n}\rightarrow0\]
+    \item \(-\frac{1}{2},\frac{1}{4},-\frac{1}{16},\dots\)
+          \begin{center}
+              \begin{scaletikzpicturetowidth}{\linewidth}
+                  \begin{tikzpicture}[scale=\tikzscale]
+                      \draw[->,thick] (0,-1) -- (0,.6);
+                      \draw[->,thick] (-.1,0) -- (2.1,0);
+                      \foreach \x/\xl/\y/\yl in {.2/1/{-1/2}/{-1/2},.4/2/{1/4}/{1/4},.6/3/{-1/8}/{-1/8},.8/4/{1/16}/{1/16},1.4/\(n\)/0/ } {
+                      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+                      \node (yl) at (0,\y){};
+                      \node (xl) at (\x,0){};
+                      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=2mm of xl]{\xl};
+                      }
+                  \end{tikzpicture}
+              \end{scaletikzpicturetowidth}
+          \end{center}
+          \[a_n=(-1)^n\frac{1}{2^n}\rightarrow0\]
+    \item \(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+          \begin{center}
+              \begin{scaletikzpicturetowidth}{\linewidth}
+                  \begin{tikzpicture}[scale=\tikzscale]
+                      \draw[->,thick] (0,-.1) -- (0,1.1);
+                      \draw[->,thick] (-.1,0) -- (2.1,0);
+                      \draw[thick] (0,1) -- node[above]{1} (2.1,1);
+                      \foreach \x/\xl/\y/\yl in {.2/1/{1/2}/{1/2},.4/2/{2/3}/{2/3},.6/3/{3/4}/{3/4},.8/4/{4/5}/{4/5},1.4/\(n\)/{9/10}/\(a_n\)} {
+                      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+                      \node (yl) at (0,\y){};
+                      \node (xl) at (\x,0){};
+                      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+                      }
+                  \end{tikzpicture}
+              \end{scaletikzpicturetowidth}
+          \end{center}
+          \[a_n=\frac{n}{n+1}\rightarrow1\]
+\end{enumerate}
+\subsection{Noción de límite}
+Intuitivamente, una sucesión \textit{tiende} a un valor determinado \(L\) si los valores de \(a_n\) \textit{están cerca} de \(L\) cuando \(n\) es grande.
+Un poco más precisamente:
+el error que se comete al aproximar \(L\) con \(a_n\) es pequeño (menor que épsilon (\(\epsilon\))) si \(n\) es bastante grande (más que \(n_0\) en el gráfico)
+\begin{center}
+    \begin{scaletikzpicturetowidth}{\linewidth}
+        \begin{tikzpicture}[scale=\tikzscale]
+            \draw[->,thick] (0,-.1) -- (0,1.1);
+            \draw[->,thick] (-.1,0) -- (2,0);
+            \draw[dashed] (0,.8) node[left]{\(L+\epsilon\)} -- (2,.8);
+            \draw[dashed] (0,.5) node[left]{\(L\)} -- (2,.5);
+            \draw[dashed] (0,.2) node[left]{\(L-\epsilon\)} -- (2,.2);
+            \draw[<->,dashed,thick] (.5,.5) -- (.5,.8) node[above]{\(\epsilon\)};
+            \draw[dashed] (1.2,0) node[below]{\(n_0\)} -- (1.2,1);
+            \fill[green,opacity=0.2] (1.2,.2) -- (1.2,.8) -- (2,.8) -- (2,.2) -- cycle;
+            \foreach \x/\y in {.2/.9,.3/.3,.6/.1,.8/.6,1/.9,1.3/.75,1.5/.4,1.7/.6,1.9/.45} {
+                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
+                }
+            \node[draw,text width=3.5cm] at (3.5,.5) {\textbf{Idea geométrica}\\A partir de \(n_0\) la franja verde capta a todos los \(a_n\)};
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+\end{center}
+La definición precisa de límite es la siguiente:
+
+Se dice que \(a_n\) tiene \textit{límite L} si, cualquiera sea \(\epsilon>0\), existe un número natural \(n_0\) tal que si \(n\geq0\), entonces \[L-\epsilon<a_n<L+\epsilon\,\text{(o sea \(|a_n-L|<\epsilon\,\text{si}\,n\geq n_0\))}\]
+Se escribe \(\lim_{n\to\infty}a_n=L\) o \(a_n\rightarrow L\), se lee "\textit{el límite de a sub n cuando n tiende a infinito es L}".
+También se dice en tal caso que \(a_n\in(L-\epsilon,L+\epsilon)\) \textit{para casi todo n (pctn)}.
+En general, una propiedad vale \textit{para casi todo n} si vale para todo \(n\) salvo un número finito de valores de \(n\).
+Se pone \(pctn\).
+\subsubsection{Sucesiones divergentes}
+No todas las sucesiones convergen a un límite \(L\in\R\), por ejemplo:
+\begin{itemize}
+    \item \(a_n=2n-1\)\tab\(1,3,5,7,\dots\)
+          \begin{center}
+              \begin{scaletikzpicturetowidth}{.5\linewidth}
+                  \begin{tikzpicture}[scale=\tikzscale]
+                      \draw[->,thick] (0,-1) -- (0,10);
+                      \draw[->,thick] (-1,0) -- (10,0);
+                      \foreach \x/\xl/\y/\yl in {1/1/1/1,2/2/3/3,3/3/5/5,4/\(n_0\)/7/\(K\),5/\(n\)/9/\(2n-1\)} {
+                              \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+                              \node (yl) at (0,\y){};
+                              \node (xl) at (\x,0){};
+                              \draw[dashed] node[left=1mm of yl]{\(\textstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+                          }
+                      \draw[dashed,ultra thin] (1,1) -- (5,9);
+                      \fill[green,opacity=0.2] (4,7) -- (4,10) -- (6,10) -- (6,7) -- cycle;
+                  \end{tikzpicture}
+              \end{scaletikzpicturetowidth}
+          \end{center}
+          \[\lim_{n\to\infty}(2n-1)=+\infty\] Para todo \(K>0\) existe \(n_0\in\N\) tal que si \(n>n_0,2n-1>K\) (en el sector verde).
+    \item \(b_0=\begin{cases}
+              0 & \text{si \(n\) es impar} \\
+              1 & \text{si \(n\) es par}
+          \end{cases}\)\tab\(0,1,0,1,\dots\)
+          \begin{center}
+              \begin{scaletikzpicturetowidth}{.5\linewidth}
+                  \begin{tikzpicture}[scale=\tikzscale]
+                      \draw[->,thick] (0,-1) -- (0,6);
+                      \draw[->,thick] (-.5,0) -- (10,0);
+                      \foreach \y [count=\x] in {0,1,0,1,0,1} {
+                              \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y*5)(n){};
+                              \node (yl) at (0,\y*5){};
+                              \node (xl) at (\x,0){};
+                              \draw node[left=1mm of yl]{\y} (yl);
+                              \draw[dashed] (n) -- (\x,0) node[below=1mm of xl]{\x};
+                          }
+                      \draw[dashed] (0,5) -- (10,5);
+                  \end{tikzpicture}
+              \end{scaletikzpicturetowidth}
+          \end{center}
+          \[\lim_{n\to\infty}b_n\,\text{no existe}\] En este caso se dice que \(a_n\) oscila finitamente.
+    \item \(c_n=(-1)^{n-1}2n\)\tab\(2,-4,6,-8,\dots\)
+          \begin{center}
+              \begin{scaletikzpicturetowidth}{.5\linewidth}
+                  \begin{tikzpicture}[scale=\tikzscale]
+                      \draw[->,thick] (0,-11) -- (0,11);
+                      \draw[->,thick] (-1,0) -- (20,0);
+                      \foreach \y [count=\x] in {2,-4,6,-8} {
+                              \node[draw,shape=circle,fill=black,scale=0.4] at (\x*2,\y)(n){};
+                              \node (yl) at (0,\y){};
+                              \node (xl) at (\x*2,0){};
+                              \draw[dashed] node[left=1mm of yl]{\y} (yl) -- (n) -- (\x*2,0) node[below=1mm of xl]{\x};
+                          }
+                  \end{tikzpicture}
+              \end{scaletikzpicturetowidth}
+          \end{center}
+          Se dice que \(c_n\) tiende a infinito (sin especificar el signo) o que oscila infinitamente.
+\end{itemize}
+\subsection{Propiedades del límite}
+La mayoría de las veces, el problema consistirá en calcular el valor de \(\lim_{n\to\infty}a_n\).
+La definición no será útil para ello porque presupone conocer el valor de \(L\), de modo que nos valdremos de propiedades y diversos recursos algebraicos para poder determinar el valor del límite en los ejemplos que estudiemos.
+La definición de límite es imprescindible para poder obtener esas propiedades y para introducir casi todos los conceptos de la materia que se basan en esta noción.
+En la práctica no haremos un uso directo de dicha definición.
+
+Las siguientes propiedades se deducen de la definición de límite y nos servirán para desarrollar técnicas que nos permitan calcular algunos límites.
+\subsubsection{Unicidad del límite}
+\begin{center}
+    \begin{scaletikzpicturetowidth}{.5\linewidth}
+        \begin{tikzpicture}[scale=\tikzscale]
+            \draw[->,thick] (0,-1) -- (0,5);
+            \draw[->,thick] (-1,0) -- (10,0);
+            \foreach \x/\xl in {1/1,2/2,3/3,4/4,6/\(n\)} {
+                    \draw[thick] (\x,.25) -- (\x,-.25) node[below]{\xl};
+                }
+            \draw[dashed, red] (6,0) -- (6,5);
+            \foreach \y [count=\i] in {1.5,3} {
+                    \draw[thick] (0,\y+.5) -- (10,\y+.5);
+                    \draw[dashed, red] (0,\y) node[left]{\(L_\i\)} -- (10,\y);
+                    \draw[thick] (0,\y-.5) -- (10,\y-.5);
+                }
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+\end{center}
+Una sucesión no puede converger a dos límites distintos.
+Si así fuera todos los \(a_n\) a partir de \(n=n_0\) tendrían que estar simultáneamente en las dos franjas y eso no es posible.
+\subsubsection{Acotación de las sucesiones convergentes}
+Si \(a_n\) es convergente, entonces el conjunto \(A=\{a_n:n\in\N\}\) es acotado.
+\begin{center}
+    \begin{scaletikzpicturetowidth}{.5\linewidth}
+        \begin{tikzpicture}[scale=\tikzscale]
+            \draw[->,thick] (0,-1) -- (0,7);
+            \draw[->,thick] (-1,0) -- (11,0);
+            \draw[thick] (5.5,.25) -- (5.5,-.25) node[below]{\(n_0\)};
+            \draw[dashed] (5.5,0) -- (5.5,7);
+            \draw[red] (0,1) node[left]{\(m\)} -- (11,1);
+            \draw[dashed] (0,2) node[left]{\(L-1\)} -- (11,2);
+            \draw[dashed] (0,3) node[left]{\(L\)} -- (11,3);
+            \draw[dashed] (0,4) node[left]{\(L+1\)} -- (11,4);
+            \draw[red] (0,5) node[left]{\(M\)} -- (11,5);
+            \fill[green,opacity=0.2] (5.5,2) -- (5.5,4) -- (11,4) -- (11,2) -- cycle;
+            \foreach \y [count=\x] in {4.5,2.2,1.2,3.5,4.6,3.8,2.6,3.3,2.7,3.2} {
+                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
+                }
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+\end{center}
+Se elige \(\epsilon=1\) o cualquier otro.
+Una vez que \(a_n\) queda dentro de la franja roja para \(n\geq n_0\), es fácil encontrar cotas superiores e inferiores de \(A\).
+\(M\) es cota superior y \(m\) es cota inferior de \(A\).
+\subsubsection{Conservación de signo}
+Si \(a_n\) converge a un límite \(L\) mayor que cero, entonces la sucesión \(a_n\) es mayor que cero para casi todo \(n\).
+Es decir:
+\[\text{Si }\lim_{n\to\infty}a_n=L>0\text{ entonces }a_n>0\,pctn\]
+\begin{center}
+    \begin{scaletikzpicturetowidth}{.5\linewidth}
+        \begin{tikzpicture}[scale=\tikzscale]
+            \draw[->,thick] (0,-1) -- (0,7);
+            \draw[->,thick] (-1,0) -- (11,0);
+            \draw[thick] (5.5,.25) -- (5.5,-.25) node[below]{\(n_0\)};
+            \draw[dashed] (5.5,0) -- (5.5,7);
+            \draw[dashed] (0,2) node[left]{\(L-L/2\)} -- (11,2);
+            \draw[dashed] (0,3) node[left]{\(L\)} -- (11,3);
+            \draw[dashed] (0,4) node[left]{\(L+L/2\)} -- (11,4);
+            \fill[green,opacity=0.2] (5.5,2) -- (5.5,4) -- (11,4) -- (11,2) -- cycle;
+            \foreach \y [count=\x] in {4.5,-.8,1.2,3.5,-.4,3.8,2.6,3.3,2.7,3.2} {
+                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
+                }
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+\end{center}
+Se elige \(\epsilon=L/2\), de modo que \(L-L/2=L/2>0\).
+Esto asegura que la franja verde esté por encime del eje de las \(x\).
+Así \(a_n>0\) si \(n\geq n_0\).
+\subsubsection{Álgebra de límites}
+Si \(a_n\rightarrow a\in\R\) y \(b_n\rightarrow b\in\R\), entonces
+\begin{itemize}
+    \item \(a_n+b_n\rightarrow a+b\)
+    \item \(a_n\cdot b_n\rightarrow ab\).
+          En particular \(k\cdot a_n\rightarrow ka\) si \(k\in\R\)
+    \item Si \(b\neq0\) entonces \(\frac{a_n}{b_n}\rightarrow\frac{a}{b}\)
+    \item \(|a_n|\rightarrow|a|\)
+    \item Si \(a>0\) entonces \((a_n)^{b_n}\rightarrow a^b\)
+\end{itemize}
+Ejemplo.
+Calcular \(\lim_{n\to\infty}=\left(\frac{1}{n}+\frac{2n}{n+1}\right)^3\).
+
+Tenemos que \[\lim_{n\to\infty}\frac{1}{n}=0\] \[\lim_{n\to\infty}\frac{2n}{n+1}=2\cdot\lim_{n\to\infty}\frac{n}{n+1}=2\cdot1=2\]
+Entonces:
+\[\lim_{n\to\infty}=\left(\frac{1}{n}+\frac{2n}{n+1}\right)^3=(0+2)^3=8\]
+\subsubsection{Intederminaciones}
+El álgebra de límites requiere que las sucesiones involucradas sean convergentes a un número real.
+Por ello, no podemos aplicar el álgebra de límites en forma directa en, por ejemplo \(\lim_{a\to\infty}\frac{3n^2+2}{2n^2+5n}\), ya que un primer análisis de la sucesión nos dice que tanto numerador como denominador tienden a más infinito y el teorema de álgebra de límites se refiere a valores numéricos del límite.
+
+Se suele decir que estamos en presencia de una \textit{indeterminación} en este caso, del tipo \(\frac{\infty}{\infty}\) entendiendo este símbolo como el cociente de sucesiones que tienden ambas a infinito.
+El nombre de indeterminación es porque no hay una propiedad general que nos indique el valor del límite en una situación como esta.
+
+Es necesario, en cada caso, aplicar alguna técnica algebraica que permita “salvar” la indeterminación y calcular el límite.
+No es el único tipo de indeterminación con el que nos vamos a encontrar.
+Analicemos los siguientes ejemplos:
+\begin{itemize}
+    \item \(a_n=\frac{1}{n}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n=1\rightarrow1\)
+    \item \(a_n=\frac{1}{n}\rightarrow0,b_n=n^2\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n^2=n\rightarrow+\infty\)
+    \item \(a_n=\frac{1}{n^2}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n^2}n=\frac{1}{n}\rightarrow0\)
+\end{itemize}
+En estos observamos que no existe una propiedad que pueda predecir sobre un límite del tipo \(0\cdot\infty\).
+
+Los límites de los siguientes “tipos”, aunque no son todos, constituyen indeterminaciones:
+\begin{itemize}
+    \item \(\frac{\infty}{\infty}\)
+    \item \(+\infty-\infty\)
+    \item \(0\cdot\infty\)
+    \item \(\frac{0}{0}\)
+    \item \((+\infty)^0\)
+    \item \(0^0\)
+\end{itemize}
+En todos los casos, hay que entender estos símbolos como el límite de la operación aritmética indicada en cada caso, entre dos sucesiones.
+
+Como vimos, el álgebra de límites requiere que las sucesiones involucradas sean convergentes a un número real.
+Cuando esto no ocurre, a veces se presentan indeterminaciones.
+En cada caso hay que usar algún recurso algebraico que permita salvar la indeterminación y calcular el valor del límite.
+
+En ocasiones no es posible aplicar el álgebra de límites porque los límites involucrados no son finitos, sin embargo no estamos ante una indeterminación.
+A continuación damos algunas situaciones donde se puede saber el límite a pesar de que los límites involucrados no sean todos números reales.
+\begin{itemize}
+    \item \((+\infty)\cdot L=+\infty\) si \(L>0\)\tab Ej:
+          \(\lim_{n\to\infty}\sqrt{n}\left(\frac{n}{3n+1}\right)=+\infty\)
+    \item \((+\infty)+\infty=+\infty\)\tab Ej:
+          \(\lim_{n\to\infty}\frac{n^2}{n+1}+\sqrt{n}=+\infty\)
+    \item \((+\infty)+\) oscila finitamente \(=+\infty\)\tab Ej:
+          \(\lim_{n\to\infty}(n+\cos(n))=+\infty\)
+    \item \(\frac{0}{\infty}=0\)\tab Ej:
+          \(\lim_{n\to\infty}\frac{\frac{1}{n}}{n^2+1}=0\)
+    \item \((0)^{+\infty}=0\)\tab Ej:
+          \(\lim_{n\to\infty}\left(\frac{n}{n^2+1}\right)^n=0\)
+\end{itemize}
+Cada una de estas afirmaciones se puede demostrar a partir de la definición de límite.
+\subsubsection{``Cero por acotado''}
+Si bien los límites del tipo \(0\cdot\infty\) resultan ser una indeterminación y, por lo tanto, nada podemos decir a sobre el valor del límite sin salvar tal indeterminación, sí se puede decir algo cuando estamos en presencia de un producto de una sucesión que tiende a cero por otra que está acotada.
+En estos casos se obtiene una sucesión que tiende a cero.
+Es decir \[\text{Si }a_n\rightarrow0\text{ y }|b_n|\leq K\text{ entonces }a_nb_n\rightarrow0\]
+Ejemplo: Calcular el \(\lim_{n\to\infty}\left(1-\frac{n}{n+1}\right)(-1)^{n+1}\)
+La expresión \((-1)^{n+1}\) vale 1 o \(-1\) según la paridad de \(n\).
+En particular está acotada: \(|(-1)^{n+1}|\leq1\).
+Por otra parte, \(\lim_{n\to\infty}\left(1-\frac{n}{n+1}\right)=\lim_{n\to\infty}\left(\frac{1}{n+1}\right)=0\).
+Usando la propiedad "cero por acotado" se obtiene
+\[\lim_{n\to\infty}\left(1-\frac{n}{n+1}\right)(-1)^{n+1}=0\]
+\subsubsection{Propiedad del sándwich}
+Si dos sucesiones convergen a un mismo límite \(L\), entonces, cualquier sucesión comprendida entre ambas, también converge a \(L\).
+\[\text{Si }b_n<a_n<c_n\text{ entonces }\lim_{n\to\infty}b_n\leq\lim_{n\to\infty}a_n\leq\lim_{n\to\infty}c_n\]
+Ejemplo: Calcular el \(\lim_{n\to\infty}\left(3+\frac{1}{n}\cos(3n+1)\right)\)
+
+El coseno es una función que toma valores entre \(-1\) y 1.
+Entonces vale
+\[-1\leq\cos(3n+1)\leq1\]
+\[-\frac{1}{n}\leq\frac{1}{n}\cos(3n+1)\leq\frac{1}{n}\]
+\[3-\frac{1}{n}\leq3+\frac{1}{n}\cos(3n+1)\leq3+\frac{1}{n}\]
+Ahora bien: \(\lim_{n\to\infty}\left(3-\frac{1}{n}\right)=\lim_{n\to\infty}\left(3+\frac{1}{n}\right)=3\).
+Entonces \[\lim_{n\to\infty}\left(3+\frac{1}{n}\cos(3n+1)\right)=3\]
+Otra forma de resolverlo es
+\[\lim_{n\to\infty}\left(3+\frac{1}{n}\cos(3n+1)\right)=\]
+\[3+\lim_{n\to\infty}\left(\underbrace{\frac{1}{n}}_{\text{Tiende a cero}}\underbrace{\cos(3n+1)}_{\text{Está acotado}}\right)=3\]
+\subsubsection{Sándwich en el infinito}
+La propiedad del sándwich se puede generalizar de la siguiente forma.
+\[\text{Si }a_n>b_n\text{ y }b_n\rightarrow+\infty\text{ entonces }a_n\rightarrow+\infty\]
+Ejemplo: Calcular el \(\lim_{n\to\infty}a_n\) sabiendo que \(a_n>\frac{3n^2+1}{100n+5}\) para todo \(n\).
+
+Calculamos el \(\lim_{n\to\infty}\frac{3n^2+1}{100n+5}\).
+Para ello, dividimos por \(n\) numerador y denominador:
+\[\lim_{n\to\infty}\frac{3n^2+1}{100n+5}=\lim_{n\to\infty}\frac{3n+\frac{1}{n}}{100+\frac{5}{n}}=+\infty\]
+Entonces \(\lim_{n\to\infty}a_n=+\infty\).
+\subsection{Sucesiones monótonas}
+Las sucesiones son funciones que tienen por dominio a los números naturales.
+Estudiaremos aquellas sucesiones que son funciones crecientes o decrecientes de su variable natural.
+Es decir:
+\[a_{n+1}\leq a_n \text{para (casi) todo \(n\). En tal caso será \textit{decreciente} o}\]
+\[a_{n+1}\geq a_n \text{para (casi) todo \(n\). En tal caso será \textit{creciente}.}\]
+En ambos casos decimos que se trata de una \textit{sucesión monótona}.
+
+La importancia de las sucesiones monótonas radica en que siempre tienen límite, ya sea éste finito o infinito.
+Antes de enunciar con precisión este resultado, hacemos una observación que será de utilidad en lo que sigue.
+
+Si la sucesión es de términos positivos se tiene que:
+\[\frac{a_{n+1}}{a_n}\leq1\text{ equivale a \(a_n\) decreciente.}\]
+\[\frac{a_{n+1}}{a_n}\geq1\text{ equivale a \(a_n\) creciente.}\]
+Ejemplo.
+Determinemos si las sucesiones \(a_n=(0,8)^n\) y \(b_n=(-0,8)^n\) son monótonas.
+
+La sucesión \(a_n=(0,8)^n\) tiene todos sus términos positivos.
+Sus primeros términos son: \(a_1=0,8, a_2=0,64, a_3=0,512\dots\) Aparentemente es decreciente, pero no alacanza con visualizar tres términos para concluir que es decreciente.
+Sirve para hacer una conjetura.
+Para demostrar que la misma es efectivamente cierta usamos la observación precendente
+\[\frac{a_{n+1}}{a_n}=\frac{(0,8)^{n+1}}{(0,8)^n}=(0,8)^{n+1-n}=0,8<1\]
+Entonces, como \(\frac{a_{n+1}}{a_n}<1\), la sucesión resulta decreciente.
+
+En el otro caso, la sucesión no es de términos positivos pues \(b_n=(-0,8)^n\) va cambiando de signo según sea \(n\) par o impar.
+Los primeros términos de \(b_n\) son \(b_1=-0,8, b_2=0,64, b_3=-0,512\dots\) Se observa que \(b_n<0\) si \(n\) es impar y que \(b_n>0\) sin \(n\) es par.
+Podemos concluir entonces que la sucesión \(b_n\) no es monótona.
+Este ejemplo nos muestra que no todas las sucesiones son monótonas y que éstas constituyen una clase particular de sucesiones.
+El siguiente teorema nos dice cómo se comporta el límite de una sucesión monótona.
+\subsubsection{Teorema sobre sucesiones monótonas}
+Si \(a_n\) es una sucesión creciente puede ser que el conjunto \(A=\{a_n:n\in\N\}\) esté acotado superiormente o que no lo esté.
+Para cada uno de estos dos casos se tiene el siguiente teorema.
+\begin{itemize}
+    \item Si \(A=\{a_n:n\in\N\}\) está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=L\in\R\).
+    \item Si \(A=\{a_n:n\in\N\}\) no está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=+\infty\).
+\end{itemize}
+De forma análoga, hay una versión del teorema cambiando \textit{creciente} por \textit{decreciente}, \textit{acotada superiormente} por \textit{acotada inferiormente} y \(\lim_{n\to\infty}a_n=+\infty\) por \(\lim_{n\to\infty}a_n=-\infty\).
+
+En otras palabras, el teorema dice que la sucesión no puede oscilar:
+o tiene límite finito o tiende a infinito (más o menos según sea creciente o decreciente).
+
+El teorema es de los llamados \textit{teoremas de existencia}, esto es, asegura que el límite existe (en el caso de acotación) pero no dice cuánto vale.
+
+\subsubsection{Algunos ejemplos importantes}
+Estudiaremos algunos ejemplos importantes de sucesiones, no sólo por los ejemplos en sí, sino por las técnicas usadas para calcular sus límites.
+Haremos uso del teorema recién enunciado sobre sucesiones monótonas.
+\begin{itemize}
+    \item \(a_n=r^n, 0<r<1\)
+\end{itemize}
+Si experimentamos con algún caso particular (\(r=\frac{1}{2},\,a_n=\frac{1}{2^n}\), por ejemplo) nos podemos convencer de que la sucesión tiende a 0 ya que \(2^n\) crece a más infinito.
+Veamos cómo este convencimiento se puede plasmar en una demostración.
+
+La sucesión es de términos positivos.
+Estudiamos el cociente \(\frac{a_{n+1}}{a_n}\) a los efectos de compararlo, se tiene que
+\[\frac{a_{n+1}}{a_n}=\frac{r^{n+1}}{r^n}=r<1\text{ para todo }n\]
+Entonces, la sucesión es decreciente.
+Además, dijimos que es de términos positivos, por lo que \(0<a_n\), es decir, está acotada inferiormente.
+
+El teorema nos dice entonces que existe el límite \(\lim_{n\to\infty}a_n=L\geq0\).
+Apostamos a (“conjeturamos” es más apropiado) que \(L=0\).
+
+Pues bien, veamos qué pasa si fuera \(L>0\).
+En tal caso, podemos aplicar el teorema de álgebra de límites al cociente \(\frac{a_{n+1}}{a_n}\) y obtenemos la siguiente contradicción:
+
+Por un lado:
+\[\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\frac{\lim_{n\to\infty}a_{n+1}}{\lim_{n\to\infty}a_n}=\frac{L}{L}=1\]
+Por otro lado:
+\[\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\lim_{n\to\infty}r=r\]
+Como el límite es único, debe ser \(1=r\).
+Pero \(r<1\).
+¡Contradicción!
+Luego no queda otra que \(L=0\).
+Es decir
+\[0<r<1\Rightarrow\lim_{n\to\infty}r^n=0\]
+Con una cuenta similar se obtiene que si
+\[r>1\Rightarrow\lim_{n\to\infty}r^n=+\infty\]
+\begin{itemize}
+    \item \(b_n=\frac{r^n}{n}, r>1\)
+\end{itemize}
+Otra vez tenemos una sucesión de términos positivos.
+Estamos ante una indeterminación del tipo \(\frac{\infty}{\infty}\).
+Si tuviéramos que conjeturar un resultado, habría que decidir quién va "más rápido" a más infinito, ¿el numerador o el denominador?
+Si fuera \(r=2\), los primeros términos serían:
+\(2,2,\frac{8}{3},4,\frac{32}{5},\dots\)
+Aparentemente va creciendo y nada la detiene.
+
+Calculamos el cociente \(\frac{b_{n+1}}{b_n}\) y lo comparamos con 1 como en el ejemplo anterior.
+\[\frac{b_{n+1}}{b_n}=\frac{\frac{r^{n+1}}{n+1}}{\frac{r^n}{n}}=r\frac{n}{n+1}\]
+Observamos que:
+\begin{enumerate}
+    \item \(r>1\) (Es dato)
+    \item \(\frac{n}{n+1}=\frac{1}{1+\frac{1}{n}}\rightarrow1\)
+    \item El producto \(r\frac{n}{n+1}>1\) para casi todo \(n\)
+\end{enumerate}
+Entonces la sucesión \(b_n=\frac{r^n}{n}\) es creciente.
+El teorema de las sucesiones monótonas nos dice que si está acotada superiormente tiene límite finito, caso contrario, tiende a más infinito.
+
+Supongamos que esté acotado superiormente.
+En tal caso \(\lim_{n\to\infty}b_n=L>0\) y se puede usar el álgebra de límites y obtener:
+
+Por un lado, \[\lim_{n\to\infty}\frac{b_{n+1}}{b_n}=\frac{L}{L}=1\]
+y, por otro lado, \[\lim_{n\to\infty}\frac{b_{n+1}}{b_n}=\lim_{n\to\infty}r\frac{n}{n+1}=r\]
+Se llega a la contradicción: \(r=1\) cuando teníamos de movida que \(r>1\).
+Esta contradicción proviene de suponer que la sucesión creciente \(b_n=\frac{r^n}{n}\) está acotada superiormente.
+Por lo tanto \(b_n=\frac{r^n}{n}\) \textit{no está acotada superiormente}.
+El teorema nos dice entonces que \[r>1\Rightarrow\lim_{n\to\infty}\frac{r^n}{n}=+\infty\]
+Con una cuenta similar se obtiene que \[0<r<1\Rightarrow\lim_{n\to\infty}nr^n=0\]
+Con una demostración análoga a la precedente, vale que
+\(r>1\Rightarrow\lim_{n\to\infty}\frac{r^n}{n^k}=+\infty\) y que \(0<r<1\Rightarrow\lim_{n\to\infty}n^kr^n=0\) cualquiera sea \(k\in\N\).
+\begin{itemize}
+    \item \(c_n=\sqrt[n]{n}\)
+\end{itemize}
+Nos apoyaremos en que \(\lim_{n\to\infty}\frac{r^n}{n}=+\infty\) (\(r>1\)).
+Observemos en primer lugar que \[c_n=\sqrt[n]{n}\geq1\text{ para todo }n\]
+Vamos a probar que \[\lim_{n\to\infty}\sqrt[n]{n}=1\]
+Cualquiera sea \(\epsilon>0\), basta probar que \[1\leq\sqrt[n]{n}<1+\epsilon\text{ para casi todo }n\]
+Llamamos \(r=1+\epsilon>1\) y la desigualdad a probar es equivalente a probar que \[n<(1+\epsilon)^n=r^n\text{ para casi todo }n\]
+Es decir \(\frac{r^n}{n}>1\) para casi todo \(n\).
+Pero sabemos que \(\frac{r^n}{n}\rightarrow+\infty\) pues \(r>1\).
+Entonces, es seguro que \(\frac{r^n}{n}>1\) para casi todo \(n\).
+Luego \[\lim_{n\to\infty}\sqrt[n]{n}=1\]
+\subsubsection{El número \textit{e}}
+\begin{itemize}
+    \item \(e_n=\left(1+\frac{1}{n}\right)^n\)
+\end{itemize}
+Esta sucesión ejemplifica un nuevo tipo de indeterminación \(1^\infty\), siempre entendiendo este símbolo como una sucesión que tiende a 1 elevada a una sucesión que tiende a infinito.
+
+Sin pretender dar una demostración, mostraremos que \(e_n\) es creciente \((e_{n+1}>e_n)\) y acotada \(e_n<K\).
+Aceptados estos dos hechos, el teorema de sucesiones monótonas nos asegurará que la sucesión converja a un límite finito.
+
+Para visualizar que \(e_n\) es creciente y acotada recurriremos al gráfico de la función \(f(x)=\log(1+x)\) para valores positivos de la variable \(x\).
+Más precisamente, fijamos la atención en \[x_1=\frac{1}{n+1}\text{ y }x_2=\frac{1}{n}\]
+\begin{center}
+    \begin{scaletikzpicturetowidth}{\linewidth}
+        \begin{tikzpicture}[scale=\tikzscale]
+            \draw[->,thick] (0,-.1) -- (0,1.1);
+            \draw[->,thick] (-.1,0) -- (2.1,0);
+            \foreach \x/\xl/\y/\yl/\c in {.7/\(\frac{1}{n+1}\)/.45/\(f(\frac{1}{n+1})\)/green,1.4/\(\frac{1}{n}\)/.75/\(f(\frac{1}{n})\)/blue} {
+                    \draw[\c,very thick] (0,0) -- (\x,\y);
+                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+                    \node (yl) at (0,\y){};
+                    \node (xl) at (\x,0){};
+                    \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+                }
+            \draw[very thick,domain=0:2, smooth, variable=\x] plot ({\x}, {2*Log(10,1+\x)});
+            \draw[red,very thick] (0,0) -- (1,.9);
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+\end{center}
+Se observa que la recta verde tiene pendiente mayor que la recta azul.
+Estas dos rectas pasan por el origen y lo unen con los puntos del gráfico \((x_1,f(x_1))\) y \((x_2,f(x_2))\) respectivamente.
+Esta observación se traduce en la desigualdad
+\[\frac{\log\left(1+\frac{1}{n+1}\right)}{\frac{1}{n+1}}>\frac{\log\left(1+\frac{1}{n}\right)}{\frac{1}{n}}\]
+\[(n+1)\log\left(1+\frac{1}{n+1}\right)>n\log\left(1+\frac{1}{n}\right)\]
+\[\log\left[\left(1+\frac{1}{n+1}\right)^{n+1}\right]>\log\left[\left(1+\frac{1}{n}\right)^n\right]\]
+Como el logaritmo es una función creciente la desigualdad vale para las expresiones que están entre corchetes.
+Es decir \[\left(1+\frac{1}{n+1}\right)^{n+1}>\left(1+\frac{1}{n}\right)^n\]
+Esto muestra que la sucesión \(e_n\) es creciente.
+Para “ver” que además está acotada, también apelamos al gráfico de \(f(x)=\log(1+x)\) y observamos que las pendientes de las rectas de colores (sean azules o verdes) son todas menores que la pendiente de la recta roja.
+
+Si tal pendiente es \(m\) esta observación se traduce en la desigualdad
+\[\frac{\log\left(1+\frac{1}{n}\right)}{\frac{1}{n}}<m\]
+\[\log\left[\left(1+\frac{1}{n}\right)^n\right]<m\]
+\[\left(1+\frac{1}{n}\right)^n<10^m=K\]
+El teorema de las sucesiones monótonas, nos asegura que existe \[\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\]
+El número \(e\), valor límite de la sucesión \(e_n\) es un número muy importante de la matemática que aparece en diversas situaciones.
+Es un número irracional que está entre 2 y 3.
+Más precisamente, su expresión decimal aproximada es \(e\cong2,718281\dots\)
+
+Conocer el límite de \(\left(1+\frac{1}{n}\right)^n\) nos permite calcular el límite de otras sucesiones con la misma “pinta”.
+
+Ejemplo.
+Calcular el \(\lim_{n\to\infty}\left(1+\frac{2}{n+1}\right)^{\frac{n+1}{2}}\)
+
+Estamos ante una indeterminación del tipo \(1^\infty\).
+Observemos, además, que si llamamos \(a_n=\frac{n+1}{2}\), podemos escribir el límite a calcular como
+\[\lim_{n\to\infty}\left(1+\frac{1}{a_n}\right)^{a_n}\text{ donde }\lim_{n\to\infty}a_n=+\infty\]
+Este límite, con un tratamiento similar al realizado para el caso \(a_n=n\), tiende al número real \(e\).
+De modo que, en general vale
+\[\lim_{n\to\infty}\left(1+\frac{1}{a_n}\right)^{a_n}=e\text{ si }\lim_{n\to\infty}a_n=+\infty\]
+Es equivalente decir, cambiando \(b_n=\frac{1}{a_n}\) que
+\[\lim_{n\to\infty}\left(1+b_n\right)^{\frac{1}{b_n}}=e\text{ si }\lim_{n\to\infty}b_n=+\infty\]
+Cuando estemos ante una indeterminación del tipo \(1^\infty\), la estrategia será “llevar” por medio de transformaciones algebraicas, el límite a calcular a una de estas situaciones.
+
+Ejemplo.
+Calcular el \(\lim_{n\to\infty}\left(1+\frac{2}{n+2}\right)^{n-1}\)
+
+Es una indeterminación del tipo \(1^\infty\).
+Utilicemos la estrategia recién propuesta.
+\[\left(1+\frac{2}{n+1}\right)^{n-1}=\]
+Preparamos la base como \(\left(1+\frac{1}{\text{algo}}\right)\).
+El exponente queda igual.
+\[\left(1+\frac{1}{\frac{n+1}{2}}\right)^{n-1}=\]
+Hacemos ``aparecer'' en el exponente ``algo'' para poder decir que el corchete tiende a \(e\)
+\[\left[\left(1+\frac{1}{\frac{n+1}{2}}\right)^{\frac{n+1}{2}}\right]^{\frac{2}{n+1}(n-1)}\]
+Para compensar que hicimos aparecer en el exponente ``algo'' ponemos \(\frac{1}{\text{algo}}\) y mantenemos lo que ya estaba.
+
+Si bien la expresión que quedó tiene un aspecto temible, si la miramos con optimismo, podemos ver que lo que está entre corchetes es del tipo
+\[\lim_{n\to\infty}\left(1+\frac{1}{a_n}\right)^{a_n}\text{ con }\lim_{n\to\infty}a_n=+\infty\]
+Sabemos en estos casos que
+\[\left(1+\frac{1}{\frac{n+1}{2}}\right)^{\frac{n+1}{2}}\rightarrow e\]
+Por otra parte, si concentramos la atención en lo que quedó en el exponente por fuera del corchete, vemos que tenemos una sucesión que sabemos atacar.
+\[\frac{2}{n+1}(n-1)=\frac{2n-2}{n+1}=\frac{2-\frac{2}{n}}{1+\frac{1}{n}}\rightarrow2\]
+De modo que podemos usar álgebra de límite:
+la base (lo que está entre corchetes) tiende al número real \(e\) y el exponente tiende a 2, entonces
+\[\lim_{n\to\infty}\left(1+\frac{2}{n+2}\right)^{n-1}=e^2\]
+\subsection{El Criterio de Cauchy o de la raíz enésima}
+Hemos visto que \(r^n\) tiende a 0 si \(r\) está entre 0 y 1 y tiende a más infinito si \(r\) es mayor que 1.
+Se puede extender fácilmente este resultado para valores negativos de \(r\) diciendo que
+\[r^n\rightarrow0\text{ si }-1<r<1\]
+\[|r^n|\rightarrow+\infty\text{ si }|r|>1\]
+Este ejemplo sirve para dar un criterio que será muy útil para el cálculo de límites.
+Se quiere calcular el \(\lim_{n\to\infty}a_n\).
+
+Criterio de Cauchy: si \(\lim_{n\to\infty}\sqrt[n]{|a_n|}=L\) vale que:
+\begin{itemize}
+    \item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
+    \item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
+    \item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
+\end{itemize}
+\subsection{El Criterio de D ́Alembert o del cociente}
+Se basa en la idea que usamos en los primeros ejemplos donde estudiamos el cociente \(\frac{a_{n+1}}{a_n}\) y lo comparábamos con 1.
+
+Se quiere calcular el \(\lim_{n\to\infty}a_n\).
+
+Criterio de D ́Alembert: si \(\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L\) vale que:
+\begin{itemize}
+    \item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
+    \item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
+    \item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
+\end{itemize}
+\subsection{Subsucesiones}
+Hemos visto que algunas sucesiones carecen de límite finito o infinito.
+Es el caso de las sucesiones que oscilan finitamente o infinitamente.
+Comprobar que una sucesión no tiene límite en forma rigurosa puede resultar difícil con sólo la definición de límite ya que hay que descartar \textit{todo posible} candidato a ser el límite de la sucesión.
+
+Para resolver este problema será útil introducir la idea de \textit{subsucesión}.
+
+Consideremos una sucesión de números reales:
+\[a_1,a_2,a_3,a_4,a_5,\dots,a_n,\dots\]
+Con dicha sucesión se puede realizar de muchas maneras la siguiente construcción:
+se suprimen de la sucesión una cantidad finita o infinita de términos de manera que queden infinitos términos.
+Los que quedan forman una nueva sucesión que volvemos a numerar.
+Por ejemplo:
+
+Si sacamos el primer término nos queda la nueva sucesión:
+\[a_2,a_3,a_4,a_5,\dots,a_n,\dots\]
+que volvemos a numerar \(b_1,b_2,b_3,b_4,b_5,\dots,b_n,\dots\) de modo que \(b_n=a_{n+1}\).
+Esta nueva sucesión resulta ser una \textit{subsucesión} de la primera.
+
+Si, en cambio, sacamos los infinitos términos impares, nos quedan los infinitos términos pares \(a_2,a_4,a_6,a_8,a_{10},\dots,a_{2n},\dots\) de modo que si volvemos a numerarla \(b_1,b_2,b_3,b_4,b_5,\dots,b_n,\dots\) resulta ser \(b_n=a_{2n}\).
+Como antes, se dice que \(a_{2n}\) es una \textit{subsucesión} de \(a_n\).
+
+Una \textit{subsucesión} de \(a_n\) es una sucesión \(b_k=a_{ n_k}\) donde \(n_1<n_2<n_3<n_4<n_5<n_6<\dots<n_k<\dots\) es la nueva enumeración.
+
+Dada la sucesión \(a_n\) cuyos primeros términos son \(2,4,6,4,2,4,6,4,2,\dots\) escribir el término general de \(a_{2n}\) y de \(a_{2n+1}\).
+Determinen si alguna de las dos subsucesiones es convergente.
+
+\(a_{2n}\) es la subsucesión de los términos pares.
+Los resaltamos en negrita para poder visualizarlos:
+\begin{center}
+    2, \textbf{4}, 6, \textbf{4}, 2, \textbf{4}, 6, \textbf{4}, 2,
+\end{center}
+Claramente se observa que \(a_{2n}=4\) para todo \(n\).
+De modo que, al ser una sucesión constante, resulta convergente.
+
+\(a_{2n+1}\) es la subsucesión de los términos impares.
+De vuelta en negrita.
+\begin{center}
+    \textbf{2}, 4, \textbf{6}, 4, \textbf{2}, 4, \textbf{6},
+\end{center}
+Vemos que esta subsucesión se obtiene sacando todos los 4 de la sucesión.
+Si hacemos eso queda \(2,6,2,6,2,\dots\) de modo que
+\[b_n=a_{2n+1}=\begin{cases}
+        2 & \text{si \(n\) impar} \\
+        6 & \text{si \(n\) par}
+    \end{cases}\]
+que no resulta convergente.
+Pero, ¿cómo probar que no es convergente?
+
+El siguiente resultado, que se deduce directamente de la definición de límite, vendrá en nuestra ayuda.
+Sea \(a_n\) una sucesión de números reales.
+Entonces \(a_n\rightarrow L\) sí y sólo si toda subsucesión \(b_k=a_{n_k}\) de \(a_n\) converge a \(L\) (\(L\) puede ser finito o infinito).
+
+El cuantificador “toda subsucesión” la hace poco práctica para usarla para calcular límites.
+Pero alcanza con que dos subsucesiones tiendan a límites diferentes para que la sucesión original no sea convergente.
+
+Probemos que la sucesión \(b_n=\begin{cases}
+    2 & \text{si \(n\) impar} \\
+    6 & \text{si \(n\) par}
+\end{cases}\) no tiene límite.\\
+Consideremos la subsucesión de los términos pares y la subsucesión de los impares:
+\[2,6,2,6,\dots\]
+\[b_{2n}=6\text{ y }b_{2n+1}=2\]
+Es inmediato que \(b_{2n}\rightarrow6\) y que \(b_{2n+1}\rightarrow2\).
+Como estos límites son distintos, se concluye que la sucesión \(b_n\) no tiene límite.
+\subsection{Sucesiones dadas en forma recurrente}
+Hasta ahora hemos tratado cada sucesión por medio de su término general.
+
+Sin embargo, en muchas situaciones vinculadas con las aplicaciones y procesos iterativos, las sucesiones sepresentan en forma recurrente.
+Esto es, se define el primer término \(a_1\), luego del mismo surge \(a_2\) y en general, se define \(a_{n+1}\) a partir del término anterior \(a_n\) o más generalmente, a partir de todos los términos anteriores.
+
+Ejemplo.
+Estudiemos la convergencia de la sucesión definida como \(a_1=5,\frac{a_{n+1}}{a_n}=\frac{n+1}{3n}\) para todo \(n>1\).
+
+La sucesión viene servida para aplicar el criterio del cociente:
+\[\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\lim_{n\to\infty}\frac{n+1}{3n}=\frac{1}{3}<1\]
+Entonces
+\[\lim_{n\to\infty}a_n=0\]
+Ejemplo.
+Sea \(a_n\) la sucesión definida en forma recurrente por \(a_1=1,a_{n+1}=\frac{n^n+3^n}{n!}a_n\).
+Calcular, si existe, el \(\lim_{n\to\infty}2^{1+\frac{1}{a_n}}\)
+
+La sucesión es de términos positivos.
+En primer lugar calculamos el \(\lim_{n\to\infty}a_n\).
+Para ello usaremos el Criterio del cociente o Criterio de D ́Alembert.
+
+Aprovechamos la forma recurrente en que viene definida la sucesión:
+\[\frac{a_{n+1}}{a_n}=\frac{n^n+3^n}{n!}=\frac{n^n}{n!}+\frac{3^n}{n!}\]
+Estudiamos cada término por separado, usando otra vez, el criterio del cociente:
+\(x_n=\frac{n^n}{n!}\).
+El cociente de D ́Alembert es
+\[\frac{x_{n+1}}{x_n}=\frac{\frac{(n+1)^{n+1}}{(n+1)!}}{\frac{n^n}{n!}}=\frac{(n+1)^{n+1}}{(n+1)!}\cdot\frac{n!}{n^n}\]
+Trabajamos un poco esta última expresión
+\[\frac{x_{n+1}}{x_n}=\frac{(n+1)^{n+1}}{(n+1)!}\cdot\frac{n!}{n^n}=\frac{(n+1)(n+1)^n}{(n+1)\cdot n!}\cdot\frac{n!}{n^n}=\]
+\[=\frac{(n+1)^n}{n^n}=\left(\frac{n+1}{n}\right)^n=\left(1+\frac{1}{n}\right)^n\]
+Entonces \(\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\).
+Como \(e>1\), el criterio del cociente nos dice que la sucesión \(x_n=\frac{n^n}{n!}\) tiende a más infinito.
+Es decir \(\lim_{n\to\infty}\frac{n^n}{n!}=+\infty\)
+
+Con este resultado alcanza para asegurar que el cociente
+\[\frac{a_{n+1}}{a_n}=\frac{n^n}{n!}+\frac{3^n}{n!}\]
+tiende a más infinito y así, por el Criterio del cociente podemos afirmar que \(\lim_{n\to\infty}a_n=+\infty\).
+
+De todas maneras estudiemos el segundo término:
+
+\(y_n=\frac{3^n}{n!}\).
+El cociente de D ́Alembert es en este caso:
+\[\frac{y_{n+1}}{y_n}=\frac{\frac{3^{n+1}}{(n+1)!}}{\frac{3^n}{n!}}=\frac{3^{n+1}}{(n+1)!}\cdot\frac{n!}{3^n}=\frac{3}{n+1}\]
+Entonces \(\lim_{n\to\infty}frac{y_{n+1}}{y_n}=\lim_{n\to\infty}\frac{3}{n+1}=0\).
+Como \(0<1\) el criterio del cociente nos dice que \(\lim_{n\to\infty}y_n=0\).
+
+En consecuencia \(\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\lim_{n\to\infty}\frac{n^n}{n!}+\frac{3^n}{n!}=+\infty\).
+
+El criterio del cociente afirma que \(\lim_{n\to\infty}a_n=+\infty\).
+
+Estamos en condiciones de calcular el límite que nos pide el problema, teniendo en cuenta que \(\lim_{n\to\infty}\frac{1}{a_n}=0\).
+\[\lim_{n\to\infty}2^{1+\frac{1}{a_n}}=\lim_{n\to\infty}2^{1+\lim_{n\to\infty}\frac{1}{a_n}}=2^{1+0}=2\]
+\subsubsection{La raíz cuadrada de 2}
+Comenzamos esta unidad planteando el problema de diseñar un algoritmo para calcular la raíz cuadrada de un número utilizando las cuatro operaciones elementales de la aritmética.
+Tomamos el caso particular \(a=\sqrt{2}\).
+
+Con la ayuda de una original \textit{idea geométrica}, llegamos a conjeturar que las bases de los rectángulos aproximaban a \(\sqrt{2}\).
+
+Las medidas de las bases de los sucesivos rectángulos vienen dados por la sucesión dada en forma recurrente por la fórmula
+\[x_1=1,x_{n+1}=\frac{1}{2}\left(x_n+\frac{2}{x_n}\right)\]
+Esta sucesión resulta ser una sucesión de términos positivos que podemos ver que está acotada inferiormente y es decreciente, usando la desigualdad entre el promedio geométrico y el promedio aritmético que recordamos en el recuadro.
+(Si \(a>0,b>0\) vale \(\frac{a+b}{2}\geq\sqrt{ab}\))
+
+Para ver que está acotada inferiormente ponemos \(a=x_n\) y \(b=\frac{2}{x_n}\) en la desigualdad y queda
+\[x_{n+1}=\frac{1}{2}\left(x_n+\frac{2}{x_n}\right)\geq\sqrt{x_n\cdot\frac{2}{x_n}}=\sqrt{2}\quad n\geq1\]
+Para ver que es decreciente analizamos el cociente de D ́Alembert como en ocasiones anteriores y volvemos a usar la desigualdad entre promedios y la acotación que acabamos de demostrar.
+El cociente es
+\[\frac{x_{n+1}}{x_n}=\frac{1}{2}\left(1+\frac{2}{x^2_n}\right)\]
+Al poner en la desigualdad \(a=1\) y \(b=\frac{2}{x^2_n}\) se obtiene
+\[\frac{x_{n+1}}{x_n}=\frac{1}{2}\left(1+\frac{2}{x^2_n}\right)\geq\sqrt{1\cdot\frac{2}{x^2_n}}=\frac{\sqrt{2}}{x_n}\leq1\quad n\geq2\]
+Entonces, la sucesión de la medida de las bases de los rectángulos \(x_n\) es decreciente y acotadainferiormente.
+Por el Teorema de las sucesiones monótonas podemos afirmar que existe \(\lim_{n\to\infty}x_n=L\).
+Solo queda calcular \(L\).
+Para ello, usamos el álgebra de límites en la definición recurrente de \(x_n\) y obtenemos
+\[L=\lim_{n\to\infty}x_{n+1}=\lim_{n\to\infty}\frac{1}{2}\left(x_n+\frac{2}{x_n}\right)=\frac{1}{2}\left(L+\frac{2}{L}\right)\]
+Es decir,
+\[2L=L+\frac{2}{L}\]
+o lo que es equivalente
+\[L^2=2\Longleftrightarrow L=\sqrt{2}\text{ ó }L=-\sqrt{2}\]
+Como la sucesión es de términos positivos, el límite no puede ser negativo (recordar la propiedad de conservación de signo).
+Entonces, podemos asegurar que la solución verdadera es la positiva.
+Es decir
+\[\lim_{n\to\infty}x_n=\sqrt{2}\]
+\end{document}
