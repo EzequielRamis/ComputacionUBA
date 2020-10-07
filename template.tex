@@ -1,24 +1,15 @@
 \documentclass[12pt, a4paper, spanish]{article}
 
-\usepackage{subfiles}
 \def\spanishoptions{es-noquoting,es-nolist}
-\usepackage[spanish]{babel}
-\usepackage{hyperref}
-\usepackage{mathtools}
-\usepackage{cancel}
-\usepackage{array}
-\usepackage{amssymb}
-\usepackage{amsmath}
+\usepackage{babel}
+\usepackage{subfiles}
 \usepackage{tikz}
-\usepackage{environ}
-\hypersetup{
-	colorlinks,
-	citecolor=black,
-	filecolor=black,
-	linkcolor=black,
-	urlcolor=black
-}
+\usepackage{mathtools} % Incluye amsmath
+\usepackage{amssymb} % Agrega \mathbb
+\usepackage{cancel} % Agrega macro \cancel
+\usepackage{hyperref} % Agrega links clickeables
 
+\usepackage{environ}
 \makeatletter
 \newsavebox{\measure@tikzpicture}
 \NewEnviron{scaletikzpicturetowidth}[1]{
