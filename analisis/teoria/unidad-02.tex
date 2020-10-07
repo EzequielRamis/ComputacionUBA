@@ -15,13 +15,13 @@ Una solución al problema se basa en una idea geométrica:
 Se construyen sucesivos rectángulos todos de área 2.
 La base de cada uno de ellos es el promedio de la base y la altura del anterior.
 \begin{center}
-    \begin{scaletikzpicturetowidth}{\linewidth}
-        \begin{tikzpicture}[scale=\tikzscale]
-            \node(rect)[draw=black,ultra thick, minimum width=2*1cm,minimum height=2*2cm,label=right:2,label=below:1](A){\(\textstyle1\cdot2=2\)};
-            \node(rect)[right=of A,draw=black,ultra thick, minimum width=2*1.5cm,minimum height=2*1.333cm,label=right:\(\textstyle\frac{2}{1,5}\),label=below:\(\textstyle\text{\(\frac{1+2}{2}=1,5\)}\)](B){\(\textstyle1,5\cdot\frac{2}{1,5}=2\)};
-            \node(rect)[right=of B,draw=black,ultra thick, minimum width=2*1.417cm,minimum height=2*1.412cm,label=right:\(\textstyle\text{1,4118}\),label=below:\(\textstyle\text{\(\frac{1,5+\frac{2}{1,5}}{2}\cong1,4167\)}\)](c){\(\scriptstyle1,4167\cdot1,4118\cong2\)};
-        \end{tikzpicture}
-    \end{scaletikzpicturetowidth}
+	\begin{scaletikzpicturetowidth}{\linewidth}
+		\begin{tikzpicture}[scale=\tikzscale]
+			\node(rect)[draw=black,ultra thick, minimum width=2*1cm,minimum height=2*2cm,label=right:2,label=below:1](A){\(\textstyle1\cdot2=2\)};
+			\node(rect)[right=of A,draw=black,ultra thick, minimum width=2*1.5cm,minimum height=2*1.333cm,label=right:\(\textstyle\frac{2}{1,5}\),label=below:\(\textstyle\text{\(\frac{1+2}{2}=1,5\)}\)](B){\(\textstyle1,5\cdot\frac{2}{1,5}=2\)};
+			\node(rect)[right=of B,draw=black,ultra thick, minimum width=2*1.417cm,minimum height=2*1.412cm,label=right:\(\textstyle\text{1,4118}\),label=below:\(\textstyle\text{\(\frac{1,5+\frac{2}{1,5}}{2}\cong1,4167\)}\)](c){\(\scriptstyle1,4167\cdot1,4118\cong2\)};
+		\end{tikzpicture}
+	\end{scaletikzpicturetowidth}
 \end{center}
 Designamos con \(x_1\) a la medida de la base del primer rectángulo, que elegimos que fuera igual a 1, con \(x_2\) a lo que mide la base del segundo rectángulo, y así sucesivamente.
 
@@ -32,12 +32,12 @@ Geométricamente se observa que los rectángulos se van aproximando a un cuadrad
 \subsubsection{Ejemplos de sucesiones}
 Consideramos los siguientes ejemplos:
 \begin{enumerate}
-    \item \(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
-    \item 1, 3, 5, 7, \dots
-    \item \(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
-    \item \(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
-    \item 0, 1, 0, 1, \dots
-    \item 2, -4, 6, -8, \dots
+	\item \(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+	\item 1, 3, 5, 7, \dots
+	\item \(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
+	\item \(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+	\item 0, 1, 0, 1, \dots
+	\item 2, -4, 6, -8, \dots
 \end{enumerate}
 Informalmente, una \textit{sucesión} es una \textit{lista ordenada} e infinita de números reales.
 
@@ -59,90 +59,90 @@ Lo que interesará es el comportamiento de \(a_n\) para “valores grandes” de
 Es la expresión de \(a_n\) para cada \(n\).
 Analizamos cada una de las sucesiones anteriores
 \begin{enumerate}
-    \item \(a_n=\frac{1}{n}\)\tab\(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
-    \item \(a_n=2n-1\)\tab\(1,3,5,7,\dots\)
-    \item \(a_n=(-1)^n\frac{1}{2^n}\)\tab\(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
-    \item \(a_n=\frac{n}{n+1}\)\tab\(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
-    \item \(a_n=\begin{cases}
-              0 & \text{si \(n\) es impar} \\
-              1 & \text{si \(n\) es par}
-          \end{cases}\)\tab\(0,1,0,1,\dots\)
-    \item \(a_n=(-1)^{n+1}2n\)\tab\(2,-4,6,-8,\dots\)
+	\item \(a_n=\frac{1}{n}\)\tab\(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+	\item \(a_n=2n-1\)\tab\(1,3,5,7,\dots\)
+	\item \(a_n=(-1)^n\frac{1}{2^n}\)\tab\(-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},\dots\)
+	\item \(a_n=\frac{n}{n+1}\)\tab\(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+	\item \(a_n=\begin{cases}
+		      0 & \text{si \(n\) es impar} \\
+		      1 & \text{si \(n\) es par}
+	      \end{cases}\)\tab\(0,1,0,1,\dots\)
+	\item \(a_n=(-1)^{n+1}2n\)\tab\(2,-4,6,-8,\dots\)
 \end{enumerate}
 \subsubsection{Representación gráfica}
 Como una sucesión es una función admite una representación gráfica, veamos alguno de los ejemplos anteriores:
 \begin{enumerate}
-    \item \addtocounter{enumi}{1}\(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
-          \begin{center}
-              \begin{scaletikzpicturetowidth}{\linewidth}
-                  \begin{tikzpicture}[scale=\tikzscale]
-                      \draw[->,thick] (0,-.1) -- (0,1.1);
-                      \draw[->,thick] (-.1,0) -- (2.1,0);
-                      \foreach \x/\xl/\y/\yl in {.2/1/1/1,.4/2/{1/2}/{1/2},.6/3/{1/3}/{1/3},.8/4/{1/4}/{1/4},1.4/\(n\)/{1/10}/{1/\(n\)}} {
-                      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
-                      \node (yl) at (0,\y){};
-                      \node (xl) at (\x,0){};
-                      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
-                      }
-                  \end{tikzpicture}
-              \end{scaletikzpicturetowidth}
-          \end{center}
-          \[a_n=\frac{1}{n}\rightarrow0\]
-    \item \(-\frac{1}{2},\frac{1}{4},-\frac{1}{16},\dots\)
-          \begin{center}
-              \begin{scaletikzpicturetowidth}{\linewidth}
-                  \begin{tikzpicture}[scale=\tikzscale]
-                      \draw[->,thick] (0,-1) -- (0,.6);
-                      \draw[->,thick] (-.1,0) -- (2.1,0);
-                      \foreach \x/\xl/\y/\yl in {.2/1/{-1/2}/{-1/2},.4/2/{1/4}/{1/4},.6/3/{-1/8}/{-1/8},.8/4/{1/16}/{1/16},1.4/\(n\)/0/ } {
-                      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
-                      \node (yl) at (0,\y){};
-                      \node (xl) at (\x,0){};
-                      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=2mm of xl]{\xl};
-                      }
-                  \end{tikzpicture}
-              \end{scaletikzpicturetowidth}
-          \end{center}
-          \[a_n=(-1)^n\frac{1}{2^n}\rightarrow0\]
-    \item \(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
-          \begin{center}
-              \begin{scaletikzpicturetowidth}{\linewidth}
-                  \begin{tikzpicture}[scale=\tikzscale]
-                      \draw[->,thick] (0,-.1) -- (0,1.1);
-                      \draw[->,thick] (-.1,0) -- (2.1,0);
-                      \draw[thick] (0,1) -- node[above]{1} (2.1,1);
-                      \foreach \x/\xl/\y/\yl in {.2/1/{1/2}/{1/2},.4/2/{2/3}/{2/3},.6/3/{3/4}/{3/4},.8/4/{4/5}/{4/5},1.4/\(n\)/{9/10}/\(a_n\)} {
-                      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
-                      \node (yl) at (0,\y){};
-                      \node (xl) at (\x,0){};
-                      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
-                      }
-                  \end{tikzpicture}
-              \end{scaletikzpicturetowidth}
-          \end{center}
-          \[a_n=\frac{n}{n+1}\rightarrow1\]
+	\item \addtocounter{enumi}{1}\(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\dots\)
+	      \begin{center}
+		      \begin{scaletikzpicturetowidth}{\linewidth}
+			      \begin{tikzpicture}[scale=\tikzscale]
+				      \draw[->,thick] (0,-.1) -- (0,1.1);
+				      \draw[->,thick] (-.1,0) -- (2.1,0);
+				      \foreach \x/\xl/\y/\yl in {.2/1/1/1,.4/2/{1/2}/{1/2},.6/3/{1/3}/{1/3},.8/4/{1/4}/{1/4},1.4/\(n\)/{1/10}/{1/\(n\)}} {
+				      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+				      \node (yl) at (0,\y){};
+				      \node (xl) at (\x,0){};
+				      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+				      }
+			      \end{tikzpicture}
+		      \end{scaletikzpicturetowidth}
+	      \end{center}
+	      \[a_n=\frac{1}{n}\rightarrow0\]
+	\item \(-\frac{1}{2},\frac{1}{4},-\frac{1}{16},\dots\)
+	      \begin{center}
+		      \begin{scaletikzpicturetowidth}{\linewidth}
+			      \begin{tikzpicture}[scale=\tikzscale]
+				      \draw[->,thick] (0,-1) -- (0,.6);
+				      \draw[->,thick] (-.1,0) -- (2.1,0);
+				      \foreach \x/\xl/\y/\yl in {.2/1/{-1/2}/{-1/2},.4/2/{1/4}/{1/4},.6/3/{-1/8}/{-1/8},.8/4/{1/16}/{1/16},1.4/\(n\)/0/ } {
+				      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+				      \node (yl) at (0,\y){};
+				      \node (xl) at (\x,0){};
+				      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=2mm of xl]{\xl};
+				      }
+			      \end{tikzpicture}
+		      \end{scaletikzpicturetowidth}
+	      \end{center}
+	      \[a_n=(-1)^n\frac{1}{2^n}\rightarrow0\]
+	\item \(\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\dots\)
+	      \begin{center}
+		      \begin{scaletikzpicturetowidth}{\linewidth}
+			      \begin{tikzpicture}[scale=\tikzscale]
+				      \draw[->,thick] (0,-.1) -- (0,1.1);
+				      \draw[->,thick] (-.1,0) -- (2.1,0);
+				      \draw[thick] (0,1) -- node[above]{1} (2.1,1);
+				      \foreach \x/\xl/\y/\yl in {.2/1/{1/2}/{1/2},.4/2/{2/3}/{2/3},.6/3/{3/4}/{3/4},.8/4/{4/5}/{4/5},1.4/\(n\)/{9/10}/\(a_n\)} {
+				      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+				      \node (yl) at (0,\y){};
+				      \node (xl) at (\x,0){};
+				      \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+				      }
+			      \end{tikzpicture}
+		      \end{scaletikzpicturetowidth}
+	      \end{center}
+	      \[a_n=\frac{n}{n+1}\rightarrow1\]
 \end{enumerate}
 \subsection{Noción de límite}
 Intuitivamente, una sucesión \textit{tiende} a un valor determinado \(L\) si los valores de \(a_n\) \textit{están cerca} de \(L\) cuando \(n\) es grande.
 Un poco más precisamente:
 el error que se comete al aproximar \(L\) con \(a_n\) es pequeño (menor que épsilon (\(\epsilon\))) si \(n\) es bastante grande (más que \(n_0\) en el gráfico)
 \begin{center}
-    \begin{scaletikzpicturetowidth}{\linewidth}
-        \begin{tikzpicture}[scale=\tikzscale]
-            \draw[->,thick] (0,-.1) -- (0,1.1);
-            \draw[->,thick] (-.1,0) -- (2,0);
-            \draw[dashed] (0,.8) node[left]{\(L+\epsilon\)} -- (2,.8);
-            \draw[dashed] (0,.5) node[left]{\(L\)} -- (2,.5);
-            \draw[dashed] (0,.2) node[left]{\(L-\epsilon\)} -- (2,.2);
-            \draw[<->,dashed,thick] (.5,.5) -- (.5,.8) node[above]{\(\epsilon\)};
-            \draw[dashed] (1.2,0) node[below]{\(n_0\)} -- (1.2,1);
-            \fill[green,opacity=0.2] (1.2,.2) -- (1.2,.8) -- (2,.8) -- (2,.2) -- cycle;
-            \foreach \x/\y in {.2/.9,.3/.3,.6/.1,.8/.6,1/.9,1.3/.75,1.5/.4,1.7/.6,1.9/.45} {
-                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
-                }
-            \node[draw,text width=3.5cm] at (3.5,.5) {\textbf{Idea geométrica}\\A partir de \(n_0\) la franja verde capta a todos los \(a_n\)};
-        \end{tikzpicture}
-    \end{scaletikzpicturetowidth}
+	\begin{scaletikzpicturetowidth}{\linewidth}
+		\begin{tikzpicture}[scale=\tikzscale]
+			\draw[->,thick] (0,-.1) -- (0,1.1);
+			\draw[->,thick] (-.1,0) -- (2,0);
+			\draw[dashed] (0,.8) node[left]{\(L+\epsilon\)} -- (2,.8);
+			\draw[dashed] (0,.5) node[left]{\(L\)} -- (2,.5);
+			\draw[dashed] (0,.2) node[left]{\(L-\epsilon\)} -- (2,.2);
+			\draw[<->,dashed,thick] (.5,.5) -- (.5,.8) node[above]{\(\epsilon\)};
+			\draw[dashed] (1.2,0) node[below]{\(n_0\)} -- (1.2,1);
+			\fill[green,opacity=0.2] (1.2,.2) -- (1.2,.8) -- (2,.8) -- (2,.2) -- cycle;
+			\foreach \x/\y in {.2/.9,.3/.3,.6/.1,.8/.6,1/.9,1.3/.75,1.5/.4,1.7/.6,1.9/.45} {
+					\node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
+				}
+			\node[draw,text width=3.5cm] at (3.5,.5) {\textbf{Idea geométrica}\\A partir de \(n_0\) la franja verde capta a todos los \(a_n\)};
+		\end{tikzpicture}
+	\end{scaletikzpicturetowidth}
 \end{center}
 La definición precisa de límite es la siguiente:
 
@@ -154,61 +154,61 @@ Se pone \(pctn\).
 \subsubsection{Sucesiones divergentes}
 No todas las sucesiones convergen a un límite \(L\in\R\), por ejemplo:
 \begin{itemize}
-    \item \(a_n=2n-1\)\tab\(1,3,5,7,\dots\)
-          \begin{center}
-              \begin{scaletikzpicturetowidth}{.5\linewidth}
-                  \begin{tikzpicture}[scale=\tikzscale]
-                      \draw[->,thick] (0,-1) -- (0,10);
-                      \draw[->,thick] (-1,0) -- (10,0);
-                      \foreach \x/\xl/\y/\yl in {1/1/1/1,2/2/3/3,3/3/5/5,4/\(n_0\)/7/\(K\),5/\(n\)/9/\(2n-1\)} {
-                              \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
-                              \node (yl) at (0,\y){};
-                              \node (xl) at (\x,0){};
-                              \draw[dashed] node[left=1mm of yl]{\(\textstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
-                          }
-                      \draw[dashed,ultra thin] (1,1) -- (5,9);
-                      \fill[green,opacity=0.2] (4,7) -- (4,10) -- (6,10) -- (6,7) -- cycle;
-                  \end{tikzpicture}
-              \end{scaletikzpicturetowidth}
-          \end{center}
-          \[\lim_{n\to\infty}(2n-1)=+\infty\] Para todo \(K>0\) existe \(n_0\in\N\) tal que si \(n>n_0,2n-1>K\) (en el sector verde).
-    \item \(b_0=\begin{cases}
-              0 & \text{si \(n\) es impar} \\
-              1 & \text{si \(n\) es par}
-          \end{cases}\)\tab\(0,1,0,1,\dots\)
-          \begin{center}
-              \begin{scaletikzpicturetowidth}{.5\linewidth}
-                  \begin{tikzpicture}[scale=\tikzscale]
-                      \draw[->,thick] (0,-1) -- (0,6);
-                      \draw[->,thick] (-.5,0) -- (10,0);
-                      \foreach \y [count=\x] in {0,1,0,1,0,1} {
-                              \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y*5)(n){};
-                              \node (yl) at (0,\y*5){};
-                              \node (xl) at (\x,0){};
-                              \draw node[left=1mm of yl]{\y} (yl);
-                              \draw[dashed] (n) -- (\x,0) node[below=1mm of xl]{\x};
-                          }
-                      \draw[dashed] (0,5) -- (10,5);
-                  \end{tikzpicture}
-              \end{scaletikzpicturetowidth}
-          \end{center}
-          \[\lim_{n\to\infty}b_n\,\text{no existe}\] En este caso se dice que \(a_n\) oscila finitamente.
-    \item \(c_n=(-1)^{n-1}2n\)\tab\(2,-4,6,-8,\dots\)
-          \begin{center}
-              \begin{scaletikzpicturetowidth}{.5\linewidth}
-                  \begin{tikzpicture}[scale=\tikzscale]
-                      \draw[->,thick] (0,-11) -- (0,11);
-                      \draw[->,thick] (-1,0) -- (20,0);
-                      \foreach \y [count=\x] in {2,-4,6,-8} {
-                              \node[draw,shape=circle,fill=black,scale=0.4] at (\x*2,\y)(n){};
-                              \node (yl) at (0,\y){};
-                              \node (xl) at (\x*2,0){};
-                              \draw[dashed] node[left=1mm of yl]{\y} (yl) -- (n) -- (\x*2,0) node[below=1mm of xl]{\x};
-                          }
-                  \end{tikzpicture}
-              \end{scaletikzpicturetowidth}
-          \end{center}
-          Se dice que \(c_n\) tiende a infinito (sin especificar el signo) o que oscila infinitamente.
+	\item \(a_n=2n-1\)\tab\(1,3,5,7,\dots\)
+	      \begin{center}
+		      \begin{scaletikzpicturetowidth}{.5\linewidth}
+			      \begin{tikzpicture}[scale=\tikzscale]
+				      \draw[->,thick] (0,-1) -- (0,10);
+				      \draw[->,thick] (-1,0) -- (10,0);
+				      \foreach \x/\xl/\y/\yl in {1/1/1/1,2/2/3/3,3/3/5/5,4/\(n_0\)/7/\(K\),5/\(n\)/9/\(2n-1\)} {
+						      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+						      \node (yl) at (0,\y){};
+						      \node (xl) at (\x,0){};
+						      \draw[dashed] node[left=1mm of yl]{\(\textstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+					      }
+				      \draw[dashed,ultra thin] (1,1) -- (5,9);
+				      \fill[green,opacity=0.2] (4,7) -- (4,10) -- (6,10) -- (6,7) -- cycle;
+			      \end{tikzpicture}
+		      \end{scaletikzpicturetowidth}
+	      \end{center}
+	      \[\lim_{n\to\infty}(2n-1)=+\infty\] Para todo \(K>0\) existe \(n_0\in\N\) tal que si \(n>n_0,2n-1>K\) (en el sector verde).
+	\item \(b_0=\begin{cases}
+		      0 & \text{si \(n\) es impar} \\
+		      1 & \text{si \(n\) es par}
+	      \end{cases}\)\tab\(0,1,0,1,\dots\)
+	      \begin{center}
+		      \begin{scaletikzpicturetowidth}{.5\linewidth}
+			      \begin{tikzpicture}[scale=\tikzscale]
+				      \draw[->,thick] (0,-1) -- (0,6);
+				      \draw[->,thick] (-.5,0) -- (10,0);
+				      \foreach \y [count=\x] in {0,1,0,1,0,1} {
+						      \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y*5)(n){};
+						      \node (yl) at (0,\y*5){};
+						      \node (xl) at (\x,0){};
+						      \draw node[left=1mm of yl]{\y} (yl);
+						      \draw[dashed] (n) -- (\x,0) node[below=1mm of xl]{\x};
+					      }
+				      \draw[dashed] (0,5) -- (10,5);
+			      \end{tikzpicture}
+		      \end{scaletikzpicturetowidth}
+	      \end{center}
+	      \[\lim_{n\to\infty}b_n\,\text{no existe}\] En este caso se dice que \(a_n\) oscila finitamente.
+	\item \(c_n=(-1)^{n-1}2n\)\tab\(2,-4,6,-8,\dots\)
+	      \begin{center}
+		      \begin{scaletikzpicturetowidth}{.5\linewidth}
+			      \begin{tikzpicture}[scale=\tikzscale]
+				      \draw[->,thick] (0,-11) -- (0,11);
+				      \draw[->,thick] (-1,0) -- (20,0);
+				      \foreach \y [count=\x] in {2,-4,6,-8} {
+						      \node[draw,shape=circle,fill=black,scale=0.4] at (\x*2,\y)(n){};
+						      \node (yl) at (0,\y){};
+						      \node (xl) at (\x*2,0){};
+						      \draw[dashed] node[left=1mm of yl]{\y} (yl) -- (n) -- (\x*2,0) node[below=1mm of xl]{\x};
+					      }
+			      \end{tikzpicture}
+		      \end{scaletikzpicturetowidth}
+	      \end{center}
+	      Se dice que \(c_n\) tiende a infinito (sin especificar el signo) o que oscila infinitamente.
 \end{itemize}
 \subsection{Propiedades del límite}
 La mayoría de las veces, el problema consistirá en calcular el valor de \(\lim_{n\to\infty}a_n\).
@@ -219,44 +219,44 @@ En la práctica no haremos un uso directo de dicha definición.
 Las siguientes propiedades se deducen de la definición de límite y nos servirán para desarrollar técnicas que nos permitan calcular algunos límites.
 \subsubsection{Unicidad del límite}
 \begin{center}
-    \begin{scaletikzpicturetowidth}{.5\linewidth}
-        \begin{tikzpicture}[scale=\tikzscale]
-            \draw[->,thick] (0,-1) -- (0,5);
-            \draw[->,thick] (-1,0) -- (10,0);
-            \foreach \x/\xl in {1/1,2/2,3/3,4/4,6/\(n\)} {
-                    \draw[thick] (\x,.25) -- (\x,-.25) node[below]{\xl};
-                }
-            \draw[dashed, red] (6,0) -- (6,5);
-            \foreach \y [count=\i] in {1.5,3} {
-                    \draw[thick] (0,\y+.5) -- (10,\y+.5);
-                    \draw[dashed, red] (0,\y) node[left]{\(L_\i\)} -- (10,\y);
-                    \draw[thick] (0,\y-.5) -- (10,\y-.5);
-                }
-        \end{tikzpicture}
-    \end{scaletikzpicturetowidth}
+	\begin{scaletikzpicturetowidth}{.5\linewidth}
+		\begin{tikzpicture}[scale=\tikzscale]
+			\draw[->,thick] (0,-1) -- (0,5);
+			\draw[->,thick] (-1,0) -- (10,0);
+			\foreach \x/\xl in {1/1,2/2,3/3,4/4,6/\(n\)} {
+					\draw[thick] (\x,.25) -- (\x,-.25) node[below]{\xl};
+				}
+			\draw[dashed, red] (6,0) -- (6,5);
+			\foreach \y [count=\i] in {1.5,3} {
+					\draw[thick] (0,\y+.5) -- (10,\y+.5);
+					\draw[dashed, red] (0,\y) node[left]{\(L_\i\)} -- (10,\y);
+					\draw[thick] (0,\y-.5) -- (10,\y-.5);
+				}
+		\end{tikzpicture}
+	\end{scaletikzpicturetowidth}
 \end{center}
 Una sucesión no puede converger a dos límites distintos.
 Si así fuera todos los \(a_n\) a partir de \(n=n_0\) tendrían que estar simultáneamente en las dos franjas y eso no es posible.
 \subsubsection{Acotación de las sucesiones convergentes}
 Si \(a_n\) es convergente, entonces el conjunto \(A=\{a_n:n\in\N\}\) es acotado.
 \begin{center}
-    \begin{scaletikzpicturetowidth}{.5\linewidth}
-        \begin{tikzpicture}[scale=\tikzscale]
-            \draw[->,thick] (0,-1) -- (0,7);
-            \draw[->,thick] (-1,0) -- (11,0);
-            \draw[thick] (5.5,.25) -- (5.5,-.25) node[below]{\(n_0\)};
-            \draw[dashed] (5.5,0) -- (5.5,7);
-            \draw[red] (0,1) node[left]{\(m\)} -- (11,1);
-            \draw[dashed] (0,2) node[left]{\(L-1\)} -- (11,2);
-            \draw[dashed] (0,3) node[left]{\(L\)} -- (11,3);
-            \draw[dashed] (0,4) node[left]{\(L+1\)} -- (11,4);
-            \draw[red] (0,5) node[left]{\(M\)} -- (11,5);
-            \fill[green,opacity=0.2] (5.5,2) -- (5.5,4) -- (11,4) -- (11,2) -- cycle;
-            \foreach \y [count=\x] in {4.5,2.2,1.2,3.5,4.6,3.8,2.6,3.3,2.7,3.2} {
-                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
-                }
-        \end{tikzpicture}
-    \end{scaletikzpicturetowidth}
+	\begin{scaletikzpicturetowidth}{.5\linewidth}
+		\begin{tikzpicture}[scale=\tikzscale]
+			\draw[->,thick] (0,-1) -- (0,7);
+			\draw[->,thick] (-1,0) -- (11,0);
+			\draw[thick] (5.5,.25) -- (5.5,-.25) node[below]{\(n_0\)};
+			\draw[dashed] (5.5,0) -- (5.5,7);
+			\draw[red] (0,1) node[left]{\(m\)} -- (11,1);
+			\draw[dashed] (0,2) node[left]{\(L-1\)} -- (11,2);
+			\draw[dashed] (0,3) node[left]{\(L\)} -- (11,3);
+			\draw[dashed] (0,4) node[left]{\(L+1\)} -- (11,4);
+			\draw[red] (0,5) node[left]{\(M\)} -- (11,5);
+			\fill[green,opacity=0.2] (5.5,2) -- (5.5,4) -- (11,4) -- (11,2) -- cycle;
+			\foreach \y [count=\x] in {4.5,2.2,1.2,3.5,4.6,3.8,2.6,3.3,2.7,3.2} {
+					\node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
+				}
+		\end{tikzpicture}
+	\end{scaletikzpicturetowidth}
 \end{center}
 Se elige \(\epsilon=1\) o cualquier otro.
 Una vez que \(a_n\) queda dentro de la franja roja para \(n\geq n_0\), es fácil encontrar cotas superiores e inferiores de \(A\).
@@ -266,21 +266,21 @@ Si \(a_n\) converge a un límite \(L\) mayor que cero, entonces la sucesión \(a
 Es decir:
 \[\text{Si }\lim_{n\to\infty}a_n=L>0\text{ entonces }a_n>0\,pctn\]
 \begin{center}
-    \begin{scaletikzpicturetowidth}{.5\linewidth}
-        \begin{tikzpicture}[scale=\tikzscale]
-            \draw[->,thick] (0,-1) -- (0,7);
-            \draw[->,thick] (-1,0) -- (11,0);
-            \draw[thick] (5.5,.25) -- (5.5,-.25) node[below]{\(n_0\)};
-            \draw[dashed] (5.5,0) -- (5.5,7);
-            \draw[dashed] (0,2) node[left]{\(L-L/2\)} -- (11,2);
-            \draw[dashed] (0,3) node[left]{\(L\)} -- (11,3);
-            \draw[dashed] (0,4) node[left]{\(L+L/2\)} -- (11,4);
-            \fill[green,opacity=0.2] (5.5,2) -- (5.5,4) -- (11,4) -- (11,2) -- cycle;
-            \foreach \y [count=\x] in {4.5,-.8,1.2,3.5,-.4,3.8,2.6,3.3,2.7,3.2} {
-                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
-                }
-        \end{tikzpicture}
-    \end{scaletikzpicturetowidth}
+	\begin{scaletikzpicturetowidth}{.5\linewidth}
+		\begin{tikzpicture}[scale=\tikzscale]
+			\draw[->,thick] (0,-1) -- (0,7);
+			\draw[->,thick] (-1,0) -- (11,0);
+			\draw[thick] (5.5,.25) -- (5.5,-.25) node[below]{\(n_0\)};
+			\draw[dashed] (5.5,0) -- (5.5,7);
+			\draw[dashed] (0,2) node[left]{\(L-L/2\)} -- (11,2);
+			\draw[dashed] (0,3) node[left]{\(L\)} -- (11,3);
+			\draw[dashed] (0,4) node[left]{\(L+L/2\)} -- (11,4);
+			\fill[green,opacity=0.2] (5.5,2) -- (5.5,4) -- (11,4) -- (11,2) -- cycle;
+			\foreach \y [count=\x] in {4.5,-.8,1.2,3.5,-.4,3.8,2.6,3.3,2.7,3.2} {
+					\node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y){};
+				}
+		\end{tikzpicture}
+	\end{scaletikzpicturetowidth}
 \end{center}
 Se elige \(\epsilon=L/2\), de modo que \(L-L/2=L/2>0\).
 Esto asegura que la franja verde esté por encime del eje de las \(x\).
@@ -288,12 +288,12 @@ Así \(a_n>0\) si \(n\geq n_0\).
 \subsubsection{Álgebra de límites}
 Si \(a_n\rightarrow a\in\R\) y \(b_n\rightarrow b\in\R\), entonces
 \begin{itemize}
-    \item \(a_n+b_n\rightarrow a+b\)
-    \item \(a_n\cdot b_n\rightarrow ab\).
-          En particular \(k\cdot a_n\rightarrow ka\) si \(k\in\R\)
-    \item Si \(b\neq0\) entonces \(\frac{a_n}{b_n}\rightarrow\frac{a}{b}\)
-    \item \(|a_n|\rightarrow|a|\)
-    \item Si \(a>0\) entonces \((a_n)^{b_n}\rightarrow a^b\)
+	\item \(a_n+b_n\rightarrow a+b\)
+	\item \(a_n\cdot b_n\rightarrow ab\).
+	      En particular \(k\cdot a_n\rightarrow ka\) si \(k\in\R\)
+	\item Si \(b\neq0\) entonces \(\frac{a_n}{b_n}\rightarrow\frac{a}{b}\)
+	\item \(|a_n|\rightarrow|a|\)
+	\item Si \(a>0\) entonces \((a_n)^{b_n}\rightarrow a^b\)
 \end{itemize}
 Ejemplo.
 Calcular \(\lim_{n\to\infty}=\left(\frac{1}{n}+\frac{2n}{n+1}\right)^3\).
@@ -312,20 +312,20 @@ Es necesario, en cada caso, aplicar alguna técnica algebraica que permita “sa
 No es el único tipo de indeterminación con el que nos vamos a encontrar.
 Analicemos los siguientes ejemplos:
 \begin{itemize}
-    \item \(a_n=\frac{1}{n}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n=1\rightarrow1\)
-    \item \(a_n=\frac{1}{n}\rightarrow0,b_n=n^2\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n^2=n\rightarrow+\infty\)
-    \item \(a_n=\frac{1}{n^2}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n^2}n=\frac{1}{n}\rightarrow0\)
+	\item \(a_n=\frac{1}{n}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n=1\rightarrow1\)
+	\item \(a_n=\frac{1}{n}\rightarrow0,b_n=n^2\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n}n^2=n\rightarrow+\infty\)
+	\item \(a_n=\frac{1}{n^2}\rightarrow0,b_n=n\rightarrow+\infty\):\tab\(a_nb_n=\frac{1}{n^2}n=\frac{1}{n}\rightarrow0\)
 \end{itemize}
 En estos observamos que no existe una propiedad que pueda predecir sobre un límite del tipo \(0\cdot\infty\).
 
 Los límites de los siguientes “tipos”, aunque no son todos, constituyen indeterminaciones:
 \begin{itemize}
-    \item \(\frac{\infty}{\infty}\)
-    \item \(+\infty-\infty\)
-    \item \(0\cdot\infty\)
-    \item \(\frac{0}{0}\)
-    \item \((+\infty)^0\)
-    \item \(0^0\)
+	\item \(\frac{\infty}{\infty}\)
+	\item \(+\infty-\infty\)
+	\item \(0\cdot\infty\)
+	\item \(\frac{0}{0}\)
+	\item \((+\infty)^0\)
+	\item \(0^0\)
 \end{itemize}
 En todos los casos, hay que entender estos símbolos como el límite de la operación aritmética indicada en cada caso, entre dos sucesiones.
 
@@ -336,16 +336,16 @@ En cada caso hay que usar algún recurso algebraico que permita salvar la indete
 En ocasiones no es posible aplicar el álgebra de límites porque los límites involucrados no son finitos, sin embargo no estamos ante una indeterminación.
 A continuación damos algunas situaciones donde se puede saber el límite a pesar de que los límites involucrados no sean todos números reales.
 \begin{itemize}
-    \item \((+\infty)\cdot L=+\infty\) si \(L>0\)\tab Ej:
-          \(\lim_{n\to\infty}\sqrt{n}\left(\frac{n}{3n+1}\right)=+\infty\)
-    \item \((+\infty)+\infty=+\infty\)\tab Ej:
-          \(\lim_{n\to\infty}\frac{n^2}{n+1}+\sqrt{n}=+\infty\)
-    \item \((+\infty)+\) oscila finitamente \(=+\infty\)\tab Ej:
-          \(\lim_{n\to\infty}(n+\cos(n))=+\infty\)
-    \item \(\frac{0}{\infty}=0\)\tab Ej:
-          \(\lim_{n\to\infty}\frac{\frac{1}{n}}{n^2+1}=0\)
-    \item \((0)^{+\infty}=0\)\tab Ej:
-          \(\lim_{n\to\infty}\left(\frac{n}{n^2+1}\right)^n=0\)
+	\item \((+\infty)\cdot L=+\infty\) si \(L>0\)\tab Ej:
+	      \(\lim_{n\to\infty}\sqrt{n}\left(\frac{n}{3n+1}\right)=+\infty\)
+	\item \((+\infty)+\infty=+\infty\)\tab Ej:
+	      \(\lim_{n\to\infty}\frac{n^2}{n+1}+\sqrt{n}=+\infty\)
+	\item \((+\infty)+\) oscila finitamente \(=+\infty\)\tab Ej:
+	      \(\lim_{n\to\infty}(n+\cos(n))=+\infty\)
+	\item \(\frac{0}{\infty}=0\)\tab Ej:
+	      \(\lim_{n\to\infty}\frac{\frac{1}{n}}{n^2+1}=0\)
+	\item \((0)^{+\infty}=0\)\tab Ej:
+	      \(\lim_{n\to\infty}\left(\frac{n}{n^2+1}\right)^n=0\)
 \end{itemize}
 Cada una de estas afirmaciones se puede demostrar a partir de la definición de límite.
 \subsubsection{``Cero por acotado''}
@@ -415,8 +415,8 @@ El siguiente teorema nos dice cómo se comporta el límite de una sucesión mon�
 Si \(a_n\) es una sucesión creciente puede ser que el conjunto \(A=\{a_n:n\in\N\}\) esté acotado superiormente o que no lo esté.
 Para cada uno de estos dos casos se tiene el siguiente teorema.
 \begin{itemize}
-    \item Si \(A=\{a_n:n\in\N\}\) está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=L\in\R\).
-    \item Si \(A=\{a_n:n\in\N\}\) no está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=+\infty\).
+	\item Si \(A=\{a_n:n\in\N\}\) está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=L\in\R\).
+	\item Si \(A=\{a_n:n\in\N\}\) no está acotado superiormente, entonces existe \(\lim_{n\to\infty}a_n=+\infty\).
 \end{itemize}
 De forma análoga, hay una versión del teorema cambiando \textit{creciente} por \textit{decreciente}, \textit{acotada superiormente} por \textit{acotada inferiormente} y \(\lim_{n\to\infty}a_n=+\infty\) por \(\lim_{n\to\infty}a_n=-\infty\).
 
@@ -429,7 +429,7 @@ El teorema es de los llamados \textit{teoremas de existencia}, esto es, asegura 
 Estudiaremos algunos ejemplos importantes de sucesiones, no sólo por los ejemplos en sí, sino por las técnicas usadas para calcular sus límites.
 Haremos uso del teorema recién enunciado sobre sucesiones monótonas.
 \begin{itemize}
-    \item \(a_n=r^n, 0<r<1\)
+	\item \(a_n=r^n, 0<r<1\)
 \end{itemize}
 Si experimentamos con algún caso particular (\(r=\frac{1}{2},\,a_n=\frac{1}{2^n}\), por ejemplo) nos podemos convencer de que la sucesión tiende a 0 ya que \(2^n\) crece a más infinito.
 Veamos cómo este convencimiento se puede plasmar en una demostración.
@@ -459,7 +459,7 @@ Es decir
 Con una cuenta similar se obtiene que si
 \[r>1\Rightarrow\lim_{n\to\infty}r^n=+\infty\]
 \begin{itemize}
-    \item \(b_n=\frac{r^n}{n}, r>1\)
+	\item \(b_n=\frac{r^n}{n}, r>1\)
 \end{itemize}
 Otra vez tenemos una sucesión de términos positivos.
 Estamos ante una indeterminación del tipo \(\frac{\infty}{\infty}\).
@@ -472,9 +472,9 @@ Calculamos el cociente \(\frac{b_{n+1}}{b_n}\) y lo comparamos con 1 como en el 
 \[\frac{b_{n+1}}{b_n}=\frac{\frac{r^{n+1}}{n+1}}{\frac{r^n}{n}}=r\frac{n}{n+1}\]
 Observamos que:
 \begin{enumerate}
-    \item \(r>1\) (Es dato)
-    \item \(\frac{n}{n+1}=\frac{1}{1+\frac{1}{n}}\rightarrow1\)
-    \item El producto \(r\frac{n}{n+1}>1\) para casi todo \(n\)
+	\item \(r>1\) (Es dato)
+	\item \(\frac{n}{n+1}=\frac{1}{1+\frac{1}{n}}\rightarrow1\)
+	\item El producto \(r\frac{n}{n+1}>1\) para casi todo \(n\)
 \end{enumerate}
 Entonces la sucesión \(b_n=\frac{r^n}{n}\) es creciente.
 El teorema de las sucesiones monótonas nos dice que si está acotada superiormente tiene límite finito, caso contrario, tiende a más infinito.
@@ -492,7 +492,7 @@ Con una cuenta similar se obtiene que \[0<r<1\Rightarrow\lim_{n\to\infty}nr^n=0\
 Con una demostración análoga a la precedente, vale que
 \(r>1\Rightarrow\lim_{n\to\infty}\frac{r^n}{n^k}=+\infty\) y que \(0<r<1\Rightarrow\lim_{n\to\infty}n^kr^n=0\) cualquiera sea \(k\in\N\).
 \begin{itemize}
-    \item \(c_n=\sqrt[n]{n}\)
+	\item \(c_n=\sqrt[n]{n}\)
 \end{itemize}
 Nos apoyaremos en que \(\lim_{n\to\infty}\frac{r^n}{n}=+\infty\) (\(r>1\)).
 Observemos en primer lugar que \[c_n=\sqrt[n]{n}\geq1\text{ para todo }n\]
@@ -505,7 +505,7 @@ Entonces, es seguro que \(\frac{r^n}{n}>1\) para casi todo \(n\).
 Luego \[\lim_{n\to\infty}\sqrt[n]{n}=1\]
 \subsubsection{El número \textit{e}}
 \begin{itemize}
-    \item \(e_n=\left(1+\frac{1}{n}\right)^n\)
+	\item \(e_n=\left(1+\frac{1}{n}\right)^n\)
 \end{itemize}
 Esta sucesión ejemplifica un nuevo tipo de indeterminación \(1^\infty\), siempre entendiendo este símbolo como una sucesión que tiende a 1 elevada a una sucesión que tiende a infinito.
 
@@ -515,21 +515,21 @@ Aceptados estos dos hechos, el teorema de sucesiones monótonas nos asegurará q
 Para visualizar que \(e_n\) es creciente y acotada recurriremos al gráfico de la función \(f(x)=\log(1+x)\) para valores positivos de la variable \(x\).
 Más precisamente, fijamos la atención en \[x_1=\frac{1}{n+1}\text{ y }x_2=\frac{1}{n}\]
 \begin{center}
-    \begin{scaletikzpicturetowidth}{\linewidth}
-        \begin{tikzpicture}[scale=\tikzscale]
-            \draw[->,thick] (0,-.1) -- (0,1.1);
-            \draw[->,thick] (-.1,0) -- (2.1,0);
-            \foreach \x/\xl/\y/\yl/\c in {.7/\(\frac{1}{n+1}\)/.45/\(f(\frac{1}{n+1})\)/green,1.4/\(\frac{1}{n}\)/.75/\(f(\frac{1}{n})\)/blue} {
-                    \draw[\c,very thick] (0,0) -- (\x,\y);
-                    \node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
-                    \node (yl) at (0,\y){};
-                    \node (xl) at (\x,0){};
-                    \draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
-                }
-            \draw[very thick,domain=0:2, smooth, variable=\x] plot ({\x}, {2*Log(10,1+\x)});
-            \draw[red,very thick] (0,0) -- (1,.9);
-        \end{tikzpicture}
-    \end{scaletikzpicturetowidth}
+	\begin{scaletikzpicturetowidth}{\linewidth}
+		\begin{tikzpicture}[scale=\tikzscale]
+			\draw[->,thick] (0,-.1) -- (0,1.1);
+			\draw[->,thick] (-.1,0) -- (2.1,0);
+			\foreach \x/\xl/\y/\yl/\c in {.7/\(\frac{1}{n+1}\)/.45/\(f(\frac{1}{n+1})\)/green,1.4/\(\frac{1}{n}\)/.75/\(f(\frac{1}{n})\)/blue} {
+					\draw[\c,very thick] (0,0) -- (\x,\y);
+					\node[draw,shape=circle,fill=black,scale=0.4] at (\x,\y)(n){};
+					\node (yl) at (0,\y){};
+					\node (xl) at (\x,0){};
+					\draw[dashed] node[left=1mm of yl]{\(\scriptstyle\text{\yl}\)} (yl) -- (n) -- (\x,0) node[below=1mm of xl]{\xl};
+				}
+			\draw[very thick,domain=0:2, smooth, variable=\x] plot ({\x}, {2*Log(10,1+\x)});
+			\draw[red,very thick] (0,0) -- (1,.9);
+		\end{tikzpicture}
+	\end{scaletikzpicturetowidth}
 \end{center}
 Se observa que la recta verde tiene pendiente mayor que la recta azul.
 Estas dos rectas pasan por el origen y lo unen con los puntos del gráfico \((x_1,f(x_1))\) y \((x_2,f(x_2))\) respectivamente.
@@ -598,9 +598,9 @@ Se quiere calcular el \(\lim_{n\to\infty}a_n\).
 
 Criterio de Cauchy: si \(\lim_{n\to\infty}\sqrt[n]{|a_n|}=L\) vale que:
 \begin{itemize}
-    \item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
-    \item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
-    \item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
+	\item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
+	\item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
+	\item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
 \end{itemize}
 \subsection{El Criterio de D ́Alembert o del cociente}
 Se basa en la idea que usamos en los primeros ejemplos donde estudiamos el cociente \(\frac{a_{n+1}}{a_n}\) y lo comparábamos con 1.
@@ -609,9 +609,9 @@ Se quiere calcular el \(\lim_{n\to\infty}a_n\).
 
 Criterio de D ́Alembert: si \(\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L\) vale que:
 \begin{itemize}
-    \item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
-    \item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
-    \item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
+	\item Si \(0\leq L<1\) entonces \(\lim_{n\to\infty}a_n=0\).
+	\item Si \(L>1\) o es más infinito entonces \(\lim_{n\to\infty}|a_n|=+\infty\).
+	\item Si \(L=1\) entonces el criterio no sirve para decidir el \(\lim_{n\to\infty}a_n\).
 \end{itemize}
 \subsection{Subsucesiones}
 Hemos visto que algunas sucesiones carecen de límite finito o infinito.
@@ -643,7 +643,7 @@ Determinen si alguna de las dos subsucesiones es convergente.
 \(a_{2n}\) es la subsucesión de los términos pares.
 Los resaltamos en negrita para poder visualizarlos:
 \begin{center}
-    2, \textbf{4}, 6, \textbf{4}, 2, \textbf{4}, 6, \textbf{4}, 2,
+	2, \textbf{4}, 6, \textbf{4}, 2, \textbf{4}, 6, \textbf{4}, 2,
 \end{center}
 Claramente se observa que \(a_{2n}=4\) para todo \(n\).
 De modo que, al ser una sucesión constante, resulta convergente.
@@ -651,14 +651,14 @@ De modo que, al ser una sucesión constante, resulta convergente.
 \(a_{2n+1}\) es la subsucesión de los términos impares.
 De vuelta en negrita.
 \begin{center}
-    \textbf{2}, 4, \textbf{6}, 4, \textbf{2}, 4, \textbf{6},
+	\textbf{2}, 4, \textbf{6}, 4, \textbf{2}, 4, \textbf{6},
 \end{center}
 Vemos que esta subsucesión se obtiene sacando todos los 4 de la sucesión.
 Si hacemos eso queda \(2,6,2,6,2,\dots\) de modo que
 \[b_n=a_{2n+1}=\begin{cases}
-        2 & \text{si \(n\) impar} \\
-        6 & \text{si \(n\) par}
-    \end{cases}\]
+		2 & \text{si \(n\) impar} \\
+		6 & \text{si \(n\) par}
+	\end{cases}\]
 que no resulta convergente.
 Pero, ¿cómo probar que no es convergente?
 
@@ -670,8 +670,8 @@ El cuantificador “toda subsucesión” la hace poco práctica para usarla para
 Pero alcanza con que dos subsucesiones tiendan a límites diferentes para que la sucesión original no sea convergente.
 
 Probemos que la sucesión \(b_n=\begin{cases}
-    2 & \text{si \(n\) impar} \\
-    6 & \text{si \(n\) par}
+	2 & \text{si \(n\) impar} \\
+	6 & \text{si \(n\) par}
 \end{cases}\) no tiene límite.\\
 Consideremos la subsucesión de los términos pares y la subsucesión de los impares:
 \[2,6,2,6,\dots\]
