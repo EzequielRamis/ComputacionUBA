@@ -6,4 +6,6 @@ COPY \
   entrypoint.sh \
   /root/
 
+RUN apk add parallel
+
 ENTRYPOINT ["/root/entrypoint.sh"]
