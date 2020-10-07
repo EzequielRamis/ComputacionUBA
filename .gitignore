@@ -277,3 +277,4 @@ TSWLatexianTemp*
 
 # Custom
 __latexindent_temp.tex
+*.code-workspace
