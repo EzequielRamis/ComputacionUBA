@@ -1,0 +1,78 @@
+\documentclass[../teoria.root.tex]{subfiles}
+
+\usepackage{siunitx}
+
+\begin{document}
+
+\section{Ángulos}
+
+\subsection{Radianes}
+
+En vez de utilizar grados, en esta materia vamos a utilizar radianes para
+expresar ángulos.
+
+Al dibujar una linea que este a un ángulo $\theta$ del eje $x$ (por convención
+se empieza en el extremo positivo del eje, y se mueve en dirección anti
+horaria), la longitud del arco formado en un circulo de radio $1$ hasta ese
+ángulo es la medida de $\theta$ en radianes.
+
+En grados, una rotación completa es de \ang{360}, pero en radianes es de $2\pi$
+(la circunferencia de un circulo de radio $1$). En general, para convertir de
+grados a radianes se puede usar la siguiente fórmula, donde $\alpha$ es el
+ángulo en radianes y $\beta$ es el ángulo en grados:
+\[\frac{\alpha}{\pi}=\frac{\beta}{\ang{180}}\]
+
+\subsection{Circulo unitario}
+
+Un circulo de radio $1$, también llamado un circulo unitario, puede servir como
+una gran ayuda visual para entender los radianes y otros conceptos de
+trigonometría:
+
+\begin{center}
+	\begin{tikzpicture}[scale=3]
+		\pgfmathsetmacro{\a}{45}
+		\draw[->] (-1.5,0) -- (1.5,0);
+		\draw[->] (0,-1.5) -- (0,1.5);
+		\draw[help lines] circle(1);
+		\draw[purple,thick] (1,0) arc (0:\a:1) node[midway,right]{$\theta$};
+		\draw[blue,thick] (0,0) -- (\a:1) node[midway,sloped,above]{$1$};
+		\draw[green,thick] (0,0) -- ($(cos{\a},0)$) node[midway,below]{$\cos\theta$};
+		\draw[red,thick] ($(cos{\a},0)$) -- (\a:1) node[midway,sloped,above]{$\sin\theta$};
+		\fill (\a:1) circle(0.5pt) node[above right]{$(\cos{\theta},\sin{\theta})$};
+		\fill (0,0) circle(0.5pt);
+		\fill ( 1, 0) circle(0.5pt) node[above right]{$0$};
+		\fill ( 0, 1) circle(0.5pt) node[above left]{$\frac{1}{2}\pi$};
+		\fill (-1, 0) circle(0.5pt) node[below left]{$\pi$};
+		\fill ( 0,-1) circle(0.5pt) node[below right]{$\frac{3}{2}\pi$};
+		\fill ( 1, 0) circle(0.5pt) node[below right]{$2\pi$};
+	\end{tikzpicture}
+\end{center}
+
+\subsection{Funciones Trigonométricas}
+
+Las funciones trigonométricas sirven para conocer los ángulos internos de un
+triangulo rectángulo, conociendo las longitudes de dos de sus lados:
+
+\begin{center}
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\a}{25}
+		\pgfmathsetmacro{\x}{4}
+		\coordinate (p) at ($(\x,tan{\a}*\x)$);
+		\draw (0,0) -- (\x,0) node[midway,below]{$CA$};
+		\draw (\x,0) -- (p) node[midway,right]{$CO$};
+		\draw (0,0) -- (p) node[midway,sloped,above]{$H$};
+		\draw (1,0) arc(0:\a:1) node[midway,right]{$\theta$};
+	\end{tikzpicture}
+\end{center}
+
+En términos de las longitudes del cateto adyacente ($CA$), opuesto ($CO$) y la
+hipotenusa ($H$) en un triangulo rectángulo, podemos definir el coseno y el
+seno del angulo $\theta$ como:
+\[\cos\alpha=\frac{CA}{H}\]
+\[\sin\alpha=\frac{CO}{H}\]
+
+Ya que en un circulo de radio $1$ la hipotenusa formada por la linea siempre va
+a medir $1$, podemos ver que la coordenada $x$ del punto en el circulo va a ser
+$\cos\alpha$, y la coordenada $y$ va a ser $\sin\alpha$.
+
+\end{document}
