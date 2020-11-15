@@ -18,14 +18,14 @@ de la unidad.
 		\foreach \x in {-5,...,5}
 			\draw (\x,-.1) -- (\x,.1);
 		\fill (-3,0) circle(2pt) node[below]{$-3$};
-		\fill[blue] (0,0) circle(2pt) node[below]{$0$};
-		\fill[green] (1,0) circle(2pt) node[below]{$1$};
+		\fill[purple] (0,0) circle(2pt) node[below]{$0$};
+		\fill[xa] (1,0) circle(2pt) node[below]{$1$};
 		\fill ($(sqrt{(2)},0)$) circle(2pt) node[below]{$\sqrt{2}$};
 		\fill (4.5,0) circle(2pt) node[below]{$4.5$};
 		\draw[->] (0,.2) -- ++(-3,0);
 		\draw[->] (0,.2) -- ++($(sqrt{(2)},0)$);
 		\draw[->] (0,.2) -- ++(4.5,0);
-		\draw[green,thick,->] (0,.2) -- ++(1,0);
+		\draw[xa,thick,->] (0,.2) -- ++(1,0);
 	\end{tikzpicture}
 \end{center}
 
@@ -46,17 +46,17 @@ puede leer como dos movimientos paralelos a cada eje, que llevan a un punto
 		\draw[help lines] (-4.1,-4.1) grid (4.1,4.1);
 		\draw[->] (-4.1,0) -- (4.1,0) node[right]{$x$};
 		\draw[->] (0,-4.1) -- (0,4.1) node[above]{$y$};
-		\draw[green,very thick,->] (0,0) -- (1,0) node[below]{$(1,0)$};
-		\draw[red,very thick,->] (0,0) -- (0,1) node[left]{$(0,1)$};
-		\fill[blue] (0,0) circle(2pt) node[below left]{$(0,0)$};
-		\draw[red,dashed,very thick] (2,0) -- (2,3);
-		\draw[green,dashed,very thick] (0,3) -- (2,3);
+		\draw[xa,very thick,->] (0,0) -- (1,0) node[below]{$(1,0)$};
+		\draw[ya,very thick,->] (0,0) -- (0,1) node[left]{$(0,1)$};
+		\fill[purple] (0,0) circle(2pt) node[below left]{$(0,0)$};
+		\draw[ya,dashed,very thick] (2,0) -- (2,3);
+		\draw[xa,dashed,very thick] (0,3) -- (2,3);
 		\fill (2,3) circle(2pt) node[right]{$(2,3)$};
-		\draw[red,dashed,very thick] (-2,0) -- (-2,2);
-		\draw[green,dashed,very thick] (0,2) -- (-2,2);
+		\draw[ya,dashed,very thick] (-2,0) -- (-2,2);
+		\draw[xa,dashed,very thick] (0,2) -- (-2,2);
 		\fill (-2,2) circle(2pt) node[left]{$(-2,2)$};
-		\draw[red,dashed,very thick] (-5/2,0) -- (-5/2,-2);
-		\draw[green,dashed,very thick] (0,-2) -- (-5/2,-2);
+		\draw[ya,dashed,very thick] (-5/2,0) -- (-5/2,-2);
+		\draw[xa,dashed,very thick] (0,-2) -- (-5/2,-2);
 		\fill (-5/2,-2) circle(2pt) node[below]{$\left(-\frac{5}{2},-2\right)$};
 	\end{tikzpicture}
 \end{center}
@@ -71,17 +71,17 @@ que se juntan en el origen:
 		\draw[->] (-4,0,0) -- (4,0,0) node[right]{$x$};
 		\draw[->] (0,-4,0) -- (0,4,0) node[above right]{$y$};
 		\draw[->] (0,0,-4) -- (0,0,4) node[above]{$z$};
-		\draw[green,very thick,->] (0,0,0) -- (1,0,0);
-		\draw[red,very thick,->] (0,0,0) -- (0,1,0);
-		\draw[purple,very thick,->] (0,0,0) -- (0,0,1);
-		\fill[blue] circle(2pt);
-		\draw[green,dashed,very thick] (0,3,0) -- (2,3,0);
-		\draw[red,dashed,very thick] (2,0,0) -- (2,3,0);
-		\draw[purple,dashed,very thick] (2,3,0) -- (2,3,1);
+		\draw[xa,very thick,->] (0,0,0) -- (1,0,0);
+		\draw[ya,very thick,->] (0,0,0) -- (0,1,0);
+		\draw[za,very thick,->] (0,0,0) -- (0,0,1);
+		\fill[purple] circle(2pt);
+		\draw[xa,dashed,very thick] (0,3,0) -- (2,3,0);
+		\draw[ya,dashed,very thick] (2,0,0) -- (2,3,0);
+		\draw[za,dashed,very thick] (2,3,0) -- (2,3,1);
 		\fill (2,3,1) circle(2pt) node[above]{$(2,3,1)$};
-		\draw[green,dashed,very thick] (0,-2,0) -- (-3,-2,0);
-		\draw[red,dashed,very thick] (-3,0,0) -- (-3,-2,0);
-		\draw[purple,dashed,very thick] (-3,-2,0) -- (-3,-2,-2);
+		\draw[xa,dashed,very thick] (0,-2,0) -- (-3,-2,0);
+		\draw[ya,dashed,very thick] (-3,0,0) -- (-3,-2,0);
+		\draw[za,dashed,very thick] (-3,-2,0) -- (-3,-2,-2);
 		\fill (-3,-2,-2) circle(2pt) node[below]{$(-3,-2,-2)$};
 	\end{tikzpicture}
 \end{center}
