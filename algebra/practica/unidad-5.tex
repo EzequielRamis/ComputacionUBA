@@ -1,4 +1,155 @@
 \documentclass[../practica.root.tex]{subfiles}
 
 \begin{document}
+\begin{enumerate}
+    \item Determinar si la función $f$ es t. l.
+          \begin{enumerate}
+              \item \( f: \R^3 \to \R^2, f(x_1, x_2, x_3) = (x_1 - x_2, 2x_1) \)
+                    \[ v, u \in \R^3 \]
+                    \[ f(v + u) = f(v) + f(u) \]
+                    \[ f(v_1 + u_1,v_2 + u_2,v_3 + u_3) = f(v_1,v_2,v_3) + f(u_1,u_2,u_3) \]
+                    \[ ((v_1 + u_1) - (v_2 + u_2), 2(v_1 + u_1)) = (v_1 - v_2, 2v_1) + (u_1 - u_2, 2u_1) \]
+                    \[ (v_1 - v_2 + u_1 - u_2, 2v_1 + 2u_1) = (v_1 - v_2 + u_1 - u_2, 2v_1 + 2u_1) \]
+                    $f$ verifica $(v + u) = f(v) + f(u)$
+                    \[ v \in \R^3, a \in \R \]
+                    \[ af(v) = f(av) \]
+                    \[ a(v_1 - v_2, 2v_1) = (av_1 - av_2, 2av_1) \]
+                    \[ \boxed{f \text{ es t. l.}} \]
+              \item \( f: \R^2 \to \R^3, f(x_1,x_2) = (x_1\cdot x_2,0,0) \)
+                    \[ v, u \in \R^2 \]
+                    \[ f(v + u) = f(v) + f(u) \]
+                    \[ f(v_1 + u_1, v_2 + u_2) = f(v_1, v_2) + f(u_1, u_2) \]
+                    \[ ((v_1 + u_1)\cdot(v_2 + u_2),0,0) = (v_1v_2,0,0) + (u_1u_2,0,0) \]
+                    \[ (v_1v_2 + v_1u_2 + u_1v_2 + u_1u_2,0,0) = (v_1v_2 + u_1u_2,0,0) \]
+                    \[ v_1v_2 + v_1u_2 + u_1v_2 + u_1u_2 \neq v_1v_2 + u_1u_2 \]
+                    \[ \boxed{$f$ \text{ no es t. l. No verifica } $f(v + u) = f(v) + f(u)$} \]
+              \item \( f: \R^2 \to \R^{3\x2}, f(x_1,x_2) =
+                    \begin{pmatrix}
+                        x_1  & x_1 - x_2 \\
+                        0    & 0         \\
+                        -x_1 & 0
+                    \end{pmatrix}
+                    \)
+                    \[ v, u \in \R^2 \]
+                    \[ f(v + u) = f(v) + f(u) \]
+                    \[ f(v_1 + u_1, v_2 + u_2) = f(v_1, v_2) + f(u_1, u_2) \]
+                    \[
+                        \begin{pmatrix}
+                            (v_1 + u_1)  & (v_1 + u_1) - (v_2 + u_2) \\
+                            0            & 0                         \\
+                            -(v_1 + u_1) & 0
+                        \end{pmatrix}
+                        =
+                        \begin{pmatrix}
+                            v_1  & v_1 - v_2 \\
+                            0    & 0         \\
+                            -v_1 & 0
+                        \end{pmatrix}
+                        +
+                        \begin{pmatrix}
+                            u_1  & u_1 - u_2 \\
+                            0    & 0         \\
+                            -u_1 & 0
+                        \end{pmatrix}
+                    \] \[
+                        \begin{pmatrix}
+                            v_1 + u_1  & v_1 + u_1 - v_2 - u_2 \\
+                            0          & 0                     \\
+                            -v_1 - u_1 & 0
+                        \end{pmatrix}
+                        =
+                        \begin{pmatrix}
+                            v_1 + u_1 & v_1 + u_1 - v_2 - u_2 \\
+                            0         & 0                     \\
+                            -v_1-u_1  & 0
+                        \end{pmatrix}
+                    \]
+                    \[ v \in \R^{3\x2}, a \in \R \]
+                    \[ af(v) = f(av) \]
+                    \[
+                        a
+                        \begin{pmatrix}
+                            v_1  & v_1 - v_2 \\
+                            0    & 0         \\
+                            -v_1 & 0
+                        \end{pmatrix}
+                        =
+                        \begin{pmatrix}
+                            av_1  & av_1 - av_2 \\
+                            0     & 0           \\
+                            -av_1 & 0
+                        \end{pmatrix}
+                    \]
+                    \[ \boxed{f \text{ es t. l.}} \]
+              \item \( f: \R^{2\x3} \to \R^{3\x2}, f(A) = A^t \)
+                    \[ v, u \in \R^2 \]
+                    \[ f(v + u) = f(v) + f(u) \]
+                    \[
+                        f
+                        \begin{pmatrix}
+                            v_{1,1} + u_{1,1} & v_{1,2} + u_{1,2} & v_{1,3} + u_{1,3} \\
+                            v_{2,1} + u_{2,1} & v_{2,2} + u_{2,2} & v_{2,3} + u_{2,3} \\
+                        \end{pmatrix}
+                        =
+                        f
+                        \begin{pmatrix}
+                            v_{1,1} & v_{1,2} & v_{1,3} \\
+                            v_{2,1} & v_{2,2} & v_{2,3} \\
+                        \end{pmatrix}
+                        +
+                        f
+                        \begin{pmatrix}
+                            u_{1,1} & u_{1,2} & u_{1,3} \\
+                            u_{1,1} & u_{1,1} & u_{1,1} \\
+                        \end{pmatrix}
+                    \] \[
+                        \begin{pmatrix}
+                            (vu)_{1,1} & (vu)_{2,1} \\
+                            (vu)_{1,2} & (vu)_{2,2} \\
+                            (vu)_{1,3} & (vu)_{2,3} \\
+                        \end{pmatrix}
+                        =
+                        \begin{pmatrix}
+                            v_{1,1} & v_{2,1} \\
+                            v_{1,2} & v_{2,2} \\
+                            v_{1,3} & v_{2,3} \\
+                        \end{pmatrix}
+                        +
+                        \begin{pmatrix}
+                            u_{1,1} & u_{2,1} \\
+                            u_{1,2} & u_{2,2} \\
+                            u_{1,3} & u_{2,3} \\
+                        \end{pmatrix}
+                    \]
+                    $f$ verifica $(v + u) = f(v) + f(u)$
+                    \[ v \in \R^{2\x3}, a \in \R \]
+                    \[ af(v) = f(av) \]
+                    \[
+                        a\cdot f
+                        \begin{pmatrix}
+                            v_{1,1} & v_{1,2} & v_{1,3} \\
+                            v_{2,1} & v_{2,2} & v_{2,3} \\
+                        \end{pmatrix}
+                        =
+                        \begin{pmatrix}
+                            av_{1,1} & av_{1,2} & av_{1,3} \\
+                            av_{2,1} & av_{2,2} & av_{2,3} \\
+                        \end{pmatrix}
+                    \] \[
+                        a\cdot
+                        \begin{pmatrix}
+                            v_{1,1} & v_{2,1} \\
+                            v_{1,2} & v_{2,2} \\
+                            v_{1,3} & v_{2,3} \\
+                        \end{pmatrix}
+                        =
+                        \begin{pmatrix}
+                            av_{1,1} & av_{2,1} \\
+                            av_{1,2} & av_{2,2} \\
+                            av_{1,3} & av_{2,3} \\
+                        \end{pmatrix}
+                    \]
+                    \[ \boxed{f \text{ es t. l.}} \]
+          \end{enumerate}
+\end{enumerate}
 \end{document}
