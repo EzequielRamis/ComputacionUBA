@@ -1,6 +1,7 @@
 \input{../template.tex}
 
 \usepackage{siunitx}
+\usepackage{transparent}
 
 \usepackage{tikz-3dplot}
 \tdplotsetmaincoords{70}{20}
@@ -21,6 +22,15 @@
 	za/.style={color=z}
 }
 
+\newcommand\vx{{\color{x}v_x}}
+\newcommand\vy{{\color{y}v_y}}
+\newcommand\vz{{\color{z}v_z}}
+\newcommand\wx{{\color{x}w_x}}
+\newcommand\wy{{\color{y}w_y}}
+\newcommand\wz{{\color{z}w_z}}
+
+\newcommand\eola{la serie \href{https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab}{``Esencia Del Álgebra Lineal''} de 3Blue1Brown}
+
 \begin{document}
 
 \tableofcontents
@@ -28,5 +38,6 @@
 \subfile{teoria/conjuntos.tex}
 \subfile{teoria/espacios.tex}
 \subfile{teoria/angulos.tex}
+\subfile{teoria/vectores.tex}
 
 \end{document}
