@@ -8,6 +8,7 @@
 \usepackage{amssymb} % Agrega \mathbb
 \usepackage{cancel} % Agrega macro \cancel
 \usepackage[hidelinks]{hyperref} % Agrega links clickeables
+\usepackage{pifont} % Agrega cruz de "Mal" xd
 
 \usepackage{environ}
 \makeatletter
@@ -23,3 +24,6 @@
 }
 \makeatother
 \everymath{\displaystyle}
+
+\newcommand{\cmark}{\ding{51}} % Tick de "correcto"
+\newcommand{\xmark}{\ding{55}} % Cruz de "mal"

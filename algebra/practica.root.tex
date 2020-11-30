@@ -1,0 +1,30 @@
+\input{../template.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\S}{\mathbb{S}} % Sobre escribir letra rara con S cheta
+\renewcommand{\H}{\mathbb{H}} % \H???
+\newcommand{\x}{\times}
+\newcommand{\tabr}{\hspace*{\fill}}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+% \setcounter{section}{-1}
+
+\subfile{practica/unidad-4.tex}
+\newpage
+\end{document}
