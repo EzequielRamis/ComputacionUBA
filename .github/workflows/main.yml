@@ -21,9 +21,10 @@ jobs:
       - name: Compile LaTeX document
         uses: ./.github/actions/latex
       - name: Upload files to Google Drive
-        uses: PeronTheDuck/glob-to-drive@v2
+        uses: PeronTheDuck/glob-to-drive@v4
         with:
           glob: "**/*.pdf"
+          keepStructure: true
           uploadTo: ${{ secrets.UPLOADTO }}
           credentials: ${{ secrets.CREDENTIALS }}
           token: ${{ secrets.TOKEN }}
