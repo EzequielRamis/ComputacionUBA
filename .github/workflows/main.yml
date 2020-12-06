@@ -23,7 +23,7 @@ jobs:
       - name: Upload files to Google Drive
         uses: PeronTheDuck/glob-to-drive@v4
         with:
-          glob: "**/*.pdf"
+          glob: "**/!(tikz)/*.pdf"
           keepStructure: true
           uploadTo: ${{ secrets.UPLOADTO }}
           credentials: ${{ secrets.CREDENTIALS }}
