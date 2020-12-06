@@ -188,9 +188,9 @@
                             x_2 + \frac{1}{2}x_3 = 0 \implies x_2 = -\frac{1}{2}x_3
                         \end{cases}
                     \] \[
-                        (x_1 + x_2 + x_3, x_1 - x_2, 2x_2 + x_3) \implies (0, 0, 2x_3) = x_3(0, 0, 2)
+                        (x_1, x_2, x_3) = \left( -\frac{1}{2}x_3, -\frac{1}{2}x_3, x_3 \right) = x_3\left(-\frac{1}{2}, -\frac{1}{2}, 1\right)
                     \] \[
-                        \boxed{B_{\Nu f} = \langle(0,0,2)\rangle}
+                        \boxed{B_{\Nu f} = \left\{\left(-\frac{1}{2}, -\frac{1}{2}, 1\right)\right\}}
                     \]
                     Calcular \(\Img f\):
                     \[ \Img f = \langle f(\hat{i}), f(\hat{j}), f(\hat{k}) \rangle = \langle (1,1,0),(1,-1,2),(1,0,1) \rangle\]
@@ -199,12 +199,12 @@
                         \alpha(1,1,0) + \beta(1,-1,2) + \gamma(1,0,1) = (\alpha + \beta + \gamma, \alpha - \beta, 2\beta + \gamma) = 0
                     \] \[
                         \begin{pmatrix}
-                            1 &  1 & 1 \\
+                            1 & 1  & 1 \\
                             1 & -1 & 0 \\
-                            0 &  2 & 1 
+                            0 & 2  & 1
                         \end{pmatrix}
                     \]
-                    (Este sistema es el mismo del nucleo)
+                    (Este sistema es el mismo que el del nucleo)
                     \[
                         \begin{pmatrix}
                             1 & 1 & 1   \\
@@ -213,15 +213,146 @@
                         \end{pmatrix}
                     \]
                     El sistema es l. d. por lo que hay que hay que extraer los 2 primeros vectores para crear una base:
-                    \[ \boxed{B_{\Img f}} = \langle (1,0,0),(1,1,0) \rangle \]
-                    \[ \boxed{\dim\Img f = 2} \]
+                    \[ \boxed{B_{\Img f}} = \{ (1,0,0),(1,1,0) \} \]
+                    \[ \boxed{\dim B_{\Img f} = 2} \]
 
               \item \( f : \R^4 \to \R^4, f(x_1,x_2,x_3,x_4) = (x_1 + x_3, 0, x_2 + 2x_3, -x_1 + x_2 + x_3) \)
+                    Calcular \(\Nu f\):
+                    \[ f(x) = 0 \]
+                    \[
+                        \begin{cases}
+                            x_1 + x_3 = 0        \\
+                            0 = 0                \\
+                            x_2 + 2x_3 = 0       \\
+                            -x_1 + x_2 + x_3 = 0 \\
+                        \end{cases}
+                    \] \[
+                        \begin{pmatrix}
+                            1  & 0 & 1 & 0 \\
+                            0  & 0 & 0 & 0 \\
+                            0  & 1 & 2 & 0 \\
+                            -1 & 1 & 1 & 0
+                        \end{pmatrix}
+                        \begin{array}{rl}
+                            F_4 + F_1 - F_3 & \to F_4             \\
+                            F_2             & \leftrightarrow F_3 \\
+                        \end{array}
+                        \begin{pmatrix}
+                            1 & 0 & 1 & 0 \\
+                            0 & 1 & 2 & 0 \\
+                            0 & 0 & 0 & 0 \\
+                            0 & 0 & 0 & 0
+                        \end{pmatrix}
+                    \] \[
+                        \boxed{\dim \Nu f = 4 - 2 = 2}
+                    \] \[
+                        \begin{cases}
+                            x_1 + x_3 = 0 \implies x_1 = -x_3 \\
+                            x_2 + 2x_3 = 0 \implies x_2 = -2x_3
+                        \end{cases}
+                    \] \[
+                        (x_1, x_2, x_3, x_4) = (-x_3, -2x_3, x_3, x_4) = x_3(-1,-2,1,0) + x_4(0,0,0,1)
+                    \] \[
+                        \boxed{B_{\Nu f} = \{ (-1,-2,1,0),(0,0,0,1) \}}
+                    \]
+                    Calcular \( \Img f \):
+                    \[
+                        \begin{array}{rl}
+                            \Img f & = \langle f(1,0,0,0),f(0,1,0,0),f(0,0,1,0),f(0,0,0,1) \rangle \\
+                                   & = \langle (1,0,0,-1),(0,0,1,1),(1,0,2,1),(0,0,0,0) \rangle
+                        \end{array}
+                    \]
+                    Verificar que los vectores sean l. i.:
+                    \[
+                        \begin{pmatrix}
+                            1  & 0 & 1 & 0 \\
+                            0  & 0 & 0 & 0 \\
+                            0  & 1 & 2 & 0 \\
+                            -1 & 1 & 1 & 0 \\
+                        \end{pmatrix}
+                    \]
+                    (Este sistema es el mismo que el del nucleo)
+                    \[
+                        \begin{pmatrix}
+                            1 & 0 & 1 & 0 \\
+                            0 & 1 & 2 & 0 \\
+                            0 & 0 & 0 & 0 \\
+                            0 & 0 & 0 & 0
+                        \end{pmatrix}
+                    \]
+                    El sistema es l. d. por lo que hay que hay que extraer los 2 primeros vectores para crear una base:
+                    \[ \boxed{B_{\Img f} = \{ (1,0,0,0),(0,1,0,0) \}} \]
+                    \[ \boxed{\dim B_{\Img f} = 2} \]
+
               \item \( f : \R^3 \to \R^{2\x2}, f(x_1, x_2, x_3) =
                     \begin{pmatrix}
                         x_2 - x_3 & x_1 + x_3 \\
                         x_1 + x_2 & x_2 - x_3
                     \end{pmatrix} \)
+                    Calcular \(\Nu f\):
+                    \[ f(x) = 0 \]
+                    \[
+                        \begin{cases}
+                            x_2 - x_3 = 0 \\
+                            x_1 + x_3 = 0 \\
+                            x_1 + x_2 = 0 \\
+                            x_2 - x_3 = 0 \\
+                        \end{cases}
+                    \] \[
+                        \begin{pmatrix}
+                            0 & 1 & -1 \\
+                            1 & 0 & 1  \\
+                            1 & 1 & 0  \\
+                            0 & 1 & -1 \\
+                        \end{pmatrix}
+                        \begin{array}{rl}
+                            F_3 - F_2 - F_1 & \to F_3             \\
+                            F_4 - F_1       & \to F_4             \\
+                            F_1             & \leftrightarrow F_2
+                        \end{array}
+                        \begin{pmatrix}
+                            1 & 0 & 1  \\
+                            0 & 1 & -1 \\
+                            0 & 0 & 0  \\
+                            0 & 0 & 0  \\
+                        \end{pmatrix}
+                    \] \[
+                        \boxed{\dim\Nu f = 4 - 2 = 2}
+                    \] \[
+                        \begin{cases}
+                            x_1 + x_3 = 0 \implies x_1 = -x_3 \\
+                            x_2 - x_3 = 0 \implies x_2 = x_3
+                        \end{cases}
+                    \] \[
+                        (x_1, x_2, x_3) = (-x_3, x_3, x_3) = x_3(-1,1,1)
+                    \] \[
+                        \boxed{B_{\Nu f} = \{ (-1,1,1) \}} \text{\xmark}
+                    \]
+                    Calcular \( \Img f \):
+                    \[
+                        \begin{array}{rl}
+                            \Img f & = \langle f(1,0,0),f(0,1,0),f(0,0,1) \rangle \\
+                                   & =
+                            \left\langle
+                            \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix},
+                            \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix},
+                            \begin{pmatrix} -1 & 1 \\ 0 & -1 \end{pmatrix}
+                            \right\rangle
+                        \end{array}
+                    \]
+                    Los vectores no son l. i., por lo que tomamos los 2 primeros
+                    \[
+                        \boxed{
+                            B_{\Img f} =
+                            \left\{
+                            \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix},
+                            \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}
+                            \right\}
+                        }
+                    \] \[
+                        \boxed{\dim B_{\Img f} = 2}
+                    \]
+
           \end{enumerate}
     \item \dots
     \item \dots
