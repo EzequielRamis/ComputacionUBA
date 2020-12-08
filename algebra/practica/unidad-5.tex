@@ -385,7 +385,100 @@
     \item \dots
     \item \dots
     \item \dots
-    \item \dots
+    \item Hallar \(h = g \circ f\), \(t = f \circ g\) y determinar el núcleo y la imagen de los 4
+          \begin{enumerate}
+              \item \( f : \R^3 \to \R^2 \), \( f(x_1,x_2,x_3) = (x_1,x_1+x_2-x_3) \), \( g : \R^2 \to \R^3 \), \( g(x_1, x_2) = (x_1 - x_2, x_1, x_2) \) \\ \\
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular nucleo de \(f\):
+                        \[ f(x) = \0 \]
+                        \[
+                            \begin{cases}
+                                x_1 = 0 \\
+                                x_1 + x_2 - x_3 = 0 \implies x_2 = x_3
+                            \end{cases}
+                        \] \[
+                            (x_1, x_2, x_3) = (0, x_3, x_3) = x_3(0,1,1)
+                        \] \[
+                            \boxed{\Nu f = \langle (0,1,1) \rangle}
+                        \]
+                    \end{minipage}
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular imagen de \(f\):
+                        \[
+                            \Img f = \langle f(\hat{i}),f(\hat{j}),f(\hat{k}) \rangle
+                        \] \[
+                            \Img f = \langle (1,1),(0,1),(0,-1) \rangle
+                        \] \[
+                            \boxed{\Img f = \langle (1,1),(0,1) \rangle}
+                        \]
+                    \end{minipage}
+
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular nucleo de \(g\):
+                        \[
+                            g(x) = 0
+                        \] \[
+                            \begin{cases}
+                                x_1 - x_2 = 0 \implies x_1 = x_2 \\
+                                x_1 = 0                          \\
+                                x_2 = 0
+                            \end{cases}
+                        \] \[
+                            (x_1, x_2) = (x_2, x_2) = x_2(1,1)
+                        \] \[
+                            \boxed{\Nu g = \langle (1,1) \rangle}
+                        \]
+                    \end{minipage}
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular imagen de \(g\):
+                        \[ \Img g = \langle g(\hat{i}),g(\hat{j}) \rangle \]
+                        \[ \boxed{\Img g = \langle (1,1,0),(-1,0,1) \rangle} \]
+                    \end{minipage}
+                    \[ h = g(f(x)) = g(x_1, x_1 + x_2 - x_3) = (-x_2 + x_3, x_1, x_1 + x_2 - x_3) \]
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular nucleo de \(h\):
+                        \[ h(x) = \0 \]
+                        \[
+                            \begin{cases}
+                                -x_2 + x_3 = 0 \implies x_3 = x_2 \\
+                                x_1 = 0 \\
+                                x_1 + x_2 - x_3 = 0
+                            \end{cases}
+                        \] \[
+                            (x_1,x_2,x_3) = (0,x_2,x_2) = x_2(0,1,1)
+                        \] \[
+                            \boxed{\Nu h = \langle (0,1,1) \rangle \supset \Nu f}
+                        \]
+                    \end{minipage}
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular imagen de \(h\):
+                        \[ \Img h = \langle h(\hat{i}),h(\hat{j}),h(\hat{k}) \rangle \]
+                        \[ \Img h = \langle (0,1,1),(-1,0,1),(1,0,-1) \rangle \]
+                        \[ \boxed{\Img h = \langle (0,1,1),(1,0,-1) \rangle \subset \Img g} \]
+                    \end{minipage}
+                    \[ t = f(g(x)) = f(x_1 - x_2, x_1, x_2) = (x_1 - x_2, 2x_1 - 2x_2) \]
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular nucleo de \(t\):
+                        \[ t(x) = \0 \]
+                        \[
+                            \begin{cases}
+                                x_1 - x_2 = 0 \implies x_1 = x_2 \\
+                                2x_1 - 2x_2 = 0
+                            \end{cases}
+                        \] \[
+                            (x_1, x_2) = (x_2, x_2) = x_2(1,1)
+                        \] \[
+                            \boxed{\Nu t = \langle (1,1) \rangle \supset \Nu g}
+                        \]
+                    \end{minipage}
+                    \begin{minipage}[t]{0.5\textwidth}
+                        Calcular imagen de \(t\):
+                        \[ \Img t = \langle t(\hat{i}),t(\hat{j}) \rangle \]
+                        \[ \Img t = \langle (1,2),(-1,-2) \rangle \]
+                        \[ \boxed{\Img t = \langle (1,2) \rangle \subset \Img f } \]
+                    \end{minipage}
+              \item \dots
+          \end{enumerate}
     \item \dots
     \item \dots
 \end{enumerate}
