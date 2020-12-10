@@ -592,5 +592,49 @@
           \end{enumerate}
     \item \dots
     \item \dots
+    \item \dots
+    \item \dots
+    \item Definir un proyector $p$ tal que:
+          \begin{enumerate}
+              \item \( p : \R^2 \to \R^2 \), \( \Nu p = \langle (-1,2) \rangle \) e \( \Img p \langle (-1,1) \rangle \)
+                    \[
+                        \boxed{
+                            \begin{cases}
+                                p(-1,2) = (0,0) \\
+                                p(-1,1) = (-1,1)
+                            \end{cases}
+                        }
+                    \]
+              \item \( p : \R^3 \to \R^3 \), \( \Nu p = \langle (1,1,-2) \rangle \) ¿Es único?
+                    \[
+                        \boxed{
+                            \begin{cases}
+                                p(1,1,-2) = (0,0,0)      \\
+                                p(\Img p_1) = (\Img p_1) \\
+                                p(\Img p_2) = (\Img p_2)
+                            \end{cases}
+                        }
+                    \]
+                    Existen infinitas proyecciones ya que los vectores generadores de la imagen pueden tener cualquier valor (Siempre y cuando no sean multiplos del nucleo)
+              \item \( p : \R^4 \to \R^4 \), \( \Nu p = \langle (1,1,1,1),(-1,0,1,1),(1,2,3,3) \rangle \), \( \Img p = \langle (1,2,0,1),(-1,1,4,2) \rangle \) \\
+                    El nucleo no es l. i.:
+                    \[ 2(1,1,1,1) + (-1,0,1,1) = (1,2,3,3) \]
+                    Tomamos los 2 primeros
+                    \[ \Nu = \langle (1,1,1,1),(-1,0,1,1) \rangle \]
+                    \[
+                        \boxed{
+                            \begin{cases}
+                                p(1,1,1,1) = (0,0,0,0)  \\
+                                p(-1,0,1,1) = (0,0,0,0) \\
+                                p(1,2,0,1) = (1,2,0,1)  \\
+                                p(-1,1,4,2) = (-1,1,4,2)
+                            \end{cases}
+                        }
+                    \]
+          \end{enumerate}
+    \item \dots
+    \item \dots
+    \item \dots
+    \item \dots
 \end{enumerate}
 \end{document}
