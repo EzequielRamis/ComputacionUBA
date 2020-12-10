@@ -590,7 +590,24 @@
                         \[ \boxed{\Nu t = \langle (1,0,0),(0,1,1) \rangle} \]
                     \end{minipage}
           \end{enumerate}
-    \item \dots
+    \item Hallar la función inversa del isomorfismo \(f\)
+          \begin{enumerate}
+              \item \( f : \R^3 \to \R^3 \) \( f(1,1,-1) = (1,-1,1) \),\( f(2,0,1) = (1,1,0) \),\( f(0,1,0) = (0,0,1) \)
+                    \[
+                        \boxed{
+                            f^{-1} =
+                            \begin{cases}
+                                f^{-1}(1,-1,1) = (1,1,-1) \\
+                                f^{-1}(1,1,0) = (2,0,1)   \\
+                                f^{-1}(0,0,1) = (0,1,0)   \\
+                            \end{cases}
+                        }
+                    \]
+              \item \( f : \R^2 \to \R^2 \) \( f(x_1,x_2) = (x_1,x_1-x_2) \)
+                    \[ f^{-1}(f(x_1,x_2)) = f^{-1}(x_1, x_1 - x_2) = (x_1, x_2) \]
+                    \[ \boxed{f^{-1}(x_1, x_2) = (x_1, -x_2 + x_1) } \]
+              \item \( f : \R^{2\x3} \to \R^{3\x2} \) \( f(A) = A^t \)
+          \end{enumerate}
     \item \dots
     \item \dots
     \item \dots
