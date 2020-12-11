@@ -7,6 +7,16 @@
 \tdplotsetmaincoords{70}{20}
 \usetikzlibrary{calc}
 
+\makeatletter
+\def\mcol#1#{\@mcol{#1}}
+\def\@mcol#1#2#3{%
+	\protect\leavevmode
+	\begingroup
+		\color#1{#2}#3%
+	\endgroup
+}
+\makeatother
+
 \definecolor{red}{HTML}{ff6762}
 \definecolor{green}{HTML}{00b146}
 \definecolor{blue}{HTML}{009eff}
@@ -31,6 +41,14 @@
 
 \newcommand\eola{la serie \href{https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab}{``Esencia Del Álgebra Lineal''} de 3Blue1Brown}
 
+\newcommand*{\plane}[7][(0,0)]{
+	\pgfmathsetmacro{\len}{sqrt((#2)^2+(#3)^2+(#4)^2)}
+	\tdplotsetrotatedcoords{atan2(#3,#2)}{acos(#4/\len)}{0};
+	\begin{scope}[tdplot_rotated_coords,canvas is xy plane at z=#5/\len]
+		\filldraw[shift={#1},draw=#7,dashed,fill=#7,fill opacity=0.2] (-#6,-#6) rectangle (#6,#6);
+	\end{scope}
+}
+
 \begin{document}
 
 \tableofcontents
@@ -40,5 +58,6 @@
 \subfile{teoria/angulos.tex}
 \subfile{teoria/vectores.tex}
 \subfile{teoria/rectas.tex}
+\subfile{teoria/planos.tex}
 
 \end{document}
