@@ -337,9 +337,9 @@
                             \Img f & = \langle f(1,0,0),f(0,1,0),f(0,0,1) \rangle \\
                                    & =
                             \left\langle
-                            \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix},
-                            \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix},
-                            \begin{pmatrix} -1 & 1 \\ 0 & -1 \end{pmatrix}
+                            \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix},
+                            \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix},
+                            \begin{pmatrix} -1 & 1 \\ 0 & -1 \end{pmatrix}
                             \right\rangle
                         \end{array}
                     \]
@@ -348,8 +348,8 @@
                         \boxed{
                             B_{\Img f} =
                             \left\{
-                            \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix},
-                            \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}
+                            \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix},
+                            \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}
                             \right\}
                         }
                     \] \[
@@ -374,8 +374,8 @@
                     \[ 4 = \dim\Nu f + 3 \]
                     \[ \boxed{\dim\Nu = 1} \]
 
-              \item \(f: \R \to \R \; f(x) = 2x \) \\
-                    La función \( f(x) = 2x \) es isomorfica. \\ % anda a saber como probar algo asi
+              \item \(f: \R \to \R \  f(x) = 2x \) \\
+                    La función \( f(x) = 2x \) es isomorfica. \\ % anda a saber como probar algo asi
                     Por ser monomorfica:
                     \[ \boxed{\dim\Nu f = 0} \]
                     \[ \dim f = \dim\Nu f + \dim\Img f \]
@@ -512,8 +512,8 @@
                     \[ \boxed{\Nu f = \langle (1,0,1) \rangle} \]
                     Calcular imagen de \(g\):
                     \[ \Img g = \langle g(\hat{i}),g(\hat{j}),g(\hat{k}) \rangle \]
-                    \[ \Img g = \langle (2,0,2),(0,1,1),(1,-1,0) \rangle \]
-                    \[ \boxed{\Img g = \langle (0,1,1),(1,-1,0) \rangle} \]
+                    \[ \Img g = \langle (2,0,2),(0,1,1),(1,-1,0) \rangle \]
+                    \[ \boxed{\Img g = \langle (0,1,1),(1,-1,0) \rangle} \]
                     Calcular nucleo de \(g\):
                     \[
                         g(x) = \0
@@ -650,8 +650,99 @@
                     \]
           \end{enumerate}
     \item \dots
-    \item \dots
-    \item \dots
+    \item Sea \( f : \R^3 \to \R^3 \) tal que \( M(f) = \begin{pmatrix}
+              1  & 2 & -1 \\
+              3  & 1 & 2  \\
+              -2 & 0 & -2
+          \end{pmatrix} \)
+          \begin{enumerate}
+              \item Calcular \( f(1,2,1) \), \( f(5,7,2) \) y \( f(0,0,1) \)
+                    \[
+                        M(f)\cdot
+                        \begin{pmatrix}
+                            1 \\ 2 \\ 1
+                        \end{pmatrix}
+                        =
+                        \boxed{
+                            \begin{pmatrix}
+                                4 \\ 7 \\ -4
+                            \end{pmatrix}
+                        }
+                    \] \[
+                        M(f)\cdot
+                        \begin{pmatrix}
+                            5 \\ 7 \\ 2
+                        \end{pmatrix}
+                        =
+                        \boxed{
+                            \begin{pmatrix}
+                                17 \\ 26 \\ -14
+                            \end{pmatrix}
+                        }
+                    \] \[
+                        M(f)\cdot
+                        \begin{pmatrix}
+                            0 \\ 0 \\ 1
+                        \end{pmatrix}
+                        =
+                        \boxed{
+                            \begin{pmatrix}
+                                -1 \\ 2 \\ -2
+                            \end{pmatrix}
+                        }
+                    \]
+              \item Hallar bases de \( \Nu f \) e \( \Img f \)
+                    \[
+                        B_{\Img f} = \left\{
+                        M(f) \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix},
+                        M(f) \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix},
+                        M(f) \cdot \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix},
+                        \right\}
+                        =
+                    \] \[
+                        \boxed{
+                            B_{\Img f} = \left\{
+                            \begin{pmatrix} 1 \\ 3 \\ -2 \end{pmatrix},
+                            \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix},
+                            \begin{pmatrix} -1 \\ 2 \\ -2 \end{pmatrix},
+                            \right\}
+                        }
+                    \] \[
+                        M(f)v = \0
+                    \] \[
+                        \begin{cases} % {{a + 2 b - c}, {3 a + b + 2 c}, {-2 a - 2 c}}
+                            v_1 + 2v_2 - v_3  = 0                     \\
+                            3v_1 + v_2 + 2v_3 = 0 \implies v_1 = -v_3 \\
+                            -2v_1 - 2v_2  = 0 \implies v_1 = -v_2
+                        \end{cases}
+                    \] \[
+                        (v_1, v_2, v_3) = (v_1, -v_1, -v_1) = v_1(1,-1,-1)
+                    \] \[
+                        \boxed{
+                            B_{\Nu f} = \{ (1,-1,-1) \}
+                        }
+                    \]
+          \end{enumerate}
+    \item En cada caso hallar \( M_{BB'}(f) \)
+          \begin{enumerate}
+              \item \( f : \R^3 \to \R^3 \ f(x_1, x_2, x_3) = (2x_1 + x_2, x_1 - x_3, x_1 + 2x_2 + x_3) \)
+                    \\ \( B = B' = E \)
+                    \[
+                        \boxed{
+                            M_{BB'}(f) = \begin{pmatrix}
+                                2 & 1 & 0  \\
+                                1 & 0 & -1 \\
+                                1 & 2 & 1
+                            \end{pmatrix}
+                        }
+                    \]
+              \item \( f : \R^2 \to \R^2 \ f(x_1, x_2) = (x_1 - 2x_2, x_1) \) \\
+                    \( B = \{(-1,0),(1,1)\} \quad B' = \{ (1,1),(0,1) \} \)
+              \item \( f : \R^3 \to \R^2 \ f(x_1, x_2, x_3) = (x_1 - x_2, x_1 + x_2 + x_3) \) \\
+                    \( B = \{ (1,-1,2),(0,2,-1),(0,0,1) \} \quad B = \{ (2,1),(1,-1) \} \)
+              \item \( f : \R^4 \to \R^3 \ f(x_1, x_2, x_3, x_4) = (x_1 - x_3, 2x_4, x_2 + x_3) \) \\
+                    \( B = \{ (1,-1,2,0),(0,2,-1,1),(0,0,2,1),(0,0,0,-1) \} \quad B' = E \)
+          \end{enumerate}
     \item \dots
 \end{enumerate}
 \end{document}
