@@ -1,0 +1,111 @@
+\documentclass[../practica.root.tex]{subfiles}
+
+\begin{document}
+
+\section{Autovectores y autovalores}
+
+\begin{enumerate}
+    \item Calcular todos los autovalores y autovectores y hallar el subespacio asociado \\
+          \begin{enumerate*}
+              \item \( \begin{pmatrix}
+                  -7  & 5 \\
+                  -10 & 8
+              \end{pmatrix} \)
+              \item \( \begin{pmatrix}
+                  4 & 2 \\
+                  3 & 3
+              \end{pmatrix} \)
+              \item \( \begin{pmatrix}
+                  2  & -1 \\
+                  -4 & 2
+              \end{pmatrix} \)
+              \item \( \begin{pmatrix}
+                  4 & 1 \\
+                  0 & 4
+              \end{pmatrix} \)
+              \item \( \begin{pmatrix}
+                  2  & 3 & -1 \\
+                  -1 & 1 & 4  \\
+                  1  & 2 & -1
+              \end{pmatrix} \)
+              \item \( \begin{pmatrix}
+                  3 & -5 \\
+                  1 & -1
+              \end{pmatrix} \)
+              \item \( \begin{pmatrix}
+                  1 & 2  & -1 \\
+                  0 & -5 & -4 \\
+                  0 & 8  & 7
+              \end{pmatrix} \)
+          \end{enumerate*}
+          \begin{enumerate}
+              \item \[ \det(A - \lambda I ) = 0 \]
+                    \[ A - \lambda I = \begin{pmatrix}
+                            -7  & 5 \\
+                            -10 & 8
+                        \end{pmatrix} - \begin{pmatrix}
+                            \lambda & 0       \\
+                            0       & \lambda
+                        \end{pmatrix} = \begin{pmatrix}
+                            -7 - \lambda & 5           \\
+                            -10          & 8 - \lambda
+                        \end{pmatrix} \]
+                    \[ \det\begin{pmatrix}
+                            -7 - \lambda & 5           \\
+                            -10          & 8 - \lambda
+                        \end{pmatrix} = 0 \]
+                    \[ \lambda^2 - \lambda - 6 = 0 \]
+                    \[ (\lambda - 2)(\lambda + 3) = 0 \]
+                    \[ \boxed{\text{Los autovalores de A son } \lambda = 2 \land \lambda = -3} \]
+                    Resolver \( ( A - \lambda I )v = 0 \)
+                    \begin{itemize}
+                        \item Para \( \lambda = 2 \):
+                              \[
+                                  \begin{pmatrix}
+                                      -9  & 5 \\
+                                      -10 & 6
+                                  \end{pmatrix}
+                                  \begin{pmatrix}
+                                      x \\ y
+                                  \end{pmatrix}
+                                  =
+                                  \0
+                              \] \[
+                                  \begin{cases}
+                                      -9x + 5y = 0 \\
+                                      -10x + 6y = 0
+                                  \end{cases}
+                                  \implies
+                                  x = y
+                              \] \[
+                                  (x, y) = (y, y) = y(1, 1)
+                              \]
+                              \boxed{Los autovectores asociados a \( \lambda = 2 \) son \( v = k(1,1),\ k \neq 0 \)}
+                        \item Para \( \lambda = -3 \):
+                              \[
+                                  \begin{pmatrix}
+                                      -4  & 5  \\
+                                      -10 & 11
+                                  \end{pmatrix}
+                                  \begin{pmatrix}
+                                      x \\ y
+                                  \end{pmatrix}
+                                  =
+                                  \0
+                              \] \[
+                                  \begin{cases}
+                                    5y - 4x = 0 \\
+                                    11y - 10x = 0
+                                  \end{cases}
+                                  \implies
+                                  x = y
+                              \] \[
+                                  (x, y) = (y, y) = y(1, 1)
+                              \]
+                              \boxed{Los autovectores asociados a \( \lambda = -3 \) son \( v = k(1,1),\ k \neq 0 \)}
+                    \end{itemize}
+              \item \dots
+          \end{enumerate}
+    \item \dots
+\end{enumerate}
+\end{document}
