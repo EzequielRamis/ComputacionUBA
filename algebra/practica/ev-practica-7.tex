@@ -1,0 +1,175 @@
+\documentclass[../practica.root.tex]{subfiles}
+
+\begin{document}
+
+\section{Autoevaluación de la Práctica 7}
+
+\begin{enumerate}
+    \item[] \dots
+    \item   \dots
+    \item   \dots
+    \item[] Sea \( A = \begin{pmatrix}
+              0 & -1 & k  \\
+              3 & 1  & -1 \\
+              2 & 1  & -2
+          \end{pmatrix} \) y \( v = (1,2,1) \) un autovector de esta. Hallar \( k \in \R \), \( C \in \R^{3\x3} \) que sea inversible y \( D \in \R^{3\x3} \) que sea diagonal tal que \( A = CDC^{-1} \).
+    \item   El valor de \( k \in \R \) para el cual el vector \( v = (1,2,1) \) es un autovector de \( A \) es:
+          \[
+              \begin{pmatrix}
+                  0 & -1 & k  \\
+                  3 & 1  & -1 \\
+                  2 & 1  & -2
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 \\ 2 \\ 1
+              \end{pmatrix}
+              =
+              \lambda
+              \begin{pmatrix}
+                  1 \\ 2 \\ 1
+              \end{pmatrix}
+          \] \[
+              \begin{pmatrix}
+                  k - 2 \\ 4 \\ 2
+              \end{pmatrix}
+              =
+              \lambda
+              \begin{pmatrix}
+                  1 \\ 2 \\ 1
+              \end{pmatrix}
+          \]
+          Si \( k = 4 \), entonces \( v \) es un autovector asociado al autovalor \( \lambda = 2 \)
+          \[ \boxed{ k = 4 } \]
+    \item Para el valor de \( k \) encontrado, hallar todos los autovalores
+          \[
+              A - \lambda I=
+              \begin{pmatrix}
+                  -\lambda & -1        & 4          \\
+                  3        & 1-\lambda & -1         \\
+                  2        & 1         & -2-\lambda
+              \end{pmatrix}
+          \]
+          \begin{align*}
+              \det(A - \lambda I)              & = 0                                          \\
+              -\lambda^3 -\lambda^2 + 6\lambda & = 0                                          \\
+              -\lambda(\lambda^2 + \lambda -6) & = 0 \implies \lambda_1 = 0                   \\
+              \lambda^2 + \lambda -6           & = 0                                          \\
+              (\lambda - 2)(\lambda + 3)       & = 0 \implies \lambda_2 = 2 \  \lambda_3 = -3
+          \end{align*}
+          \[ \boxed{\lambda_1 = 0 \ \lambda_2 = 2 \ \lambda_3 = -3} \]
+    \item Encontrar una base \( \R^3 \) formada por autovectores de \( A \):
+          \[
+              \begin{pmatrix}
+                  -\lambda & -1        & 4          \\
+                  3        & 1-\lambda & -1         \\
+                  2        & 1         & -2-\lambda
+              \end{pmatrix}
+              \begin{pmatrix}
+                  x \\ y \\ z
+              \end{pmatrix}
+              =
+              \0
+          \] \[
+              \begin{cases}
+                  -\lambda x - y + 4z = 0       \\
+                  (1 - \lambda) y + 3x - z = 0  \\
+                  (-\lambda - 2) z + 2x + y = 0 \\
+              \end{cases}
+          \]
+          \begin{minipage}[t]{0.5\textwidth}
+              Si \( \lambda = 0 \)
+              \[
+                  \begin{cases}
+                      -y + 4z = 0 \implies y = 4z    \\
+                      y + 3x - z = 0 \implies x = -z \\
+                      -2z + 2x + y = 0               \\
+                  \end{cases}
+              \] \[
+                  (x, y, z) = (-z,4z,z) = z(-1,4,1)
+              \]
+          \end{minipage}
+          \begin{minipage}[t]{0.5\textwidth}
+              Si \( \lambda = 2 \)
+              \[
+                  \begin{cases}
+                      -2x - y + 4z = 0 \\
+                      3x - y -  z = 0  \\
+                      2x + y - 4z = 0  \\
+                  \end{cases}
+                  \implies
+                  \begin{array}{rl}
+                      x & = z  \\
+                      y & = 2z
+                  \end{array}
+              \] \[
+                  (x, y, z) = (z,2z,z) = z(1,2,1)
+              \]
+          \end{minipage}
+          \begin{minipage}[t]{0.5\textwidth}
+              Si \( \lambda = -3 \)
+              \[
+                  \begin{cases}
+                      3x -  y + 4z = 0 \\
+                      3x + 4y -  z = 0 \\
+                      2x +  y +  z = 0 \\
+                  \end{cases}
+                  \implies
+                  \begin{array}{rl}
+                      y & = -x \\
+                      z & = -x
+                  \end{array}
+              \] \[
+                  (x, y, z) = (x,-x,-x) = x(1,-1,-1)
+              \]
+          \end{minipage}
+          \[ \boxed{B = \{ (-1,4,1),(1,2,1),(1,-1,-1) \}} \]
+    \item Una matriz inversible \( C \in \R^{3\x3} \) y una diagonal \( D \in \R^{3\x3} \) tal que \( A = CDC^{-1} \) son:
+          \begin{enumerate}
+              \item \( C = \begin{pmatrix}
+                        1 & -1 & -1 \\
+                        2 & 1  & 4  \\
+                        1 & 1  & 1
+                    \end{pmatrix}
+                    D = \begin{pmatrix}
+                        0 & 0 & 0  \\
+                        0 & 2 & 0  \\
+                        0 & 0 & -3
+                    \end{pmatrix} \)
+              \item \( C = \begin{pmatrix}
+                        1 & -1 & -1 \\
+                        2 & 1  & 4  \\
+                        1 & 1  & 1
+                    \end{pmatrix}
+                    D = \begin{pmatrix}
+                        -3 & 0 & 0 \\
+                        0  & 0 & 0 \\
+                        0  & 0 & 2
+                    \end{pmatrix} \)
+              \item \( C = \begin{pmatrix}
+                        1  & 2 & 1 \\
+                        -1 & 1 & 1 \\
+                        -1 & 4 & 1
+                    \end{pmatrix}
+                    D = \begin{pmatrix}
+                        0 & 0 & 0  \\
+                        0 & 2 & 0  \\
+                        0 & 0 & -3
+                    \end{pmatrix} \)
+              \item \boxed{
+                        C = \begin{pmatrix}
+                            -1 & -1 & 1 \\
+                            1  & 4  & 2 \\
+                            1  & 1  & 1
+                        \end{pmatrix}
+                        D = \begin{pmatrix}
+                            -3 & 0 & 0 \\
+                            0  & 0 & 0 \\
+                            0  & 0 & 2
+                        \end{pmatrix}
+                    }
+          \end{enumerate}
+          Respuesta: \href{https://www.wolframalpha.com/input/?i=%7B%7B-1%2C-1%2C1%7D%2C%7B1%2C4%2C2%7D%2C%7B1%2C1%2C1%7D%7D%7B%7B-3%2C0%2C0%7D%2C%7B0%2C0%2C0%7D%2C%7B0%2C0%2C2%7D%7D(%7B%7B-1%2C-1%2C1%7D%2C%7B1%2C4%2C2%7D%2C%7B1%2C1%2C1%7D%7D%5E-1)}{[WolframAlpha]}
+    \item
+\end{enumerate}
+
+\end{document}
