@@ -2,6 +2,7 @@
 
 \usepackage{siunitx}
 \usepackage{transparent}
+\usepackage{systeme}
 
 \usepackage{tikz-3dplot}
 \tdplotsetmaincoords{70}{20}
@@ -15,6 +16,13 @@
 		\color#1{#2}#3%
 	\endgroup
 }
+\makeatother
+
+\makeatletter
+	\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
 \makeatother
 
 \definecolor{red}{HTML}{ff6762}
@@ -59,5 +67,6 @@
 \subfile{teoria/vectores.tex}
 \subfile{teoria/rectas.tex}
 \subfile{teoria/planos.tex}
+\subfile{teoria/sistemas_lineales.tex}
 
 \end{document}

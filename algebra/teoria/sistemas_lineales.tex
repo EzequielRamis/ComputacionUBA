@@ -1,0 +1,271 @@
+\documentclass[../teoria.root.tex]{subfiles}
+
+\begin{document}
+
+\section{Sistemas Lineales}
+
+Una ecuación lineal es una ecuación que consiste de una suma de productos de
+incógnitas:
+\[a_1x_1+a_2x_2+\cdots+a_nx_n=b\]
+
+$a_1$, $a_2$, \ldots, $a_n$ serian los coeficientes de la ecuación, y $x_1$,
+$x_2$, \ldots, $x_n$ serian las incógnitas. La suma de los productos de los
+coeficientes por las incógnitas van a ser iguales a un numero real $b$.
+
+La ecuación implícita de un plano es sencillamente una ecuación lineal de grado
+3. Las incógnitas $x_1$, $x_2$, \ldots, $x_n$ se pueden interpretar como las
+coordenadas de un vector $(x_1,x_2,\ldots,x_n)$.
+
+Cuando $b=0$, la ecuación es \textit{homogénea}, y el vector $(0,\ldots,0)$
+siempre va a ser una solución, la \textit{solución trivial}.
+
+Un sistema de ecuaciones lineales reúne varias ecuaciones lineales, y busca una
+solución que satisfaga todas al mismo tiempo.
+\[\systeme{
+	2x_1+x_2-x_3+3x_4=0,
+	x_2+x_3-x_4=4,
+	-x_3+2x_4=-3
+}\]
+
+Si todas las ecuaciones del sistema son homogéneas, el sistema es homogéneo, y
+también tiene una solución trivial.
+
+Los sistemas de ecuaciones lineales se pueden categorizar en tres grupos
+dependiendo de cuantas soluciones tiene:
+
+\begin{itemize}
+	\item \textit{Sistema Compatible Determinado:} Una sola solución.
+	\item \textit{Sistema Compatible Indeterminado:} Infinitas soluciones.
+	\item \textit{Sistema Incompatible:} Sin solución.
+\end{itemize}
+
+\subsection{Sistemas escalonados}
+
+Si un sistema tiene una forma particular, puede ser muy fácil de resolver. Por
+ejemplo:
+\begin{gather*}
+	\systeme{
+		x_1+x_2=5,
+		3x_2=-6
+	}
+	\intertext{Este sistema es fácil de resolver, ya que la ultima ecuación
+	tiene solo una incógnita, que se puede fácilmente despejar:}
+	\systeme{
+		x_1+x_2=5,
+		x_2=-2
+	}
+	\intertext{Luego se reemplaza en la otra ecuación, y se despeja todo:}
+	\systeme{
+		x_1=7,
+		x_2=-2
+	}
+\end{gather*}
+
+Un sistema con esta forma se llama un \textit{sistema escalonado}, ya que cada
+fila tiene progresivamente menos incógnitas.
+
+Veamos un ejemplo mas complicado de un sistema escalonado:
+\[\systeme{
+	2x_1+x_2-x_3+3x_4=0,
+	x_2+x_3-x_4=4,
+	-x_3+2x_4=-3
+}\]
+
+En este caso, la ultima fila tiene 2 incógnitas. Podemos despejar solo una, y
+repetir el proceso anterior. Vamos a poder despejar todas las incógnitas
+excepto una, que queda libre:
+\[\systeme{
+	x_1=1,
+	x_2=-x_4+1,
+	x_3=2x_4+3
+}\]
+
+Para cualquier valor de $x_4$, el sistema sigue resuelto. Este sistema tiene
+infinitas soluciones, y es equivalente a la ecuación paramétrica de una recta
+en $\mathbb{R}^4$:
+\begin{align*}
+	X=(x_1,x_2,x_3,x_4)&=(1,-x_4+1,2x_4+3,x_4)\\
+	&=\lambda(0,-1,2,1)+(1,1,3,0)\\
+\end{align*}
+
+\subsection{Matriz ampliada asociada a un sistema}
+
+Para solucionar un sistema linear fácilmente, se debe transformar en un sistema
+escalonado. Para hacer esto mas fácil, vamos a usar una nueva notación para
+describir sistemas lineales, las matrices:
+\[
+	\systeme{x_2+4x_3=3,x_1+2x_3=5,2x_1+3x_3=8,-x_1+x_2+3x_3=0}
+	\quad\longrightarrow\quad
+	\begin{pmatrix}[rrr|r]
+		 0 & 1 & 4 & 3\\
+		 1 & 0 & 2 & 5\\
+		 2 & 0 & 3 & 8\\
+		-1 & 1 & 3 & 0
+	\end{pmatrix}
+\]
+
+Cada fila de la matriz es equivalente a una ecuación del sistema, con una
+columna por cada incógnita, y una columna para el termino constante.
+
+Hay 3 operaciones que se le pueden aplicar a una matriz sin modificar las
+soluciones de su sistema equivalente:
+
+\begin{center}
+	\begin{tabular}{rcll}
+		$F_i$&$\leftrightarrow$&$F_j$&Intercambiar dos filas\\
+		$F_i+\alpha F_j$&$\to$&$F_i$&A una fila sumarle un múltiplo de otra\\
+		$\beta F_i$&$\to$&$F_i$&Multiplicar una fila por un numero ($\neq0$)
+	\end{tabular}
+\end{center}
+
+\subsubsection{Matrices escalonadas}
+
+En una matriz escalonada cada fila va a empezar con mas ceros que la fila
+anterior, y el primer numero distinto a cero de cada fila va a ser $1$. Por
+ejemplo:
+\[\begin{pmatrix}[rrr|r]
+	1 & 0 & 1 &  1\\
+	0 & 1 & 3 &  2\\
+	0 & 0 & 1 & -1\\
+\end{pmatrix}\]
+
+Dada una matriz escalonada, es trivial usar las operaciones anteriormente
+mencionadas para conseguir las soluciones del sistema:
+\begin{align*}
+	\begin{pmatrix}[rrr|r]
+		1 & 0 & 1 &  1\\
+		0 & 1 & 3 &  2\\
+		0 & 0 & 1 & -1\\
+	\end{pmatrix}
+	&&\begin{aligned}
+		F_1-F_3&\to F_1\\
+		F_2-3F_3&\to F_2
+	\end{aligned}
+	&&\begin{pmatrix}[rrr|r]
+		1 & 0 & 0 &  2\\
+		0 & 1 & 0 &  5\\
+		0 & 0 & 1 & -1\\
+	\end{pmatrix}
+\end{align*}
+
+Nuestro objetivo va a ser combinar estas operaciones elementales para
+transformar nuestra matriz en una escalonada, para poder resolverla mas fácil.
+
+\subsection{Eliminación de Gauss}
+
+La forma mas fácil de escalonar matrices es con el método de eliminación de
+Gauss. El procedimiento es el siguiente:
+
+\begin{enumerate}
+	\item Ordenar las filas de la matriz según su cantidad de ceros iniciales.
+	\item Por cada fila:
+		\begin{itemize}
+			\item Dividir la fila por su coeficiente principal (el primer valor
+				$\neq0$ de la fila), para que este sea $1$.
+			\item Restar múltiplos de la fila en las demás, tal que los valores
+				debajo del coeficiente principal de la fila sean $0$.
+		\end{itemize}
+\end{enumerate}
+
+
+\begin{gather*}
+	\intertext{Como ejemplo, vamos a resolver el sistema de ecuaciones lineales
+	representado por la siguiente matriz:}
+	\begin{pmatrix}[rrr|r]
+		 0 & 1 & 4 & 3\\
+		 1 & 0 & 2 & 5\\
+		 2 & 0 & 3 & 8\\
+		-1 & 1 & 3 & 0
+	\end{pmatrix}\\
+	\begin{align*}
+		\intertext{Ordenamos las filas por la cantidad de ceros iniciales:}
+		F_1\leftrightarrow F_4\quad
+		&\begin{pmatrix}[rrr|r]
+			-1 & 1 & 3 & 0\\
+			 1 & 0 & 2 & 5\\
+			 2 & 0 & 3 & 8\\
+			 0 & 1 & 4 & 3
+		\end{pmatrix}\\
+		\intertext{Dividimos la primera fila por su coeficiente principal:}
+		-F_1\to F_1\quad
+		&\begin{pmatrix}[rrr|r]
+			1 & -1 & -3 & 0\\
+			1 &  0 &  2 & 5\\
+			2 &  0 &  3 & 8\\
+			0 &  1 &  4 & 3
+		\end{pmatrix}\\
+		\intertext{Restamos la primera fila en las demás para dejar vacíos los
+		valores debajo del coeficiente principal:}
+		\begin{aligned}
+			F_2-F_1&\to F_2\\
+			F_3-2F_1&\to F_3\\
+		\end{aligned}\quad
+		&\begin{pmatrix}[rrr|r]
+			1 & -1 & -3 & 0\\
+			0 &  1 &  5 & 5\\
+			0 &  2 &  9 & 8\\
+			0 &  1 &  4 & 3
+		\end{pmatrix}\\
+		\intertext{Repetimos el proceso con la segunda fila:}
+		\begin{aligned}
+			F_3-2F_2&\to F_3\\
+			F_4-F_2&\to F_4\\
+		\end{aligned}\quad
+		&\begin{pmatrix}[rrr|r]
+			1 & -1 & -3 &  0\\
+			0 &  1 &  5 &  5\\
+			0 &  0 & -1 & -2\\
+			0 &  0 & -1 & -2
+		\end{pmatrix}\\
+		\intertext{Y la tercera:}
+		\begin{aligned}
+			-F_3&\to F_3\\
+			F_4+F_3&\to F_4\\
+		\end{aligned}\quad
+		&\begin{pmatrix}[rrr|r]
+			1 & -1 & -3 & 0\\
+			0 &  1 &  5 & 5\\
+			0 &  0 &  1 & 2\\
+			0 &  0 &  0 & 0
+		\end{pmatrix}
+	\end{align*}\\
+	\intertext{Ahora que la matriz esta escalonada, podemos fácilmente resolver
+	el sistema:}
+	\begin{aligned}
+		F_1+F_2&\to F_1\\
+		F_1-2F_3&\to F_1\\
+		F_2-5F_3&\to F_2
+	\end{aligned}\quad
+	\begin{pmatrix}[rrr|r]
+		1 & 0 & 0 &  1\\
+		0 & 1 & 0 & -5\\
+		0 & 0 & 1 &  2\\
+		0 & 0 & 0 &  0
+	\end{pmatrix}\to
+	\systeme{x_1=1,x_2=-5,x_3=2,0=0}
+\end{gather*}
+
+\subsection{Resolución simultánea de sistemas}
+
+Si las matrices ampliadas de varios sistemas son iguales (salvo su ultima
+columna), ambas se pueden resolver en simultaneo al combinarlas:
+\begin{gather*}
+	(A|b_1)\:(A|b_2)\to (A|b_1|b_2)\\
+	\begin{pmatrix}[rrrr|r]
+		1 &  1 & -1 & 1 &  1 \\
+		2 & -1 &  0 & 1 &  0 \\
+		2 & -4 &  2 & 0 & -2 \\
+	\end{pmatrix}\:
+	\begin{pmatrix}[rrrr|r]
+		1 &  1 & -1 & 1 & 0 \\
+		2 & -1 &  0 & 1 & 3 \\
+		2 & -4 &  2 & 0 & 2 \\
+	\end{pmatrix}\to
+	\begin{pmatrix}[rrrr|r|r]
+		1 &  1 & -1 & 1 &  1 & 0 \\
+		2 & -1 &  0 & 1 &  0 & 3 \\
+		2 & -4 &  2 & 0 & -2 & 2 \\
+	\end{pmatrix}
+\end{gather*}
+
+\end{document}
