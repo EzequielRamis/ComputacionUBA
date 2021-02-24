@@ -1,0 +1,185 @@
+\documentclass[../practica.root.tex]{subfiles}
+
+\begin{document}
+
+\section{Simulacro del Final}
+
+\begin{enumerate}
+    \item Sean $\mathbb{L} : \lambda(a, 2, 1) + (1,0,1)$ y $\Pi : ax - y - 2z = 0$. Calcular los valores de $a \in \R$ para $\mathbb{L} \parallel \Pi$ y $\mathbb{L} \notin \Pi$.
+          \[ n = (a,-1,-2) \]
+          Para que una recta y un plano sean paralelos, el vector director y la normal tienen que ser perpendiculares
+          \[ (a,-1,-2)\cdot(a,2,1) = 0 \]
+          \[ a^2 -2 -2 = 0 \implies a^2 = 4 \]
+          \[ S = \{-2, 2\} \]
+          Verificar que $\mathbb{L}\notin\Pi$ para $a = -2$
+          \[ \mathbb{L} = (-2\lambda + 1, 2\lambda, \lambda + 1) \]
+          \[ (-2)(-2\lambda + 1) - (2\lambda) - 2(\lambda + 1) = 0 \]
+          \[ 0 \neq 4 \]
+          Verificar que $\mathbb{L}\notin\Pi$ para $a = 2$
+          \[ \mathbb{L} = (2\lambda + 1, 2\lambda, \lambda + 1) \]
+          \[ (2)(2\lambda + 1) - (2\lambda) - 2(\lambda + 1) = 0 \]
+          \[ 4\lambda + 2 - 2\lambda - 2\lambda - 2 = 0 \]
+          \[ 0 = 0 \]
+          \[ \boxed{a = -2} \]
+
+    \item Sea $P = (1,1,3)$ y $\Pi$ el plano que pasa por $(0,2,1)$, $(1,2,0)$ y $\mathbf{0}$. Calcular la distancia de $P$ a $\Pi$ \\
+          Calcular la normal de $\Pi$:
+          \[ N = (0,2,1)\x(1,2,0) = (-2,1,-2) \]
+          \[ \Pi : -2x + y - 2z = 0\]
+          \[
+              d(P,\Pi) = \frac{
+                  | (-2)1 +1(1) + (-2)(3) - 0 |
+              }{
+                  \sqrt{(-2)^2 + 1^2 + (-2)^2}
+              }
+          \] \[
+              \frac{
+                  | -2 +1 -6 |
+              }{
+                  \sqrt{4 + 1 + 4}
+              } = \frac{
+                  | -7 |
+              }{
+                  \sqrt{9}
+              } = \boxed{\frac{
+                      7
+                  }{
+                      3
+                  }}
+          \]
+
+    \item Sean $\Pi_1 : x + y + 3z = 5$, $\Pi_2 : y - 2z = 0$ y $\mathbb{L} = \Pi_1 \cap \Pi_2$. Encontrar la recta $\mathbb{L}'$ que pasa por $P = (1,0,4)$ y es paralela a $\mathbb{L}$
+          \[
+              \begin{cases}
+                  x + y + 3z = 5 \\
+                  y - 2z = 0
+              \end{cases}
+              =
+              \begin{amatrix}{3}
+                  1 & 1 & 3 & 5 \\
+                  0 & 1 & -2 & 0 \\
+              \end{amatrix}
+              \iff
+              \begin{amatrix}{3}
+                  1 & 0 & 5 & 5 \\
+                  0 & 1 & -2 & 0 \\
+              \end{amatrix}
+          \] \[
+              \begin{cases}
+                  1x + 5z = 5 \\
+                  1y -2z =  0 \\
+              \end{cases}
+              \implies
+              \begin{cases}
+                  x = 5-5z \\
+                  y = 2z   \\
+              \end{cases}
+          \] \[
+              \mathbb{L} : (x,y,z) = (5-5z,2z,z) = (5,0,0) + z(-5,2,1)
+          \] \[
+              \boxed{\mathbb{L'} : \lambda(-5,2,1) + (1,0,4)}
+          \]
+
+    \item Sea $S : \begin{cases}
+              x_1 + 2x_2 - x_3 = b \\
+              ax_1 - bx_2 - cx_3 = 1
+          \end{cases}$. Encontrar los valores de $a$, $b$ y $c$ para los que $(0,1,1)$ es solución de $S$
+
+    \item Calcular todos los valores de $a \in \R$ tales que el sistema de matriz ampliada $\begin{amatrix}{2}
+              a & 2 & 5 \\ 2 & a & 5
+          \end{amatrix}$ es incompatible
+          \[
+              \begin{amatrix}{2}
+                  a & 2 & 5 \\
+                  2 & a & 5 \\
+              \end{amatrix}
+              \begin{array}{rl}
+                  a(F_2) - 2F_1 & \to F_2
+              \end{array}
+              \begin{amatrix}{2}
+                  a & 2 & 5 \\
+                  0 & a^2-4 & 5a-10 \\
+              \end{amatrix}
+          \]
+
+    \item Sea $A = \begin{pmatrix}
+              -1 & -2 & 2  \\
+              0  & a  & 2  \\
+              1  & 1  & -1
+          \end{pmatrix}$. Calcular el conjunto de todos los valores de $a \in \R$ para que $Ax = 0$ tenga solución única
+
+    \item Sean $A \in \R^{3\x3}$ y $B = \begin{pmatrix}
+              0 & -1 & 0 \\ 2 & 1 & -2 \\ 1 & 1 & 2
+          \end{pmatrix}$. Si $\det(A) = 4$, calcular $\det(2A^{-1}B)$
+
+    \item Si $z \in \C$ cumple $\overline{z} - z = 2i$ y $\arg(\overline{z}) = \frac{3\pi}{4}$, calcular $z^4$
+          \[
+              2i = \overline{z} - z = (a - bi) - (a + bi) = a - bi - a - bi = -2bi \implies b = -1
+          \] \[
+              \arg(\overline{z}) = \frac{3\pi}{4} \implies \arg(z) = -\frac{3\pi}{4} \equiv \frac{5}{4}\pi
+          \]
+          % TODO: Grafico
+          %          \begin{tikzpicture}
+          %              \coordinate (O) at (0,0);
+          %              \draw (O) arc (0,135,1);
+          %          \end{tikzpicture}
+          \[
+              \tan\left(\frac{5}{4}\pi\right) = a = 1
+          \] \[
+              z = -1 - i \implies \boxed{z^4 = -4}
+          \]
+
+
+    \item Determinar polinomio $P \in R[x]$ de grado mínimo que tiene una raíz doble, $i$ y $5$ son raíces de $P$ y $P(0) = -5$ \\
+          Ya que el polinomio es real, pero tiene que tener una raiz imaginaria, uno de los terminos va a tener que ser $(x^2 + 1)$, que tiene $S = \{i, -i\}$. Aparte, para que tenga raiz en 5, va a tener un termino $(x-5)$, el cual podemos elevar al cuadrado para tener la raiz doble.
+          \[ P(x) = a(x-5)^2(x^2+1) \]
+          \[ P(0) = a(-5)^2(1) = 25a = -5 \implies a = -\frac{1}{5} \]
+          \[ P(x) = -\frac{1}{5}(x-5)^2(x^2+1) \]
+
+    \item Encontrar $a$ y $b$ para que el polinomio $P(x) = (2x-a)^2(bx-4)^3(x^2-3x+2)$ tenga a $1$ como raíz de multiplicidad $3$ % a=2 b!=4 / a!=2 b!=4 / a!=2 b=4 / a=2 b=4
+          \[ (2x - a)^2 (bx - 4)^3 (x - 1)(x - 2) \]
+          \[ P(1) = (2\cdot 1 - a)^2 (b\cdot 1 - 4)^3 (1 - 1)(1 - 2) = 0 \]
+          \[ (2\cdot 1 - a)^2 = 0 = 2 - a \implies a = 2 \]
+          \[ (b\cdot 1 - 4)^3 \neq 0 \implies b \neq 4 \]
+          \[ \boxed{a = 2 \land a \neq 4} \]
+
+    \item Sean $B = \{v_1, v_2, v_3, v_4\}$ una base de un espacio vectorial $V$ y $C = \{v_1 + 2v_2 + v_3,v_2 + v_4,v_1 + 3v_2 + av_3 + v_4,v_1 + v_2 + v_3 + av_4\}$. Encontrar el conjunto de todos los $a \in R$ tales que $C$ no es una base de $V$ % {-1} / {-1,1} / {-1,2} / R-{-1}
+
+    \item Sean $\S = \{x \in \R^4 / x_1 + x_2 - x_3 - 2x_4 = 0; x_1 - 2x_2 + x_4 = 0\}$ y $\T = \langle(1,1,1,0),(0,-1,2,-1)\rangle⟩$. Calcular $\S \cap \T$ % ⟨(1,0,3,-1)⟩ / ⟨(1,-1,-1,1)⟩ / {(0,0,0,0)} / ⟨(0,1,-3,2)⟩
+
+    \item Sean $S = \{x \in R^4 / x_1 + 2x_2 - x_3 = 0; -x_1 + x_2 + x_4 = 0\}$ y $T = \langle(1,-2,1,1),(2,1,0,3)\rangle$. Encontrar una base de $\S + \T$ % {(1,2,-1,0),(-1,1,0,1),(1,-2,1,1),(2,0,1,3)} / {(1,0,1,1),(0,1,2,-1),(1,-2,1,1)} / {(1,0,1,1),(0,1,2,-1),(1,-2,1,1),(2,1,0,3)} / {(1,2,-1,0),(-1,1,0,1),(1,-2,1,1)}
+
+    \item Sea $B = \{(1,2,1),(0,1,1),v\}$. Si $(-1,2,1)_B = (1,-1,1)$, entonces
+          % v=(0,3,1) / v=(-1,-4,0) / v=(-2,1,1) / v=(2,-1,0)
+
+    \item Sea $f : R^3 \to R^3$ la transformación lineal definida por $f(x) = (x_1 + kx_2 - x_3, -x_2 + x_3, x_1 + 3x_3)$. Calcular el valor de $k \in R$ para el cual $f(-5,1,2) \in \Nu(f)$
+          % k=2 / k=4 / k=5 / k=3
+
+    \item Sean $B = \{(0,1,1),(0,1,-1),(1,0,0)\}$ base de $R^3$, $f : R^3 \to R^3$ la transformación lineal tal que $M_B(f)=\begin{pmatrix}
+              1 & 1 & 0 \\ 2 & -1 & 1 \\ 3 & 1 & -1
+          \end{pmatrix}$ y $S = \{x \in R^3 / x_2 = 0; x_3 = 0\}$. Calcular $f(S)$
+          % ⟨(0,1,-1)⟩ / ⟨(1,2,3)⟩ / ⟨(3,3,-1)⟩ / ⟨(-1,1,-1)⟩
+
+    \item Sea $B = \{(1,1,1),(-3,1,2),(-1,0,0)\}$ base de $R^3$ y sea $f : R^3 \to R^3$ la t. l. tal que $M_{BE} = \begin{pmatrix}
+              -1 & 2 & 3 \\ 1 & 0 & 1 \\ 0 & 1 & 2
+          \end{pmatrix}$.
+          Calcular $\Nu f$
+          % Nu(f)={(0,0,0)} / Nu(f)=⟨(1,2,-1)⟩ / Nu(f)=⟨(-4,3,5)⟩ / Nu(f)=⟨(5,-3,13)⟩
+
+    \item Sea $B = \{v_1,v_2,v_3\}$ una base de un espacio vectorial $V$ y sea $f : V \to V$ la transformación lineal tal que $M_B(f) = \begin{pmatrix}
+              0 & 0 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0
+          \end{pmatrix}$. La imagen de $f \circ f$ es
+          % ⟨v2⟩ / ⟨v2,v3⟩ / ⟨v1⟩ / ⟨v1,v3⟩
+
+    \item Sea $A = \begin{pmatrix}
+              3 & a & 0 \\ b & 2 & -3 \\ 2 & 0 & 1
+          \end{pmatrix}$. Los valores de $a$ y $b$ para los cuales $(1,-1,1)$ es un autovector de $A$ son
+          % a=2, b=4 / a=2, b=6 / a=0, b=8 / a=0, b=2
+
+    \item Sea $A = \begin{pmatrix}
+              -2 & 0 & 0 \\ 1 & 5 & 3 \\ 0 & -6 & -4
+          \end{pmatrix}$. Existe una matriz inversible $C \in R^{3×3}$ tal que $A = CDC^{-1}$ si
+          % D={{-1, 0, 0},{0, 2, 0},{0, 0, -2}} / D={{-1, 0, 0},{0, 2, 0},{0, 0, 2}} / D={{1, 0, 0},{0, -2, 0},{0, 0, 2}} / D={{1, 0 ,0},{0, -2, 0},{0, 0,-2}}
+\end{enumerate}
+
+\end{document}
