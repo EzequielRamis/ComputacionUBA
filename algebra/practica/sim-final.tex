@@ -84,7 +84,7 @@
                   x_1 + 2x_2 - x_3 = b \\
                   ax_1 - bx_2 - cx_3 = 1
               \end{cases}$. Encontrar los valores de $a$, $b$ y $c$ para los que $(0,1,1)$ es solución de $S$
-              % a∈R,b=1,c=−2 // a∈R,b=−2,c=1 // a=0,b=1,c=−2 // a=0,b=−2,c=1
+          % a∈R,b=1,c=−2 // a∈R,b=−2,c=1 // a=0,b=1,c=−2 // a=0,b=−2,c=1
 
     \item Calcular todos los valores de $a \in \R$ tales que el sistema de matriz ampliada $\begin{amatrix}{2}
                   a & 2 & 5 \\ 2 & a & 5
@@ -270,12 +270,124 @@
                   1 & 1 & 0 \\ 2 & -1 & 1 \\ 3 & 1 & -1
               \end{pmatrix}$ y $\S = \{x \in R^3 / x_2 = 0; x_3 = 0\}$. Calcular $f(\S)$
           % ⟨(0,1,-1)⟩ / ⟨(1,2,3)⟩ / ⟨(3,3,-1)⟩ / ⟨(-1,1,-1)⟩
+          Primero escribimos $M(f)$ en el sistema de coordenadas estándar.
+          \begin{align*}
+              M_{BE} & =\begin{pmatrix}
+                  0 & 0  & 1 \\
+                  1 & 1  & 0 \\
+                  1 & -1 & 0
+              \end{pmatrix}      \\
+              M(f)   & =M_{BE}\cdot M_B(f)              \\
+                     & =\begin{pmatrix}
+                  0 & 0  & 1 \\
+                  1 & 1  & 0 \\
+                  1 & -1 & 0
+              \end{pmatrix}\cdot
+              \begin{pmatrix}
+                  1 & 1  & 0  \\
+                  2 & -1 & 1  \\
+                  3 & 1  & -1
+              \end{pmatrix}                \\
+                     & =\begin{pmatrix}
+                  3  & 1 & -1 \\
+                  3  & 0 & 1  \\
+                  -1 & 2 & -1
+              \end{pmatrix}
+          \end{align*}
+
+          Luego escribimos $\mathbb{S}$ como generador:
+          \begin{align*}
+              \mathbb{S} & =\begin{cases}
+                  x_1=x_1 \\
+                  x_2=0   \\
+                  x_3=0
+              \end{cases} \\
+                         & =(x, 0, 0)                  \\
+                         & =x(1, 0, 0)                 \\
+                         & =\langle(1, 0, 0)\rangle
+          \end{align*}
+          Y aplicamos la transformación:
+          \begin{align*}
+              f(\mathbb{S}) & =M(f)\cdot\mathbb{S}                                                                    \\
+                            & =\begin{pmatrix}
+                  3  & 1 & -1 \\
+                  3  & 0 & 1  \\
+                  -1 & 2 & -1
+              \end{pmatrix}\cdot\begin{pmatrix}
+                  1 \\
+                  0 \\
+                  0
+              \end{pmatrix} = \begin{pmatrix}
+                  3 \\
+                  3 \\
+                  -1
+              \end{pmatrix}
+          \end{align*}
+          \[ \boxed{f(\S) = \langle(3,3,-1)\rangle} \]
 
     \item Sea $B = \{(1,1,1),(-3,1,2),(-1,0,0)\}$ base de $R^3$ y sea $f : R^3 \to R^3$ la t. l. tal que $M_{BE} = \begin{pmatrix}
                   -1 & 2 & 3 \\ 1 & 0 & 1 \\ 0 & 1 & 2
               \end{pmatrix}$.
-          Calcular $\Nu f$
+          Calcular $\Nu f$ \\
           % Nu(f)={(0,0,0)} / Nu(f)=⟨(1,2,-1)⟩ / Nu(f)=⟨(-4,3,5)⟩ / Nu(f)=⟨(5,-3,13)⟩
+          Primero hay que convertir $M_{BE}$ a $B_{EE}$
+          \[ M_{EE} = M_{BE}(f) \cdot C_{EB} \]
+          \[
+              C_{EB} = (C_{BE})^{-1} = \begin{pmatrix}
+                  1 & -3 & -1 \\
+                  1 & 1  & 0  \\
+                  1 & 2  & 0  \\
+              \end{pmatrix}^{-1} = \begin{pmatrix}
+                  0  & 2  & -1 \\
+                  0  & -1 & 1  \\
+                  -1 & 5  & -4 \\
+              \end{pmatrix}
+          \] \[
+              M_{EE} = M_{BE}(f) \cdot C_{EB}
+          \] \[
+              M_{EE} = \begin{pmatrix}
+                  -1 & 2 & 3 \\
+                  1  & 0 & 1 \\
+                  0  & 1 & 2 \\
+              \end{pmatrix}\cdot\begin{pmatrix}
+                  0  & 2  & -1 \\
+                  0  & -1 & 1  \\
+                  -1 & 5  & -4 \\
+              \end{pmatrix} = \begin{pmatrix}
+                  -3 & 11 & -9 \\
+                  -1 & 7  & -5 \\
+                  -2 & 9  & -7 \\
+              \end{pmatrix}
+          \] \[
+              \text{Diagonalizada: }
+              \begin{pmatrix}
+                  -1 & 2 & -2 \\
+                  0  & 5 & -3 \\
+                  0  & 0 & 0  \\
+              \end{pmatrix}
+          \] \[
+              \begin{pmatrix}
+                  -1 & 2 & -2 \\
+                  0  & 5 & -3 \\
+                  0  & 0 & 0  \\
+              \end{pmatrix} = \begin{pmatrix}
+                  0 \\ 0 \\
+              \end{pmatrix}
+          \] \[
+              \begin{cases}
+                  -x + 2y - 2z = 0 \\
+                  5y - 3z = 0      \\
+              \end{cases}
+              \implies
+              \begin{cases}
+                  2y - 2z = x      \\
+                  \frac{3}{5}z = y \\
+              \end{cases}
+          \] \[
+              (x,y,z) = \left(\frac{6}{5}z - 2z, \frac{3}{5}z, z\right) = z\left(\frac{-4}{5}, \frac{3}{5}, 1\right) \equiv z(-4,3,5)
+          \] \[
+              \boxed{\Nu f = (-4,3,5)}
+          \]
 
     \item Sea $B = \{x,y,z\}$ una base de un espacio vectorial $V$ y sea $f : V \to V$ la t. l. tal que $M_B(f) = \begin{pmatrix}
                   0 & 0 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0
@@ -292,25 +404,25 @@
               \end{pmatrix}$. Existe una matriz inversible $C \in R^{3\x3}$ tal que $A = CDC^{-1}$ si:
           \begin{enumerate}
               \item $ D = \begin{pmatrix}
-                      -1 & 0 & 0  \\
-                      0  & 2 & 0  \\
-                      0  & 0 & -2
-                  \end{pmatrix} $
+                            -1 & 0 & 0  \\
+                            0  & 2 & 0  \\
+                            0  & 0 & -2
+                        \end{pmatrix} $
               \item $ D = \begin{pmatrix}
-                      -1 & 0 & 0 \\
-                      0  & 2 & 0 \\
-                      0  & 0 & 2
-                  \end{pmatrix} $
+                            -1 & 0 & 0 \\
+                            0  & 2 & 0 \\
+                            0  & 0 & 2
+                        \end{pmatrix} $
               \item $ D = \begin{pmatrix}
-                      1 & 0  & 0 \\
-                      0 & -2 & 0 \\
-                      0 & 0  & 2
-                  \end{pmatrix} $
+                            1 & 0  & 0 \\
+                            0 & -2 & 0 \\
+                            0 & 0  & 2
+                        \end{pmatrix} $
               \item $ D = \begin{pmatrix}
-                      1 & 0  & 0  \\
-                      0 & -2 & 0  \\
-                      0 & 0  & -2
-                  \end{pmatrix} $
+                            1 & 0  & 0  \\
+                            0 & -2 & 0  \\
+                            0 & 0  & -2
+                        \end{pmatrix} $
           \end{enumerate}
 \end{enumerate}
 
