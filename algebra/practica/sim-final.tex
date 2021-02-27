@@ -85,6 +85,23 @@
                   ax_1 - bx_2 - cx_3 = 1
               \end{cases}$. Encontrar los valores de $a$, $b$ y $c$ para los que $(0,1,1)$ es solución de $S$
           % a∈R,b=1,c=−2 // a∈R,b=−2,c=1 // a=0,b=1,c=−2 // a=0,b=−2,c=1
+          \[
+              \begin{cases}
+                  0 + 2 - 1 = b \\
+                  0a - b1 - c1 = 1
+              \end{cases}
+              \begin{cases}
+                  1 = b \\
+                  b + c = -1
+              \end{cases}
+              \begin{cases}
+                  1 = b \\
+                  b + c = -1
+              \end{cases}
+              c = -2
+          \] \[
+              \boxed{a \in \R, b = 1, c = -2}
+          \]
 
     \item Calcular todos los valores de $a \in \R$ tales que el sistema de matriz ampliada $\begin{amatrix}{2}
                   a & 2 & 5 \\ 2 & a & 5
@@ -108,10 +125,41 @@
                   0  & a  & 2  \\
                   1  & 1  & -1
               \end{pmatrix}$. Calcular el conjunto de todos los valores de $a \in \R$ para que $Ax = 0$ tenga solución única % R−{−2} // R−{0} // {0} // {−2}
+          %          \[
+          %              \begin{pmatrix}
+          %                  -1 & -2 & 2  \\
+          %                  0  & a  & 2  \\
+          %                  1  & 1  & -1
+          %              \end{pmatrix}\begin{pmatrix}
+          %                  x \\ y \\ z
+          %              \end{pmatrix} = \0
+          %          \] \[
+          %              \begin{cases}
+          %                  -x - 2 y + 2 z = 0 \\
+          %                  a y + 2 z      = 0 \\
+          %                  x + y - z      = 0 \\
+          %              \end{cases}
+          %          \]
+          \begin{align*}
+              \det(A) & = 0  \\
+              -3a - 6 & = 0  \\
+              a       & = -2
+          \end{align*}
+          \[
+              \boxed{\R - \{-2\}}
+          \]
 
     \item Sean $A \in \R^{3\x3}$ y $B = \begin{pmatrix}
                   0 & -1 & 0 \\ 2 & 1 & -2 \\ 1 & 1 & 2
               \end{pmatrix}$. Si $\det(A) = 4$, calcular $\det(2A^{-1}B)$ % 3 // −3 // 12 // −12
+          \begin{align*}
+              \det(2A^{-1}B) & = \det(2A^{-1})\det(B)     \\
+                             & = 2^3\det(A^{-1})\det(B)   \\
+                             & = \frac{8}{\det(A)}\det(B) \\
+                             & = \frac{8}{4}\det(B)       \\
+                             & = 2\cdot 6
+          \end{align*}
+          \[ \boxed{\det(2A^{-1}B) = 12} \]
 
     \item Si $z \in \C$ cumple $\overline{z} - z = 2i$ y $\arg(\overline{z}) = \frac{3\pi}{4}$, calcular $z^4$
           \[
@@ -324,6 +372,7 @@
               \end{pmatrix}
           \end{align*}
           \[ \boxed{f(\S) = \langle(3,3,-1)\rangle} \]
+          Mal!!
 
     \item Sea $B = \{(1,1,1),(-3,1,2),(-1,0,0)\}$ base de $R^3$ y sea $f : R^3 \to R^3$ la t. l. tal que $M_{BE} = \begin{pmatrix}
                   -1 & 2 & 3 \\ 1 & 0 & 1 \\ 0 & 1 & 2
@@ -393,37 +442,150 @@
                   0 & 0 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0
               \end{pmatrix}$. La imagen de $f \circ f$ es
           % ⟨y⟩ / ⟨y,z⟩ / ⟨x⟩ / ⟨x,z⟩
+          \[ M_{EE}(f) = C_{BE}\cdot M_{BB}(f)\cdot C_{EB} \]
+          \[
+              f \circ f = \begin{pmatrix}
+                  0 & 0 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0
+              \end{pmatrix}\cdot\begin{pmatrix}
+                  0 & 0 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0
+              \end{pmatrix} = \begin{pmatrix}
+                  0 & 0 & 0 \\
+                  1 & 0 & 0 \\
+                  0 & 0 & 0
+              \end{pmatrix}
+          \] \[
+              f \circ f(x) = \begin{pmatrix}
+                  0 & 0 & 0 \\
+                  1 & 0 & 0 \\
+                  0 & 0 & 0
+              \end{pmatrix}\begin{pmatrix}
+                  x \\ 0 \\ 0
+              \end{pmatrix} = x\begin{pmatrix}
+                  0 \\ 1 \\ 0
+              \end{pmatrix}
+          \] \[
+              f \circ f(y) = \begin{pmatrix}
+                  0 & 0 & 0 \\
+                  1 & 0 & 0 \\
+                  0 & 0 & 0
+              \end{pmatrix}\begin{pmatrix}
+                  0 \\ y \\ 0
+              \end{pmatrix} = \begin{pmatrix}
+                  0 \\ 0 \\ 0
+              \end{pmatrix}
+          \] \[
+              f \circ f(z) = \begin{pmatrix}
+                  0 & 0 & 0 \\
+                  1 & 0 & 0 \\
+                  0 & 0 & 0
+              \end{pmatrix}\begin{pmatrix}
+                  0 \\ 0 \\ z
+              \end{pmatrix} = \begin{pmatrix}
+                  0 \\ 0 \\ 0
+              \end{pmatrix}
+          \] \[
+              \boxed{\Img f \circ f = \langle x \rangle}
+          \]
+          Mal!!
 
     \item Sea $A = \begin{pmatrix}
                   3 & a & 0 \\ b & 2 & -3 \\ 2 & 0 & 1
               \end{pmatrix}$. Encontrar los valores de $a$ y $b$ para los cuales $(1,-1,1)$ es un autovector de $A$
           % a=2, b=4 / a=2, b=6 / a=0, b=8 / a=0, b=2
+          \[
+              Av = \lambda v
+          \] \[
+              \begin{pmatrix}
+                  3 & a & 0 \\ b & 2 & -3 \\ 2 & 0 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 \\ -1 \\ 1
+              \end{pmatrix}
+              =
+              \lambda
+              \begin{pmatrix}
+                  1 \\ -1 \\ 1
+              \end{pmatrix}
+          \] \[
+              \begin{pmatrix}
+                  3 - a \\ b - 5 \\ 3
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                  \lambda \\ -\lambda \\ \lambda
+              \end{pmatrix}
+          \] \[
+              \begin{cases}
+                  3 - a = \lambda  \\
+                  b - 5 = -\lambda \\
+                  3 = \lambda
+              \end{cases}
+          \] \[
+              \begin{cases}
+                  3 - a  = 3 \\
+                  b - 5 = - 3
+              \end{cases}
+              \implies
+              \begin{cases}
+                  a = 0 \\
+                  b = 2
+              \end{cases}
+          \] \[
+              \boxed{a = 0 \land b = 2}
+          \]
 
     \item Sea $A = \begin{pmatrix}
                   -2 & 0 & 0 \\ 1 & 5 & 3 \\ 0 & -6 & -4
-              \end{pmatrix}$. Existe una matriz inversible $C \in R^{3\x3}$ tal que $A = CDC^{-1}$ si:
-          \begin{enumerate}
+              \end{pmatrix}$. Existe una matriz inversible $C \in R^{3\x3}$ tal que $A = CDC^{-1}$ si: \\
+          \begin{enumerate*}
               \item $ D = \begin{pmatrix}
-                            -1 & 0 & 0  \\
-                            0  & 2 & 0  \\
-                            0  & 0 & -2
-                        \end{pmatrix} $
+                      -1 & 0 & 0  \\
+                      0  & 2 & 0  \\
+                      0  & 0 & -2
+                  \end{pmatrix} $
               \item $ D = \begin{pmatrix}
-                            -1 & 0 & 0 \\
-                            0  & 2 & 0 \\
-                            0  & 0 & 2
-                        \end{pmatrix} $
+                      -1 & 0 & 0 \\
+                      0  & 2 & 0 \\
+                      0  & 0 & 2
+                  \end{pmatrix} $
               \item $ D = \begin{pmatrix}
-                            1 & 0  & 0 \\
-                            0 & -2 & 0 \\
-                            0 & 0  & 2
-                        \end{pmatrix} $
+                      1 & 0  & 0 \\
+                      0 & -2 & 0 \\
+                      0 & 0  & 2
+                  \end{pmatrix} $
               \item $ D = \begin{pmatrix}
-                            1 & 0  & 0  \\
-                            0 & -2 & 0  \\
-                            0 & 0  & -2
-                        \end{pmatrix} $
-          \end{enumerate}
+                      1 & 0  & 0  \\
+                      0 & -2 & 0  \\
+                      0 & 0  & -2
+                  \end{pmatrix} $
+          \end{enumerate*} \\
+          Encontrar autovectores de $A$:
+          \begin{align*}
+              v_1 & = (-2, -1, 3) \\
+              v_2 & = (0, -1, 1)  \\
+              v_3 & = (0, -1, 2)  \\
+          \end{align*}
+          Verificar que sean l. i.:
+          \[
+              \begin{pmatrix}
+                  -2 & -1 & 3 \\
+                  0  & -1 & 1 \\
+                  0  & -1 & 2 \\
+              \end{pmatrix}
+              \implies
+              \begin{pmatrix}
+                  -2 & 0  & 0 \\
+                  0  & -1 & 0 \\
+                  0  & 0  & 1 \\
+              \end{pmatrix}
+          \] \[
+              \boxed{D = \begin{pmatrix}
+                      -2 & 0  & 0 \\
+                      0  & -1 & 0 \\
+                      0  & 0  & 1 \\
+                  \end{pmatrix}}
+          \]
+
 \end{enumerate}
 
 \end{document}
