@@ -319,30 +319,50 @@
               \end{pmatrix}$ y $\S = \{x \in R^3 / x_2 = 0; x_3 = 0\}$. Calcular $f(\S)$
           % ⟨(0,1,-1)⟩ / ⟨(1,2,3)⟩ / ⟨(3,3,-1)⟩ / ⟨(-1,1,-1)⟩
           Primero escribimos $M(f)$ en el sistema de coordenadas estándar.
-          \begin{align*}
-              M_{BE} & =\begin{pmatrix}
+          \[
+              M_{BB} = \begin{pmatrix}
                   0 & 0  & 1 \\
                   1 & 1  & 0 \\
                   1 & -1 & 0
-              \end{pmatrix}      \\
-              M(f)   & =M_{BE}\cdot M_B(f)              \\
-                     & =\begin{pmatrix}
+              \end{pmatrix}
+          \] \[
+              M_{EE}(f) = C_{BE}\cdot M_{BB}(f) \cdot C_{EB}
+          \] \[
+              C_{BE} = \begin{pmatrix}
                   0 & 0  & 1 \\
                   1 & 1  & 0 \\
-                  1 & -1 & 0
-              \end{pmatrix}\cdot
-              \begin{pmatrix}
+                  1 & -1 & 0 \\
+              \end{pmatrix}
+          \]
+          \[
+              C_{EB} = (C_{BE})^{-1} = \frac{1}{2}\begin{pmatrix}
+                  0 & 1 & 1  \\
+                  0 & 1 & -1 \\
+                  2 & 0 & 0  \\
+              \end{pmatrix}
+          \] \[
+              M_{EE}(f) = \begin{pmatrix}
+                  0 & 0  & 1 \\
+                  1 & 1  & 0 \\
+                  1 & -1 & 0 \\
+              \end{pmatrix}\cdot\begin{pmatrix}
                   1 & 1  & 0  \\
                   2 & -1 & 1  \\
-                  3 & 1  & -1
-              \end{pmatrix}                \\
-                     & =\begin{pmatrix}
-                  3  & 1 & -1 \\
-                  3  & 0 & 1  \\
-                  -1 & 2 & -1
+                  3 & 1  & -1 \\
+              \end{pmatrix}\cdot \frac{1}{2}\begin{pmatrix}
+                  0 & 1 & 1  \\
+                  0 & 1 & -1 \\
+                  2 & 0 & 0  \\
               \end{pmatrix}
-          \end{align*}
-
+          \] \[
+              M_{EE}(f)  =
+              \frac{1}{2}
+              \begin{pmatrix}
+                  -2 & 4 & 2  \\
+                  2  & 3 & 3  \\
+                  -2 & 1 & -3 \\
+              \end{pmatrix}
+          \]
           Luego escribimos $\mathbb{S}$ como generador:
           \begin{align*}
               \mathbb{S} & =\begin{cases}
@@ -356,23 +376,23 @@
           \end{align*}
           Y aplicamos la transformación:
           \begin{align*}
-              f(\mathbb{S}) & =M(f)\cdot\mathbb{S}                                                                    \\
-                            & =\begin{pmatrix}
-                  3  & 1 & -1 \\
-                  3  & 0 & 1  \\
-                  -1 & 2 & -1
+              f(\mathbb{S}) & =M(f)\cdot\mathbb{S}                                                                               \\
+                            & =\frac{1}{2}\begin{pmatrix}
+                  -2 & 4 & 2  \\
+                  2  & 3 & 3  \\
+                  -2 & 1 & -3 \\
               \end{pmatrix}\cdot\begin{pmatrix}
                   1 \\
                   0 \\
                   0
               \end{pmatrix} = \begin{pmatrix}
-                  3 \\
-                  3 \\
+                  -1 \\
+                  1 \\
                   -1
               \end{pmatrix}
           \end{align*}
-          \[ \boxed{f(\S) = \langle(3,3,-1)\rangle} \]
-          Mal!!
+          \[ \boxed{f(\S) = \langle(-1,1,-1)\rangle} \]
+
 
     \item Sea $B = \{(1,1,1),(-3,1,2),(-1,0,0)\}$ base de $R^3$ y sea $f : R^3 \to R^3$ la t. l. tal que $M_{BE} = \begin{pmatrix}
                   -1 & 2 & 3 \\ 1 & 0 & 1 \\ 0 & 1 & 2
@@ -453,14 +473,16 @@
                   1 & 0 & 0 \\
                   0 & 0 & 0
               \end{pmatrix}
-          \] \[
+          \]
+          Asumimos que las bases de $B$ son en realidad las bases canonicas
+          \[
               f \circ f(x) = \begin{pmatrix}
                   0 & 0 & 0 \\
                   1 & 0 & 0 \\
                   0 & 0 & 0
               \end{pmatrix}\begin{pmatrix}
-                  x \\ 0 \\ 0
-              \end{pmatrix} = x\begin{pmatrix}
+                  1 \\ 0 \\ 0
+              \end{pmatrix} = \begin{pmatrix}
                   0 \\ 1 \\ 0
               \end{pmatrix}
           \] \[
@@ -469,7 +491,7 @@
                   1 & 0 & 0 \\
                   0 & 0 & 0
               \end{pmatrix}\begin{pmatrix}
-                  0 \\ y \\ 0
+                  0 \\ 1 \\ 0
               \end{pmatrix} = \begin{pmatrix}
                   0 \\ 0 \\ 0
               \end{pmatrix}
@@ -479,14 +501,13 @@
                   1 & 0 & 0 \\
                   0 & 0 & 0
               \end{pmatrix}\begin{pmatrix}
-                  0 \\ 0 \\ z
+                  0 \\ 0 \\ 1
               \end{pmatrix} = \begin{pmatrix}
                   0 \\ 0 \\ 0
               \end{pmatrix}
           \] \[
-              \boxed{\Img f \circ f = \langle x \rangle}
+              \boxed{\Img f \circ f = \langle y \rangle}
           \]
-          Mal!!
 
     \item Sea $A = \begin{pmatrix}
                   3 & a & 0 \\ b & 2 & -3 \\ 2 & 0 & 1
