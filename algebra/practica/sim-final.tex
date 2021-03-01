@@ -167,13 +167,39 @@
           \] \[
               \arg(\overline{z}) = \frac{3\pi}{4} \implies \arg(z) = -\frac{3\pi}{4} \equiv \frac{5}{4}\pi
           \]
-          % TODO: Grafico
-          %          \begin{tikzpicture}
-          %              \coordinate (O) at (0,0);
-          %              \draw (O) arc (0,135,1);
-          %          \end{tikzpicture}
+          \begin{center}
+
+              \begin{tikzpicture}
+                  \coordinate (O) at (0,0);
+
+                  % Ejes
+                  \draw[very thin,gray] (-2,-2) grid (2,2);
+                  \begin{scope}[thin]
+                      \draw (-2,0) -- (2,0);
+                      \draw (0,-2) -- (0,2);
+                      \draw (1,0) node[anchor=north] {$1$};
+                      \draw (-1,0) node[anchor=north] {$-1$};
+                      \draw (0,1) node[anchor=east] {$1$};
+                      \draw (0,-1) node[anchor=east] {$-1$};
+                      \draw (1,-0.1) -- (1,0.1);
+                      \draw (-1,-0.1) -- (-1,0.1);
+                      \draw (-0.1,1) -- (0.1,1);
+                      \draw (-0.1,-1) -- (0.1,-1);
+                  \end{scope}
+
+                  \begin{scope}[thick]
+                      \draw (1,0) node [anchor=south] {$0\pi$};
+                      \draw (-1,0) node [anchor=south] {$\pi$};
+                      \draw (1.4,0) arc (0:135:1.4) node[anchor=south east] {$\overline{z}$};
+                      \draw (1.4,0) arc (0:-135:1.4) node[anchor=north east] {$z$} circle[fill=black,radius=0.05] -- (O);
+                  \end{scope}
+
+                  \draw (0,-0.5) node[anchor=west] {$b$};
+                  \draw (-0.5,0) node[anchor=south] {$a$};
+              \end{tikzpicture}
+          \end{center}
           \[
-              \tan\left(\frac{5}{4}\pi\right) = a = 1
+              \tan\left(\frac{5}{4}\pi\right) = a = -1
           \] \[
               z = -1 - i \implies \boxed{z^4 = -4}
           \]
@@ -194,7 +220,7 @@
 
     \item Sean $B = \{x, y, z, w\}$ una base de un espacio vectorial $V$ y $C = \{x + 2y + z,y + w,x + 3y + az + w,x + y + z + aw\}$. Encontrar el conjunto de todos los $a \in R$ tales que $C$ no es una base de $V$ % {-1} / {-1,1} / {-1,2} / R-{-1}
           \[
-              C \equiv \begin{pmatrix}
+              C = \begin{pmatrix}
                   1 & 2 & 1 & 0 \\
                   0 & 1 & 0 & 1 \\
                   1 & 3 & a & 1 \\
@@ -213,7 +239,7 @@
           \[ a = 1 \lor a = - 1 \]
           \[ \boxed{S = \{-1, 1\}} \]
 
-    \item Sean $\S = \{x \in \R^4 / x + y - z - 2z = 0; x - 2y + z = 0\}$ y $\T = \langle(1,1,1,0),(0,-1,2,-1)\rangle⟩$. Calcular $\S \cap \T$ % ⟨(1,0,3,-1)⟩ / ⟨(1,-1,-1,1)⟩ / {(0,0,0,0)} / ⟨(0,1,-3,2)⟩
+    \item Sean $\S = \{(x,y,z,w) \in \R^4 / x + y - z - 2z = 0; x - 2y + z = 0\}$ y $\T = \langle(1,1,1,0),(0,-1,2,-1)\rangle⟩$. Calcular $\S \cap \T$ % ⟨(1,0,3,-1)⟩ / ⟨(1,-1,-1,1)⟩ / {(0,0,0,0)} / ⟨(0,1,-3,2)⟩
           \[
               \T = a(1,1,1,0) + b(0,-1,2,-1) = (a, a-b, a+2b, -b)
           \] \[
@@ -387,7 +413,7 @@
                   0
               \end{pmatrix} = \begin{pmatrix}
                   -1 \\
-                  1 \\
+                  1  \\
                   -1
               \end{pmatrix}
           \end{align*}

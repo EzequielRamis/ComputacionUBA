@@ -1,0 +1,248 @@
+\documentclass[../practica.root.tex]{subfiles}
+
+\makeatletter
+	\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+
+\begin{enumerate}
+    \item Sean $\L:\lambda(a,3,1)+(1,0,-1)$ y $\Pi:ax-2y-3z=0$. Los valores de
+          $a\in\R$ para los que $\L$ es paralela a $\Pi$ y no esta incluida en
+          $\Pi$ son:
+
+          \begin{enumerate}
+              \item $\{3\}$
+              \item $\R-\{-3,3\}$
+              \item $\{-3,3\}$
+              \item $\{-3\}$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $P=(1,2,2)$ y $\Pi$ el plano que pasa por $(0,2,1)$, $(1,2,0)$ y
+          $(0,0,0)$. La distancia de $P$ a $\Pi$ es:
+
+          \begin{enumerate}
+              \item $\frac{4}{3}$
+              \item $0$
+              \item $\frac{4}{\sqrt{3}}$
+              \item $4$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sean $\Pi_1:3x+y+z=5$, $\Pi_2:2x-z=0$ y $\L=\Pi_1\cap\Pi_2$. La recta
+          $\L'$ que pasa por $P=(2,1,0)$ y es paralela a $\L$ es:
+
+          \begin{enumerate}
+              \item $\lambda(1,0,2)+(2,1,0)$
+              \item $\lambda(2,1,0)+(0,5,0)$
+              \item $\lambda(1,-5,2)+(3,-4,2)$
+              \item $\lambda(1,-5,2)+(0,5,0)$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $S:\systeme[xyz]{x+2y-z=a,bx-ay-cz=1}$. Todos los valores de
+          $a,b,c\in\R$ para los que $(0,1,1)$ es solución de $S$ son:
+
+          \begin{enumerate}
+              \item $a=\phantom{-}1$, $b\in\R$, $c=-2$
+              \item $a=-2$, $b=0$, $c=\phantom{-}1$
+              \item $a=\phantom{-}1$, $b=0$, $c=-2$
+              \item $a=-2$, $b\in\R$, $c=\phantom{-}1$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item El conjunto de todos los valores de $a\in\R$ tales que el sistema de
+          matriz ampliada $\begin{pmatrix}[rr|r]a&2&5\\2&a&5\end{pmatrix}$ es
+          incompatible es:
+
+          \begin{enumerate}
+              \item $\R-\{2,-2\}$
+              \item $\{2\}$
+              \item $\{-2\}$
+              \item $\{2,-2\}$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $A=\begin{psmallmatrix}1&-2&2\\0&a&2\\1&1&-1\end{psmallmatrix}$.
+          El conjunto de todos los valores de $a\in\R$ para los que el sistema
+          $Ax=0$ tiene solución única es:
+
+          \begin{enumerate}
+              \item $\{0\}$
+              \item $\{-2\}$
+              \item $\R-\{0\}$
+              \item $\R-\{-2\}$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sean $A\in\R^{3\times 3}$ y
+          $B=\begin{psmallmatrix}0&-1&0\\2&1&-2\\2&1&3\end{psmallmatrix}$. Si
+          $\det(A)=4$, entonces $\det(2A^{-1}B)$ es igual a:
+
+          \begin{enumerate}
+              \item $5$
+              \item $-20$
+              \item $20$
+              \item $-5$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Si $z\in\C$ cumple que $\overline{z}-z=4i$ y
+          $\arg(\overline{z})=\frac{\pi}{4}$, entonces $z^4$ es igual a:
+
+          \begin{enumerate}
+              \item $64i$
+              \item $-64i$
+              \item $64$
+              \item $-64$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item El polinomio $P\in\R[x]$ de grado mínimo que tiene una raíz doble,
+          $i$ y $4$ son raíces de $P$ y $P(0)=-4$ es:
+
+          \begin{enumerate}
+              \item $(x+4)(x^2-1)$
+              \item $-\frac{1}{4}{(x-4)}^2(x^2-1)$
+              \item $-4{(x-4)}^2(x^2-1)$
+              \item ${(x-4)}^2(x^2-1)$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item El polinomio $P(x)={(2x-a)}^2{(bx-4)}^3(x^2-3x+2)$ tiene a $1$ como
+          raíz de multiplicidad $3$ si:
+
+% $P(x)={(2-a)}^2{(b-4)}^3(1-3+2)$
+
+          \begin{enumerate}
+              \item $a=2$ y $b=4$
+              \item $a\neq2$ y $b=4$
+              \item $a\neq2$ y $b\neq4$
+              \item $a=2$ y $b\neq4$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sean $B=\{x,y,z,w\}$ una base de un espacio vectorial $\V$ y
+          $C=\{x+2y+2z,y+w,x+3y+az+w,x+y+2z+aw\}$. El conjunto de todos los
+          $a\in\R$ tales que $C$ no es una base de $\V$ es:
+
+          \begin{enumerate}
+              \item $\R-\{-1\}$
+              \item $\{-1,3\}$
+              \item $\{-1,2\}$
+              \item $\{-1\}$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sean $\S=\{x\in\R^4/x+y-z-2w=0;x-2y+w=0\}$ y\\
+          $\T=\langle(1,2,-1,1),(-1,-1,-2,1)\rangle$. Entonces $\S\cap\T$ es
+          igual a:
+
+          \begin{enumerate}
+              \item $\langle(0,1,-3,2)\rangle$
+              \item $\langle(1,1,3,-1)\rangle$
+              \item $\{(0,0,0,0)\}$
+              \item $\langle(1,0,3,-1)\rangle$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sean $\S=\{x\in\R^4/x+2y-z=0;-x+y+w=0\}$ y\\
+          $\T=\langle(1,-2,1,1),(2,1,0,3)\rangle$. Una base de $\S+\T$ es:
+
+          \begin{enumerate}
+              \item $\{(1,0,\phantom{-}1,1),(\phantom{-}0,1,2,-1),(1,-2,1,1),(2,1,0,3)\}$
+              \item $\{(1,2,-1,0),(-1,1,0,\phantom{-}1),(1,-2,1,1),(2,1,0,3)\}$
+              \item $\{(1,2,-1,0),(-1,1,0,\phantom{-}1),(1,-2,1,1)\}$
+              \item $\{(1,0,\phantom{-}1,1),(\phantom{-}0,1,2,-1),(1,-2,1,1)\}$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $B=\{(1,2,1),(0,1,1),v\}$. Si ${(1,-1,1)}_B=(-1,2,1)$, entonces:
+
+          \begin{enumerate}
+              \item $v=(\phantom{-}2,-1,0)$
+              \item $v=(-2,\phantom{-}1,1)$
+              \item $v=(-1,-4,0)$
+              \item $v=(\phantom{-}0,\phantom{-}3,1)$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $f:\R^3\to\R^3$ la transformación lineal definida por
+          $f(x)=(x+ky-z,-y+z,x+2z)$. El valor de $k\in\R$ para el cual
+          $f(-3,1,2)\in\Nu(f)$ es:
+
+          \begin{enumerate}
+              \item $k=2$
+              \item $k=3$
+              \item $k=5$
+              \item $k=4$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sean $B=\{(1,1,0),(0,0,1),(1,-1,0)\}$ base de $\R^3$, $f:\R^3\to\R^3$
+          la transformación lineal tal que
+          $M_B(f)=\begin{psmallmatrix}1&1&0\\2&-1&1\\3&1&-1\end{psmallmatrix}$ y
+          $\S=\{x\in\R^3/x=0;y=0\}$. Entonces $f(\S)$ es igual a:
+
+          \begin{enumerate}
+              \item $\langle(\phantom{-}0,\phantom{-}1,-1)\rangle$
+              \item $\langle(\phantom{-}1,-1,\phantom{-}1)\rangle$
+              \item $\langle(\phantom{-}2,\phantom{-}0,-1)\rangle$
+              \item $\langle(-1,\phantom{-}1,\phantom{-}1)\rangle$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $B=\{(1,1,1),(-3,1,2),(-1,0,0)\}$ base de $\R^3$ y sea
+          $f:\R^3\to\R^3$ la transformaciíon lineal tal que
+          $M_{BE}=\begin{psmallmatrix}1&2&3\\-1&0&1\\0&1&2\end{psmallmatrix}$. El
+          nucleo de $f$ es:
+
+          \begin{enumerate}
+              \item $\Nu(f)=\langle(6,-1,-3)\rangle$
+              \item $\Nu(f)=\{(0,0,0)\}$
+              \item $\Nu(f)=\langle(1,-2,1)\rangle$
+              \item $\Nu(f)=\langle(-5,3,-15)\rangle$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $B=\{x,y,z\}$ una base de un espacio vectorial $\V$ y sea
+          $f:\V\to\V$ la transformación lineal tal que
+          $M_B(f)=\begin{psmallmatrix}0&0&0\\0&0&1\\1&0&0\end{psmallmatrix}$. La
+          imagen de $f\circ f$ es:
+
+          \begin{enumerate}
+              \item $\langle x\rangle$
+              \item $\langle x,z\rangle$
+              \item $\langle y,z\rangle$
+              \item $\langle y\rangle$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $A=\begin{psmallmatrix}3&a&0\\b&2&-3\\2&0&1\end{psmallmatrix}$.
+          Los valores de $a$ y $b$ para los cuales $(1,-1,1)$ es un autovector de
+          $A$ son:
+
+          \begin{enumerate}
+              \item $a=0$, $b=2$
+              \item $a=2$, $b=4$
+              \item $a=2$, $b=6$
+              \item $a=0$, $b=8$
+          \end{enumerate}
+
+          \hrulefill{}
+    \item Sea $A=\begin{psmallmatrix}1&0&0\\1&-4&-6\\0&3&5\end{psmallmatrix}$.
+          Existe una matriz inversible $C\in\R^{3\times 3}$ tal que $A=CDC^{-1}$
+          si:
+
+          \begin{enumerate}
+              \item $D=\begin{psmallmatrix}1&0&0\\0&1&0\\0&0&-2\end{psmallmatrix}$
+              \item $D=\begin{psmallmatrix}1&0&0\\0&-1&0\\0&0&-2\end{psmallmatrix}$
+              \item $D=\begin{psmallmatrix}1&0&0\\0&2&0\\0&0&2\end{psmallmatrix}$
+              \item $D=\begin{psmallmatrix}1&0&0\\0&-1&0\\0&0&2\end{psmallmatrix}$
+          \end{enumerate}
+\end{enumerate}
+\end{document}
