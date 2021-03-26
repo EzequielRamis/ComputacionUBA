@@ -1,0 +1,32 @@
+\input{../template.tex}
+
+\usepackage{amsmath, amssymb}
+\usepackage{tabularx}
+\usepackage{pgfplots}
+\usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{tabto}
+\captionsetup[figure]{labelformat=empty}
+\pgfplotsset{compat=1.16}
+\tikzset{declare function={Log(\n,\x)=log2(\x)/log2(\n);}}
+
+\usetikzlibrary{positioning,shapes,fit,arrows,angles,quotes}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\C}{\mathbb{C}}
+
+
+
+\def\arraystretch{2.5}
+
+\begin{document}
+\tableofcontents
+\newpage
+\subfile{teoria/unidad-01.tex}
+\end{document}
