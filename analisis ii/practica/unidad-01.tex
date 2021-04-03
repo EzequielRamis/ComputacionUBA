@@ -119,18 +119,45 @@
                         \draw[style=vec] (0,0) -- (30:10) node[pos=0.5,anchor=north west] {$\|v\| = 10$};
                         \draw (30:1) arc (30:90:1) node[pos=0.5, anchor=south west,rotate=30] {$\theta =  \SI{60}{\degree}$};
                     \end{tikzpicture}
-                    \[ \|u \x v\| = 5*10*\frac{\sqrt{3}}{2} = \boxed{25\sqrt{3}} \]
+                    \[ \|u \x v\| = 5*10*\frac{\sqrt{3}}{2} = \boxed{25\sqrt{3}\text{, apunta a} -z} \]
               \item
                     \begin{tikzpicture}[scale = 0.5]
                         \draw[style=vec] (-6,0) -- (0,0)  node[pos=0.5,anchor=south] {$\|u\| = 6$};
+                        \draw[style=vec,dashed] (0,0) -- (6,0)  node[pos=0.5,anchor=south] {$\|u\| = 6$};
                         \draw[style=vec] (0,0) -- (-30:8) node[pos=0.5,anchor=south west] {$\|v\| = 8$};
                         \draw (-30:1) arc (-30:-180:1) node[pos=0.5,anchor=north] {$\theta = \SI{150}{\degree}$};
                     \end{tikzpicture}
-                    \[ \|u \x v\| = 6*8*\frac{1}{2} = \boxed{24} \]
+                    \[ \|u \x v\| = 6 \cdot 8 \cdot \sen(\SI{30}{\degree}) = 48 \cdot \frac{1}{2} = \boxed{24\text{, apunta a} -z} \]
 
           \end{enumerate}
 
     \item Calcular el area del paralelogramo de $A = (1, 2, 3)$, $B = (1, 3, 6)$, $C = (3, 8, 6)$, $D = (3, 7 ,3)$ \\
+          \begin{tikzpicture}[tdplot_main_coords,grid/.style={very thin,gray},axis/.style={->,blue,thick}]
+              \coordinate (A) at (1, 2, 3);
+              \coordinate (B) at (1, 3, 6);
+              \coordinate (C) at (3, 8, 6);
+              \coordinate (D) at (3, 7, 3);
+
+              \foreach \x in {0,1,2,3,4}
+              \foreach \y in {0,1,2,3,4,5,6,7,8}
+                  {
+                      \draw[grid] (\x,0) -- (\x,8);
+                      \draw[grid] (0,\y) -- (4,\y);
+                  }
+              \draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
+              \draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
+              \draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
+
+              \draw (A) -- (B) -- (C) -- (D) -- cycle;
+              \begin{scope}[dashed]
+                  \draw (A) node {$A$} -- (1, 2, 0);
+                  \draw (B) node {$B$} -- (1, 3, 0);
+                  \draw (C) node {$C$} -- (3, 8, 0);
+                  \draw (D) node {$D$} -- (3, 7, 0);
+              \end{scope}
+
+          \end{tikzpicture}
+
           Verificar que los 4 vectores formen un paralelogramo. (Uno tiene que ser l. d. del resto) \\
           \[
               \begin{pmatrix}
