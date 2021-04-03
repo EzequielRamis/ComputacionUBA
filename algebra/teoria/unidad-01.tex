@@ -150,6 +150,54 @@ Dados dos conjuntos, $A$ y $B$, se denota $A \x B$ al conjunto de todos los pare
 
 \subsection{Tablas de verdad}
 \subsection{Relaciones}
+Entre conjuntos podemos establecer relaciones entre sus elementos.
+Esto se denota como un punto $(a, b)$ donde $a \in A, b \in B$, que se lee ``$a$ está relacionado con $b$''.
+Estos puntos siempre van a pertenecer al conjunto $A \x B$, por lo que podemos interpretar $A \x B$ como
+``el conjunto donde todos los $a$ están relacionados con todos los $b$''.
+Tambien se usa la notación $a \rel b$ y $a \notrel b$, y se puede representar graficamente de diferentes maneras:
+\begin{align*}
+    A & = \{1, 2, 3\} & R_1 & = \{(a,1), \dots, (c,3)\} \\
+    B & = \{a, b, c\} & R_2 & = \{(a,1), (b,2), (c,3)\}
+\end{align*}
+\begin{figure*}[h]
+    \centering
+    \begin{tikzpicture}
+        \node (A) at (-1,2) {$A$};
+        \node (1) [below of=A] {$1$};
+        \node (2) [below of=1] {$2$};
+        \node (3) [below of=2] {$3$};
+        \node (B) at (1,2) {$B$};
+        \node (a) [below of=B] {$a$};
+        \node (b) [below of=a] {$b$};
+        \node (c) [below of=b] {$c$};
+        \begin{scope}[->,thick]
+            \draw (1) -- (a);
+            \draw (2) -- (b);
+            \draw (3) -- (c);
+        \end{scope}
+    \end{tikzpicture}
+    \hfill
+    \begin{tikzpicture}
+        \begin{scope}[thick,->]
+            \draw (0,0) -- (3.5,0) node[anchor=north] (A) {$A$};
+            \draw (0,0) -- (0,3.5) node[anchor=east] (B) {$B$};
+        \end{scope}
+        \draw[very thin, gray] (0,0) grid (3,3);
+        \node (1) [anchor=north] at (1,0) {$1$};
+        \node (2) [anchor=north] at (2,0) {$2$};
+        \node (3) [anchor=north] at (3,0) {$3$};
+        \node (a) [anchor=east] at (0,1) {$a$};
+        \node (b) [anchor=east] at (0,2) {$b$};
+        \node (c) [anchor=east] at (0,3) {$c$};
+        \begin{scope}[circle,inner sep=1]
+            \node[fill=black] at (a -| 1) {};
+            \node[fill=black] at (b -| 2) {};
+            \node[fill=black] at (c -| 3) {};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{$R_2$ representado en un diagrama de Venn y en un plano de ejes cartesianos}
+\end{figure*}
+
 
 
 \end{document}
