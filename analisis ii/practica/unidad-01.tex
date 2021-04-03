@@ -4,7 +4,7 @@
 \section{Unidad 1}
 \begin{enumerate}
     \item Representar graficamente las siguientes ecuaciones en $\R^3$
-    % TODO: Encotrar una buena forma de graficar
+          % TODO: Encotrar una buena forma de graficar
 
     \item Demostrar que estas ecuaciones representan esferas
 
@@ -220,32 +220,35 @@
     \item Con $A = (2, 0, -1)$, $B = (4, 1, 0)$, $C = (3, -1, 1)$ y $D = (2, -2, 2)$,
           calcular el volumen del paralelepípedo con lados $AB$, $AC$ y $AD$
 
-          \begin{tikzpicture}[tdplot_main_coords,grid/.style={very thin,gray},axis/.style={->,blue,thick}]
-              \coordinate (O) at (0, 0, 0);
-              \coordinate (A) at (2, 0, 1);
-              \coordinate (B) at (4, 1, 0);
-              \coordinate (C) at (3, -1, 1);
-              \coordinate (D) at (2, -2, 2);
-
-              \foreach \x in {0,1,2,3,4}
-              \foreach \y in {0,1,2,3,4}
-                  {
-                      \draw[grid] (\x,0) -- (\x,4);
-                      \draw[grid] (0,\y) -- (4,\y);
-                  }
-              \draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
-              \draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
-              \draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
-
-              \draw (A) node {$A$};
-              \draw (B) node {$B$};
-              \draw (C) node {$C$};
-              \draw (D) node {$D$};
-
-              \draw (A) -- (B) -- ++(C) -- ++(D);
-              \draw (A) -- (C) -- ++(D) -- ++(B);
-              \draw (A) -- (D) -- ++(C) -- ++(B);
-          \end{tikzpicture}
+          %\begin{tikzpicture}[tdplot_main_coords,grid/.style={very thin,gray},axis/.style={->,blue,thick}]
+          %    \coordinate (O) at (0, 0, 0);
+          %    \coordinate (A) at (2, 0, 1);
+          %    \coordinate (B) at (4, 1, 0);
+          %    \coordinate (C) at (3, -1, 1);
+          %    \coordinate (D) at (2, -2, 2);
+          %
+          %    \foreach \x in {0,1,2,3,4}
+          %    \foreach \y in {-2,-1,0,1,2,3,4}
+          %        {
+          %            \draw[grid] (\x,-2) -- (\x,4);
+          %            \draw[grid] (0,\y) -- (4,\y);
+          %        }
+          %    \draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
+          %    \draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
+          %    \draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
+          %
+          %    \begin{scope}[dashed]
+          %      \draw (A) node {$A$} -- (2, 0, 0);
+          %      \draw (B) node {$B$} -- (4, 1, 0);
+          %      \draw (C) node {$C$} -- (3, -1, 0);
+          %      \draw (D) node {$D$} -- (2, -2, 0);
+          %    \end{scope}
+          %
+          %    \draw (A) -- (B);
+          %    \draw (A) -- (C) -- ++(D) -- (D);
+          %    \draw (A) -- (D);
+          %    \draw (A) ++(B) ++(C) ++(D) node {$\cdot$};
+          %\end{tikzpicture}
           \[ | ((B-A)\x(C-A))\cdot(D-A) | \]
           \[ u = B - A, v = C - A, w = D - A \]
           \[ v\x w = (1, -3, -2) \]
@@ -315,4 +318,30 @@
 
 
 \end{enumerate}
+
+\subsection{Resueltos en clase}
+\begin{enumerate}
+    \item
+          \[ u = w \x v = (15,-5,-6) \]
+          \[ \| u \| = \sqrt{225 + 25 + 36} = \sqrt{286} = \sqrt{2 * 11 * 13} \]
+          \[ det(u,v,w) = -286 \]
+          \[ \frac{1}{\sqrt{286}}det(u,v,w) = \frac{-286}{\sqrt{286}} = \frac{-286*\sqrt{286}}{286} = -\sqrt{286} \]
+          \[ det(u,v,w) = u\cdot(v*w) = (v*w)(v*w) = \|v*w\|^2 > 0 \]
+          \[ det(-u,v,w) = -det(u,v,w) = -\|v*w\|^2 > 0 \]
+
+    \item
+          \[ v = (0,1,2) \]
+          \[ v\cdot w = 0 \]
+          \[ 1w_2 + 2w_3 = 0 \]
+          \[ v\x(w_1, w_2, w_3) = (1,0,0) \]
+
+    \item Encotrar un vector $v$ tal que $v \neq 0$, $v \perp \Pi$. $\Pi$ es
+          el plano que pasa por $P = (1,0,1)$, $Q = (2, 1, 3)$ y $R = (4, 2, 5)$. Tambien calcular el area del triángulo $PQR$ \\
+          Un vector es perpendicular a un plano se es paralelo a la normal
+          \[ N = (P-Q)\x(R-Q) = (-1,-1,-2)\x(2,1,2) = (0,-2,1) \]
+          \[ \|N\| = \sqrt{5} \]
+          \[ \text{Area }PQR = \frac{\sqrt{5}}{2} \]
+
+\end{enumerate}
+
 \end{document}
