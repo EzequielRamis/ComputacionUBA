@@ -156,48 +156,114 @@ Estos puntos siempre van a pertenecer al conjunto $A \x B$, por lo que podemos i
 ``el conjunto donde todos los $a$ están relacionados con todos los $b$''.
 Tambien se usa la notación $a \rel b$ y $a \notrel b$, y se puede representar graficamente de diferentes maneras:
 \begin{align*}
-    A & = \{1, 2, 3\} & R_1 & = \{(a,1), \dots, (c,3)\} \\
-    B & = \{a, b, c\} & R_2 & = \{(a,1), (b,2), (c,3)\}
+    A & = \{1, 2, 3\} & R_1 & = \{(1,a), \dots, (3,c)\}          \\
+    B & = \{a, b, c\} & R_2 & = \{(1,a), (2,b), (3,c)\}          \\
+      &               & R_3 & = \{ (x,y) \in \R^2 : x^2 = y^2 \}
 \end{align*}
 \begin{figure*}[h]
     \centering
-    \begin{tikzpicture}
-        \node (A) at (-1,2) {$A$};
-        \node (1) [below of=A] {$1$};
-        \node (2) [below of=1] {$2$};
-        \node (3) [below of=2] {$3$};
-        \node (B) at (1,2) {$B$};
-        \node (a) [below of=B] {$a$};
-        \node (b) [below of=a] {$b$};
-        \node (c) [below of=b] {$c$};
-        \begin{scope}[->,thick]
-            \draw (1) -- (a);
-            \draw (2) -- (b);
-            \draw (3) -- (c);
-        \end{scope}
-    \end{tikzpicture}
+    \begin{subfigure}[r]{0.4\textwidth}
+        \begin{tikzpicture}
+            \node (A) at (-1,2) {$A$};
+            \node (1) [below of=A] {$1$};
+            \node (2) [below of=1] {$2$};
+            \node (3) [below of=2] {$3$};
+            \node (B) at (1,2) {$B$};
+            \node (a) [below of=B] {$a$};
+            \node (b) [below of=a] {$b$};
+            \node (c) [below of=b] {$c$};
+            \begin{scope}[->,thick]
+                \draw (1) -- (a);
+                \draw (2) -- (b);
+                \draw (3) -- (c);
+            \end{scope}
+        \end{tikzpicture}
+    \end{subfigure}
     \hfill
-    \begin{tikzpicture}
-        \begin{scope}[thick,->]
-            \draw (0,0) -- (3.5,0) node[anchor=north] (A) {$A$};
-            \draw (0,0) -- (0,3.5) node[anchor=east] (B) {$B$};
-        \end{scope}
-        \draw[very thin, gray] (0,0) grid (3,3);
-        \node (1) [anchor=north] at (1,0) {$1$};
-        \node (2) [anchor=north] at (2,0) {$2$};
-        \node (3) [anchor=north] at (3,0) {$3$};
-        \node (a) [anchor=east] at (0,1) {$a$};
-        \node (b) [anchor=east] at (0,2) {$b$};
-        \node (c) [anchor=east] at (0,3) {$c$};
-        \begin{scope}[circle,inner sep=1]
-            \node[fill=black] at (a -| 1) {};
-            \node[fill=black] at (b -| 2) {};
-            \node[fill=black] at (c -| 3) {};
-        \end{scope}
-    \end{tikzpicture}
+    \begin{subfigure}[l]{0.4\textwidth}
+        \begin{tikzpicture}
+            \begin{scope}[thick,->]
+                \draw (0,0) -- (3.5,0) node[anchor=north] (A) {$A$};
+                \draw (0,0) -- (0,3.5) node[anchor=east] (B) {$B$};
+            \end{scope}
+            \draw[very thin, gray] (0,0) grid (3,3);
+            \node (1) [anchor=north] at (1,0) {$1$};
+            \node (2) [anchor=north] at (2,0) {$2$};
+            \node (3) [anchor=north] at (3,0) {$3$};
+            \node (a) [anchor=east] at (0,1) {$a$};
+            \node (b) [anchor=east] at (0,2) {$b$};
+            \node (c) [anchor=east] at (0,3) {$c$};
+            \begin{scope}[circle,inner sep=1]
+                \node[fill=black] at (a -| 1) {};
+                \node[fill=black] at (b -| 2) {};
+                \node[fill=black] at (c -| 3) {};
+            \end{scope}
+        \end{tikzpicture}
+    \end{subfigure}
     \caption{$R_2$ representado en un diagrama de Venn y en un plano de ejes cartesianos}
 \end{figure*}
 
+\subsubsection{Tipos de relaciones entre elementos}
+Las relaciones entre elementos se pueden categorizar en 4 categorias:
+\begin{enumerate}
+    \item Reflexiva: Un elemento está relacionado consigo mismo: $x \rel x$
+    \item Simetrica: Dos elementos están relacionados entre si: $x \rel y$ \textbf{y} $y \rel x$
+    \item Antisimetrica: Dos elementos están relacionados, pero en una dirección: $x \rel y$ \textbf{ó} $y \rel x$, donde $x \neq y$
+    \begin{enumerate}
+        \item $x \rel y, x \neq y \implies y \notrel x$
+        \item $\forall (x, y) \in R$, si $x \rel y$ e $y \rel x$, entonces $x = y$
+    \end{enumerate}
+    \item Transitiva: Si hay una cadena de relaciones de 3 elementos, entonces tiene que haber un ``camino corto'' del primero al último: $x \rel y, y \rel z \implies x \rel z$
+\end{enumerate}
+
+\begin{figure*}[h]
+    \centering
+    \begin{subfigure}[c]{0.2\textwidth}
+        \begin{tikzpicture}
+            \node (a) at (0,0) {a};
+            \draw[thick,->] (a) edge[loop right] (a);
+        \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.2\textwidth}
+        \begin{tikzpicture}
+            \node (a) at (0,0) {a};
+            \node (b) [right of=a] {b};
+            \draw[thick,<->] (a) -- (b);
+        \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.2\textwidth}
+        \begin{tikzpicture}
+            \node (a) at (0,0) {a};
+            \node (b) [right of=a] {b};
+            \draw[thick,->] (a) -- (b);
+        \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.2\textwidth}
+        \begin{tikzpicture}
+            \node (a) at (0,0) {a};
+            \node (b) [right of=a] {b};
+            \node (c) [below of=a] {c};
+            \draw[thick,->] (a) -- (b);
+            \draw[thick,->] (b) -- (c);
+            \draw[thick,->] (a) -- (c);
+        \end{tikzpicture}
+    \end{subfigure}
+    \caption{Ejemplos de las 4 propiedades, de izq. a der.}
+\end{figure*}
+
+\subsubsection{Tipos de conjuntos de relaciones}
+Cuando todos los elementos de una relación cumplen ciertas propiedades, 
+el conjunto se dice que es una relación de orden o una relacion de equivalencia:
+\begin{itemize}
+    \item Si todos los elementos son reflexivos, antisimetricos y transitivos, entonces la relacion es \textit{de orden}
+    \item Si todos los elementos son reflexivos, simetricos y transitivos, entonces la relacion es \textit{de equivalencia}
+\end{itemize}
+
+Existen algunas relaciones que ya conocemos:
+\begin{itemize}
+    \item La igualdad $=$ es una relación entre elementos de un conjunto $A$: Dados $x, y \in A, x \rel y \iff x = y$
+    \item La comparación (por ej.: $\leq$) es una relación en $\R$ (y los subconjuntos): $x \rel y \iff x \leq y$
+\end{itemize}
 
 
 \end{document}
