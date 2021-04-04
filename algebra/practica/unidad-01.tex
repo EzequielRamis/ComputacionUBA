@@ -715,7 +715,7 @@
               \item Transitiva: $\{(c, f), (b, f)\}$
               \item Reflexiva y simétrica: $\{(b, b), (c, c), (d, d), (f, f), (c, b)\}$
               \item Simétrica y transitiva: $\{(c, b), (b, f), (c, f)\}$
-              \item Equivalencia % ???
+              \item Equivalencia son $\overline{1} = \{1, 3, \dots\}$ y  % ???$\overline{2} = \{2, 4, \dots\}$
           \end{enumerate}
     \item Determinar si $R$ es reflexica, anti/simétrica, transitiva, de equivalencia o de orden
           \begin{enumerate}
@@ -757,32 +757,92 @@
               \item $\overline{c} = \overline{e} = \{c, e\}$
               \item Partición $= \{\{a, b, c\}, \{c, e\}, \{d\}\}$
           \end{itemize}
+
     \item Sea $A = \{1, 2, ..., 9, 10\}$ hallar y grafica la $R$ de equivalencia de la partición $\{\{1, 3\}, \{2, 6, 7\}, \{4, 8, 9, 10\}, \{5\}\}$.
 
-          \begin{tikzpicture}
-              \node (1) at (-1,0) {$1$};
-              \node (3) [left of=1] {$3$};
+          \begin{figure*}[h]
+              \centering
+              \begin{tikzpicture}
+                  \node (1) at (-1,0) {$1$};
+                  \node (3) [left of=1] {$3$};
 
-              \node (2) at (0,1.5) {$2$};
-              \node (6) [above left of=2] {$6$};
-              \node (7) [above right of=2] {$7$};
+                  \node (2) at (0,1.5) {$2$};
+                  \node (6) [above left of=2] {$6$};
+                  \node (7) [above right of=2] {$7$};
 
-              \node (4) at (1.2,-0.5) {$4$};
-              \node (8) [above of=4] {$8$};
-              \node (9) [right of=4] {$9$};
-              \node (10) [above of=9] {$10$};
+                  \node (4) at (1.5,-0.5) {$4$};
+                  \node (8) [above of=4] {$8$};
+                  \node (9) [right of=4] {$9$};
+                  \node (10) [above of=9] {$10$};
 
-              \node (5) at (0,-1) {$5$};
+                  \node (5) at (0,-1) {$5$};
 
-              \begin{scope}[thick]
-                  \draw (-2,2) -- (2,-2);
-                  \draw (-2,-2) -- (2,2);
-              \end{scope}
+                  \begin{scope}[thick]
+                      \draw (-2,2) -- (2,-2);
+                      \draw (-2,-2) -- (2,2);
+                  \end{scope}
 
-          \end{tikzpicture}
+                  \begin{scope}[thick,<->]
+                      \draw (1) edge[loop right] node {} (1);
+                      \draw (2) edge[loop below] node {} (2);
+                      \draw (3) edge[loop left] node {} (3);
+                      \draw (4) edge[loop left] node {} (4);
+                      \draw (5) edge[loop right] node {} (5);
+                      \draw (6) edge[loop left] node {} (6);
+                      \draw (7) edge[loop right] node {} (7);
+                      \draw (8) edge[loop left] node {} (8);
+                      \draw (9) edge[loop right] node {} (9);
+                      \draw (10) edge[loop right] node {} (10);
 
-    \item 27lol
-    \item 28lol
+                      \draw (3) -- (1);
+
+                      \draw (6) -- (7);
+                      \draw (7) -- (2);
+                      \draw (2) -- (6);
+
+                      \draw (8) -- (10);
+                      \draw (10) -- (9);
+                      \draw (9) -- (4);
+                      \draw (4) -- (8);
+                      \draw (8) -- (9);
+                      \draw (4) -- (10);
+                  \end{scope}
+              \end{tikzpicture}
+          \end{figure*}
+          Tiene 4 clases de equivalencia: $\overline{3}$, $\overline{2}$, $\overline{4}$ y $\overline{5}$
+
+    \item En el cojunto $\Z$, sea una $R$ dada por la paridad ($x \rel y$, si $x$ e $y$ son pares o $x$ e $y$ son impares), encontrar las clases de quivalencia
+          \begin{figure*}[h]
+              \centering
+              \begin{tikzpicture}
+                  \draw[thick] (0,2) -- (0,-2);
+                  \node (1) at (-1,1.5) {$1$};
+                  \node (3) [below of=1] {$3$};
+                  \node (5) [below of=3] {$5$};
+                  \node (i) [below of=5] {$\dots$};
+                  \node (2) at (1,1.5) {$2$};
+                  \node (4) [below of=2] {$4$};
+                  \node (6) [below of=4] {$6$};
+                  \node (p) [below of=6] {$\dots$};
+              \end{tikzpicture}
+          \end{figure*}
+          Las clases de equivalencia son $\overline{1} = \{1, 3, \dots\}$ y $\overline{2} = \{2, 4, \dots\}$
+
+    \item En el cojunto $\Z$, sea una $R$ dada por la siguiente condición: Dos numeros están relacionados si terminan en el mismo digito.
+          Encontrar las clases de equivalencia y un representante para cada una.
+
+          Hay 10 clases de equivalencia ya que si tomamos $x \in \Z$, $x \% 10$
+          va a dar un resultado de un solo digito, que puede ser cualquiera de los 10 digitos.
+          \[ x \% 10 \text{ da uno de } 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 \]
+          Las clases de equivalencia son:
+          \begin{align*}
+              \overline{0} = & \{0, 10, 20, \dots\} & \overline{5} = & \{5, 15, 25, \dots\} \\
+              \overline{1} = & \{1, 11, 21, \dots\} & \overline{6} = & \{6, 16, 26, \dots\} \\
+              \overline{2} = & \{2, 12, 22, \dots\} & \overline{7} = & \{7, 17, 27, \dots\} \\
+              \overline{3} = & \{3, 13, 23, \dots\} & \overline{8} = & \{8, 18, 28, \dots\} \\
+              \overline{4} = & \{4, 14, 24, \dots\} & \overline{9} = & \{9, 19, 29, \dots\} \\
+          \end{align*}
+
     \item 29lol
 
 \end{enumerate}
