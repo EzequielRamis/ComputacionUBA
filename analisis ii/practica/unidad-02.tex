@@ -115,4 +115,59 @@
           \end{enumerate}
     \item \dots 4
 \end{enumerate}
+\subsection{Resueltos en clase}
+\begin{enumerate}
+    \item[11.] $2 < r < 3, \frac{5}{3}\pi \leq \theta \leq \frac{7}{3}\pi$
+
+          \begin{tikzpicture}
+              \foreach \t in {0,60,120,180,240,300} {
+                      \draw (\t:0) -- (\t:3.2);
+                  }
+              \draw (60:2) node[rotate=60,anchor=south] {$\frac{1}{3}\pi \equiv \frac{7}{3}\pi$};
+              \draw (-60:1.5) node[rotate=-60,anchor=north] {$\frac{5}{3}\pi$};
+              \draw[dashed] (-60:2) arc (-60:60:2);
+              \draw[dashed] (-60:3) arc (-60:60:3);
+              \path[pattern=north east lines] (-60:2) arc (-60:60:2) -- (60:3) arc (60:-60:3) -- cycle;
+          \end{tikzpicture}
+
+    \item[13.] Encontrar la distancia entre $P_1 = (2,\pi/3)$ y $P_2 = (4, 2\pi/3)$
+
+          \begin{tikzpicture}
+              \node (1) at (60:2) {$P_1$};
+              \node (2) at (120:4) {$P_2$};
+              \draw (-3.2,0) -- (3.2,0);
+              \draw (0,-3.2) -- (0,3.2);
+              \begin{scope}[->]
+                  \draw (0,0) -- (1) node[pos=0.5,anchor=west] {$a$};
+                  \draw (0,0) -- (2) node[pos=0.5,anchor=east] {$b$};
+                  \draw[|-|,thick,red] (1) -- (2) node[pos=0.5,anchor=south]{$c$};
+              \end{scope}
+              \draw (60:0.5) arc (60:120:0.5) node[pos=0.5,anchor=south] {$\theta$};
+          \end{tikzpicture}
+          \[ \theta = \left\|\frac{1}{3}\pi  - \frac{2}{3}\pi\right\| = \pi/3 \]
+          \[ \text{Teorema del coseno: } c^2 = a^2 + b^2 - 2 \cdot a \cdot b \cdot \cos\theta \]
+          \begin{align*}
+              c^2 & = 2^2 + 4^2 - 2 \cdot 2 \cdot 4 \cos \pi/3 \\
+                  & = 4 + 16 - 8                               \\
+                  & = 12 \\
+              c   & = \sqrt{12}
+          \end{align*}
+          \[ \boxed{c = 2\sqrt{3}} \]
+
+    \item[15.] $r^2 = 5$
+          \[ r^2 = \boxed{x^2 + y^2 = 5} \]
+
+    \item[17.] $r = 2\cos\theta$
+          \[ \cos\theta = \frac{x}{r} \]
+          \[ r^2 = 2x \]
+          \[ r^2 = x^2 + y^2 \]
+          \[ x^2 - 2x + y^2 = 0 \]
+          \[ x^2 - 2x + 1 + y^2 = 1 \]
+          \[ \boxed{(x-1)^2 + y^2 = 1} \]
+
+    \item[18.] $\theta = \frac{\pi}{3}$
+          \[ \tan\theta = \frac{y}{x} = \sqrt{3} \]
+          \[ \boxed{y = \sqrt{3}x} \]
+
+\end{enumerate}
 \end{document}
