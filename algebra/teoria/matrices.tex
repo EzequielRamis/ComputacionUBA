@@ -1,0 +1,230 @@
+\documentclass[../teoria.root.tex]{subfiles}
+
+\begin{document}
+
+\section{Matrices}
+
+Una matriz es una tabla rectangular de números reales. El conjunto
+$\mathbb{R}^{n\times m}$ contiene todas las matrices de $n$ filas y $m$
+columnas.\footnote{Es importante recordar que es filas $\times$ columnas, no
+viceversa, algo que a menudo me confundo.}
+
+En cada conjunto $\mathbb{R}^{n\times m}$ existe una matriz cero,
+$\mathbb{O}_{m\times n}$:
+\[\mathbb{O}_{3\times 4}=\begin{pmatrix}
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0
+\end{pmatrix}\]
+
+En los conjuntos de matrices cuadradas, $\mathbb{R}^{n\times n}$, existe
+también una matriz identidad, $\mathbb{I}_n$, que tiene $1$ en su diagonal
+principal y $0$ en todos los demás lugares:
+\[\mathbb{I}_3=\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}\]
+
+Para referirse al valor de una matriz $A$ en la fila $i$ y la columna $j$, se
+escribe $A_{i,j}$:
+\begin{gather*}
+	A=\begin{pmatrix}
+		6 & 2 & 8 \\
+		4 & 1 & 3 \\
+		9 & 5 & 7
+	\end{pmatrix}\\
+	A_{2,3}=8
+\end{gather*}
+
+\subsection{Suma}
+
+La suma y resta de matrices solo puede ocurrir entre matrices con la misma
+cantidad de filas y columnas, y funciona igualmente a la suma de vectores:
+\[\begin{pmatrix}
+	1 & 2 \\
+	3 & 4
+\end{pmatrix}+\begin{pmatrix}
+	5 & 6 \\
+	7 & 8
+\end{pmatrix}=\begin{pmatrix}
+	 6 &  8 \\
+	10 & 12
+\end{pmatrix}\]
+
+\subsection{Producto por escalar}
+
+El producto de una matriz por un escalar funciona igual a la multiplicación de
+vectores por escalares:
+\[5\cdot\begin{pmatrix}
+	1 & 2 \\
+	3 & 4
+\end{pmatrix}=\begin{pmatrix}
+	 5 & 10 \\
+	15 & 20
+\end{pmatrix}\]
+
+\subsection{Producto entre matrices}
+
+El producto $A\cdot B$ de dos matrices $A$ y $B$ es posible únicamente si la
+cantidad de columnas de $A$ es igual a la cantidad de filas de $B$. El
+resultado va a ser una matriz con la cantidad de filas de $A$ y la cantidad de
+columnas de $B$:
+\[
+	A\in\mathbb{R}^{n\times k}\land
+	B\in\mathbb{R}^{k\times m}\implies
+	(A\cdot B)\in\mathbb{R}^{n\cdot m}
+\]
+
+Para calcular $C=A\cdot B$, cada valor $C_{i,j}$ va a ser igual al producto
+interno de la fila $i$ de $A$ por la columna $j$ de $B$. Por ejemplo:
+\begin{gather*}
+	\begin{pmatrix}[rrrr]
+		1 & -1 & 0 &  2 \\
+		\rowcolor{red!50} 3 &  0 & 4 & -2
+	\end{pmatrix}\cdot
+	\begin{pmatrix}[r>{\columncolor{red!50}}rr]
+		 1 & 0 & 1 \\
+		-1 & 1 & 3 \\
+		 2 & 4 & 1 \\
+		 0 & 0 & 5
+	\end{pmatrix}=
+	\begin{pmatrix}[rrr]
+		2 & -1 & 8 \\
+		11 & \cellcolor{red!50}16 & -3
+	\end{pmatrix}\\
+	(3,0,4,-2)\cdot(0,1,4,0)=16
+\end{gather*}
+
+El producto entre matrices no es conmutativo, no siempre $A\cdot B=B\cdot A$:
+\begin{align*}
+	\begin{pmatrix}[rr]
+		7 & -1 \\
+		3 & 1
+	\end{pmatrix}\cdot\begin{pmatrix}[rr]
+		1 & 0 \\
+		0 & 2
+	\end{pmatrix}&=\begin{pmatrix}[rr]
+		7 & -2 \\
+		3 & 2
+	\end{pmatrix}\\
+	\begin{pmatrix}[rr]
+		1 & 0 \\
+		0 & 2
+	\end{pmatrix}\cdot\begin{pmatrix}[rr]
+		7 & -1 \\
+		3 & 1
+	\end{pmatrix}&=\begin{pmatrix}[rr]
+		7 & -1 \\
+		6 & 2
+	\end{pmatrix}
+\end{align*}
+
+Multiplicar una matriz por su matriz identidad o viceversa es una operación
+nula, es como multiplicar un numero por $1$:
+\[A\cdot\mathbb{I}=\mathbb{I}\cdot A=A\]
+
+\subsection{Ecuaciones con matrices}
+
+En general la estrategia para resolver ecuaciones con matrices es primeramente
+determinar el tamaño de la matriz incógnita. Luego se reemplaza cada valor de
+la matriz por una incógnita ($a$, $b$, $c$ \ldots) y se resuelve la ecuación
+normalmente.
+
+Como atajo, es útil recordar que una ecuación con la forma $A\cdot X=B$ se
+puede resolver escalonando la matriz $(A|B)$.
+
+\subsection{Matrices inversas}
+
+Para algunas matrices cuadradas $A\in\mathbb{R}^{n\times n}$ (no todas, mas
+adelante se vera por qué) existe una matriz inversa $A^{-1}$, tal que $A\cdot
+A^{-1}=A^{-1}\cdot A=\mathbb{I}_n$. Una matriz que tiene una inversa es una
+matriz \textit{inversible}. Para determinar si una matriz es inversible basta
+con resolver la ecuación $A\cdot X=\mathbb{I}_n$.
+
+\subsection{Rango}
+
+El rango de una matriz $M$, $\rg(M)$ es la cantidad de filas no nulas de su
+versión escalonada.
+\begin{align*}
+	&\rg\begin{pmatrix}
+		3 & 1 \\
+		2 & 0
+	\end{pmatrix}&&=&&\rg\begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix}&&=&&2\\
+	&\rg\begin{pmatrix}[rrr]
+		-1 & -1 & 1 \\
+		 1 &  3 & 9 \\
+		 1 &  2 & 4
+	\end{pmatrix}&&=&&\rg\begin{pmatrix}[rrr]
+		1 & 0 & -6 \\
+		0 & 1 &  5 \\
+		0 & 0 &  0
+	\end{pmatrix}&&=&&2
+\end{align*}
+
+Una matriz cuadrada $M\in\mathbb{R}^{n\times n}$ es inversible solamente si
+$\rg(M)=n$.
+\begin{align*}
+	M\text{ es inversible}&\iff\\
+	M\cdot x=b\text{ tiene solo una solución}&\iff\\
+	M\text{ es equivalente a }\mathbb{I}_n&\iff\\
+	\rg(M)=n
+\end{align*}
+
+Dada una matriz $A\in\mathbb{R}^{n\times m}$ y un vector
+$b\in\mathbb{R}^{n\times 1}$, el sistema $(A|b)$ es compatible solo si
+$\rg(A)=\rg(A|b)$, y es compatible determinado solo si $\rg(A)=m$.
+
+\begin{center}
+	\begin{tabular}{ccc}
+		\toprule
+		\multicolumn{3}{c}{$A\in\mathbb{R}^{n\times m}\:,\: b\in\mathbb{R}^{n\times 1}$} \\
+		\midrule
+		\multicolumn{2}{c}{$\rg(A)=\rg(A|b)$} & $\rg(A)\neq\rg(A|b)$ \\
+		\midrule
+		$\rg(A)=m$ & $\rg(A)<m$ & \multirow{2}{*}{Incompatible} \\
+		Determinado & Indeterminado \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+
+\subsection{Determinantes}
+
+Dada una matriz cuadrada, se puede calcular su determinante, un numero real. El
+determinante de una matriz se escribe $\det(A)$ o $|A|$.
+
+Para calcularlo, vamos a ver el caso para una matriz $2\times2$:
+\[\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc\]
+
+\begin{enumerate}
+	\item Se elige una fila $i$ de la matriz (conviene elegir la que tiene mas
+		ceros).
+	\item Se tacha $i$.
+	\item Por cada columna $j$ de la matriz:
+	\begin{enumerate}
+		\item Se tacha $j$.
+		\item Se calcula el determinante de la matriz resultante (De esta
+			manera, el tamaño de la matriz a calcular se va a reducir hasta
+			llegar al caso $2\times2$, que tiene una solución fácil).
+		\item Se multiplica el resultado por el valor en $M_{i,j}$
+		\item Si $i+j$ es impar, se invierte el resultado.
+	\end{enumerate}
+	\item Se suman todos estos valores.
+\end{enumerate}
+
+Este proceso también se puede hacer tachando una columna y sumando entre filas.
+En general conviene hacer el método bajo el cual la fila o columna elegida
+tiene la mayor cantidad de ceros, lo cual acorta el cálculo.
+
+\[
+	\begin{vmatrix}[>{\columncolor{red!30}}r>{\columncolor{green!30}}r>{\columncolor{blue!30}}r]
+		\rowcolor{purple!30} 1 & 2 & 3 \\
+		4 & 5 & 6 \\
+		7 & 8 & 9
+	\end{vmatrix}
+\]
+
+\end{document}
